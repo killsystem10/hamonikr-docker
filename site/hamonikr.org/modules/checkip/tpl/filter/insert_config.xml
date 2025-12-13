@@ -1,0 +1,18 @@
+<filter name="insert_config" module="checkip" act="procCheckipAdminInsertConfig">
+	<form>
+        <node target="expiration_period" required="false" filter="number" />
+    </form>
+	<parameter>
+		<param name="delete_reg_ip" target="delete_reg_ip" />
+	</parameter>
+	<parameter>
+		<param name="check_ip" target="check_ip" />
+	</parameter>
+	<parameter>
+		<param name="expiration_period" target="expiration_period" />
+	</parameter>
+	<response callback_func="completeInsertConfig">
+		<tag name="error" />
+		<tag name="message" />
+	</response>
+</filter>

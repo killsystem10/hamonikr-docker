@@ -1,0 +1,58 @@
+<!--#include("./header.html")-->
+
+<!-- 정보 -->
+<div class="summary">
+    <strong>Total</strong> <em>{number_format($total_count)}</em>, Page <strong>{number_format($page)}</strong>/{number_format($total_page)}
+</div>
+
+<!-- 목록 -->
+<table cellspacing="0" class="rowTable">
+<thead>
+    <tr>
+        <th scope="col"><div>{$lang->no}</div></th>
+        <th scope="col"><div>{$lang->target_type}</div></th>
+        <th scope="col" class="half_wide"><div>{$lang->target_name}</div></th>
+        <th scope="col"><div>{$lang->popup_type}</div></th>
+        <th scope="col" class="half_wide"><div>{$lang->popup_name}</div></th>
+        <th scope="col"><div>{$lang->start_date}</div></th>
+        <th scope="col"><div>{$lang->end_date}</div></th>
+        <th scope="col"><div>{$lang->regdate}</div></th>
+        <th scope="col" colspan="2"><div>&nbsp;</div></th>
+    </tr>
+</thead>
+<tbody>
+    <!--@foreach($popup_list as $no => $val)-->
+    <tr>
+        <td class="center number">{$no}</td>
+        <td class="center">{$val->target_type}</td>
+        <td><a href="{getUrl('mid', $val->target_mid,'act','')}" title="Preview" target="_blank">{$val->target_mid}</a></td>
+        <td>{$val->popup_type}</td>
+        <td>{$val->popup_name}</td>
+        <td>{zdate($val->startdate,"Y-m-d")}</td>
+        <td>{zdate($val->enddate,"Y-m-d")}</td>
+        <td>{zdate($val->regdate,"Y-m-d")}</td>
+        <td><a href="{getUrl('act','dispPop_upAdminInsertPopupConn','popup_conn_srl',$val->popup_conn_srl)}" class="buttonSet buttonSetting"><span>{$lang->cmd_setup}</span></a></td>
+        <td><a href="{getUrl('act','dispPop_upAdminDeletePopupConn','popup_conn_srl', $val->popup_conn_srl)}" class="buttonSet buttonDelete"><span>{$lang->cmd_delete}</span></a></td>
+    </tr>
+    <!--@end-->
+</tbody>
+</table>
+
+<div class="clear">
+    <div class="fr">
+        <a href="{getUrl('act','dispPop_upAdminInsertPopupConn','popup_conn_srl','')}" class="button black strong"><span>{$lang->cmd_make}</span></a>
+    </div>
+</div>
+
+<!-- 페이지 네비게이션 -->
+<div class="pagination a1">
+    <a href="{getUrl('page','','popup_conn_srl','')}" class="prevEnd">{$lang->first_page}</a> 
+    <!--@while($page_no = $page_navigation->getNextPage())-->
+        <!--@if($page == $page_no)-->
+            <strong>{$page_no}</strong> 
+        <!--@else-->
+            <a href="{getUrl('page',$page_no,'popup_conn_srl','')}">{$page_no}</a> 
+        <!--@end-->
+    <!--@end-->
+    <a href="{getUrl('page',$page_navigation->last_page,'popup_conn_srl','')}" class="nextEnd">{$lang->last_page}</a>
+</div>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon version="0.2">
+    <title xml:lang="ko">dyform no spam</title>
+    <description xml:lang="ko">
+		주의 : 본 애드온은 여러가지 호환성 문제로 더 이상 지원이 되지 않습니다. 더 확실하고 오류없이 스팸을 차단하는 Bot Challenge Anti Spam 애드온을 이용바랍니다.
+		본 애드온 0.4버젼은 Bot Challenge Anti Spam 1.0.0 버젼에서 PHP 5.3 미만에서 돌아가지 않는 코드를 수정하였습니다.
+		지원중단 상세 안내 : http://goo.gl/PIrDqr  업데이트 하기 :  http://goo.gl/sw8QHQ
+    </description>
+    <version>0.4</version>
+    <date>2014-04-30</date>
+    <author email_address="thename@requery.me" link="http://github.com/ajkj/xe-bot_challenge_addon">
+        <name xml:lang="ko">ajkj</name>
+    </author>
+</addon>

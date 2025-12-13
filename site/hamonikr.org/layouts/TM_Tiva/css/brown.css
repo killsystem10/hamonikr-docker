@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document */
+
+a {
+	color: #890026;
+}
+#sidebar #sidemenu li.current{  background:#890026 url(../images/sidemenu_rightbg_o.png) no-repeat; background-position:95% 15px; }
+#cycle-pager a:hover span {	background: #890026; }
+html ul.tabs li.active  { 
+	border-top: 1px solid #890026;
+}
+#footer-links li a:hover {	color: #890026;}

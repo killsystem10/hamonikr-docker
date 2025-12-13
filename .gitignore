@@ -1,0 +1,58 @@
+# 대용량 파일 (GitHub에서 관리하지 않음)
+files.tar.gz
+db/*.sql.gz
+site/hamonikr.org/files/
+
+# 로그 파일
+*.log
+xe-gpt.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 가상환경
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+.dockerignore
+
+# 인증서 및 키 파일 (보안상의 이유로 제외)
+*.pem
+*.key
+*.crt
+certs/hamonikr/
+
+# 매뉴얼 디렉토리 (필요시)
+manual/

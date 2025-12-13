@@ -1,0 +1,27 @@
+<!--@if($li->body_color)-->
+header {background-color:{$li->body_color}}
+.body {background-color:{$li->body_color}}
+<!--@if(!$li->footer_widget)-->
+.footer.arrow:after {border-top-color:{$li->body_color}}
+<!--@end-->
+<!--@end-->
+<!--@if($li->body_img)-->
+.body {background-image:url({$li->body_img}); background-position:{$li->body_img_position}; background-attachment:{$li->body_img_attach}<!--@if($li->body_img_size != 'default')-->; background-size:{$li->body_img_size}<!--@end-->}
+<!--@end-->
+<!--@if(($li->expand_sitemap == 'Y' && $_COOKIE['disp_fs_sitemap'] == 'N') || ($li->expand_sitemap != 'Y' && $_COOKIE['disp_fs_sitemap'] != 'Y'))-->
+header .sitemap-wrap {display:none}
+<!--@end-->
+<!--@if($li->container_size)-->
+.fs-wrap {width:{$li->container_size}}
+<!--@end-->
+<!--@if($li->content_size && !in_array($li->layout_type, array('mainpage', 'onepage')))-->
+body.leftside .content,
+body.rightside .content,
+body.totalside .content {width:{$li->content_size}}
+<!--@end-->
+<!--@if($li->leftside_size)-->
+.body .left-sidebar {width:{$li->leftside_size}}
+<!--@end-->
+<!--@if($li->rightside_size)-->
+.body .right-sidebar {width:{$li->rightside_size}}
+<!--@end-->

@@ -1,0 +1,142 @@
+<!--// INITIALIZE -->
+<include target="./_header.html" />
+
+<!--// BODY -->
+<header>
+	<include target="./obj/_camera_slide.html" />
+	
+	<div class="menu-wrap">
+		<div class="fs-wrap fs-wrap-extend">
+			<div class="clear">
+				<div cond="$li->header_logo" class="logo">
+					<a cond="$li->header_logo_src" href="{$li->header_logo_src}"><img src="{$li->header_logo}" alt="{$li->header_logo_desc}"|cond="$li->header_logo_desc" /></a>
+					<img cond="!$li->header_logo_src" src="{$li->header_logo}" alt="{$li->header_logo_desc}"|cond="$li->header_logo_desc" />
+				</div>
+				<ul cond="$top_menu" class="menu">
+					<li loop="$top_menu->list=>$key,$val" id="mid-{$val['node_srl']}" class="active"|cond="$val['selected']">
+						<a href="{$val['href']}" class="cufon-normal" target="_blank"|cond="$val['open_window'] == 'Y'">{$val["link"]}</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div cond="$li->layout_type != 'mainpage' || $li->lib_camera_slide == 'N' || $li->use_camera_slide != 'Y' || !$li->camera_slide_image_1" class="submenu-wrap">
+		<div class="fs-wrap">
+			<div class="clear">
+				<ul cond="$main_menu" class="breadcrumb">
+					<li class="first-child"><a href="{getUrl('')}"><i class="fa fa-home"></i></a></li>
+					<li loop="$main_menu->list=>$key1,$val1" cond="$val1['selected']">
+						<a href="{$val1['href']}" target="_blank"|cond="$val1['open_window'] == 'Y'">{$val1["link"]}</a>
+						<block cond="$val1['list']" loop="$val1['list']=>$key2,$val2">
+							<li cond="$val2['selected']">
+								<a href="{$val2['href']}" target="_blank"|cond="$val2['open_window'] == 'Y'">{$val2["link"]}</a>
+							</li>
+						</block>
+					</li>
+				</ul>
+				<ul cond="$top_menu" class="submenu">
+					<li loop="$top_menu->list=>$key1,$val1" id="pid-{$val1['node_srl']}" class="active"|cond="$val1['selected']">
+						<a cond="$val1['list']" loop="$val1['list']=>$key2,$val2" href="{$val2['href']}" class="active"|cond="$val2['selected']" target="_blank"|cond="$val2['open_window'] == 'Y'">{$val2["link"]}</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div cond="$li->layout_type != 'mainpage' || $li->lib_camera_slide == 'N' || $li->use_camera_slide != 'Y' || !$li->camera_slide_image_1" class="sitemap-btn-wrap">
+		<div class="fs-wrap">
+			<a class="sitemap-btn"><i class="fa fa-angle-<!--@if(($li->expand_sitemap == 'Y' && $_COOKIE['disp_fs_sitemap'] != 'N') || $_COOKIE['disp_fs_sitemap'] == 'Y')-->up<!--@else-->down<!--@end-->"></i> {$lang->fs_sitemap}</a>
+		</div>
+	</div>
+	<div cond="$li->layout_type != 'mainpage' || $li->lib_camera_slide == 'N' || $li->use_camera_slide != 'Y' || !$li->camera_slide_image_1" class="sitemap-wrap">
+		<div class="fs-wrap fs-wrap-extend">
+			<ul cond="$main_menu" class="sitemap">
+				<li loop="$main_menu->list=>$key1,$val1" class="active"|cond="$val1['selected']">
+					<a href="{$val1['href']}" class="cufon-normal" target="_blank"|cond="$val1['open_window'] == 'Y'">{$val1["link"]}</a>
+					<ul cond="$val1['list']" class="sub-sitemap">
+						<li loop="$val1['list']=>$key2,$val2" class="active"|cond="$val2['selected']">
+							<a href="{$val2['href']}" target="_blank"|cond="$val2['open_window'] == 'Y'">{$val2["link"]}</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</header>
+<div class="body">
+	<div class="clear">
+		<div cond="$li->body_header" class="body-header">
+			{$li->body_header}
+		</div>
+		<div cond="$li->layout_type == 'mainpage'" class="fs-wrap fs-wrap-extend"|cond="$act || $li->use_content != 'N'">
+			<div id="content" class="content">
+				{$li->content_header}
+				<div class="clear">{$content}</div>
+				{$li->content_footer}
+			</div>
+		</div>
+		<div cond="$li->layout_type != 'mainpage'" class="fs-wrap fs-wrap-extend">
+			<div class="clear">
+				<div cond="in_array($li->layout_type, array('totalside', 'leftside'))" class="left-sidebar">
+					<include target="./obj/_search.html" cond="in_array('search', $li->leftside_option)" />
+					<include target="./obj/_login_form.html" cond="in_array('login_form', $li->leftside_option)" />
+					<include target="./obj/_category.html" cond="in_array('category', $li->leftside_option)" />
+					<div class="clear">{$li->body_left_sidebar}</div>
+				</div>
+				<div cond="in_array($li->layout_type, array('totalside', 'rightside'))" class="right-sidebar">
+					<include target="./obj/_search.html" cond="in_array('search', $li->rightside_option)" />
+					<include target="./obj/_login_form.html" cond="in_array('login_form', $li->rightside_option)" />
+					<include target="./obj/_category.html" cond="in_array('category', $li->rightside_option)" />
+					<div class="clear">{$li->body_right_sidebar}</div>
+				</div>
+				<div id="content" class="content">
+					{$li->content_header}
+					<div class="clear">{$content}</div>
+					{$li->content_footer}
+				</div>
+			</div>
+		</div>
+		<div cond="$li->body_footer" class="body-footer">
+			{$li->body_footer}
+		</div>
+	</div>
+</div>
+<footer>
+	<div cond="$li->footer_widget" class="widget arrow arrow-top">
+		<div class="fs-wrap fs-wrap-extend">
+			<div class="clear">{$li->footer_widget}</div>
+		</div>
+	</div>
+	<div class="footer arrow arrow-top">
+		<div class="fs-wrap fs-wrap-extend">
+			<div class="clear">
+				<div cond="$li->footer_logo" class="logo">
+					<a cond="$li->footer_logo_src" href="{$li->footer_logo_src}"><img src="{$li->footer_logo}" alt="{$li->footer_logo_desc}"|cond="$li->footer_logo_desc" /></a>
+					<img cond="!$li->footer_logo_src" src="{$li->footer_logo}" alt="{$li->footer_logo_desc}"|cond="$li->footer_logo_desc" />
+				</div>
+				<div class="container">
+					<ul class="menu clear">
+						<block cond="$footer_menu" loop="$footer_menu->list=>$key,$val">
+							<li class="{$val['class']}"|cond="$val['class']">
+								<a href="{$val['href']}" target="_blank"|cond="$val['open_window'] == 'Y'">{$val["link"]}</a>
+							</li>
+						</block>
+					</ul>
+					<block cond="$li->footer_license">
+						<hr class="footer-divider" />
+						<div class="license">
+							<div class="clear">{$li->footer_license}</div>
+						</div>
+					</block>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<!--// ETC -->
+<ul cond="$grant->manager" class="follow-menu clear">
+	<li><a href="{getUrl('', 'module', 'admin')}" target="_blank">{$lang->cmd_management}</a></li>
+	<li><a href="{getUrl('', 'module', 'admin', 'act', 'dispLayoutAdminModify', 'layout', $li->layout, 'layout_srl', $li->layout_srl)}" target="_blank">{$lang->cmd_layout_setup}</a></li>
+</ul>
+
+<a class="top-btn"><i class="fa fa-chevron-up"></i></a>

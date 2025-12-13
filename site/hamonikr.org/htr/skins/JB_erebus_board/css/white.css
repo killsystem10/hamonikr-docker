@@ -1,0 +1,300 @@
+@charset "utf-8"; 
+
+/* Board Reset -------------------------------------------------------------------------------------------------------- */
+.board { color:#333; }
+.board .inputText,
+.board textarea,
+.board select { background:#fff; color:#333; border-color:#dbdbdb; }
+
+
+/* 게시판 상단 제목 부문 -------------------------------------------------------------------------------------------------------- */
+.boardHeader .boardTitle { border-color:#dbdbdb; }
+.boardHeader .boardTitleText a { color:#333;} /* 게시판 제목 부분 */
+.boardHeader .boardTitleText em { color:#666;} /*게시판 부 제목 */
+.boardHeader .boardDescription { background:#f5f5f5; border-color:#dbdbdb;} /* 게시판 상세 설명 부분 */
+
+
+/* 게시판 스타일 설정 부문 -------------------------------------------------------------------------------------------------------- */
+.boardInformation { border-color:#dbdbdb; }
+.boardInformation .infoSum,
+.boardInformation .infoSum strong { color:#333; } /* 글 갯수 */
+
+
+	/* 상단 카테고리 검색 부분 */
+		/* 탭 스타일 카테고리 */
+.categoryList .categoryItem a { background:#f5f5f5; color:#333; border-color:#dbdbdb; }
+
+		/* 셀렉트 스타일 카테고리 */
+.boardInformation .jumpTo { background:#fff; border-color:#dbdbdb; }
+.boardInformation .jumpTo select { background:#fff; border-color:#dbdbdb; color:#333; }
+.boardInformation .jumpTo button{ color:#333; background:#f5f5f5; border-color:#dbdbdb; }
+
+	/* 게시판 스타일 선택 부문 */
+.boardInformation .infoView li.icon a { background-image:url(../img/white/icons.gif); background-repeat:no-repeat; }
+.boardInformation .infoView li.setup a { display:block; float:left; width:30px; height:30px; background:url(../img/white/buttonSetup.gif) no-repeat;}
+
+
+/* 게시판 폼시작 -------------------------------------------------------------------------------------------------------- */
+.boardListForm em,
+.boardListForm strong {color:#333; }
+.boardListForm strong.trackback { color:#666; }
+
+
+/* 목록형 스타일 -------------------------------------------------------------------------------------------------------- */
+.boardList  { }
+.boardList .title { color:#333; } /* 타이틀바 제목,날짜 */
+.boardList th { background:url(../img/white/title_bg.gif) repeat-x; border-color:#dbdbdb; color:#333;} /* 타이틀바 하단라인, 번호,글쓴이,조회수 */
+.boardList td { border-color:#dbdbdb; } /* 리스트 구분 라인 */
+.boardList .replyNum,
+.boardList .trackbackNum { color:#ff6600; }
+.boardList tr.notice { background:#f5f5f5; }
+.boardList td.notice span, /* 공지 문구 출력 */
+.boardList td.title .notice_subject { color:#559bff;} /* 공지사항 제목  */
+.boardList td.title .titles { color:#333; } /* 리스트 제목 */
+.boardList td .category { color:#ff9900; background: url(../img/white/lineVr9.gif) no-repeat right center;}
+.boardList td a,
+.boardList td.date,
+.boardList td.author,
+.boardList td.reading,
+.boardList td.recommend,
+.boardList td.lastReply,
+.boardList td .replyAnchor,
+.boardList td.replies,
+.boardList td.num,
+.boardList td.check { color:#555; }
+.boardList td.title a:hover .notice_subject,
+.boardList td.title a:hover .titles,
+.boardList a:hover { text-decoration:none; color:#ff6600; } 
+
+
+/* 웹진 스타일 -------------------------------------------------------------------------------------------------------- */
+.webZine .thumb { background:#f5f5f5; border-color:#dbdbdb; }
+.webZine .thumb a { background:#f9f9f9;  color:#aaa; }
+
+ /* 공지사항 제목  */
+.webZine tr.notice .title a { color:#559bff;}
+
+	/* 제목 */
+.webZine td.title .subject .category { color:#ff9900; }
+.webZine td.title .subject a.title { color:#333; } /* 제목 */
+.webZine td.title .subject .trackbackNum {  color:#ff6600; }
+		/* 내용 */
+.webZine td.title .summary a { color:#555; } 
+		/* 정보 */
+.webZine td.title .lastReply,
+.webZine td.title .author, 
+.webZine td.title .author a,
+.webZine td.title .meta li.author, /* 이름,닉네임,아이디 */
+.webZine td.title .meta li.date { color:#555; }
+.webZine td.title .extra { color:#555; }
+	/* 추천,뷰,코멘트 출력 */
+.webZine td.count .commenteWrap, 
+.webZine td.count .readWrap,
+.webZine td.count .voteWrap { background:#f5f5f5; border-color:#ccc; color:#555;}
+.webZine td.count .commenteCount a,
+.webZine td.count .readCount,
+.webZine td.count .voteCount { color:#555; }
+.webZine td.count .commented,
+.webZine td.count .readed,
+.webZine td.count .voted { color:#666; }
+
+.webZine tr.notice .title a:hover,
+.webZine td.title .subject a.title:hover,
+.webZine td.count .commenteCount a:hover { color:#ff6600; }
+
+
+
+/* 갤러리 스타일 -------------------------------------------------------------------------------------------------------- */
+.gallery { border-color:#dbdbdb; }
+.gallery .thumbList li .thumb { background:#fff; border-color:#dbdbdb; }
+.gallery .thumbList li .thumb .category { background:#000; opacity:.6; filter:alpha(opacity=60); color:#ff9900;}
+.gallery .thumbList li .thumb .noPhoto { background:#f9f9f9; color:#aaa; }
+.gallery .thumbList li .title a { color:#333;}
+.gallery .thumbList li .title .replyNum,
+.gallery .thumbList li .title .trackbackNum {  color:#ff6600; }
+.gallery .thumbList li .summary a { color:#555;}
+.gallery .thumbList li .lastReply,
+.gallery .thumbList li .lastReply a,
+.gallery .thumbList li .meta li,
+.gallery .thumbList li .meta li a,
+.gallery .thumbList li .extra { color:#555;}
+
+.gallery .thumbList li .title a:hover { color:#ff6600; }
+
+
+
+/* 본문 내용 보기 -------------------------------------------------------------------------------------------------------- */
+.boardRead .boardReadHeader .titleArea { border-color:#dbdbdb; }  /* 본문 상단 라인 */
+.boardRead .boardReadHeader .titleArea .num { color:#666; }
+
+	/* 상단 날짜 부분 */
+.boardRead .boardReadHeader .titleArea .date { border-color:#dbdbdb; background:#f5f5f5; }
+.boardRead .boardReadHeader .titleArea .date .regdate,
+.boardRead .boardReadHeader .titleArea .date .regdate1 { color:#333; }
+
+	/* 상단 제목 부분 */
+.boardRead .boardReadHeader .titleArea .titlebox a.title { color:#000; }
+.boardRead .boardReadHeader .titleArea .titlebox a.category { color:#ff9900; background: url(../img/white/lineVr9.gif) no-repeat right center;}
+.boardRead .boardReadHeader .titleArea .titlebox .nickname,
+.boardRead .boardReadHeader .titleArea .titlebox .nickname .author,
+.boardRead .boardReadHeader .titleArea .titlebox .nickname .ipAddress,
+.boardRead .boardReadHeader .titleArea .titlebox .nickname .readnum,
+.boardRead .boardReadHeader .titleArea .titlebox .nickname .votenum { color:#333; }
+
+
+	/* Attached File  */
+.attachedFile dt .fileToggle { color:#333;}
+.attachedFile ul.files a { color:#333; }
+.attachedFile dt a { color:#333; }
+.attachedFile ul.files a .bubble { border-color:#dbdbdb; background:#f5f5f5; color:#333; }
+
+	/* 서명 */
+.boardRead .boardReadFooter .memberSignature { border-color:#dbdbdb; background:#f5f5f5;}
+.boardRead .boardReadFooter .memberSignature img.profile { border-color:#dbdbdb;} 
+
+	/* 엮인글 */
+.boardRead .boardReadFooter .tag dd a { color:#333; }
+.boardRead .boardReadFooter .trackbackURL {  border-color:#dbdbdb; }
+.boardRead .boardReadFooter .trackbackURL dt { color:#666; }
+.boardRead .boardReadFooter .trackbackURL dd a{ color:#666; }
+
+/* Board Navigation -------------------------------------------------------------------------------------------------------- */
+.board .boardNavigation{  border-color:#dbdbdb; } 
+
+/* Pagination -------------------------------------------------------------------------------------------------------- */
+.board .pagination a.page_no { color:#666; border-color:#dbdbdb; }
+.board .pagination .page_on { background:#f5f5f5; color:#555 !important; border-color:#dbdbdb; }
+.board .pagination a.page_back { background:url(../img/common/page_back.gif) no-repeat center; border-color:#dbdbdb; }
+.board .pagination a.page_skip { background:url(../img/common/page_skip.gif) no-repeat center; border-color:#dbdbdb; }
+.board .pagination a.prevEnd { background:url(../img/common/prevEnd.gif) no-repeat center; border-color:#dbdbdb; }
+.board .pagination a.nextEnd { background:url(../img/common/nextEnd.gif) no-repeat center; border-color:#dbdbdb; }
+
+.board .pagination a:hover { background:#dbdbdb; color:#555; border-color:#dbdbdb; }
+.board .pagination a.page_back:hover { background:url(../img/common/page_back.gif) no-repeat center #dbdbdb; }
+.board .pagination a.page_skip:hover { background:url(../img/common/page_skip.gif) no-repeat center #dbdbdb; }
+.board .pagination a.prevEnd:hover { background:url(../img/common/prevEnd.gif) no-repeat center #dbdbdb; }
+.board .pagination a.nextEnd:hover { background:url(../img/common/nextEnd.gif) no-repeat center #dbdbdb; }
+
+
+/* 검색폼 -------------------------------------------------------------------------------------------------------- */
+.boardSearchForm { background:url(../img/white/searchBg.png) center no-repeat; }
+.boardSearchForm select { border-color:#dbdbdb; background:#f5f5f5; color:#333;}
+.boardSearchForm .board_inputText {  color:#333; background:#fff; border-color:#c1c1c1; }
+.boardSearchForm .search_button { background:url(../img/white/search.gif) center no-repeat; }
+.boardSearchForm .search_next_button { background:url(../img/white/next_search.gif) center no-repeat; }
+
+
+	/* 태그 리스트 */
+.boardSearch .infoEtc li a { background:url(../img/common/buttonContributorsTaglist.gif) no-repeat;}
+
+
+/* 트랙백 목록 -------------------------------------------------------------------------------------------------------- */
+.feedback .feedbackHeader a { color:#333; }
+.feedback .feedbackHeader em { color:#ff6600; }
+.feedback .trackbackList { background:#f9f9f9; border-color:#dbdbdb; }
+.feedback .trackbackList .trackbackURL,
+.feedback .trackbackList .trackbackURL a { color:#666;  }
+.feedback .trackbackList .fb_header,
+.feedback .trackbackList .fb_content .date,
+.feedback .trackbackList .fb_content .ip,
+.feedback .trackbackList .fb_content .expert { color:#666; }
+
+
+/* Feedback List -------------------------------------------------------------------------------------------------------- */
+.feedbackList{ border-color:#dbdbdb;} /* 본문 중간 코멘트 상단 라인 */
+.feedbackList .feedbackHeader a{ color:#333;}
+.feedbackList .feedbackHeader em{ color:#ff6600;}
+
+
+	/* 코멘트 */
+.feedbackList .item { background:#f9f9f9; border-color:#dbdbdb;} /* 코멘트 박스 라인 */
+.feedbackList .item .header,
+.feedbackList .item .header a{ color:#000;}
+
+	/* 코멘트 작성자 정보 */
+.feedbackList .item .itemAside { border-color:#dbdbdb; background:#f5f5f5;}
+.feedbackList .item .itemAside img.profile { border-color:#dbdbdb;}
+.feedbackList .item .itemAside .meta { color:#666;}
+.feedbackList .item .itemAside .vote * { color:#666;}
+
+	/* 코멘트 옵션 부분 */
+.feedbackList .item .itemContent .option li { background:url(../img/white/lineVr9.gif) no-repeat left center; } /* 이댓글.. 구분선 */
+.feedbackList .item .itemContent .option li a{ color:#333;}
+
+	/* 글쓰기 */
+.boardWrite .boardWriteHeader { border-color:#dbdbdb;}
+.boardWrite .boardWriteHeader .inputText,
+.boardWrite .tag .inputText { background:#fff; color:#333; }
+.boardWrite .boardWriteHeader select { background:#fff; color:#333; border-color:#dbdbdb; }
+
+	/* Editor */
+.board .boardEditor { border-color:#dbdbdb; background:#f5f5f5;} /* 에디터 박스 라인 */
+
+	/* Editor Option */
+.board .editorOption select { background:#fff; color:#333; border-color:#dbdbdb; }
+.board .editorOption label { color:#333; }
+
+
+/* Require Password 비밀번호 요구 박스 */
+.board .requirePassword h3 { color:#333; border-color:#dbdbdb; background:#f5f5f5;  }
+	
+/* 삭제 박스 */
+.board .smallBox { border-color:#dbdbdb; }
+.board .smallBox h3 { color:#ff0000; border-color:#dbdbdb; background:#f5f5f5; }
+
+	/* Extra Var Table */
+.extraVarsList { border-color:#dbdbdb; }
+.extraVarsList caption { color:#333;}
+.extraVarsList em { color:#ff6600;}
+.extraVarsList th,
+.extraVarsList td { border-color:#dbdbdb;}
+.extraVarsList th { background:#f5f5f5;}
+.extraVarsList td { background:#f5f5f5;}
+.extraVarsList td .inputNum { border-color:#dbdbdb; background:#f5f5f5;}
+
+	/* Tag Cloud */
+.tagCloud { border-color:#dbdbdb; }
+.tagCloud li.rank1 a{ color:#000;}
+.tagCloud li.rank2 a{ color:#333;}
+.tagCloud li.rank3 a{ color:#666;}
+.tagCloud li.rank4 a{ color:#999;}
+.tagCloud li.rank5 a{ color:#ccc;}
+
+
+	/* 확장 변수 폼 */
+.extraVarsList tr td input,
+.extraVarsList tr td textarea { color:#333; background:#fff;}
+.extraVarsList tr td .text,
+.extraVarsList tr td .email_address,
+.extraVarsList tr td .homepage,
+.extraVarsList tr td .tel,
+.extraVarsList tr td .textarea,
+.extraVarsList tr td .date,
+.extraVarsList tr td .address { border-color:#dbdbdb; }
+
+
+/* (이 게시물을, 이 댓글을)  -------------------------------------------------------------------------------------------------------- */
+.board .document_popup_menu a,
+.board .comment_popup_menu a { color:#333;}
+
+	/* 팝업 메뉴 */
+#popup_menu_area {background:#f5f5f5; border-color:#dbdbdb; }
+#popup_menu_area ul { border-color:#dbdbdb; }
+#popup_menu_area li a { color:#333; }
+#popup_menu_area li a:hover { color:#ff6600; }
+
+
+/* white Button -------------------------------------------------------------------------------------------------------- */
+.buttonOfficial,
+.buttonOfficial span,
+.buttonOfficial input,
+.buttonOfficial button { background:url(../img/white/buttonOfficial.gif) no-repeat; color:#333; }
+
+.buttonOfficial { background-position:left top; margin-right:4px;}
+.buttonOfficial span,
+.buttonOfficial input,
+.buttonOfficial button{ background-position:right top; }
+
+.buttonOfficial:hover span,
+.buttonOfficial:hover input,
+.buttonOfficial:hover button{ color:#000; }

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<module version="0.2">
+    <title xml:lang="ko">팝업 관리</title>
+    <title xml:lang="en">Popup Manage</title>
+    <description xml:lang="ko">팝업 기능을 담당하는 모듈. 팝업의 생성/추가 관리등의 관리자 기능도 포함합니다.</description>
+    <description xml:lang="en">Module in charge of function of the Popup. Also includes administrator functions such as creating/managing popups.</description>
+    <version>0.0.4</version>
+    <date>2009-09-28</date>
+    <category>service</category>
+
+    <author email_address="zirho6@gmail.com" link="http://www.wingtech.co.kr">
+        <name xml:lang="ko">zirho</name>
+        <name xml:lang="en">zirho</name>
+    </author>
+</module>

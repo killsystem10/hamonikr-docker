@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgetstyle>
+    <title xml:lang="ko">Big Title</title>
+    <title xml:lang="en">Big Title</title>
+    <version>0.1</version>
+    <date>2012-09-14</date>
+    <preview>preview.gif</preview>
+
+    <author email_address="touchmind@nate.com" link="http://www.xelayout.com">
+        <name xml:lang="ko">touchxe</name>
+        <name xml:lang="en">touchxe</name>
+    </author>
+
+    <extra_vars>
+        <var name="ws_colorset" type="select">
+            <title xml:lang="ko">컬러셋</title>
+            <title xml:lang="en">Colorset</title>
+            <description xml:lang="ko">컬러셋을 지정해주세요</description>
+            <description xml:lang="en">Choose colorset</description>
+            <options>
+                <name xml:lang="ko">tiva big  기본</name>
+                <name xml:lang="en">tiva big  Default</name>
+                <value>Default</value>
+            </options>
+
+		
+        </var>
+        <var name="ws_title" type="text">
+            <name xml:lang="ko">제목</name>
+            <name xml:lang="en">Title</name>
+            <description xml:lang="ko">제목 텍스트</description>
+            <description xml:lang="en">Title text</description>
+        </var>
+        <var name="ws_title_color" type="text">
+            <name xml:lang="ko">제목 색상</name>
+            <name xml:lang="en">Title color</name>
+            <description xml:lang="ko">위젯 스타일 제목의 색상을 선택합니다.(#efefef등 16진수 컬러값으로 입력합니다.)</description>
+            <description xml:lang="en">select widgetstyle title color</description>
+        </var>
+		 <var name="ws_title_dis" type="text">
+            <name xml:lang="ko">제목설명</name>
+            <name xml:lang="en">Title Discription</name>
+            <description xml:lang="ko">제목 설명 텍스트</description>
+            <description xml:lang="en">Title Discription text</description>
+        </var>
+
+	
+		<var name="img_bt" type="select">
+			<title xml:lang="ko">이미지버튼사용</title>
+			<title xml:lang="en">Image Button Useage</title>
+            <description xml:alng="ko">더보기에 이미지 버튼을 사용할 것인지 선택해주세요.</description>
+            <description xml:alng="en">Select Image Button useage.</description>
+            <options>
+                <name xml:lang="ko">이미지버튼사용</name>
+                <name xml:lang="en">Use Image Button</name>
+				<value>Y</value>
+            </options>
+            <options>
+                <name xml:lang="ko">텍스트사용</name>
+                <name xml:lang="en">Use Text Link</name>
+				<value>N</value>
+            </options>
+		</var>
+        <var name="ws_more_url" type="text">
+            <name xml:lang="ko">더보기 URL</name>
+            <name xml:lang="en">more URL</name>
+            <description xml:lang="ko">http:// 포함한 URL를 등록합니다.</description>
+            <description xml:lang="en">Destination of a link 'more'. Register an URL including http://</description>
+        </var>
+        <var name="ws_more_text" type="text">
+            <name xml:lang="ko">더보기 텍스트</name>
+            <name xml:lang="en">more Text</name>
+            <description xml:lang="ko">더보기 텍스트로 사용될 글자입력</description>
+            <description xml:lang="en">Text for a link 'more'</description>
+       </var>
+        <var name="ws_more_color" type="text">
+            <name xml:lang="ko">더보기 글자 색상</name>
+            <name xml:lang="en">More text color</name>
+            <description xml:lang="ko">더보기 텍스트의 색상을 선택합니다.(#efefef등 16진수 컬러값으로 입력합니다.)</description>
+            <description xml:lang="en">select more text color</description>
+        </var>
+    </extra_vars>
+</widgetstyle>

@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+
+#contBottomWrap{ display:block; width:100%; overflow:visible; clear:both;}
+#contTopWrap{ display:block; width:100%;  clear:both;}
+
+.rtl{ width:5px; height:5px; position:absolute;  background:url(../images/roundRed.gif)}
+.rtr{ width:5px; height:5px; float:right; background:url(../images/roundRed.gif); background-position:100% 0 ;}
+.rbl{ width:5px; height:5px; position:absolute; background:url(../images/roundRed.gif); background-position:0 100% ;}
+.rbr{ width:5px; height:5px; float:right; background:url(../images/roundRed.gif); background-position:100% 100% ;}
+
+
+#contTivaTopWrap{ display:block; width:752px;  clear:both; margin-top:-30px; margin-left:-30px; margin-bottom:30px; }
+#contTivaBottomWrap{ display:block; width:752px; margin-top:60px; overflow:visible; clear:both; margin-bottom:-100px; margin-left:-30px;}
+
+.trtl{ width:5px; height:5px; position:absolute;  background:url(../images/roundWhite.gif)}
+.trtr{ width:5px; height:5px; float:right; background:url(../images/roundWhite.gif); background-position:100% 0 ;}
+.trbl{ width:5px; height:5px; position:absolute; background:url(../images/roundWhite.gif); background-position:0 100% ;}
+.trbr{ width:5px; height:5px; float:right; background:url(../images/roundWhite.gif); background-position:100% 100% ;}
+
+#tiva-contents{ padding-bottom:0; }

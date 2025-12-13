@@ -1,0 +1,281 @@
+/*--------------------
+sub-Content
+----------------------*/
+.mT0  {margin-top:0!important} 
+.mT10 {margin-top: 10px}
+.mT20 {margin-top: 20px}
+.mT30 {margin-top: 30px}
+.mT40 {margin-top: 40px}
+.mT50 {margin-top: 50px}
+.mT80 {margin-top: 80px}
+.mR10 {margin-right:10px}
+.mR20 {margin-right:20px}
+.mL20 {margin-left:20px}
+.mB10 {margin-bottom: 10px}
+.pR10 {padding-right: 10px}
+.pR20 {padding-right: 20px}
+.pR50 {padding-right: 50px}
+
+.t_right   {text-align: right!important}
+.t_center  {text-align: center!important}
+.t_left    {text-align: left!important}
+.right       {float:right!important;}
+.left       {float:left!important;}
+.bold        {font-weight: 500}
+.normal      {font-weight: 400}
+.green       {color:#1e8936!important}
+.gray        {color:#999!important}
+.red         {color:#c21b3f!important}
+.blue        {color:#1769c5!important}
+.black       {color:#000!important}
+.purple      {color:#6446c1}
+.txt13       {font-size:13px;}
+.block       {display:block; }
+.inblock     {display:inline-block!important; }
+.clear      {clear: both}
+.line {border-top:1px solid #ddd; padding:50px 0 0 0}
+
+
+.hamotitle {position: relative; border-bottom:5px solid #ddd; height: 45px; }
+.hamotitle h2 { position: absolute;top:0; left: 0;  font-size:20px; font-weight: 500; color:#333; display: inline-block; border-bottom: 5px solid #6446c2; line-height: 45px; vertical-align: top}
+.location {float:right;padding-top:15px; font-size:13px; color:#666; line-height: 20px}
+.location i { font-size: 20px;line-height: 20px; vertical-align: middle;} 
+.sub_area {background: #fff;  padding:30px 40px 50px 40px; font-size:13px}
+.sub_area2 {background: #fff;  padding:0 40px; font-size:13px}
+.sub_area3 {background: #fff; font-size:14px;word-break:keep-all}
+
+.tabmenu {width: 100%; margin-top:50px; border-bottom: 5px solid #6446c2;}
+.tabmenu li {display: inline-block; height:50px; line-height: 50px;  text-align:center; background-color: #ccc; width:16%; margin-right:0.4%; font-size:15px; border-top-left-radius: 5px; border-top-right-radius: 5px }
+.tabmenu li a {display: block; color:#222}
+.tabmenu li a:hover {color:#6446c2}
+.tabmenu li.current {background-color:#6446c2; color:#fff }
+.tabmenu li.current a {color:#fff }
+.tabmenu li:last-child {margin-right: 0;width:16.2%}
+
+
+.tabmenu2 {width: 100%; margin-top:10px;border-bottom:1px solid #e8e8e8;}
+.tabmenu2 li {display: inline-block; height:35px; line-height: 35px;  text-align:center; padding:0 28px; margin-right:3px; font-size:15px;  }
+.tabmenu2 li a {display: block; color:#fff}
+.tabmenu2 li a:hover {color:#fff; opacity: 0.8}
+.tabmenu2 li.m1 {background: #333}
+.tabmenu2 li.m2 {background: #6446c2}
+.tabmenu2 li.m3 {background: #b51f1f}
+
+.addhamo {text-align: center; width: 100%; }
+.addhamo li{text-align: center; font-size:16px; width: 100%; padding:50px 0}
+.addhamo li img {width:500px;  padding-bottom: 50px;text-align: center;}
+.addhamo li span {display: block;}
+.addhamo li span em {font-weight: 500; font-size:24px;}
+
+
+.copyright_01 {background: #f1f1f1; padding:50px 30px; margin: 30px 0; border-radius: 10px}
+.copyright_01 .info1  {text-align: center; border-bottom: 1px solid #ddd; padding-bottom: 50px; margin-bottom: 20px;line-height: 20px}
+.copyright_01 .info1 span {font-weight: 500; color: #333; font-size: 17px; display: block; line-height: 30px}
+.copyright_02 {font-size: 13px; line-height: 20px}
+.copyright_02 h3 {margin:30px 0 10px 0; border-top: 1px solid #ddd; padding-top: 30px}
+
+.info2 dt {font-weight: 500; padding-top: 30px;color: #333; }
+.info2 dd {background: url("../images/po.png") no-repeat 0 8px; background-size: 3px; padding-left:12px; font-size: 13px; line-height: 20px}
+
+.info3 {padding: 20px 0 20px 20px; }
+.info3 li {background: url("../images/po.png") no-repeat 0 8px; background-size: 3px; padding-left:12px; padding-bottom: 10px; font-size: 13px; line-height: 20px}
+
+
+.down_01 {color:#aaa; padding:30px 50px 0 450px; line-height: 20px; font-size:13px ; margin-top: 20px}
+.down_01 a {margin-top:15px; border: 1px solid #aaa; padding:10px; display: block; width: 200px; text-align: center; color: #fff!important; border-radius: 7px}
+.down_01 a:hover {opacity: 0.7}
+
+
+
+.bg1 {background: #333 url("../images/hamo_01.png") no-repeat ; background-size: 400px; height:185px; }
+.bg2 {background: #333 url("../images/down_01.png") no-repeat ; background-size: 400px; height:195px; }
+.bg3 {background: #333 url("../images/down_02.png") no-repeat ; background-size: 400px; height:175px; }
+.bg4 {background: #333 url("../images/down_03.png") no-repeat ; background-size: 400px; height:175px; }
+.bg5 {background: #333 url("../images/down_04.png") no-repeat ; background-size: 400px; height:175px; }
+
+
+.info2 a, .info3 a {color:#6446c1!important}
+.info2 a:hover, .info3 a:hover {text-decoration: underline}
+
+
+.down_02 {margin: 20px 0; vertical-align: top}
+.down_02  li{ background-image:url("../images/icon_download.png");background-repeat: no-repeat; background-position: left 30px center; background-size:40px; line-height: 20px;display: inline-block; margin:5px; border:1px solid #ddd; border-radius: 10px; padding:15px  30px 15px 90px; width: 34%;height: 80px; vertical-align: top}
+.down_02  li span {display: block;color:#6446c1; font-size:12px;  }
+.down_02  li em {display: block;color:#333; font-weight: 500; font-size:14px;}
+.down_02  li font {display: block;color:#999;font-size:12px; overflow: hidden ;text-overflow: ellipsis;white-space: nowrap;width: 230px;}
+.down_02 li a:hover em, .right_quick ul li a:hover font {text-decoration: underline}
+
+
+.download_count {background: #333 url("../images/down_05.png") no-repeat ; color:#fff; background-size: 100%; height:140px; text-align: center; padding-top:60px; font-size:50px}
+.download_count span {font-size:15px; display: block; padding-bottom: 20px}
+
+
+/*--------------------
+게시판  
+----------------------*/
+.board_list table		{width:100%; border-bottom:1px solid #ccc ; border-top:1px solid #ccc;}
+.board_list thead th	{padding:10px 5px; color:#333;text-align:center;border-bottom:1px solid #ccc; font-weight:500;font-size:13px}
+.board_list tbody th	{padding:10px 5px; border-bottom:1px solid #e8e8e8;text-align:center;}
+.board_list tbody td	{padding:10px 5px; border-bottom:1px solid #e8e8e8;text-align:center;font-size:13px }
+.board_list tbody tr:hover td	{background:#f5f5f5;}
+.fileimg  {width:13px; vertical-align: middle; padding-left: 5px}
+.board_list tbody td a span {color:#6c4ec8; font-size:13px}
+.board_list tbody tr.top	{background:#f5f5f5;}
+.board_list tbody tr.top a {color:#6446c2;}
+
+.board_view 	{width:100%; }
+.board_view li {display: block;  border-bottom:1px solid #e8e8e8;padding:10px;}
+.board_view li.title {font-size:16px; background:#f5f5f5;padding:15px;}
+.board_view li.con   {padding:40px;}
+.board_view li.con img {width: 100%; margin-bottom: 50px}
+.board_view li span {padding-left: 20px}
+
+.reply {margin-top:30px;  height:100px; text-align: center; padding-top: 60px}
+
+
+.board_list2 table		{width:100%; border-top:2px solid #6446c2}
+.board_list2 thead th	{padding:10px 5px; color:#333;text-align:center;border-bottom:1px solid #ccc; background:#f5f5f5;}
+.board_list2 tbody th	{padding:10px 5px; border-bottom:1px solid #e8e8e8;text-align:center;}
+.board_list2 tbody td	{padding:10px 5px; border-bottom:1px solid #e8e8e8;text-align:center; }
+.board_list2 tbody td a {color:#6446c1!important}
+
+.board_list3 table		{width:100%; border:1px solid #e8e8e8;text-align:center; }
+.board_list3 thead th	{padding:10px 5px; border:1px solid #e8e8e8; font-weight: 400}
+.board_list3 tbody td	{padding:10px 5px; border:1px solid #e8e8e8;}
+
+
+.board_search {float: left; margin-top:80px;}
+.board_search input  {border:1px solid #6446c2; height:35px;font-size:13px; padding-left:10px;margin:3px 1px; color:#555; width: 130px; border-radius: 0px!important;}
+.board_search button {height:25px!important; line-height: 15px!important; margin-top:3px; color:#fff; font-size:12px; width:50px;background-color: #6446c2; margin-left:-1px; margin-right:3px}
+.board_search button i {font-size:18px}
+
+
+.gallery_type1   {width: 100%;  }
+.gallery_type1 li {display: inline-block; width:31%; padding-top:20px; font-size:0; padding-left:2.5%; text-align:center;}
+.gallery_type1 li img {width:100%}
+.gallery_type1 li a:hover {opacity: 0.7}
+.gallery_type1 li:nth-child( 3n+1 ) {padding-left:0; width:32.1%; }
+
+
+.gallery_type2   {width: 100%}
+.gallery_type2 li {display:block;border-bottom:1px solid #e8e8e8; vertical-align: top; padding: 20px 20px 20px 0}
+.gallery_type2 li img {width:200px; display: inline-block}
+.gallery_type2 li a:hover {opacity: 0.7}
+.gallery_type2 li .info {display: inline-block; margin-left:50px; padding-top:15px;vertical-align: top; }
+.gallery_type2 li .info li {border-bottom: 0;padding: 0px!important}
+
+
+
+
+
+/* 페이지넘버 */
+.page_num{margin-top:80px; margin-bottom: 10px;  text-align:center; font-size:0;color:#333;}
+.page_num a{font-size: 13px; margin-left:-1px; display:inline-block;*zoom:1;height:30px;line-height:30px;background:#fff;width:30px; border:1px solid #ddd;}
+.page_num a:hover		{background:#ddd; color:#000}
+.page_num a.current		{background:#6446c2;border:1px solid #6446c2; color:#fff;}
+.page_num .inner		{display:inline;*zoom:1;}
+
+
+
+
+/*--------------------
+로그인
+----------------------*/
+.hamologin {position:relative; width:690px; height:320px; background: #fff url("../images/login_bg.png") no-repeat; background-size: 230px; border: 1px solid #fff}
+.hamologin h1 {position:absolute;left:35px; top:20px}
+.hamologin h1 img {width:150px}
+.hamologin h2 {font-weight: 100!important; font-size:40px; position: absolute; left:90px; bottom: 30px!important; color: #fff; top:auto; border-bottom: 0!important}
+
+.memberin {margin-top:50px; margin-left: 290px}
+.memberin li {display: block; padding:3px 0}
+.memberin li input {height: 45px; line-height: 45px; background: #e6e6e6; border-radius: 3px;width:340px; border:0; padding:0 20px;  font-size: 14px}
+.memberin li label {font-size:0}
+.memberin li input:focus {background: #dde2e6;border:0; } 
+.memberin li button {border-radius: 3px;width:340px;height: 45px; line-height: 45px; margin-top:10px; background: #6446c1 ; border:0;} 
+.memberin li button:hover {background:#402b82; border:0; }
+
+.login_info {margin-top:10px; margin-left: 290px}
+.login_info ul li {display: inline-block;  font-size:14px; padding-top:10px}
+.login_info ul li:after {content: ' | '; color:#ccc; padding:8px}
+.login_info ul li:last-child:after { content:''; padding:0} 
+
+.hamologin .btn_close a {position: absolute; right:10px; top:5px; color:#000; font-size:24px}
+
+
+
+/* download 20200318 */
+.downintro {position: relative; background: url("../images/down_bg1.png") right top no-repeat; background-size: 800px; height:460px; padding:100px 40px; }
+.downintro .titlever {font-size: 30px; font-weight: 500; color:#373c4f; line-height: 32px; margin-bottom: 50px}
+.downintro .titlever span {display: block; color: #6446c2; font-weight: 400; font-size: 24px}
+.downintro .infover {width:400px; letter-spacing: -0.5px} 
+.downintro .countver {position: absolute;  right: 70px; top: 470px;  font-size: 43px; text-align: center; line-height: 40px; font-weight: bold; color: #000; }
+.downintro .countver span {display: block;font-size: 17px; font-weight: 500}
+.downintro .countver img {vertical-align: top; padding-top: 5px; padding-right: 10px}
+
+.h3title {font-size: 20px; background: #eaebee; padding:20px 30px; border-bottom: 1px solid #ddd; font-weight: 500; color:#222}
+.h4title {font-size: 15px; background:#f0f1f4 url("../images/tiltebar.png") right center no-repeat; padding:10px 30px; font-weight: 500; color:#222; margin:50px 0 20px 0; border-radius: 5px}
+.h4title img {width:25px; padding-right: 10px}
+
+.down_area {padding:40px}
+.downbox{ background-image:url("../images/icon_in01.png");background-repeat: no-repeat; background-position: left 30px center; background-size:70px; line-height: 20px; margin:5px; border:1px solid #ddd; border-radius: 10px; padding:15px  30px 15px 130px;  vertical-align: top}
+.downbox span {display: block;color:#6446c1; font-size:12px;  }
+.downbox em {display: block;color:#333; font-weight: 500; font-size:14px;}
+.downbox font {display: block;color:#999;font-size:12px; }
+.downbox a:hover {text-decoration: underline!important}
+.downbox a {display: inline-block;}
+
+.help_list {margin-top:50px;}
+.help_list li {display: inline-block; border-right: 1px solid #ddd; width: 140px; padding:60px 35px 0 35px; text-align: center; vertical-align: top; font-size: 12px;line-height: 18px; color:#666;}
+.help_list li span {display: block; font-weight: 500; color:#222; font-size: 15px; line-height: 22px }
+.help_list li.in01 { background: url("../images/icon_in02.png") center top no-repeat; background-size: 50px;}
+.help_list li.in03 { background: url("../images/icon_in03.png") center top no-repeat; background-size: 50px;}
+.help_list li.in04 { background: url("../images/icon_in04.png") center top no-repeat; background-size: 50px;}
+.help_list li:last-child {border-right: 0}
+
+
+.skill_list {margin-bottom: 50px; line-height: 22px }
+.skill_list li {display:block;   padding-bottom: 20px}
+.skill_list li span {display: inline-block;}
+.skill_list li span.image {width: 48%; display:inline-block; vertical-align: top; margin-bottom: 10px;  margin-right: 10px}
+.skill_list li span.image img {width: 100%; border-radius: 6px;}
+.skill_list li span.text {width: 45%; padding-top: 30px; margin-left: 20px}
+.skill_list li span.view3 {width: 31%; }
+
+
+
+
+/*--------------------
+해상도별
+----------------------*/
+ @media (max-width:800px) {
+   
+.downintro {background-size: 200px; height:auto; padding:50px 20px; }
+.downintro .infover {width:100%;} 
+.downintro .countver {position: relative;  right: auto; top: auto; margin-top: 40px}
+
+
+.h3title {font-size: 18px; background: #eaebee; padding:10px 20px;}
+.h4title { padding:6px 10px;}
+.h4title img {width:18px;}
+
+.down_area {padding:20px 15px; }
+.downbox{background-position: left 20px top 10px; background-size:40px; line-height:15px; margin:5px; padding:10px  10px 10px 70px;  word-break: break-all }
+
+.help_list {margin-top:30px;}
+.help_list li { border-right: 0px solid #ddd; width: 43%; padding:60px 10px 30px 10px;}
+
+.skill_list {margin-bottom: 30px; line-height: 22px }
+.skill_list li {display:block;   padding-bottom: 40px}
+.skill_list li span {display:block;}
+.skill_list li span.image {width: 100%; display:block; margin-right: 0px}
+.skill_list li span.image img {width: 100%; border-radius: 6px;}
+.skill_list li span.text {width: 100%; padding-top: 0px; margin-left: 0px}
+.skill_list li span.view3 {width: 31%;display:inline-block;  }
+
+   
+}
+
+
+
+
+

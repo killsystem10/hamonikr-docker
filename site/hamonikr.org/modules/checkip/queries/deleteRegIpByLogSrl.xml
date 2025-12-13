@@ -1,0 +1,8 @@
+<query id="deleteRegIpByLogSrl" action="delete">
+	<tables>
+		<table name="member_checkip" />
+	</tables>
+	<conditions>
+		<condition operation="in" column="log_srl" var="log_srls" notnull="notnull" filter="number" />
+	</conditions>
+</query>

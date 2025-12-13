@@ -1,0 +1,171 @@
+<form action="./" method="get" class="boardListForm">
+    <fieldset>
+        <legend>List of Articles</legend>
+        <table cellspacing="0" border="0" summary="List of Articles" class="boardList">
+			<thead>
+				<tr>
+				<!--// 목록 설정으로 table theader 생성 -->
+					<block loop="$list_config=>$key,$val">
+						<!--// 기본 컨텐츠일 경우 -->
+						<!--@if($val->idx == -1)-->	
+							<!--// 컨텐츠 종류에 따라서 출력 -->
+							<th scope="col" cond="$val->type == 'no'">{$lang->no}</th>
+							<th scope="col" class="title" cond="$val->type == 'title'">{$lang->title}</th>
+							<th scope="col" cond="$val->type == 'regdate'">
+								<a href="{getUrl('sort_index','regdate','order_type',$order_type)}" class="title">
+									{$lang->date}<img src="./img/common/{$order_icon}" alt="sort" width="5" height="3" class="sort" cond="$sort_index == 'regdate'" />
+								</a>
+							</th>
+							<th scope="col" cond="$val->type == 'last_update'">
+								<a href="{getUrl('sort_index','last_update','order_type',$order_type)}"  class="title">
+									{$lang->last_update}<img src="./img/common/{$order_icon}" alt="sort" width="5" height="3" class="sort" cond="$sort_index=='last_update'" />
+								</a>
+							</th>
+							<th scope="col" cond="$val->type == 'nick_name'">{$lang->writer}</th>
+							<th scope="col" cond="$val->type == 'user_id'">{$lang->user_id}</th>
+							<th scope="col" cond="$val->type == 'user_name'">{$lang->user_name}</th>
+							<th scope="col" cond="$val->type == 'readed_count'">
+								<a href="{getUrl('sort_index','readed_count','order_type',$order_type)}"  class="title">
+									{$lang->readed_count}<img src="./img/common/{$order_icon}" alt="sort" width="5" height="3" class="sort" cond="$sort_index=='readed_count'" />
+								</a>
+							</th>
+							<th scope="col" cond="$val->type == 'voted_count'">
+								<a href="{getUrl('sort_index','voted_count','order_type',$order_type)}"  class="title">
+									{$lang->voted_count}<img src="./img/common/{$order_icon}" alt="sort" width="5" height="3" class="sort" cond="$sort_index=='voted_count'" />
+								</a>
+							</th>
+							<th scope="col" cond="$val->type == 'last_post'">
+								<a href="{getUrl('sort_index','last_update','order_type',$order_type)}"  class="title">
+									{$lang->last_post}<img src="./img/common/{$order_icon}" alt="sort" width="5" height="3" class="sort" cond="$sort_index=='last_update'" />
+								</a>
+							</th>
+						
+						<!--// 사용자 선언 확장변수일 경우 -->
+						<!--@else-->
+							<th scope="col">{$val->name}</th>
+						<!--@end-->
+					</block>
+					<th scope="col" cond="$grant->manager"><input type="checkbox" onclick="XE.checkboxToggleAll({ doClick:true }); return false;" title="Check All" /></th>
+				</tr>
+			</thead>
+	
+			<tbody>
+	
+			<!--// 등록된 글이 없을때 -->
+				<tr cond="!$document_list && !$notice_list">
+					<td colspan="<!--@if($grant->manager)-->{count($list_config)+1}<!--@else-->{count($list_config)}<!--@end-->">{$lang->no_documents}</td>
+				</tr>
+
+			<!--// 공지사항 출력 -->				
+				<tr class="notice" loop="$notice_list=>$no,$document">
+					<block loop="$list_config=>$key,$val">
+
+						<!--// 기본 컨텐츠일 경우 -->
+						<!--@if($val->idx == -1)-->	
+							<!--// 컨텐츠 종류에 따라서 출력 -->
+							<td class="notice" cond="$val->type=='no'">
+								<span cond="$document_srl==$document->document_srl">&raquo;</span>
+								<span cond="$document_srl!=$document->document_srl">{$lang->notice}</span>
+							</td>	
+							
+							<td class="title" cond="$val->type == 'title'">
+								<a href="{getUrl('document_srl',$document->document_srl, 'listStyle', $listStyle, 'cpage','')}"><span class="notice_subject">{$document->getTitle($module_info->subject_cut_size)}</span></a>
+								<block cond="$module_info->display_new !='N'">{$document->printExtraImages(60*60*$module_info->duration_new)}</block>			
+								<!-- // 코멘트 있을 때 // -->
+								<a href="{getUrl('document_srl', $document->document_srl)}#comment" cond="$document->getCommentCount()"><span class="replyNum" title="Replies">+ {$document->getCommentCount()}</span></a>
+								<!-- // 트랙백 있을 때 // -->
+								<a href="{getUrl('document_srl', $document->document_srl)}#trackback" cond="$document->getTrackbackCount()"><span class="trackbackNum" title="Trackbacks">+ {$document->getTrackbackCount()}</span></a>
+							</td>
+							<td class="date" cond="$val->type == 'regdate'">{$document->getRegdate('Y-m-d')}</td>
+							<td class="date" cond="$val->type == 'last_update'">{zdate($document->get('last_update'),'Y-m-d H:i')}</td>
+							<td class="author" cond="$val->type == 'nick_name'">
+								<a href="#popup_menu_area" class="member_{$document->get('member_srl')}" onclick="return false">{$document->getNickName()}</a>
+							</td>
+							<td class="author" cond="$val->type == 'user_id'">{$document->getUserID()}</a></td>
+							<td class="author" cond="$val->type == 'user_name'">{$document->getUserName()}</a></td>
+							<td class="reading" cond="$val->type == 'readed_count'">{$document->get('readed_count')>0?$document->get('readed_count'):'&nbsp;'}</td>
+							<td class="recommend" cond="$val->type == 'voted_count'">{$document->get('voted_count')!=0?$document->get('voted_count'):'&nbsp;'}</td>
+							<td class="lastReply" cond="$val->type == 'last_post'">
+								<block cond="(int)($document->get('comment_count'))>0">
+									<a href="{$document->getPermanentUrl()}#comment" class="replyAnchor">{zdate($document->get('last_update'),'Y-m-d')}</a>
+									<span class="author" cond="$document->get('last_updater')">{htmlspecialchars($document->get('last_updater'))}</span>
+								</block>
+								<block cond="(int)($document->get('comment_count'))==0">&nbsp;</block>
+							</td>	
+						
+						<!--// 사용자 선언 확장변수일 경우 -->
+						<!--@else-->
+							<td>{$document->getExtraValueHTML($val->idx)}&nbsp;</td>
+						<!--@end-->
+					</block>
+					<td class="check" cond="$grant->manager">
+						<input type="checkbox" name="cart" value="{$document->document_srl}" title="Check this" onclick="doAddDocumentCart(this)" checked="checked"|cond="$document->isCarted()" />
+					</td>
+				</tr>
+
+
+			<!--// 목록 콘텐츠 출력 -->
+				<tr class="bg{($no+1)%2+1}" loop="$document_list=>$no, $document">
+				<block loop="$list_config=>$key,$val">					
+					<!--// 기본 컨텐츠일 경우 -->
+					<!--@if($val->idx == -1)-->
+						<!--// 컨텐츠 종류에 따라서 출력 -->
+						<td class="num" cond="$val->type == 'no'">
+							<span cond="$document_srl==$document->document_srl">&raquo;</span>
+							<span cond="$document_srl!=$document->document_srl">{$no}</span>
+						</td>
+						<td class="title" cond="$val->type == 'title'">
+							<!-- 분류 출력-->
+							<block cond="$module_info->use_category == 'Y' && $document->get('category_srl')">
+								<strong class="category" style="color:{$category_list[$document->get('category_srl')]->color};"|cond="$category_list[$document->get('category_srl')]->color && $category_list[$document->get('category_srl')]->color != 'transparent'">
+									{$category_list[$document->get('category_srl')]->title}
+								</strong>
+							 </block>
+							<!-- 제목 출력-->
+							<a href="{getUrl('document_srl',$document->document_srl, 'listStyle', $listStyle, 'cpage','')}">
+								<span class="titles" style="<!--@if($module_info->subject_font_size)-->font-size:{$module_info->subject_font_size}px;<!--@end-->font-weight:{$module_info->subject_font_weight}">	{$document->getTitle($module_info->subject_cut_size)}</span>
+							</a>							
+							<block cond="$module_info->display_new !='N'">{$document->printExtraImages(60*60*$module_info->duration_new)}</block>
+							<!-- 댓글 출력-->
+							<a href="{getUrl('document_srl', $document->document_srl)}#comment" cond="$document->getCommentCount()">
+								<span class="replyNum" title="Replies">+ {$document->getCommentCount()}</span>
+							</a>
+							<!-- 트랙백 출력-->
+							<a href="{getUrl('document_srl', $document->document_srl)}#trackback" cond="$document->getTrackbackCount()">
+								<span class="trackbackNum" title="Trackbacks">+ {$document->getTrackbackCount()}</span>
+							</a>
+						</td>
+						<td class="author" cond="$val->type == 'nick_name'">
+							<a href="#popup_menu_area" class="member_{$document->get('member_srl')}" onclick="return false">{$document->getNickName()}</a>
+						</td>
+						<td class="author" cond="$val->type == 'user_id'">{$document->getUserID()}</a></td>
+						<td class="author" cond="$val->type == 'user_name'">{$document->getUserName()}</a></td>
+						<td class="date" cond="$val->type == 'regdate'">{$document->getRegdate('Y-m-d')}</td>
+						<td class="date" cond="$val->type == 'last_update'">{zdate($document->get('last_update'),'Y-m-d H:i')}</td>
+						<td class="reading" cond="$val->type == 'readed_count'">{$document->get('readed_count')>0?$document->get('readed_count'):'&nbsp;'}</td>
+						<td class="recommend" cond="$val->type == 'voted_count'">{$document->get('voted_count')!=0?$document->get('voted_count'):'&nbsp;'}</td>
+						<td class="lastReply" cond="$val->type == 'last_post'">
+							<block cond="(int)($document->get('comment_count'))>0">
+								<a href="{$document->getPermanentUrl()}#comment" class="replyAnchor">{zdate($document->get('last_update'),'Y-m-d')} {zdate($document->get('last_update'),'H:i')}</a>
+								<span class="author" cond="$document->get('last_updater')">
+									{htmlspecialchars($document->get('last_updater'))}
+								</span>
+							</block>
+							<block cond="(int)($document->get('comment_count'))==0">&nbsp;</block>
+						</td>
+
+					<!--// 사용자 선언 확장변수일 경우 -->
+					<!--@else-->
+							<td>{$document->getExtraValueHTML($val->idx)}&nbsp;</td>
+					<!--@end-->
+
+				</block>
+					<td class="check" cond="$grant->manager">
+						<input type="checkbox" name="cart" value="{$document->document_srl}" title="Check this" onclick="doAddDocumentCart(this)" checked="checked"|cond="$document->isCarted()" />
+					</td>
+				</tr>
+			</tbody>
+        </table>		
+    </fieldset>
+</form>
+

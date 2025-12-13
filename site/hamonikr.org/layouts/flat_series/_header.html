@@ -1,0 +1,27 @@
+<!--// PHP -->
+<include target="./_init.php" />
+
+<!--// LANG -->
+<load target="./lang/lang.xml" />
+
+<!--// CSS -->
+<load target="///netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" cond="$li->lib_fa != 'N' && $li->lib_fa_cdn != 'N' && __DEBUG__" />
+<load target="///netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" cond="$li->lib_fa != 'N' && $li->lib_fa_cdn != 'N' && !__DEBUG__" />
+<load target="./css/libs/font-awesome.css" cond="$li->lib_fa != 'N' && $li->lib_fa_cdn == 'N'" />
+<load target="./css/libs/camera.css" cond="$li->use_camera_slide == 'Y' && $li->camera_slide_image_1" />
+<load target="./css/stylesheet.css" />
+
+<!--// JS FONT -->
+<load target="./js/libs/cufon.yui.js" cond="$li->lib_cufon != 'N'" />
+<load target="./fonts/cufon.ng.400.js" cond="$li->lib_cufon != 'N' && $li->lib_cufon_font == '400'" />
+<load target="./fonts/cufon.ng.600.js" cond="$li->lib_cufon != 'N' && $li->lib_cufon_font != '400'" />
+
+<!--// JS -->
+<load target="./js/libs/jquery.cookie.js" type="body" cond="$li->lib_jq_cookie != 'N'" />
+<load target="./js/libs/jquery.easing.js" type="body" cond="$li->lib_jq_easing != 'N'" />
+<load target="./js/libs/jquery.placeholder.js" targetie="IE" type="body" cond="$li->lib_jq_placeholder != 'N'" />
+<load target="./js/libs/camera.js" type="body" cond="$li->lib_camera_slide != 'N' && $li->use_camera_slide == 'Y' && $li->camera_slide_image_1" />
+<load target="./js/script.js" type="body" />
+
+<!--// INLINE -->
+<include target="./_inline.html" />

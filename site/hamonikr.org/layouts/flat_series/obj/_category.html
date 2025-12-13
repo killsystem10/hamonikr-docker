@@ -1,0 +1,11 @@
+<!--// CATEGORY -->
+<ul cond="$main_menu" class="fs-category">
+	<li loop="$main_menu->list=>$key1,$val1" cond="$val1['selected'] && $val1['list']">
+		<a href="{$val1['href']}" class="cufon-normal" target="_blank"|cond="$val1['open_window'] == 'Y'"><i class="fa fa-folder"></i> {$val1["link"]}</a>
+		<ul class="sub-category clear">
+			<li loop="$val1['list']=>$key2,$val2" class="active edge edge-small edge-bottom-right"|cond="$val2['selected']">
+				<a href="{$val2['href']}" target="_blank"|cond="$val2['open_window'] == 'Y'">{$val2["link"]}</a>
+			</li>
+		</ul>
+	</li>
+</ul>

@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+
+a {	color: #890026; }
+#sidebar #sidemenu li.current{  background-color:#890026 ;}
+#cycle-pager a:hover span {	background: #890026; }
+html ul.tabs li.active  { 	border-top: 1px solid #890026;}
+#footer-links li a:hover {	color: #890026;}
+
+#sidebar h6 {	color:#890026;}
+#sidebar #sidemenu li a{ color:#890026;}

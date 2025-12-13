@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+    <grants />
+    <permissions>
+        <permission action="dispPop_upAdminContent" target="manager" />
+        <permission action="dispPop_upAdminInsertPopupConn" target="manager" />
+        <permission action="dispPop_upAdminDeletePopupConn" target="manager" />
+        <permission action="procPop_upAdminDeletePopupConn" target="manager" />
+        <permission action="procPop_upAdminInsertPopupConn" target="manager"  />
+    </permissions>
+    <actions>
+        <action name="dispPop_upAdminContent" type="view" standalone="true" admin_index="true" />
+        <action name="dispPop_upContent" type="view" index="true" />
+        <action name="dispPop_upAdminInsertPopupConn" type="view" standalone="true" />
+        <action name="dispPop_upAdminDeletePopupConn" type="view" standalone="true" />
+
+        <action name="procPop_upAdminInsertPopupConn" type="controller" standalone="true" />
+        <action name="procPop_upAdminDeletePopupConn" type="controller" standalone="true" />
+    </actions>
+</module>

@@ -1,0 +1,258 @@
+<?
+session_start();
+define('__ZBXE__', true);
+define('__XE__', true);
+require_once('../config/config.inc.php');
+$oContext = &Context::getInstance();
+$oContext->init();
+
+define(_V_, '00000001');
+define(_LINK_, '_bs');
+define(_DIR_, '/20141112');
+include './FN.php';
+foreach($_REQUEST as $key => $val) $R[$key] = ${'k_'.$key} = trim(str_replace("( select| union| insert| update| delete| drop|\"|\'|#|\/\*|\*\/|\\\|\;)", "", $val));
+
+include './MI.php';
+$DB= new MI;
+$DB->Conn();
+
+//$DBX = new MI;
+//$DBX->Conn('xedb','xedb','gkahslzk!$(');
+## 회원정보
+//$sql = "select group_srl from xe_member_group_member where member_srl='".$_SESSION['member_srl']."'";
+//$levv = $DBX->KRow($sql);
+//if($levv['Count'] > 0) for($i=0;$i<$levv['Count'];$i++) $lev[]=$levv[$i][0];
+
+if($_SESSION['member_srl']!=''){
+	$DBX = new MI;
+	$DBX->Conn('xedb','xedb','gkahslzk!$(');
+	## 회원정보
+	$sql = "select * from xe_member where member_srl='".$_SESSION['member_srl']."'";
+	$member = $DBX->FAss($sql);
+	$sql = "select group_srl from xe_member_group_member where member_srl='".$_SESSION['member_srl']."'";
+	$levv = $DBX->KRow($sql);
+	if($levv['Count'] > 0) for($i=0;$i<$levv['Count'];$i++) $lev[]=$levv[$i][0];
+	if(in_array(148, $lev)!=false&&in_array(149,$lev)!=false) $_SESSION['group']='all';
+	elseif(in_array(148, $lev)!=false&&in_array(149,$lev)==false) $_SESSION['group']='commiter';
+	elseif(in_array(148, $lev)==false&&in_array(149,$lev)!=false) $_SESSION['group']='writer';
+//	if($levv[0]==148) $_SESSION['group']='commiter';
+//	elseif($levv[0]==149) $_SESSION['group']='writer';
+//	else $_SESSION['group']='user';
+}
+?>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- META -->
+<meta charset="utf-8">
+<meta name="Generator" content="XpressEngine">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- TITLE -->
+<title>다운로드</title>
+<!-- CSS -->
+<link rel="stylesheet" href="/common/css/xe.min.css?20141102212543" />
+<link rel="stylesheet" href="/common/js/plugins/ui/jquery-ui.min.css?20141102212544" />
+<link rel="stylesheet" href="/layouts/TM_Tiva/css/reset.css?20130104101632" />
+<link rel="stylesheet" href="/layouts/TM_Tiva/css/text.css?20130104101632" />
+<link rel="stylesheet" href="/layouts/TM_Tiva/css/style.css?20130922195046" />
+<link rel="stylesheet" href="/modules/editor/styles/dreditor/style.css?20141102212612" />
+<link rel="stylesheet" href="/addons/bootstrap3_css/bootstrap.min.css?20141103234159" />
+<!-- JS -->
+<!--[if lt IE 9]><script src="/common/js/jquery-1.x.min.js?20141102212543"></script>
+<![endif]--><!--[if gte IE 9]><!--><script src="/common/js/jquery.min.js?20141102212543"></script>
+<![endif]--><script src="/common/js/x.min.js?20141102212543"></script>
+<script src="/common/js/xe.min.js?20141102212543"></script>
+<script src="/layouts/TM_Tiva/js/modernizr-2.0.6.js?20130104101708"></script>
+<script src="/layouts/TM_Tiva/js/jquery.quicksand.js?20130104101708"></script>
+<script src="/layouts/TM_Tiva/js/jquery.prettyPhoto.js?20130104101708"></script>
+<script src="/layouts/TM_Tiva/js/jquery.cycle.all.js?20130503084830"></script>
+<script src="/layouts/TM_Tiva/js/jquery.roundabout.js?20130104101708"></script>
+<script src="/layouts/TM_Tiva/js/jquery.easing.1.3.js?20130104101708"></script>
+<script src="/layouts/TM_Tiva/js/jquery.twitter.js?20130104101708"></script>
+<script src="/layouts/TM_Tiva/js/jquery.quovolver.js?20130104101708"></script>
+<script src="/layouts/TM_Tiva/js/hoverIntent.js?20130104101708"></script>
+<script src="/layouts/TM_Tiva/js/supersubs.js?20130104101708"></script>
+<script src="/layouts/TM_Tiva/js/superfish.js?20130104101708"></script>
+<script src="/layouts/TM_Tiva/js/custom.js?20130906145730"></script>
+<!--[if lt IE 9]><script src="/common/js/html5.js"></script><![endif]-->
+<!-- RSS -->
+<!-- ICON -->
+<link rel="shortcut icon" href="./modules/admin/tpl/img/faviconSample.png" /><link rel="apple-touch-icon" href="./modules/admin/tpl/img/mobiconSample.png" />
+
+<style type="text/css">
+#tiva-contents{
+	/*background: url('layouts/TM_Tiva/images/office1_gallery_bg.jpg') no-repeat 50% 0;*/
+	}
+
+body{ background-image:none;}
+#navigation-container { float:left; margin-left: -20px; margin-top:10px; height:65px; }
+#header-logo { margin-top:15px; }
+.sf-menu a {font-size:16px;  }
+#header-wrapper{ height:132px;}
+#header-container{ margin-top:9px;}
+#header-social-icons { margin-top: 10px;}
+.sf-menu li.sfHover ul {top: 50px;}
+</style>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--#Meta:layouts/TM_Tiva/css/reset.css--><!--#Meta:layouts/TM_Tiva/css/text.css--><!--#Meta:layouts/TM_Tiva/css/style.css--><!--#Meta:layouts/TM_Tiva/js/modernizr-2.0.6.js--><!--#Meta:layouts/TM_Tiva/js/jquery.quicksand.js--><!--#Meta:layouts/TM_Tiva/js/jquery.prettyPhoto.js--><!--#Meta:layouts/TM_Tiva/js/jquery.cycle.all.js--><!--#Meta:layouts/TM_Tiva/js/jquery.roundabout.js--><!--#Meta:layouts/TM_Tiva/js/jquery.easing.1.3.js--><!--#Meta:layouts/TM_Tiva/js/jquery.twitter.js--><!--#Meta:layouts/TM_Tiva/js/jquery.quovolver.js--><!--#Meta:layouts/TM_Tiva/js/hoverIntent.js--><!--#Meta:layouts/TM_Tiva/js/supersubs.js--><!--#Meta:layouts/TM_Tiva/js/superfish.js--><!--#Meta:layouts/TM_Tiva/js/custom.js--><!-- 동영상 배경화면 -->
+<!-- 슬라이드 배경화면 -->
+<script language="JavaScript">
+			function bookmarksite(title,url) {
+			   // Internet Explorer
+			   if(document.all)
+			   {
+				   window.external.AddFavorite(url, title);
+			   }
+			   // Google Chrome
+			   else if(window.chrome){
+				  alert("크롬브라우져 : Ctrl+D 를 사용하여 추가해 주시기 바랍니다.");
+			   }
+			   // Firefox
+			   else if (window.sidebar)
+			   {
+				   window.sidebar.addPanel(title, url, "");
+			   }
+			}
+</script>
+
+
+
+
+
+
+
+    <!--HEADER WRAPPER STARTS-->
+    <div id="header-wrapper" >
+    	<!--HEADER CONTAINER STARTS-->
+        <div id="header-container" class="container">
+
+            <!--TOP ELEMENTS STARTS-->
+            <div id="top-elements">
+            <div id="header-logo">
+                <a href="index.php">
+                                <img src="http://xe.hamonikr.org/files/attach/images/286/beb5d3bc16f9ca73c08744a9096110ec.png" alt="logo" title="" /><script>
+//<![CDATA[
+var current_url = "http://xe.hamonikr.org/";
+var request_uri = "http://xe.hamonikr.org/";
+var current_mid = "page_wFpT75";
+var waiting_message = "서버에 요청 중입니다. 잠시만 기다려주세요.";
+var ssl_actions = new Array();
+var default_url = "http://xe.hamonikr.org/";
+xe.current_lang = "ko";
+xe.cmd_find = "찾기";
+xe.cmd_cancel = "취소";
+xe.cmd_confirm = "확인";
+xe.msg_no_root = "루트는 선택 할 수 없습니다.";
+xe.msg_no_shortcut = "바로가기는 선택 할 수 없습니다.";
+xe.msg_select_menu = "대상 메뉴 선택";
+//]]>
+</script>
+</head>
+<body>
+<!--Google Fonts-->
+</h1>
+                                </a>
+            </div>
+                <div id="header-social-icons">
+                    <ul>
+                        <li><a href="#"><img src="/layouts/TM_Tiva/images/icons/social-from-iconsweets/twitter.png" alt="twitter" /></a></li>
+                        <li><a href="#"><img src="/layouts/TM_Tiva/images/icons/social-from-iconsweets/facebook.png" alt="facebook" /></a></li>
+                        <li  class="tiva_user"><a href="#" class="loginbt"><img src="/layouts/TM_Tiva/images/icons/social-from-iconsweets/login.png" alt="login" /></a></li>
+                        <li id="member_option" class="tiva_user" >
+                        	<span><a href="#" class="loginbt" style="margin-right:5px;">LOGIN</a></span>
+                            <span><a href="/index.php?mid=page_wFpT75&amp;act=dispMemberSignUpForm" >JOIN</a></span>
+                        </li>
+                        <li><a href="javascript:bookmarksite('', '')"><img src="/layouts/TM_Tiva/images/icons/social-from-iconsweets/favorit.png" alt="favorit" /></a></li>
+                        <li><div id="header-search">
+                        <form action="http://xe.hamonikr.org/" method="post" class="iSearch"><input type="hidden" name="error_return_url" value="/index.php?mid=page_wFpT75" />
+                                                        <input type="hidden" name="mid" value="page_wFpT75" />
+                            <input type="hidden" name="act" value="IS" />
+                            <input type="hidden" name="search_target" value="title_content" />
+                            <input name="is_keyword"  placeholder="Search the site" type="text" class="iText" id="search" title="keyword" />
+                            <input type="submit" id="go" src="/layouts/TM_Tiva/images/lcblue/buttonSearch.gif" alt="검색" class="submit" />
+                        </form>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--TOP ELEMENTS ENDS-->
+
+        	<div>
+            <!--NAVIGATION CONTAINER STARTS-->
+            <div id="navigation-container" >
+
+
+            <!--NAVIGATION STARTS-->
+			<ul id="gnb" class="sf-menu">
+				<li><a href="/index.php?mid=page_jBcr78">홈으로</a>
+									</li><li class="current"><a href="/index.php?mid=page_wFpT75">다운로드</a>
+									</li><li><a href="/index.php?mid=board_hzVL42">커뮤니티</a>
+					<ul >
+						<li><a href="/index.php?mid=board_hzVL42">인터넷 뱅킹</a>
+                        	                        </li><li><a href="/index.php?mid=board_aMBI05">나의 데스크탑</a>
+                        	                        </li><li><a href="/index.php?mid=board_bFBk25">Tip & Tech</a>
+                        	                        </li><li><a href="/index.php?mid=board_KtxL32">배경화면</a>
+                        	                        </li><li><a href="/index.php?mid=board_RXwB16">추천 오픈소스 프로젝트</a>
+                        	                        </li>					</ul>				</li><li><a href="/20141112/korean_bs.php">한글화 작업</a>
+					<ul >
+						<li><a href="/20141112/korean_bs.php">한글화 개요</a>
+                        	                        </li><li><a href="/">패키지별 한글화</a>
+                        	<ul>
+                                <li><a href="/">패키지별 한글화</a></li>                            </ul>                        </li><li><a href="/">데스크탑 한글화</a>
+                        	                        </li>					</ul>				</li>			</ul>
+
+            <!--NAVIGATION ENDS-->
+            </div>
+            <!--NAVIGATION CONTAINER ENDS-->
+            </div>
+            <!--GNB WRAP  ENDS-->
+
+        </div>
+        <!--HEADER CONTAINER ENDS-->
+    </div>
+    <!--HEADER WRAPPER ENDS-->
+
+
+
+
+
+
+
+
+    <!--CYCLE WRAPPER STARTS-->
+        <!--CYCLE WRAPPER ENDS-->
+
+
+
+    <!--CYCLE WRAPPER STARTS-->
+        <!--CYCLE WRAPPER ENDS-->
+
+
+
+    <!--ROUNDABOUT WRAPPER STARTS-->
+        <!--ROUNDABOUT WRAPPER ENDS-->
+
+
+    <!--BREADCRUMBS WRAPPER STARTS-->
+        <!--BREADCRUMBS WRAPPER ENDS-->
+
+
+
+    <div id="inner-page-wrapper">
+
+        <!--INNER PAGE CONTAINER STARTS-->
+    	<div id="inner-page-container" class="container ">
+
+             <!-- s : rQuick Menu layer -->
+                    <!-- e : rQuick Menu layer -->
+
+          <!-- s : lQuick Menu layer -->
+                    <!-- e : lQuick Menu layer -->
+
+ <!-- ///////////// SIDEBAR CONTENT //////////// -->
+            <!--SIDEBAR STARTS-->
+
+                        <!--SIDEBAR ENDS-->

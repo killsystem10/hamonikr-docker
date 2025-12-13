@@ -1,0 +1,19 @@
+
+div.Tiva { position:relative; margin-bottom:0px; overflow:hidden; *zoom:1; }
+div.Tiva #TitleBg { height:25px; }
+div.Tiva #TitleBg #titleLine{ position:absolute; width:100%; height:1px; left:0; top:37px; background:#e2e2e2; }
+div.Tiva #TitleBg #titleLineDot{ position:absolute; width:10px; height:1px; left:0; top:0px; background:#333;  }
+div.Tiva #TitleBg h2 { position:relative; float:left;  margin:0 ; padding:0; font-weight:bold; font-size:12px; line-height:40px; color:#333; z-index:1;  font-family:'NanumGothicBlod',NanumGothic,'Malgun Gothic'; }
+div.Tiva #TitleBg h2 span{ color:#999;}
+div.Tiva #TitleBg h3{position:relative; float:left; margin:0 ; padding:0;  color:#CCC; line-height:40px; font-size:12px;   font-family:'NanumGothicBlod',NanumGothic,'Malgun Gothic';}
+div.Tiva #moreBt{ position:absolute; right:0px; top:-2px;}
+div.Tiva a.widgetMoreLink { position:absolute; top:15px; right:0px; font-size:12px; text-decoration:none;  color:#999;}
+
+div.Tiva #wsImgBox{ position:relative; display:block; padding:10px 10px 0px 15px; overflow:hidden; }
+div.Tiva #wsCustomImg{ position:relative; float:left; padding-bottom:15px; padding-right:15px;}
+div.Tiva #wsCustomTitleWrap{ position:relative; }
+div.Tiva #wsCustomBigTitle{ display:block; clear:right; padding-bottom:5px; font:1.8em Tahoma, arial, "Malgun Gothic", AppleGothic, Dotum, Sans-serif; font-weight:bold; color:#333; line-height:1.8em;}
+div.Tiva #wsCustomSmallTitle{ display:block; font:1em Tahoma, arial, "Malgun Gothic", AppleGothic, Dotum, Sans-serif; text-align:left; color:#999; line-height:1em;}
+div.Tiva #wsBody{ position:relative; padding:20px 0 10px 0; margin:0; background-color:transparent; }
+
+

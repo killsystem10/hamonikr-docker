@@ -1,0 +1,11 @@
+<query id="insertRegIP" action="insert">
+	<tables>
+		<table name="member_checkip" />
+	</tables>
+	<columns>
+		<column name="log_srl" var="log_srl" filter="number" notnull="notnull" />
+		<column name="member_srl" var="member_srl" filter="number" notnull="notnull" />
+		<column name="reg_ip" var="reg_ip" default="ipaddress()" />
+		<column name="regdate" var="regdate" default="curdate()" />
+	</columns>
+</query>

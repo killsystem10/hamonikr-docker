@@ -1,0 +1,94 @@
+﻿/**
+ * Flat Series XE Layout Stylesheet
+ * Copyright (C) ISIZU. All rights reserved.
+ **/
+
+@charset "UTF-8";
+
+.camera-wrap a, .camera-wrap img, .camera-wrap ol, .camera-wrap ul, .camera-wrap li, .camera-wrap table, .camera-wrap tbody, .camera-wrap tfoot, .camera-wrap thead, .camera-wrap tr, .camera-wrap th, .camera-wrap td,
+.camera-thumbs-wrap a, .camera-thumbs-wrap img, .camera-thumbs-wrap ol, .camera-thumbs-wrap ul, .camera-thumbs-wrap li, .camera-thumbs-wrap table, .camera-thumbs-wrap tbody, .camera-thumbs-wrap tfoot, .camera-thumbs-wrap thead, .camera-thumbs-wrap tr, .camera-thumbs-wrap th, .camera-thumbs-wrap td {margin:0; padding:0; border:0; font:inherit; font-size:100%; vertical-align:baseline; list-style:none; background:none}
+
+.camera-wrap {z-index:0; position:relative; display:none; direction:ltr}
+.camera-wrap img {max-width:none !important}
+.camera-fakehover {z-index:1; position:relative; width:100%; height:100%; min-height:60px}
+.camera-wrap {width:100%}
+.camera-src {display:none}
+
+.cameraCont,
+.cameraContents {z-index:1; position:relative; width:100%; height:100%}
+.cameraSlide {position:absolute; top:0; left:0; right:0; bottom:0; width:100%}
+.cameraContent {position:absolute; display:none; top:0; left:0; right:0; bottom:0; width:100%}
+
+.camera-overlayer {z-index:0; position:absolute; overflow:hidden; top:0; left:0; right:0; bottom:0; width:100%; height:100%}
+
+.camera-target {z-index:0; position:absolute; overflow:hidden; top:0; left:0; right:0; bottom:0;; width:100%; height:100%; text-align:left}
+.camera-target-content {z-index:2; position:absolute; overflow:hidden; top:0; left:0; right:0; bottom:0}
+.camera-target-content .camera-link {display:block;  height:100%; text-decoration:none; background:url(../../img/blank.gif)}
+
+.camera-loader {z-index:3; position:absolute; overflow:hidden; top:50%; left:50%; width:36px; height:36px; margin:-18px 0 0 -18px; background:#FFFFFF url(../../img/camera-loader.gif) center center no-repeat; -moz-border-radius:100%; -webkit-border-radius:100%; border-radius:100%}
+
+.camera-bar {z-index:3; position:absolute; overflow:hidden; top:0; left:0; right:0; bottom:0}
+.camera-thumbs-wrap.camera-left .camera-bar,
+.camera-thumbs-wrap.camera-right .camera-bar {position:absolute; width:auto; height:100%}
+.camera-thumbs-wrap.camera-bottom .camera-bar,
+.camera-thumbs-wrap.camera-top .camera-bar {position:absolute; width:100%; height:auto}
+
+.camera-nav-cont {z-index:4; position:absolute; overflow:hidden; top:15px; right:9px; width:120px; height:65px}
+.camera-caption {position:absolute; display:block; left:0; right:0; bottom:30px}
+.camerarelative {position:relative; overflow:hidden}
+.imgFake {cursor:pointer}
+
+.camera-prevThumbs {z-index:10; position:absolute; visibility:hidden; top:4px; left:0; bottom:4px; width:30px; cursor:pointer}
+.camera-prevThumbs div {position:absolute; display:block; top:50%; width:30px; height:40px; margin-top:-20px; background:url(../../img/camera-skins.png) no-repeat -160px 0}
+.camera-nextThumbs {z-index:10; position:absolute; visibility:hidden; top:4px; right:0; bottom:4px; width:30px; cursor:pointer}
+.camera-nextThumbs div {position:absolute; display:block; top:50%; width:30px; height:40px; margin-top:-20px; background:url(../../img/camera-skins.png) no-repeat -190px 0}
+
+.camera-wrap .camera-pag {position:absolute; right:0; bottom:3px}
+.camera-wrap .camera-pag .camera-pag-ul {margin:0; padding:0; list-style:none}
+.camera-wrap .camera-pag .camera-pag-ul li {position:relative; display:inline-block; *display:inline; zoom:1; width:16px; height:16px; margin:5px; -webkit-border-radius:8px; -moz-border-radius:8px; border-radius:8px; text-align:left; text-indent:9999px; cursor:pointer}
+.camera-wrap .camera-pag .camera-pag-ul li > span {position:absolute; overflow:hidden; top:4px; left:4px; width:8px; height:8px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px}
+.camera-wrap .camera-pag .camera-pag-ul li.cameracurrent > span {-moz-box-shadow:0; -webkit-box-shadow:0; box-shadow:0}
+
+.camera-command-wrap .hideNav {display:none}
+.camera-command-wrap {z-index:4; position:relative; left:0; right:0}
+
+.camera-pag-ul li img {position:absolute; display:none}
+.camera-pag-ul .thumb-arrow {position:absolute; top:0; left:50%; margin-left:-4px; border-top:4px solid; border-left:4px solid transparent; border-right:4px solid transparent}
+
+.camera-prev,
+.camera-next,
+.camera-commands {z-index:2; position:absolute; top:50%; width:40px; height:40px; margin-top:-20px; cursor:pointer}
+.camera-prev {left:0}
+.camera-prev > span {display:block; width:40px; height:40px; background:url(../../img/camera-skins.png) no-repeat 0 0}
+.camera-next {right:0}
+.camera-next > span {display:block; width:40px; height:40px; background:url(../../img/camera-skins.png) no-repeat -40px 0}
+
+.camera-commands {left:50%; margin-left:-20px}
+.camera-commands > .camera-play {width:40px; height:40px; background:url(../../img/camera-skins.png) no-repeat -80px 0}
+.camera-commands > .camera-stop {display:block; width:40px; height:40px; background:url(../../img/camera-skins.png) no-repeat -120px 0}
+
+.camera-thumbs-cont {position:absolute; left:0; right:0; bottom:0}
+.camera-thumbs-cont > div {float:left; width:100%}
+.camera-thumbs-cont ul {position:relative; overflow:hidden; padding:3px 4px 8px; text-align:center}
+.camera-thumbs-cont ul li {display:inline; padding:0 4px}
+.camera-thumbs-cont ul li > img {margin-top:5px; vertical-align:bottom; cursor:pointer}
+
+.showIt {display:none}
+.camera-clear {clear:both; position:relative; display:block; height:1px; margin:-1px 0 25px}
+
+.pattern-01 .camera-overlayer {background:url(../../img/patterns/overlay-01.png) repeat}
+.pattern-02 .camera-overlayer {background:url(../../img/patterns/overlay-02.png) repeat}
+.pattern-03 .camera-overlayer {background:url(../../img/patterns/overlay-03.png) repeat}
+.pattern-04 .camera-overlayer {background:url(../../img/patterns/overlay-04.png) repeat}
+.pattern-05 .camera-overlayer {background:url(../../img/patterns/overlay-05.png) repeat}
+.pattern-06 .camera-overlayer {background:url(../../img/patterns/overlay-06.png) repeat}
+.pattern-07 .camera-overlayer {background:url(../../img/patterns/overlay-07.png) repeat}
+.pattern-08 .camera-overlayer {background:url(../../img/patterns/overlay-08.png) repeat}
+.pattern-09 .camera-overlayer {background:url(../../img/patterns/overlay-09.png) repeat}
+
+.camera-wrap .camera-pag .camera-pag-ul li {background:#B7B7B7}
+.camera-wrap .camera-pag .camera-pag-ul li:hover > span {background:#B7B7B7}
+.camera-wrap .camera-pag .camera-pag-ul li.cameracurrent > span {background:#434648}
+.camera-pag-ul li img {border:4px solid #E6E6E6; -moz-box-shadow:0px 3px 6px rgba(0, 0, 0, 0.5); -webkit-box-shadow:0px 3px 6px rgba(0, 0, 0, 0.5); box-shadow:0px 3px 6px rgba(0, 0, 0, 0.5)}
+.camera-pag-ul .thumb-arrow {border-top-color:#E6E6E6}
+.camera-wrap .camera-pag .camera-pag-ul li {background:#B7B7B7}

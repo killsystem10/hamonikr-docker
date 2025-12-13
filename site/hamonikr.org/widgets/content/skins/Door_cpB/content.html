@@ -1,0 +1,19 @@
+<load target="./js/content_widget.js" cond="$widget_info->page_count || count($widget_info->tab)" />
+<load target="./css/widget.css" />
+<block cond="$widget_info->list_type == 'gallery'">
+<load target="./css/owl.carousel.css" />
+<load target="./css/owl.theme.css" />
+<load target="./js/owl.carousel.min.js" type="body" />
+</block>
+<block cond="$widget_info->list_type == 'image_title'">
+<load target="./js/jcarousellite.js" type="body" />
+</block>
+<div class="cpB_Container widgetContainer<!--@if($colorset=='black')--> black<!--@end-->">
+    <!--@if($widget_info->tab_type  == "tab_left")-->
+        <!--#include("./_tab_left.html")-->
+    <!--@elseif($widget_info->tab_type == "tab_top")-->
+        <!--#include("./_tab_top.html")-->
+    <!--@else-->
+        <!--#include("./_tab_none.html")-->
+    <!--@end-->
+</div>

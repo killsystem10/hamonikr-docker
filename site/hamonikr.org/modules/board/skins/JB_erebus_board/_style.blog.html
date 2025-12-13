@@ -1,0 +1,17 @@
+<block cond="$grant->list">
+    <!--@if($category || $search_keyword)-->
+		<div class="viewDocument" cond="$oDocument->isExists()">
+			<include target="view_document.html" />
+        </div>
+		<include target="_style.list.html" />
+    <!--@elseif($oDocument->isExists())-->
+        <div class="viewDocument">
+            <include target="view_document.html" />
+        </div>
+    <!--@else-->
+        <div class="viewDocument" loop="$document_list=>$no, $oDocument">
+            <include target="view_document.html" />
+        </div>
+    <!--@end-->
+</block>
+

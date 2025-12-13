@@ -1,0 +1,21 @@
+<table name="pop_ups">
+    <column name="popup_conn_srl" type="number" size="11" notnull="notnull" primary_key="primary_key" />
+    <column name="document_srl" type="number" size="11" />
+    <column name="popup_name" type="varchar" size="50" notnull="notnull" />
+    <column name="target_type" type="varchar" size="50" />
+    <column name="target_srl" type="number" size="11" />
+    <column name="popup_type" type="varchar" size="50" />
+    <column name="popup_data" type="text"/>
+	<column name="popup_url" type="varchar" size="200" />
+	<column name="popup_linkto" type="varchar" size="200" />
+	<column name="popup_linkto_newwindow" type="varchar" size="20" />
+    <column name="width" type="number" size="11" />
+    <column name="height" type="number" size="11" />
+    <column name="left" type="number" size="11" />
+    <column name="top" type="number" size="11" />
+    <column name="open_type" type="varchar" size="20" />
+    <column name="exp_days" type="number" size="11" />
+    <column name="startdate" type="date" />
+    <column name="enddate" type="date" />
+    <column name="regdate" type="date" />
+</table>

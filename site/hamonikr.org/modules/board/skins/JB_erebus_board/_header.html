@@ -1,0 +1,137 @@
+<load target="css/board.css" />
+
+<!--// 기본값 설정 -->
+
+<!--@if(!$module_info->colorset)-->
+    {@ $module_info->colorset == 'black'}
+<!--@end-->
+<!--@if($layout_info->content_colorset)-->
+	<!--@if($layout_info->content_colorset=="black")-->
+		<load target="css/black.css" />
+	<!--@elseif($layout_info->content_colorset=="white")-->
+		<load target="css/white.css" />
+	<!--@end-->
+<!--@else-->
+	<!--@if($module_info->colorset=="black")-->
+		<load target="css/black.css" />
+	<!--@else-->
+		<load target="css/white.css" />
+	<!--@end-->
+<!--@end-->
+
+<block cond="!$module_info->duration_new = (int)$module_info->duration_new">{@ $module_info->duration_new = 24 }</block>
+<block cond="!$module_info->content_cut_size = (int)$module_info->content_cut_size">{@ $module_info->content_cut_size= 240 }</block>
+
+<block cond="!$module_info->thumbnail_type">{@ $module_info->thumbnail_type = 'crop'; }</block>
+<block cond="!$module_info->thumbnail_width">{@ $module_info->thumbnail_width = 120; }</block>
+<block cond="!$module_info->thumbnail_height">{@ $module_info->thumbnail_height = 140; }</block>
+
+<block cond="!$module_info->gallery_thumbnail_type">{@ $module_info->gallery_thumbnail_type = 'crop'; }</block>
+<block cond="!$module_info->gallery_thumbnail_width">{@ $module_info->gallery_thumbnail_width = 200; }</block>
+<block cond="!$module_info->gallery_thumbnail_height">{@ $module_info->gallery_thumbnail_height = 200; }</block>
+
+<!--@if($order_type == "desc")-->
+    {@ $order_icon = "buttonDescending.gif" }
+    {@ $order_type = "asc"; }
+<!--@else-->
+    {@ $order_icon = "buttonAscending.gif" }
+    {@ $order_type = "desc"; }
+<!--@end-->
+
+<block cond="$listStyle=='gallery'">{@ $module_info->default_style = 'gallery'}</block>
+<block cond="$listStyle=='webzine'">{@ $module_info->default_style = 'webzine'}</block>
+<block cond="$listStyle=='list'">{@ $module_info->default_style = 'list'}</block>
+<block cond="$listStyle=='blog'">{@ $module_info->default_style = 'blog'}</block>
+<block cond="!in_array($module_info->default_style,array('list','webzine','gallery','blog'))">{@ $module_info->default_style = 'list'}</block>
+
+<style type="text/css">
+<block cond="$module_info->category_style_color">
+.categoryList { border-color:{$module_info->category_style_color} }
+.categoryList .categoryItem a:hover,
+.categoryList .categoryThisItem a { background:{$module_info->category_style_color}; border-color:{$module_info->category_style_color}; }
+</block>
+<block cond="$module_info->subject_hover_color">
+.boardList td.title a:hover .notice_subject,
+.boardList td.title a:hover .titles,
+.webZine tr.notice .title a:hover,
+.webZine td.title .subject a.title:hover,
+.gallery .thumbList li .title a:hover { color:{$module_info->subject_hover_color} }
+</block>
+</style>
+<!--// 기본값 설정 끝 -->
+
+<!-- // 게시판 시작 // -->
+<div class="board">
+
+<block cond="!$document_srl"><!-- 본문에서는 헤더영역 출력 안함 -->
+
+	<!-- // 상단 내용 // -->
+	<div class="header_text" cond="$module_info->header_text">{$module_info->header_text}</div>
+
+    <div class="boardHeader">
+		<!-- // 게시판 제목, 부제목 // -->
+		<div class="boardTitle" cond="$module_info->title">
+			<h2 class="boardTitleText">
+				<a href="{getUrl('','mid',$mid,'listStyle',$listStyle)}">{$module_info->title} <em cond="$module_info->sub_title">: {$module_info->sub_title}</em></a>
+			</h2>
+		</div>
+		<!-- // 게시판 상세 설명 // -->
+		<div class="boardDescription" cond="$module_info->comment">{$module_info->comment}</div>
+    </div>
+
+	<!-- 탭 스타일 카테고리 출력 -->
+	<div class="categoryList" cond="$module_info->use_category == 'Y' && $module_info->category_style == 'tab_style'">
+		<span class="categoryThisItem" cond="!$category"><a href="{getUrl('','mid',$module_info->mid)}">All</a></span>
+		<span class="categoryItem" cond="$category"><a href="{getUrl('','mid',$module_info->mid)}">All</a></span>
+
+		<block loop="$category_list=>$val">
+		<span class="categoryThisItem" cond="$category==$val->category_srl"><a href="{getUrl('','mid',$module_info->mid, 'category',$val->category_srl)}">{$val->title}</a></span>
+		<span class="categoryItem" cond="$category!=$val->category_srl"><a href="{getUrl('','mid',$module_info->mid, 'category',$val->category_srl)}">{$val->title}</a></span>
+		</block>
+	</div>
+	
+    <div class="boardInformation">
+		<!-- 셀렉트 스타일 카테고리 출력 -->
+		<block cond="$module_info->use_category == 'Y' && $module_info->category_style == 'select_style'">
+		<span class="jumpTo" >
+			<select name="category" id="board_category">
+				<option value="">{$lang->category}</option>
+				<option value="{$val->category_srl}" selected="selected"|cond="$category==$val->category_srl" loop="$category_list=>$val">
+					{str_repeat("&nbsp;&nbsp;",$val->depth)} {$val->title}	<block cond="$val->document_count">({$val->document_count})</block>
+				</option>
+			</select>
+			<button type="button" name="go_button" id="go_button" onclick="doChangeCategory(); return false;" class="button">GO</button>
+		</span>
+		</block>
+
+		<!-- 게시물 수 출력 -->
+		<div class="infoSum" cond="$total_count && $module_info->document_count != 'N' && $module_info->category_style != 'select_style'">
+			{$lang->document_count} <strong>{number_format($total_count)}</strong>
+		</div>
+
+		<!-- // 게시판 스타일 선택 아이콘 // -->
+		<div class="infoView">
+			<ul>
+				<li class="setup" cond="$grant->manager">
+					<a href="{getUrl('act','dispBoardAdminBoardInfo')}" title="{$lang->cmd_setup}"><span>{$lang->cmd_setup}</span></a>
+				</li>
+				<block cond="$grant->manager || $module_info->display_setup_button != 'N'">
+				<li class="listTypeClassic icon<!--@if($module_info->default_style=='list')--> active<!--@end-->">
+					<a href="{getUrl('listStyle','list','act','','document_srl','')}" title="목록형 스타일"><span>Classic Style</span></a>
+				</li>
+				<li class="listTypeZine icon<!--@if($module_info->default_style=='webzine')--> active<!--@end-->">
+					<a href="{getUrl('listStyle','webzine','act','','document_srl','')}" title="웹진형 스타일"><span>Zine Style</span></a>
+				</li>
+				<li class="listTypeGallery icon<!--@if($module_info->default_style=='gallery')--> active<!--@end-->">
+					<a href="{getUrl('listStyle','gallery','act','','document_srl','')}" title="갤러리 스타일"><span>Gallery Style</span></a>
+				</li>
+				<li class="listTypeBlog icon<!--@if($module_info->default_style=='blog')--> active<!--@end-->">
+					<a href="{getUrl('listStyle','blog','act','','document_srl','')}" title="블로그 스타일"><span>Blog Style</span></a>
+				</li>
+				</block>
+			</ul>
+		</div>
+
+    </div><!-- boardInformation End -->
+
+</block>

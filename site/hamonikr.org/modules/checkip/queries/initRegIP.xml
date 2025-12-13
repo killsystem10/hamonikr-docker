@@ -1,0 +1,6 @@
+<query id="initRegIP" action="delete">
+	<tables>
+		<table name="member_checkip" />
+	</tables>
+	<conditions />
+</query>

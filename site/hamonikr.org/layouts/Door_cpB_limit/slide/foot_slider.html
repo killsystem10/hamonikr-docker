@@ -1,0 +1,60 @@
+<load target="../css/owl.carousel.css" />
+<load target="../css/da-owl.css" />
+<load target="../js/owl.carousel.min.js" type="body" />
+
+<style>
+.wrap_bottom-owl{width:100%;padding:0;overflow:hidden;}
+.c .wrap_bottom-owl{padding-top:0;}
+.in_bottom-owl{background:#ddd;padding:0 20px;}
+.bottom-owl {background:#fff;padding:0 5px 0 6px;;width:auto;}
+.bottom-owl .owl-dots{display:none !important;}
+.bottom-owl .item{margin:0 6px;}
+</style>
+<block cond="!$layout_info->bottom_speed">
+{@ $layout_info->bottom_speed = "5000"}
+</block>
+				<div class="wrap_bottom-owl">
+					<div class="in_bottom-owl">
+						<div class="bottom-owl owl-carousel">
+							<div class="item" cond="$layout_info->bottom_img1"><a target="_blank"|cond="$layout_info->bottom_window" href="{$layout_info->bottom_url1}"><img src="{$layout_info->bottom_img1}" alt="배너" /></a></div>
+							<div class="item" cond="$layout_info->bottom_img2"><a target="_blank"|cond="$layout_info->bottom_window" href="{$layout_info->bottom_url2}"><img src="{$layout_info->bottom_img2}" alt="배너" /></a></div>
+							<div class="item" cond="$layout_info->bottom_img3"><a target="_blank"|cond="$layout_info->bottom_window" href="{$layout_info->bottom_url3}"><img src="{$layout_info->bottom_img3}" alt="배너" /></a></div>
+							<div class="item" cond="$layout_info->bottom_img4"><a target="_blank"|cond="$layout_info->bottom_window" href="{$layout_info->bottom_url4}"><img src="{$layout_info->bottom_img4}" alt="배너" /></a></div>
+							<div class="item" cond="$layout_info->bottom_img5"><a target="_blank"|cond="$layout_info->bottom_window" href="{$layout_info->bottom_url5}"><img src="{$layout_info->bottom_img5}" alt="배너" /></a></div>
+							<div class="item" cond="$layout_info->bottom_img6"><a target="_blank"|cond="$layout_info->bottom_window" href="{$layout_info->bottom_url6}"><img src="{$layout_info->bottom_img6}" alt="배너" /></a></div>
+							<div class="item" cond="$layout_info->bottom_img7"><a target="_blank"|cond="$layout_info->bottom_window" href="{$layout_info->bottom_url7}"><img src="{$layout_info->bottom_img7}" alt="배너" /></a></div>
+							<div class="item" cond="$layout_info->bottom_img8"><a target="_blank"|cond="$layout_info->bottom_window" href="{$layout_info->bottom_url8}"><img src="{$layout_info->bottom_img8}" alt="배너" /></a></div>
+							<div class="item" cond="$layout_info->bottom_img9"><a target="_blank"|cond="$layout_info->bottom_window" href="{$layout_info->bottom_url9}"><img src="{$layout_info->bottom_img9}" alt="배너" /></a></div>
+							<div class="item" cond="$layout_info->bottom_img10"><a target="_blank"|cond="$layout_info->bottom_window" href="{$layout_info->bottom_url10}"><img src="{$layout_info->bottom_img10}" alt="배너" /></a></div>
+							<div class="item" cond="$layout_info->bottom_img11"><a target="_blank"|cond="$layout_info->bottom_window" href="{$layout_info->bottom_url11}"><img src="{$layout_info->bottom_img11}" alt="배너" /></a></div>
+							<div class="item" cond="$layout_info->bottom_img12"><a target="_blank"|cond="$layout_info->bottom_window" href="{$layout_info->bottom_url12}"><img src="{$layout_info->bottom_img12}" alt="배너" /></a></div>
+							<div class="item" cond="$layout_info->bottom_img13"><a target="_blank"|cond="$layout_info->bottom_window" href="{$layout_info->bottom_url13}"><img src="{$layout_info->bottom_img13}" alt="배너" /></a></div>
+							<div class="item" cond="$layout_info->bottom_img14"><a target="_blank"|cond="$layout_info->bottom_window" href="{$layout_info->bottom_url14}"><img src="{$layout_info->bottom_img14}" alt="배너" /></a></div>
+							<div class="item" cond="$layout_info->bottom_img15"><a target="_blank"|cond="$layout_info->bottom_window" href="{$layout_info->bottom_url15}"><img src="{$layout_info->bottom_img15}" alt="배너" /></a></div>
+							<div class="item" cond="$layout_info->bottom_img16"><a target="_blank"|cond="$layout_info->bottom_window" href="{$layout_info->bottom_url16}"><img src="{$layout_info->bottom_img16}" alt="배너" /></a></div>
+							<div class="item" cond="$layout_info->bottom_img17"><a target="_blank"|cond="$layout_info->bottom_window" href="{$layout_info->bottom_url17}"><img src="{$layout_info->bottom_img17}" alt="배너" /></a></div>
+							<div class="item" cond="$layout_info->bottom_img18"><a target="_blank"|cond="$layout_info->bottom_window" href="{$layout_info->bottom_url18}"><img src="{$layout_info->bottom_img18}" alt="배너" /></a></div>
+							<div class="item" cond="$layout_info->bottom_img19"><a target="_blank"|cond="$layout_info->bottom_window" href="{$layout_info->bottom_url19}"><img src="{$layout_info->bottom_img19}" alt="배너" /></a></div>
+							<div class="item" cond="$layout_info->bottom_img20"><a target="_blank"|cond="$layout_info->bottom_window" href="{$layout_info->bottom_url20}"><img src="{$layout_info->bottom_img20}" alt="배너" /></a></div>
+						</div>
+					</div>
+				</div>
+				  
+	
+
+
+		<script type="text/javascript">
+			jQuery(function($){
+			
+			  $('.bottom-owl').owlCarousel({
+				nav:true,
+                items:6,
+                loop: true,
+				autoplay:true,
+				
+				autoplayTimeout:{$layout_info->bottom_speed},
+				autoplayHoverPause:true,
+                margin:0
+              });
+		});
+		</script>	

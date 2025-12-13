@@ -1,0 +1,18 @@
+
+div.Tiva_big { position:relative; margin-bottom:0px; overflow:hidden; *zoom:1; }
+div.Tiva_big #TitleBg { height:25px; }
+div.Tiva_big #TitleBg h2 {  z-index:1; font-size:1.3rem;}
+div.Tiva_big #TitleBg h2 span{ color:#999;}
+div.Tiva_big #TitleBg h3{position:relative; float:left; margin:0 ; padding:0;  color:#CCC; line-height:40px; font-size:0.9rem;}
+
+div.Tiva_big a.widgetMoreLink { position:relative; font-size:0.9rem; text-decoration:none;  color:#999; margin-left:25px;}
+div.Tiva_big #moreBt{ position:absolute; right:0px; top:-2px;}
+
+div.Tiva_big #wsImgBox{ position:relative; display:block; padding:10px 10px 0px 15px; overflow:hidden; }
+div.Tiva_big #wsCustomImg{ position:relative; float:left; padding-bottom:15px; padding-right:15px;}
+div.Tiva_big #wsCustomTitleWrap{ position:relative; }
+div.Tiva_big #wsCustomBigTitle{ display:block; clear:right; padding-bottom:5px; font-size:0.9rem; font-weight:bold; color:#333; line-height:1.8em;}
+div.Tiva_big #wsCustomSmallTitle{ display:block; font-size:0.9rem text-align:left; color:#999; line-height:1em;}
+div.Tiva_big #wsBody{ position:relative; padding:20px 0 10px 0; margin:0; background-color:transparent; font-size:0.9rem;}
+
+

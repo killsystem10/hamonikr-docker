@@ -1,0 +1,1 @@
+<filter name="delete_checked_log" module="checkip" act="procCheckipAdminAllDelete" confirm_msg_code="confirm_delete" />

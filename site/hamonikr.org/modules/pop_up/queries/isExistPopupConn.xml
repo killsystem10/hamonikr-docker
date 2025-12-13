@@ -1,0 +1,12 @@
+<query id="isExistsPopupConn" action="select">
+    <tables>
+        <table name="pop_ups" />
+    </tables>
+    <columns>
+        <column name="count(*)" alias="count" />
+    </columns>
+    <conditions>
+        <condition operation="equal" column="target_srl" var="target_srl" />
+        <condition operation="equal" column="popup_module_srl" var="popup_module_srl" pipe="and" />
+    </conditions>
+</query>

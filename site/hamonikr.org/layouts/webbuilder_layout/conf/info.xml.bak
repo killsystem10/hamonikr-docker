@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.2">
+    <title xml:lang="ko">웹빌드 부트스트립 레이아웃</title>
+    <title xml:lang="en">WEBBUILDER LAYOUT</title>
+    <title xml:lang="jp">WEBBUILDER LAYOUT </title>
+    <description xml:lang="ko">WEBBUILDER LAYOUT.</description>
+    <description xml:lang="en">WEBBUILDER LAYOUT.</description>
+    <description xml:lang="jp">WEBBUILDER LAYOUT。</description>
+    <version>1.0</version>
+    <date>2014-02-04</date>
+    <author email_address="ch7@hanmail.net" link="http://webbuilder.kr/">
+        <name xml:lang="ko">웹빌드</name>
+        <name xml:lang="en">webuilder</name>
+        <name xml:lang="jp">webuilder</name>
+    </author>
+    <menus>
+        <menu name="global_menu" maxdepth="3" default="true">
+            <title xml:lang="ko">전역 메뉴</title>
+            <title xml:lang="en">Global Menu</title>
+            <title xml:lang="jp">グローバルメニュー</title>
+        </menu>
+    </menus>
+</layout>

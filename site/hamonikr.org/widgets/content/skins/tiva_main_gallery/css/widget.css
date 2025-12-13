@@ -1,0 +1,56 @@
+
+@charset "utf-8";
+@font-face {font-family:NanumGothic; src:url('NanumGothic.eot');}
+@font-face { font-family:'NanumGothicWeb'; font-style:normal; font-weight:400; src: url('NanumGothic.woff') format('woff');}
+
+.floatLeft{ float:left;}
+.floatRight{ float:right;}
+.clearLeft{ clear:left;}
+.clearRight{ clear:right;}
+
+.widgetContainerMainGal .open{ display:block !important;} 
+.widgetContainerMainGal a{ text-decoration:none; color:#666666; line-height:24px;}
+.widgetContainerMainGal .title{ background:none !important;}
+.widgetContainerMainGal a:hover,
+.widgetContainerMainGal a:active,
+.widgetContainerMainGal a:focus{ text-decoration:underline;}
+.widgetContainerMainGal img{ border:0;}
+.widgetContainerMainGal em{ position:relative; line-height:1; display:inline-block; margin:-5px 0; *padding:0 1px; font-style:normal;}
+.widgetContainerMainGal form{ margin:0; padding:0;}
+.widgetContainerMainGal fieldset{ border:0; margin:0; padding:0;}
+
+
+
+.widgetContainerMainGal .widgetGalleryA{ position:relative; margin:0; padding:0; font-size:12px; line-height:1.5; *zoom:1; _margin-right:-100%; background:none;}
+.widgetContainerMainGal .widgetGalleryA:after{ content:""; display:block; clear:both; }
+.widgetContainerMainGal .widgetGalleryA li { float:left; overflow:hidden; width:100px; margin-right:20px; padding-bottom:0; white-space:nowrap; list-style:none; margin-bottom:0; border:none; }
+.widgetContainerMainGal .widgetGalleryA li.clearRight{ margin-right:0;}
+.widgetContainerMainGal .widgetGalleryA li .thumb{ display:block; position:relative; width:100px; height:75px; margin-bottom:10px; overflow:hidden; text-decoration:none; margin-top:13px;}
+.widgetContainerMainGal .widgetGalleryA li .thumb img{ display:block; position:relative; width:100%;}
+.widgetContainerMainGal .widgetGalleryA li .thumb .imgNone{ display:block; position:relative; width:100%; height:70%; padding-top:30%; background:#eee; text-align:center; cursor:pointer; color:#000;}
+.widgetContainerMainGal .widgetGalleryA li .thumb .board{ display:block; position:absolute; width:100%; top:0; left:0; padding:2px 0 0 0 !important; cursor:pointer; text-align:center; font-weight:normal; background:#000; color:#fff; opacity:0.6;  filter:alpha(opacity=60); -ms-filter:alpha('opacity=60'); }
+.widgetContainerMainGal .widgetGalleryA li .thumb .category{ display:block; position:absolute; width:100%; bottom:0; left:0; padding:2px 0 0 0 !important; cursor:pointer; text-align:center; font-weight:normal; background:#000; color:#fff; opacity:0.6;  filter:alpha(opacity=60); -ms-filter:alpha('opacity=60'); }
+.widgetContainerMainGal .widgetGalleryA li .author{color: #267BB1; font-style: normal; font-size: 10px; line-height: 12px;  padding: 2px 0 2px 20px; background:url(../img/author.png) no-repeat 0 1px; }
+.widgetContainerMainGal .widgetGalleryA li .replyNum a{ font:10px Tahoma; margin:0 -1px;}
+.widgetContainerMainGal .widgetGalleryA li .trackbackNum a{ font:10px Tahoma; margin:0 -1px;}
+.widgetContainerMainGal .widgetGalleryA li .date{ font:11px Tahoma;}
+.widgetContainerMainGal .widgetGalleryA li .hour{ font:11px Tahoma;}
+
+
+
+.widgetContainerMainGal .widgetGalleryA li .title{ color:#333; font-size:1em; font-weight:bold; font-family:'나눔고딕'; }
+.widgetContainerMainGal .widgetGalleryA li #titleBar{ height:25px; width:100%; display:block; position:absolute; border-bottom:1px #e3e3e3 solid;}
+.widgetContainerMainGal .widgetGalleryA li #titleBarP{ height:25px; width:12px; display:block; position:absolute; bottom:-1px; border-bottom:1px #333 solid;}
+.widgetContainerMainGal .widgetGalleryA li .replyNum a{ color:#267BB1; padding: 2px 0 2px 20px; background:url(../img/comments.png) no-repeat 0 1px;}
+.widgetContainerMainGal .widgetGalleryA li .trackbackNum a{ color:#66c;}
+.widgetContainerMainGal .widgetGalleryA li .author{  }
+.widgetContainerMainGal .widgetGalleryA li .date{ color:#333;margin-right:5px; color: #ACACAC; font-style: normal; font-size: 10px; line-height: 12px; padding: 2px 0 2px 20px; background:url(../img/date.png) no-repeat 0 1px;}
+
+
+.widgetContainerMainGal.black .widgetGalleryA li .title{ color:#999;}
+.widgetContainerMainGal.black .widgetGalleryA li .replyNum a{ color:#267BB1;}
+.widgetContainerMainGal.black .widgetGalleryA li .trackbackNum a{ color:#66c;}
+.widgetContainerMainGal.black .widgetGalleryA li .author{ color:#999;}
+.widgetContainerMainGal.black .widgetGalleryA li .date{ color:#999;}
+.widgetContainerMainGal.black .widgetGalleryA li .hour{ color:#888;}
+

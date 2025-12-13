@@ -1,0 +1,105 @@
+<load target="js/jquery.masonry.min.js" cond="$module_info->gallery_align == 'auto'" />
+<form action="./" method="get" class="boardListForm">
+    <fieldset>
+        <legend>List of Articles</legend>
+
+		<block cond="$module_info->gallery_align != 'auto'" >
+		{@ $_height = count($list_config)*1}
+		<block cond="$list_config['thumbnail']">{@ $_height += $module_info->gallery_thumbnail_height+20}</block>
+		<block cond="$list_config['title']">{@ $_height += 40}</block>
+		<block cond="$list_config['summary']">{@ $_height += 200}</block>
+		<block cond="$list_config['regdate']">{@ $_height += 18}</block>
+		<block cond="$list_config['last_post']">{@ $_height += 20}</block>
+		<block cond="$list_config['nick_name']">{@ $_height += 18}</block>
+		<block cond="$list_config['user_id']">{@ $_height += 18}</block>
+		<block cond="$list_config['user_name']">{@ $_height += 18}</block>
+		<block cond="$list_config['readed_count']">{@ $_height += 18}</block>
+		<block cond="$list_config['voted_count']">{@ $_height += 18}</block>
+		</block>
+		<block cond="!$module_info->gallery_thumbnail_width_space">{@ $module_info->gallery_thumbnail_width_space = 10 }</block>
+        
+		<div class="gallery" cond="count($document_list)">
+			<ul class="thumbList" style="margin-left:{-$module_info->gallery_thumbnail_width_space}px;">
+				<li class="box" style="width:{$module_info->gallery_thumbnail_width}px; height:{$_height}px; margin-left:{$module_info->gallery_thumbnail_width_space}px; margin-bottom:{$module_info->gallery_thumbnail_width_space}px" loop="$document_list=>$no,$document">
+				
+								
+					<!--// 기본 컨텐츠일 경우 -->					
+					<!-- 썸네일 출력 -->
+					<div class="thumb">
+						<a href="{getUrl('document_srl',$document->document_srl,'listStyle',$listStyle, 'cpage','')}">
+							<!--@if($document->thumbnailExists())-->
+							<img src="{$document->getThumbnail($module_info->gallery_thumbnail_width, $module_info->gallery_thumbnail_height, $module_info->gallery_thumbnail_type)}" alt="" />
+							<!--@else-->
+							<span class="noPhoto" style="width:{$module_info->gallery_thumbnail_width}px; height:{$module_info->gallery_thumbnail_height}px; line-height:{$module_info->gallery_thumbnail_height}px" cond="!$document->thumbnailExists()">No Image</span>
+							<!--@end-->
+							<!-- 분류 출력-->
+							<block cond="$module_info->use_category == 'Y' && $document->get('category_srl')">
+								<strong class="category" style="color:{$category_list[$document->get('category_srl')]->color};"|cond="$category_list[$document->get('category_srl')]->color && $category_list[$document->get('category_srl')]->color != 'transparent'">
+									{$category_list[$document->get('category_srl')]->title}
+								</strong>
+							 </block>
+						</a>							
+					</div>
+
+				<div class="gallery_content" style="text-align:center"|cond="$module_info->gallery_content_align == 'center'">
+					<block loop="$list_config=>$key,$val">
+					<!--@if($val->idx == -1)-->
+						<!-- 제목 출력 -->
+						<div class="title" cond="$val->type == 'title'" s>
+							<block cond="$grant->manager">
+								<input type="checkbox" name="cart" value="{$document->document_srl}" onclick="doAddDocumentCart(this)" checked="checked"|cond="$document->isCarted()" /> 
+							</block>
+
+							<a href="{getUrl('document_srl',$document->document_srl, 'listStyle', $listStyle, 'cpage','')}" style="display: none;  <!--@if($module_info->subject_font_size)-->font-size:{$module_info->subject_font_size}px;<!--@end-->font-weight:{$module_info->subject_font_weight}">{$document->getTitle($module_info->subject_cut_size)}</a>
+							<block cond="$module_info->display_new !='N'">{$document->printExtraImages(60*60*$module_info->duration_new)}</block>
+
+							<!-- // 코멘트 있을 때 // -->
+							<a href="{getUrl('document_srl', $document->document_srl)}#comment" cond="$document->getCommentCount()">
+								<span class="replyNum" title="Replies">+{$document->getCommentCount()}</span>
+							</a>
+							<!-- // 트랙백 있을 때 // -->
+							<a href="{getUrl('document_srl', $document->document_srl)}#trackback" cond="$document->getTrackbackCount()">
+								<span class="trackbackNum" title="Trackbacks">+{$document->getTrackbackCount()}</span>
+							</a>
+						</div>
+
+						<!-- 내용 출력 -->
+						<p class="summary" cond="$val->type == 'summary'">
+							{$document->getSummary($module_info->content_cut_size)}
+						</p>
+
+						<div class="lastReply" cond="$val->type == 'last_post' && $document->get('comment_count')>0">
+							{$lang->last_post}: <a href="{$document->getPermanentUrl()}#comment">{zdate($document->get('last_update'),'Y-m-d')} {zdate($document->get('last_update'),'H:i')}</a>
+							<span cond="$document->get('last_updater')">{htmlspecialchars($document->get('last_updater'))}</span>
+						</div>
+
+						<ul class="meta" cond="!$_meta_display" style="vertical-align: top">
+							<!--<li class="date" cond="$val->type == 'regdate'"  >{$lang->regdate}: {$document->getRegdate('Y-m-d')}</li>
+							 <li class="date" cond="$val->type == 'last_update'" >{$lang->last_update}: {zdate($document->get('last_update'),'Y-m-d H:i')}</li> -->
+							<li class="author" cond="$val->type == 'nick_name'">{$lang->author}: <a href="#popup_menu_area" class="member_{$document->get('member_srl')}" onclick="return false">{$document->getNickName()}</a></li>
+							<!-- <li class="author" cond="$val->type == 'user_id'">{$lang->user_id}: {$document->getUserID()}</li>
+							<li class="author" cond="$val->type == 'user_name'">{$lang->user_name}: {$document->getUserName()}</li>
+							<li class="reading" cond="$val->type == 'readed_count'">{$lang->readed_count}: {$document->get('readed_count')>0?$document->get('readed_count'):'0'}</li>
+							<li class="recommend" cond="$val->type == 'voted_count'">{$lang->voted_count}: {$document->get('voted_count')!=0?$document->get('voted_count'):'0'}</li> -->
+						</ul>
+
+					<!--@else-->
+						<p class="extra">{$val->name}: {$document->getExtraValueHTML($val->idx)}&nbsp;</p>
+					<!--@end-->
+				</block>
+				</div>
+				
+				</li>
+			</ul>		
+        </div>
+    </fieldset>
+</form>
+
+
+<script type="text/javascript" cond="$module_info->gallery_align == 'auto'">
+jQuery(window).load(function($) {
+    jQuery('.thumbList').masonry({
+      itemSelector: '.box'
+    });
+  });
+</script>

@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+
+#inner-page-container{
+
+	background:url(../images/contnets_bg.gif);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-topleft: 10px;
+	padding:0;
+
+
+}
+
+#sidebar {
+border:none;
+padding: 10px 6px;
+margin: 0;
+background-color:transparent;
+width:173px;
+}
+
+#sidebar #sidemenu{}
+#sidebar #sidemenu li{ padding:0; border:none; background:url(../images/side_menu_li_bg.png) no-repeat left bottom;}
+#sidebar #sidemenu li a{ display:block; line-height:40px; color:#ddd; font-weight:bold; z-index:10 !important; outline:none;}
+#sidebar #sidemenu li.current{  background:url(../images/side_menu_li_over_bg.png) no-repeat center bottom;}
+#sidebar #sidemenu li.current a{color:#fff; }
+#sidebar #sidemenu li ul{ display:none; }
+#sidebar #sidemenu li ul li{  background-color:transparent;  border:none; }
+#sidebar #sidemenu li ul li a{ color:#fff !important; line-height:30px;  }
+#sidebar #sidemenu li ul li span{ margin-top:13px; margin-left:30px;}
+#sidebar #sidemenu li ul li.current{ background-color:transparent; }
+#sidebar #sidemenu li ul li.current a{ color:#fff !important;}
+
+#sidebar #sidemenu li .shbg{ position:absolute; width:100%; height:1px; background:none; display:none; margin-top:-30px;  }
+#sidebar #sidemenu li .shbg img{ margin-top:16px; z-index:-1;}
+
+.styled-list li{ border:none; padding:0; }
+.styled-list li a{ color:white; font-family:'나눔고딕',NanumGothic; font-size:12px; line-height:12px;} 
+
+#sidebar h6 {
+display:none;
+}
+.breadcrumbs a{ color:#333;}
+#breadcrumbs-container p {
+margin: 0;
+float: right;
+}
+
+#breadcrumbs-wrapper{ border:none; background:none;}
+
+#tiva-contents{
+	background:white;
+
+	border-radius:10px;
+	-moz-border-radius::10px;
+	-webkit-border-radius:10px;
+	padding-right:20px;
+	margin: 23px;
+	margin-left:none;
+	}
+	
+	.styled-list li span {
+		background: url("../images/list-arrow.png") no-repeat left;
+		margin: 18px 8px 0px 16px;
+		width: 4px;
+		height: 7px;
+		float: left;
+	}
+
+#slogan-container {
+	margin-top:0px;
+
+}
+
+#contBottomWrap,#contTopWrap,#contTivaTopWrap,#contTivaBottomWrap{ display:none;}
+
+#sidebar .widget .widCont {
+padding: 10px 15px;
+border:none;
+overflow: hidden;
+}
+
+#footer-bottom-container{ 	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;}
+	
+	#side_util_tap{ display:none;}

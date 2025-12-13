@@ -1,0 +1,60 @@
+<include target="_header.html" />
+
+<div class="feedbackList" cond="$oSourceComment->isExists()">
+    <div class="item round6">	
+		<div class="itemAside">
+			<img src="{$oSourceComment->getProfileImage()}" alt="profile" class="profile" cond="$oSourceComment->getProfileImage()" />
+			<img src="img/common/profile_photo.gif" alt="profile" class="profile" cond="!$oSourceComment->getProfileImage()" />
+			
+			<div class="profile_info">
+				<h4 class="header"><a href="#popup_menu_area" class="member_{$oSourceComment->getMemberSrl()}" onclick="return false">{$oSourceComment->getNickName()}</a></h4>
+				
+				<p class="meta">				
+					{$oSourceComment->getRegdate("Y.m.d H:i")}
+					<span cond="$grant->manager || $module_info->display_ip_address != 'N'"><br />{$oSourceComment->get('ipaddress')}</span>
+				</p>
+			</div>
+		</div>		
+		<div class="itemContent">
+			{$oSourceComment->getContent(false)}
+		</div>
+    </div>
+</div>
+
+
+<form action="./" method="post" onsubmit="jQuery(this).find('input').each(function(){if(this.title==this.value)this.value='';});return procFilter(this, insert_comment)" class="boardEditor" >
+	<input type="hidden" name="mid" value="{$mid}" />
+	<input type="hidden" name="document_srl" value="{$oComment->get('document_srl')}" />
+	<input type="hidden" name="comment_srl" value="{$oComment->get('comment_srl')}" />
+	<input type="hidden" name="content" value="{htmlspecialchars($oComment->get('content'))}" />
+	<input type="hidden" name="parent_srl" value="{$oComment->get('parent_srl')}" />
+
+	<div class="boardWrite commentEditor">		
+		<div class="editor">{$oComment->getEditor()}</div>
+		
+		<div class="editorOption">
+			<block cond="!$is_logged">
+				<input type="text" name="nick_name" class="inputText userName" value="{$lang->writer}"  title="{$lang->writer}" onfocus="if(this.value==this.title)this.value='';return false;" />
+				<input type="password" name="password" class="inputText userPw" value="{$lang->password}" title="{$lang->password}" onfocus="if(this.value==this.title)this.value='';return false;" />
+				<input type="text" name="email_address" class="inputText emailAddress" value="{$lang->email_address}" title="{$lang->email_address}" onfocus="if(this.value==this.title)this.value='';return false;" />
+				<input type="text" name="homepage" class="inputText homePage" value="{$lang->homepage}" title="{$lang->homepage}" onfocus="if(this.value==this.title)this.value='';return false;" />
+			</block>
+
+			<block cond="$is_logged">
+				<input type="checkbox" name="notify_message" value="Y" checked="checked"|cond="$oComment->get('notify_message')=='Y'" id="notify_message" class="inputCheck" />
+				<label for="notify_message">{$lang->notify}</label>
+			</block>
+				<input type="checkbox" name="is_secret" value="Y" id="is_secret" checked="checked"|cond="$oComment->get('is_secret')=='Y'" class="inputCheck" />
+				<label for="is_secret">{$lang->secret}</label>
+		</div>
+
+		<div class="boardNavigation">
+			<span class="buttonOfficial"><input type="submit" value="{$lang->cmd_comment_registration}" accesskey="s" /></span>
+			<span class="buttonOfficial"><input type="button" value="{$lang->cmd_back}" onclick="location.href='{getUrl('act','')}'" /></span>
+		</div>
+		
+	</div>
+</form>
+
+<include target="_footer.html" />
+

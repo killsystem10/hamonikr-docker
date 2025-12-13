@@ -1,0 +1,12 @@
+<include target="_header.html" />
+
+<div class="smallBox">
+    <h3 class="round6">{$message}</h3>
+
+	<div class="boardNavigation">
+        <a href="{getUrl('act','dispMemberLoginForm')}" class="buttonOfficial" cond="!$is_logged"><span>{$lang->cmd_login}</span></a>
+        <a href="#" onclick="history.back(); return false;" class="buttonOfficial"><span>{$lang->cmd_back}</span></a>
+    </div>
+</div>
+
+<include target="_footer.html" />

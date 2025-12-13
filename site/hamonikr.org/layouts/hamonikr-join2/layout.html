@@ -1,0 +1,915 @@
+<!--Google Fonts-->
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+<load target="css/reset.css" />
+<load target="css/text.css" />
+<load target="css/common.css" />
+<load target="css/sub_boxtype.css"  cond="$layout_info->contents_type=='box'"/>
+<load target="css/sub_dorpmenu_h.css"  cond="$layout_info->drop_menu_display=='horizon'"/>
+<load target="css/color/black.css"  cond="$layout_info->colorset=='lcblack'" />
+<load target="css/color/grayblue.css"  cond="$layout_info->colorset=='lcgrayblue'" />
+<load target="css/color/graysky.css"  cond="$layout_info->colorset=='lcgraysky'" />
+<load target="css/color/green.css"  cond="$layout_info->colorset=='lcgreen'" />
+<load target="css/color/olive.css"  cond="$layout_info->colorset=='lcolive'" />
+<load target="css/color/orange.css"  cond="$layout_info->colorset=='lcorange'" />
+<load target="css/color/purple.css"  cond="$layout_info->colorset=='lcpurple'" />
+<load target="css/color/red.css"  cond="$layout_info->colorset=='lcred'" />
+
+<load target="js/modernizr-2.0.6.js" />
+<load target="js/jquery.quicksand.js" />
+<load target="js/jquery.prettyPhoto.js" />
+<load target="js/jquery.cycle.all.js" />
+<load target="js/jquery.roundabout.js" />
+<load target="js/jquery.easing.1.3.js" />
+<load target="js/jquery.twitter.js" />
+<load target="js/jquery.quovolver.js" />
+<load target="js/hoverIntent.js" />
+<load target="js/supersubs.js" />
+<load target="js/superfish.js" />
+<load target="js/custom.js" />
+
+
+<load target="css/maximage.css" cond="$layout_info->background_img_use!='unuse'" />
+<load target="js/jquery.maximage.js" cond="$layout_info->background_img_use!='unuse'" />
+
+
+<script>console.log('html');</script>
+
+
+<!-- 동영상 배경화면 -->
+<block cond="$layout_info->background_img_use=='mp4'">
+<style>
+html {overflow-x:hidden;}
+video, object {	top:0;left:0;position:fixed;z-index:-1;	}
+</style>
+<video src="{$layout_info->userbgmp4}" autoplay loop autobuffer="autobuffer" muted="muted" poster="http://sandbox.thewikies.com/vfe-generator/images/big-buck-bunny_poster.jpg" width="640" height="360"></video>
+
+<script type="text/javascript" charset="utf-8">
+		jQuery(function($){
+			// Helper function to Fill and Center the HTML5 Video
+			jQuery('video, object').maximage('maxcover');
+		});			
+</script>
+</block>
+
+
+<!-- 슬라이드 배경화면 -->        
+<block cond="$layout_info->background_img_use=='slide'">
+    <div id="maximage">
+        <div class="first-item">
+            <img src="{$layout_info->userbg1}" alt="" cond="$layout_info->userbg1" />
+        </div>
+        <img src="{$layout_info->userbg2}" cond="$layout_info->userbg2" />
+        <img src="{$layout_info->userbg3}" cond="$layout_info->userbg3" />
+        <img src="{$layout_info->userbg4}" cond="$layout_info->userbg4" />
+
+    </div>
+
+<script type="text/javascript" charset="utf-8">
+			jQuery(function($){
+				$('#maximage').maximage({
+					cycleOptions: {
+						fx:'scrollHorz',
+						speed: 800,
+						timeout: 8000,
+						prev: '#arrow_left',
+						next: '#arrow_right'
+					},
+					onFirstImageLoaded: function(){
+						jQuery('#cycle-loader').hide();
+						jQuery('#maximage').fadeIn('fast');
+					}
+				});
+			});	
+</script>
+</block>
+
+
+{@$browser_type = getenv("HTTP_USER_AGENT")}
+<!--@if(preg_match("/MSIE 8.0/",$browser_type))-->
+	<load target="css/ie.css" cond="$layout_info->layout_type!='c'&&$layout_info->contents_type=='box'" />
+<!--@endif-->
+
+<!--@if($layout_info->contents_twitterid)-->
+<script type="text/jscript">
+
+jQuery(function($){
+/** Twitter **/
+	  $("#twitter").getTwitter({
+		  userName: "{$layout_info->contents_twitterid}",
+		  numTweets: 3,
+		  loaderText: "Loading tweets...",
+		  slideIn: true,
+		  showHeading: true,
+		  headingText: "Latest Tweets",
+		  showProfileLink: true
+	  }); 	
+});
+</script>
+<!--@end-->
+
+<script language="JavaScript">
+			function bookmarksite(title,url) { 
+			   // Internet Explorer
+			   if(document.all)
+			   {
+				   window.external.AddFavorite(url, title); 
+			   }
+			   // Google Chrome
+			   else if(window.chrome){
+				  alert("크롬브라우져 : Ctrl+D 를 사용하여 추가해 주시기 바랍니다.");
+			   }
+			   // Firefox
+			   else if (window.sidebar)
+			   {
+				   window.sidebar.addPanel(title, url, ""); 
+			   }
+			} 
+</script>
+
+<style type="text/css">
+
+<!--@if($layout_info->contents_type=='box')-->
+#sidebar #sidemenu li.current{ background-color:transparent;}
+<!--@end-->
+
+<!--@if($layout_info->layout_width)-->
+.container {width:{($layout_info->layout_width)}px}
+<!--@end-->
+
+<!--@if($layout_info->layout_type=='ec')-->
+#tiva-contents{ padding:20px; border-left:1px solid #f0f0f0; border-right:1px solid #f0f0f0;}
+#main-content{ border-left:1px solid #f0f0f0;}
+#sidebar{ border-right:none; border-bottom:1px solid #f0f0f0;}
+
+<!--@elseif($layout_info->layout_type=='ce')-->
+#sidebar{ float:right; border-left:none; border-bottom:1px solid #f0f0f0;}
+#tiva-contents{ padding:20px; border-left:1px solid #f0f0f0; border-right:1px solid #f0f0f0;}
+#main-content{ border-right:1px solid #f0f0f0;}
+
+<!--@end-->
+
+<!--@if($layout_info->layout_type=='c'&&$layout_info->contents_type=='default')-->
+#tiva-contents{
+	/*background: url('{($request_url)}layouts/TM_Tiva/images/office1_gallery_bg.jpg') no-repeat 50% 0;*/
+	}
+	
+<!--@end-->
+
+<!--@if($layout_info->pattern=='0')-->
+body{ background-image:none;}
+<!--@else-->
+body{ background:url('{($request_url)}layouts/Tiva/images/pattern/{($layout_info->pattern)}.png') repeat 0 0; }
+<!--@end-->
+
+
+<!--@if($layout_info->top_menu_type=='type2')-->
+#header-logo { margin-top:15px; }
+.sf-menu a {font-size:16px;}
+#header-wrapper{ height:132px;}
+#header-container{ margin-top:9px;}
+#header-social-icons { margin-top: 10px;}
+.sf-menu li.sfHover ul {top: 50px;}
+#navigation-container { margin-top:10px; height:65px; }
+<!--@elseif($layout_info->top_menu_type=='type1')-->
+#top-elements { overflow:visible; }
+#openmenu-wrapper { top:100px;}
+<!--@elseif($layout_info->top_menu_type=='type3')-->
+#navigation-container { float:left; margin-left: -20px;}
+#header-logo { margin-top:15px; }
+#openmenu-wrapper { top:100px;}
+
+<!--@elseif($layout_info->top_menu_type=='type4')-->
+#navigation-container { float:left; margin-left: -20px; margin-top:10px; height:65px; }
+#header-logo { margin-top:15px; }
+.sf-menu a {font-size:16px;  }
+#header-wrapper{ height:132px;}
+#header-container{ margin-top:9px;}
+#header-social-icons { margin-top: 10px;}
+.sf-menu li.sfHover ul {top: 50px;}
+<!--@end-->
+
+<!--@if(($layout_info->top_menu_type=='type2'||$layout_info->top_menu_type=='type3')&&$layout_info->drop_menu_display=='horizon')-->
+.sf-shadow ul { margin-left:0; }
+.sf-menu li li {float:left; }
+<!--@end-->
+
+
+
+<!--@if($layout_info->drop_menu_display=='unuse')-->
+.sf-shadow ul {
+	display:none !important;
+}
+<!--@end-->
+
+
+
+
+</style>
+	
+  
+
+    <!-- header -->
+    <div class="hamo_header">
+        <div class="logo"><a href="/"><img src="images/logo.png" alt="하모니카 커뮤니티" /></a></div>
+        <!-- <li><a href="#" class="logo"><img src="images/logo.png" alt="하모나이즈커뮤니티" /></a></li>-->
+        <div class="hamo_search">
+            
+         
+            <form action="{getUrl()}" method="post" class="iSearch">
+                <input type="hidden" name="vid" value="{$vid}" cond="$vid" />
+                <input type="hidden" name="mid" value="{$mid}" />
+                <input type="hidden" name="act" value="IS" />
+                <input type="hidden" name="search_target" value="title_content" />
+                
+                <label for="">검색</label>
+                <input name="is_keyword"  placeholder="Search the site" type="text" class="" id="search" title="" />
+                <input type="submit" id="go" class="igo"  value=""/>
+            </form>
+
+        </div>
+        <ul class="user_info" >
+             <!-- custom.js -->
+            <!-- <li><i class="mdi mdi-account-box" ></i><a href="#">Login</a></li> 
+            <li><i class="mdi mdi-account-plus"></i><a href="{getUrl('act','dispMemberSignUpForm')}">회원가입</a></li> -->            
+            <li id="member_option" class="" cond="!$is_logged" >
+                <span><i class="mdi mdi-account-plus"></i><a href="{getUrl('act','dispMemberSignUpForm')}" >회원가입</a></span> | 
+                <span><i class="mdi mdi-account-box"></i><a href="#" class="loginbt" style="margin-right:5px;">로그인</a></span>
+            </li>
+            <li id="member_option" class="" cond="$is_logged" >
+                <span><i class="mdi mdi-logout-variant"></i><a href="{getUrl('act','dispMemberLogout')}" style="margin-right:5px;">로그아웃</a></span>
+                <span><i class="mdi mdi-account-box"></i><a href="{getUrl('act','dispMemberInfo')}" style="margin-right:5px;">회원정보</a></span>
+                <span cond="$logged_info->is_admin=='Y'"><i class="mdi mdi-account-key"></i><a href="{getUrl('','module','admin')}" target="_new" >관리자</a></span>
+            </li>
+        </ul>
+        
+            
+    </div><!-- //header -->   
+        
+	<!--//////////// HEADER ////////////-->
+   
+
+    
+
+    <!--HEADER WRAPPER STARTS-->
+    <div id="header-wrapper" >
+    	<!--HEADER CONTAINER STARTS-->
+        <div id="header-container" class="container">
+        	
+            <!--TOP ELEMENTS STARTS-->
+           <!-- /////////////검색+로그인 겹쳐서 삭제///////////// -->
+            <!--TOP ELEMENTS ENDS-->
+             <!--//////////// OPEN MENU  ////////////-->    
+        	<div id="gnbwarp"|cond="$layout_info->openmenu_display=='mouse'">
+            <!--NAVIGATION CONTAINER STARTS-->
+            <div id="navigation-container" >
+            
+            <div id="openmenu-wrapper" cond="$layout_info->openmenu_display!='unuse'" style="display:none"|cond="$layout_info->openmenu_display=='mouse'">
+                <div class="container">
+                
+                <ul >
+                        <li loop="$global_menu->list=>$key1,$val1" class="current"|cond="$val1['selected']"><div class="dot"></div><a href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'">{$val1['link']}</a>
+                            <ul cond="$val1['list']">
+                                <li loop="$val1['list']=>$key2,$val2" class="current"|cond="$val2['selected']"><a href="{$val2['href']}" target="_blank"|cond="$val2['open_window']=='Y'">{$val2['link']}</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+            
+            <!--NAVIGATION STARTS-->
+			<ul id="gnb" class="sf-menu">
+				<li loop="$global_menu->list=>$key1,$val1" class="current"|cond="$val1['selected']"><a href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'">{$val1['link']}</a>
+					<ul cond="$val1['list']" style="width:{($layout_info->drop_menu_width)}px !important;"|cond="$layout_info->drop_menu_width" >
+						<li loop="$val1['list']=>$key2,$val2" class="current"|cond="$val2['selected']"><a href="{$val2['href']}" target="_blank"|cond="$val2['open_window']=='Y'">{$val2['link']}</a>
+                        	<ul cond="$val2['list']">
+                                <li loop="$val2['list']=>$key3,$val3" class="current"|cond="$val3['selected']"><a href="{$val3['href']}" target="_blank"|cond="$val3['open_window']=='Y'">{$val3['link']}</a></li>
+                            </ul>
+                        </li>
+					</ul>
+				</li>
+			</ul>
+            
+            <!--NAVIGATION ENDS-->
+            </div> 
+            <!--NAVIGATION CONTAINER ENDS-->
+            </div>
+            <!--GNB WRAP  ENDS-->
+            
+        </div> 
+        <!--HEADER CONTAINER ENDS-->
+    </div> 
+    <!--HEADER WRAPPER ENDS-->
+    
+  
+        
+      
+    <!--//////////// CYCLE SLIDER (IMG) ////////////-->
+          <div id="slider-wrapper" cond="$layout_info->banner_type=='img'" <!--@if($layout_info->banner_height)--> style="height:{$layout_info->banner_height}px;" <!--@else--> style="height:400px;" <!--@end--> >
+   		<!--IMAGE CONTAINER STARTS-->
+        <div id="slide-container">
+    		<!--IMG BANNER STARTS-->
+            <div id="slide-1" class="slide" cond="$layout_info->banner_slider_image1">
+            	<div class="container" <!--@if($layout_info->banner_height)--> style="height:{$layout_info->banner_height}px;" <!--@else--> style="height:420px;" <!--@end-->>
+                    <a href="{$layout_info->banner_slider_image1_url}">
+                        <img src="{$layout_info->banner_slider_image1}" >
+                    </a>
+                </div>
+            </div>
+            <!--IMG BANNER ENDS-->
+        </div>
+        <!--IMAGE CONTAINER ENDS-->
+    </div>
+    
+     
+        
+    <!--CYCLE WRAPPER STARTS-->
+    <div id="slider-wrapper" cond="$layout_info->banner_type=='type1'" <!--@if($layout_info->banner_height)--> style="height:{$layout_info->banner_height}px;" <!--@else--> style="height:400px;" <!--@end--> >
+   		<!--SLIDE CONTAINER STARTS-->
+        <div id="slide-container">
+    		<!--1ST SLIDE STARTS-->
+            <div id="slide-1" class="slide" cond="$layout_info->banner_slider_image1">
+            	<div class="container" <!--@if($layout_info->banner_height)--> style="height:{$layout_info->banner_height}px;" <!--@else--> style="height:420px;" <!--@end-->>
+                    <a href="{$layout_info->banner_slider_image1_url}">
+                        <img src="{$layout_info->banner_slider_image1}" >
+                    </a>
+                </div>
+            </div>
+            <!--1ST SLIDE ENDS-->
+            <!--2ND SLIDE STARTS-->
+            <div id="slide-2" class="slide" cond="$layout_info->banner_slider_image2">
+            	<div class="container" >
+                	<a href="{$layout_info->banner_slider_image2_url}">
+                        <img src="{$layout_info->banner_slider_image2}" >
+                    </a>
+                </div>
+            </div>
+            <!--2ND SLIDE ENDS-->
+            <!--3RD SLIDE STARTS-->
+            <div id="slide-3" class="slide" cond="$layout_info->banner_slider_image3">
+            	<div class="container">
+	                <a href="{$layout_info->banner_slider_image3_url}">
+                        <img src="{$layout_info->banner_slider_image3}" >
+                    </a>
+                </div>
+            </div>
+            <!--3RD SLIDE ENDS-->
+            <!--SLIDE'S PAGINATION STARTS-->
+            <div id="cycle-pager" class="ppusher"></div>
+            <!--SLIDE'S PAGINATION ENDS-->
+        </div>
+        <!--SLIDE CONTAINER ENDS-->
+    </div>
+    <!--CYCLE WRAPPER ENDS-->
+   
+        <!--//////////// CYCLE SLIDER 2 (banner) ////////////-->
+    
+    <!--CYCLE WRAPPER STARTS-->
+    <div id="slider-wrapper-2" cond="$layout_info->banner_type=='type2'" <!--@if($layout_info->banner_height)--> style="height:{$layout_info->banner_height}px;" <!--@else--> style="height:460px;" <!--@end-->>
+    	<!--SLIDE CONTAINER STARTS-->
+        <div id="slide-container-2">
+    		<!--1ST SLIDE STARTS-->
+            <div id="slide-1" class="slide small-vertical-space-pusher">
+            	<div class="container" <!--@if($layout_info->banner_height)--> style="height:{$layout_info->banner_height}px;" <!--@else--> style="height:395px;" <!--@end-->>
+                     <a href="{$layout_info->banner_slider_image1_url}">
+                        <img src="{$layout_info->banner_slider_image1}" >
+                    </a>
+                    <div class="full-width-image-shadow"></div>
+                </div>
+            </div>
+            <!--1ST SLIDE ENDS-->
+            <!--2ND SLIDE STARTS-->
+            <div id="slide-2" class="slide small-vertical-space-pusher">
+            	<div class="container">
+                     <a href="{$layout_info->banner_slider_image2_url}">
+                        <img src="{$layout_info->banner_slider_image2}" >
+                    </a>
+                    <div class="full-width-image-shadow"></div>
+                </div>
+            </div>
+            <!--2ND SLIDE ENDS-->
+            <!--3RD SLIDE STARTS-->
+            <div id="slide-3" class="slide small-vertical-space-pusher">
+            	<div class="container">
+                     <a href="{$layout_info->banner_slider_image3_url}">
+                        <img src="{$layout_info->banner_slider_image3}" >
+                    </a>
+                    <div class="full-width-image-shadow"></div>
+                </div>
+            </div>
+            <!--3RD SLIDE ENDS-->
+            <!--4TH SLIDE STARTS-->
+            <div id="slide-4" class="slide small-vertical-space-pusher">
+            	<div class="container">
+                     <a href="{$layout_info->banner_slider_image4_url}">
+                        <img src="{$layout_info->banner_slider_image4}" >
+                    </a>
+                    <div class="full-width-image-shadow"></div>
+                </div>
+            </div>
+            <!--4TH SLIDE ENDS-->
+            <!--SLIDE'S PAGINATION STARTS-->
+            <div id="cycle-pager" class="ppusher"></div>
+            <!--SLIDE'S PAGINATION ENDS-->
+        </div>
+        <!--SLIDE CONTAINER ENDS-->
+    </div>
+    <!--CYCLE WRAPPER ENDS-->
+    
+  
+                    
+    <!--ROUNDABOUT WRAPPER STARTS-->
+    <div id="roundabout-wrapper" cond="$layout_info->banner_type=='type3'">
+   		<!--ROUNDABOUT HOLDER STARTS-->
+        <ul id="myRoundabout" class="roundabout-holder container">
+    		<!--1ST SLIDE STARTS-->
+            <li class="roundabout-moveable-item roundabout-in-focus" cond="$layout_info->banner_slider_image1"><a href="{$layout_info->banner_slider_image1_url}"><img src="{$layout_info->banner_slider_image1}" width="582" height="340"></a></li>
+            <!--1ST SLIDE ENDS-->
+            <!--2ND SLIDE STARTS-->
+            <li class="roundabout-moveable-item" cond="$layout_info->banner_slider_image2"><a href="{$layout_info->banner_slider_image2_url}"><img src="{$layout_info->banner_slider_image2}" width="582" height="340"></a></li>
+            <!--2ND SLIDE ENDS-->
+            <!--3RD SLIDE STARTS-->
+            <li class="roundabout-moveable-item" cond="$layout_info->banner_slider_image3"><a href="{$layout_info->banner_slider_image3_url}"><img src="{$layout_info->banner_slider_image3}" width="582" height="340"></a></li>
+            <!--3RD SLIDE ENDS-->
+            <!--4TH SLIDE STARTS-->
+            <li class="roundabout-moveable-item" cond="$layout_info->banner_slider_image4"><a href="{$layout_info->banner_slider_image4_url}"><img src="{$layout_info->banner_slider_image4}" width="582" height="340"></a></li>
+            <!--4TH SLIDE ENDS-->
+        </ul>
+        <!--ROUNDABOUT HOLDER ENDS-->
+    </div>
+    <!--ROUNDABOUT WRAPPER ENDS-->
+      
+       
+     
+    <!---  현재메뉴상태 표시 각 페이지 상단에 넣어줘야함. 홀수단위로 
+   <script type="text/javascript">
+        $(document).ready(function() {
+            $('.sidebar-submenu').children().eq(1).addClass('current');
+        });
+    </script> -->
+                 
+
+
+    <div class="hamo_container">
+        <div class="con_left">
+
+    
+            <div class="page-wrapper toggled">
+                <nav id="sidebar" class="sidebar-wrapper">
+                    <div class="sidebar-content">
+                        <div class="sidebar-menu">                    
+                            <ul>
+                                <li class="sidebar-dropdown"> <a href="#">다운로드</a>
+                                    <ul class="sidebar-submenu"> 
+                                        <li><a href="/menuDownload_RTM">다운로드</a></li>
+                                        <li><a href="/menuDownload_RTM_old" >이전버전 및 관련사이트</a></li>
+                                        <li><a href="/board_mkER88">커뮤니티배포판</a></li>
+                                        <li><a href="/page_YaNU21">이용약관</a></li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-dropdown"> <a href="#">커뮤니티</a>
+                                    <ul class="sidebar-submenu ">
+                                        <li><a href="/hamoni_notice">하모니공지</a></li>
+                                        <li><a href="/hamoni_board">하모니 게시판</a></li>
+                                        <li><a href="/board_bFBk25">리눅스 사용기 및 테크팁</a></li>
+                                        <li><a href="/index.php?mid=board_hzVL42&category=453">인터넷 뱅킹</a></li>
+                                        <li><a href="/board_IUmu37">인터넷 쇼핑</a></li>
+                                        <li><a href="/board_Device">장치 및 프린터</a></li>
+                                        <li><a href="/Free_Board">자유게시판</a></li>
+                                        <li><a href="/oss">오픈소스 이야기</a></li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-dropdown"> <a href="#">OS 가이드</a>
+                                    <ul class="sidebar-submenu ">
+                                        <li><a href="/board_hkrme">하모니카ME 게시판</a></li>
+                                        <li><a href="/board_practice">활용하기_기초편</a></li>
+                                        <li><a href="/board_advance">활용하기_응용편</a></li>
+                                        <li><a href="/board_nLnK17">하모니카 도입사례</a></li>
+                                        <li><a href="/addsearchengines">검색엔진 등록</a></li>
+                                        <li><a href="/board_manual">사용자 안내서</a></li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-dropdown"> <a href="#">사용자참여</a>
+                                    <ul class="sidebar-submenu ">
+                                        <li><a href="/how_join">참여방법</a></li>
+                                        <li><a href="/board_KtxL32">바탕화면자랑</a></li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-dropdown"> <a href="#">오픈소스</a>
+                                    <ul class="sidebar-submenu ">
+                                        <li><a href="/hamonia">하모니아 미디어 워버</a></li>
+                                        <li><a href="/info_welding">영상분석기반 용접품질검사 시스템</a></li>
+                                        <li><a href="/inforshare">제조산업 수질계측 통합모니터링</a></li>
+                                        <!--     <li class="sub3th"><a href="/inforshare_oss">- 공개SW 거버넌스&구축운영</a></li>
+                                        <li class="sub3th"><a href="/inforshare_license">- 라이센스관리</a></li>
+                                        <li class="sub3th"><a href="/inforshare_github">- Github 사용법</a></li>
+                                        <li class="sub3th"><a href="/inforshare_package">- 패키징 절차 및 방법</a></li>
+                                        <li class="sub3th"><a href="/inforshare_document">- Document</a></li> -->
+                                    </ul>
+                                </li>
+                            </ul>
+                            
+    
+                         
+                        </div>
+                        <!-- sidebar-menu  -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- //con_left  --->
+
+        <div class="con_right">
+
+
+
+    <!--- //컨텐츠영역 --------------------------------------> 
+    <!--//////////// MAIN CONTENT ////////////-->
+    <div id="inner-page-wrapper" class="sub_content"> 
+    	
+        <!--INNER PAGE CONTAINER STARTS-->
+    	<div id="inner-page-container" class="container">
+			
+             <!-- s : rQuick Menu layer --> 
+
+
+
+            <div id="rquick" cond="$layout_info->quick_menu_use=='use'" style="width:{$layout_info->q1_width}px; right:-{$layout_info->q1_width+28}px"|cond="$layout_info->q1_width">
+                <ul class="rqu">
+                	<li class="rqlw" cond="$layout_info->q1_widget">{$layout_info->q1_widget}</li>
+                	<li class="rqlw" cond="$layout_info->q2_widget">{$layout_info->q2_widget}</li>
+                	<li class="rqlw" cond="$layout_info->q3_widget">{$layout_info->q3_widget}</li>
+                	<li class="rql" cond="$layout_info->q1_url"><a href="{$layout_info->q1_url}"><img src="{$layout_info->q1_image}" /></a></li>
+                    <li class="rql" cond="$layout_info->q2_url"><a href="{$layout_info->q2_url}"><img src="{$layout_info->q2_image}" /></a></li>
+                    <li class="rql" cond="$layout_info->q3_url"><a href="{$layout_info->q3_url}"><img src="{$layout_info->q3_image}" /></a></li>
+                    <li class="rql" cond="$layout_info->q4_url"><a href="{$layout_info->q4_url}"><img src="{$layout_info->q4_image}" /></a></li>
+                    <li class="rql" cond="$layout_info->q5_url"><a href="{$layout_info->q5_url}"><img src="{$layout_info->q5_image}" /></a></li>
+                </ul>
+            </div>
+        <!-- e : rQuick Menu layer -->
+        
+          <!-- s : lQuick Menu layer --> 
+            <div id="lquick" cond="$layout_info->lquick_menu_use=='use'" style="width:{$layout_info->lq1_width}px; margin-left:-{$layout_info->lq1_width+30}px"|cond="$layout_info->lq1_width">
+               <ul class="lqu">
+                	<li class="lqlw" cond="$layout_info->lq1_widget">{$layout_info->lq1_widget}</li>
+                	<li class="lqlw" cond="$layout_info->lq2_widget">{$layout_info->lq2_widget}</li>
+                	<li class="lqlw" cond="$layout_info->lq3_widget">{$layout_info->lq3_widget}</li>
+                	<li class="lql" cond="$layout_info->lq1_url"><a href="{$layout_info->lq1_url}"><img src="{$layout_info->lq1_image}" /></a></li>
+                    <li class="lql" cond="$layout_info->lq2_url"><a href="{$layout_info->lq2_url}"><img src="{$layout_info->lq2_image}" /></a></li>
+                    <li class="lql" cond="$layout_info->lq3_url"><a href="{$layout_info->lq3_url}"><img src="{$layout_info->lq3_image}" /></a></li>
+                    <li class="lql" cond="$layout_info->lq4_url"><a href="{$layout_info->lq4_url}"><img src="{$layout_info->lq4_image}" /></a></li>
+                    <li class="lql" cond="$layout_info->lq5_url"><a href="{$layout_info->lq5_url}"><img src="{$layout_info->lq5_image}" /></a></li>
+                </ul>
+            </div>
+        <!-- e : lQuick Menu layer -->
+        
+ <!-- ///////////// SIDEBAR CONTENT //////////// -->
+            <!--SIDEBAR STARTS -->	
+                        
+            <div id="sidebar" class="one_fourth last_column" cond="$layout_info->layout_type!='c'" style="border-bottom:none;"|cond="$layout_info->contents_type=='box'" style=" width:{$layout_info->contents_widget_width}px"|cond="$layout_info->contents_widget_width" >
+            		
+
+            
+            <!--SIDE BAR UTIL MENU -->
+				<ul id="side_util_tap">
+                	<li class="member"><img src="images/side_util_tab1.png" cond="$is_logged" /><img src="images/side_util_tab1_1.png" cond="!$is_logged" /></li>
+                    <li class="newdoc"><img src="images/side_util_tab2.png" /></li>
+                    <li class="newco last"><img src="images/side_util_tab3.png" /></li>
+                </ul>
+                
+                <div id="side_util_cont1" cond="$layout_info->login_box=='use'" >            
+                    <!--SIDE BAR LOGIN BOX-->
+                    <img widget="login_info" skin="xe_tiva" colorset="white" />
+                </div>
+
+                <div id="side_util_cont2">
+                <div class="widget" >
+                    <div class="styled-list widCont">
+                        <p>
+                        {$layout_info->side_util_cont1}
+                        </p>
+                    </div>
+                </div>
+                </div>
+                
+                <div id="side_util_cont3">
+                <div class="widget" >
+                    <div class="styled-list widCont">
+                        <p>
+                        {$layout_info->side_util_cont2}
+                        </p>
+                    </div>
+                </div>
+                </div>
+
+                <!--BLOG CATEGORIES STARTS-->
+                <div class="extra-space-bottom">
+
+                <block loop="$quick_menu->list=>$key1,$val1" cond="$val1['selected']">
+                    <a  href="{$val1['href']}"><h6>{$val1['link']}<img id="titlerb" src="images/subMenu_titleArrow.png" /></h6></a> 
+                </block>   
+
+                    <div class="styled-list">
+                        <ul id="sidemenu" loop="$global_menu->list=>$key1,$val1" cond="$val1['selected'] && $val1['list']">
+                            <li loop="$val1['list']=>$key2,$val2" class="current"|cond="$val2['selected']"><span></span><a href="{$val2['href']}" target="_blank"|cond="$val2['open_window']=='Y'">{$val2['link']}</a><div class="shbg" cond="$layout_info->contents_type=='box'"><img src="images/side_menu_li_over_bg2.png" /></div>
+                                <ul cond="$val2['list']&&$val2['selected']">
+                                    <li loop="$val2['list']=>$key3,$val3" class="current"|cond="$val3['selected']"><span></span><a href="{$val3['href']}" target="_blank"|cond="$val3['open_window']=='Y'">{$val3['link']}</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+                <!--IMAGE WIDGET SECTION STARTS -->
+                <div cond="$layout_info->contents_widget_img_link_use=='use'"> 
+                <!--WIDGET STARTS -->
+                <div class="extra-space-bottom widget" cond="$layout_info->contents_widget_img_link1">
+                   
+                    <div class="styled-list widCont">
+                        <p>
+                        <a href="{$layout_info->contents_widget_img_link1_url}" ><img src="{$layout_info->contents_widget_img_link1}" /></a>
+                        </p>
+                    </div>
+                </div>
+                
+                
+                <!--WIDGET ENDS-->
+                <!--WIDGET STARTS-->
+                <div class="extra-space-bottom widget" cond="$layout_info->contents_widget_img_link2">
+                   
+                    <div class="styled-list widCont">
+                        <p>
+                        <a href="{$layout_info->contents_widget_img_link2_url}" ><img src="{$layout_info->contents_widget_img_link2}" /></a>
+                        </p>
+                    </div>
+                </div>
+                <!--WIDGET ENDS-->
+                <!--WIDGET STARTS-->
+                <div class="extra-space-bottom widget" cond="$layout_info->contents_widget_img_link3">
+                   
+                    <div class="styled-list widCont">
+                        <p>
+                        <a href="{$layout_info->contents_widget_img_link3_url}" ><img src="{$layout_info->contents_widget_img_link3}" /></a>
+                        </p>
+                    </div>
+                </div>
+                <!--WIDGET ENDS-->
+                </div>
+                <!--IMAGE WIDGET SECTION END-->
+                
+
+                <!--WIDGET STARTS-->
+                <div class="extra-space-bottom widget" cond="$layout_info->contents_widget1_title">
+                    <h6 class="title">{$layout_info->contents_widget1_title}</h6>
+                    <div class="styled-list widCont">
+                        <p>
+                        {$layout_info->contents_widget1_code}
+                        </p>
+                    </div>
+                </div>
+                <!--WIDGET ENDS-->
+                <!--WIDGET STARTS-->
+                <div class="extra-space-bottom widget" cond="$layout_info->contents_widget2_title">
+                    <h6 class="title">{$layout_info->contents_widget2_title}</h6>
+                    <div class="styled-list widCont">
+                        <p>
+                        {$layout_info->contents_widget2_code}
+                        </p>
+                    </div>
+                </div>
+                <!--WIDGET ENDS-->
+                <!--WIDGET STARTS-->
+                <div class="extra-space-bottom widget" cond="$layout_info->contents_widget3_title">
+                    <h6 class="title">{$layout_info->contents_widget3_title}</h6>
+                    <div class="styled-list widCont">
+                        <p>
+                        {$layout_info->contents_widget3_code}
+                        </p>
+                    </div>
+                </div>
+                <!--WIDGET ENDS-->
+                
+                 <!--FACEBOOK PLUGIN STARTS-->
+                <div class="extra-space-bottom widget" cond="$layout_info->contents_facebook_code">
+                    <div class="styled-list widCont">
+                        <p>
+                        {$layout_info->contents_facebook_code}
+                        </p>
+                    </div>
+                </div>
+                <!--FACEBOOK PLUGIN ENDS-->
+ 
+                <!--TWITTER FEED STARTS-->
+                <div class="extra-space-bottom widget"  >
+                <h6 class="title">Latest Tweets</h6>                  
+                <div id="twitter" class="widCont"></div>
+                </div>
+                <!--TWITTER FEED ENDS-->  
+                
+                <!--POPULAR TAG STARTS-->
+                <div class="widget" style="display:none;">
+                <h6 class="title">Popular Tags</h6>                  
+                <div id="popular-tags" class="extra-space-bottom widCont">
+                	<a class="tags" href="#">sexy</a>
+                    <a class="tags" href="#">iPhone</a>
+                    <a class="tags" href="#">windows</a>
+                    <a class="tags" href="#">gadgets</a>
+                    <a class="tags" href="#">techno</a>
+                    <a class="tags" href="#">theme</a>
+                    <a class="tags" href="#">forest</a>
+                    <a class="tags" href="#">cool</a>
+                    <a class="tags" href="#">ideas</a>
+                    <a class="tags" href="#">applications</a>
+                </div>
+                </div>
+                <!--POPULAR TAG ENDS-->  
+            </div>
+            <!--SIDEBAR ENDS-->
+                        
+            <!--///////////// MAIN CONTENT ////////////-->           
+            <!--MAIN CONTENT STARTS--> 
+            <div id="main-content" style="border:none;"|cond="$layout_info->contents_type=='box'" > 
+            	<!--BLOG STARTS-->
+                <div id="tiva-contents" >
+                   
+                     
+                     
+                    {$content}
+                </div>
+                <!--BLOG ENDS-->
+            </div>
+            <!--MAIN CONTENT ENDS-->
+
+    	</div>
+        <!--INNER PAGE CONTAINER ENDS-->
+    </div>
+        
+    <!--- //컨텐츠영역 --------------------------------------> 
+    
+    
+    
+    
+    <!-- right content -->
+            <div class="main_content_02" >
+                <!-- 다운로드 -->
+                <div class="right_quick">
+                    <div class="title">다운로드</div>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <span>2019-09-05</span>
+                                <em>HamoniKR-ME 1.3 Download</em>
+                                <font>MD5 : 60e48431d6b47eb7c92b093d8b50fcc9</font>
+                                <font> File : HamoniKR-ME_1.3.iso</font>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>2019-09-05</span>
+                                <em>HamoniKR-ME 1.2 Download</em>
+                                <font>MD5 : 60e48431d6b47eb7c92b093d8b50fcc9</font>
+                                <font> File : HamoniKR-ME_1.3.iso</font>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>2019-09-05</span>
+                                <em>HamoniKR-ME 1.1 Download</em>
+                                <font>MD5 : 60e48431d6b47eb7c92b093d8b50fcc9</font>
+                                <font> File : HamoniKR-ME_1.3.iso</font>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="more"><a href="#"> more + </a></div>
+                </div>
+                <!-- 배너 -->
+                <ul class="right_banner">
+                    <li><a href="#"><img src="images/right_con1.png" alt="하모니카 미디어 에디션" /></a></li>
+                    <li><a href="#"><img src="images/right_con2.png" alt="설치가 필요없는 화상통화 하모니" /></a></li>
+                </ul> 
+   
+                
+            </div> <!-- //right content -->
+
+        </div> <!-- //con_right  -->
+    </div> <!-- //content -->
+
+            
+    <div id="slogan-container" class="container" cond="$layout_info->footer_notice">
+		<h6 style="font-size:12px; margin-top:4px; margin-right:15px; display:inline; position:absolute;">NOTICE</h6> <div style="margin-left:65px;">{$layout_info->footer_notice}</div>
+    </div>
+        
+        
+    <!-- footer -->
+    <div class="hamo_footer">
+        <p><img src="images/logo_footer.png"> Copyright © Invesume, Inc. All rights reserved.</p>
+    </div>
+<!--    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>-->
+    <script type="text/javascript" src="js/content.js"></script>
+
+    
+
+
+<!--AJAX 로그인 창 시작-->
+<!--@if(!$is_logged)-->
+{@ $member_config = MemberModel::getMemberConfig(); }
+<!--%import("filter/login.xml")-->
+<!--@if($member_config->enable_openid=='Y')--><!--%import("filter/openid_login.xml")--><!--@end-->
+<!-- loginWindow -->
+<div id="cv2_login_area">
+	<div class="loginboxcover ">
+    
+                <div id="login_close"><img src="images/btn_loginboxClose.png" /></div>
+                
+    <div class="loginbox">
+    
+    	<div id="loginbox_ad">
+        <div id="box1">        
+         <!--@if($layout_info->loginbox_banner_type=='img')-->
+	        
+                <!--@if($layout_info->loginbox_banner_image)-->
+                <img src="{$layout_info->loginbox_banner_image}" alt="비쥬얼 이미지" />
+                <!--@else-->    	
+                <img src="images/loginbox_ad_img.png" alt="loginbox"/>
+                <!--@end-->
+
+	        <!--@elseif($layout_info->loginbox_banner_type=='xe')-->
+            	{$layout_info->loginbox_banner_widget}
+            <!--@end-->
+        </div>
+        <div id="box2" style="display:none;"><img src="images/loginbox_ad_img.png" alt="loginbox"/></div>
+
+        </div>
+        
+		<form action="./" method="post" ruleset="@login" class="logbinbox_form">
+			<fieldset>
+
+					<input type="hidden" name="act" value="procMemberLogin" />
+                    <input type="hidden" name="success_return_url" value="{getRequestUriByServerEnviroment()}" />                    
+
+				<ul>
+					<li><input name="user_id"  type="text" /></li>
+					<li><input  name="password" type="password" /></li>
+				</ul>
+                
+				<div class="lbbtn">
+                <a href="#"><button type="submit" value="" class="cielov2Submit">로그인</button></a>
+                <span><input  name="keep_signed" value="Y" type="checkbox" class="check" id="che_id" onclick="if(this.checked) return confirm('{$lang->about_keep_signed}');"/> <label for="che_id">로그인유지</label></span>	
+				</div>
+
+              	<ul class="idmail" >
+                    <li><a href="<!--@if($layout_info->signup_mid)-->{getUrl('act','dispMemberFindAccount','mid', $layout_info->signup_mid)}<!--@else-->{getUrl('act','dispMemberFindAccount')}<!--@end-->">아이디/비밀번호 찾기</a></li>
+                    <li class="mail"><a href="<!--@if($layout_info->signup_mid)-->{getUrl('act','dispMemberResendAuthMail','mid', $layout_info->signup_mid)}<!--@else-->{getUrl('act','dispMemberResendAuthMail')}<!--@end-->">인증메일 재발송</a></li>
+                </ul>
+                
+                <div id="joinsocial">
+                <div id="jswarp">
+                <div class="memberjoin">
+                <span>아직 회원이 아니세요?</span>
+                 <a href="{getUrl('act','dispMemberSignUpForm')}" class="btnJoin {$layout_info->colorset}">회원가입</a>
+                </div>
+                <!--@if($layout_info->login_type!='xe')-->
+                <div class="sociallogin" >
+                <span>SNS를 사용하세요?</span>
+                <a href="{getUrl('act', 'dispSocialxeLoginForm')}"><img class="btnSJoin" src="images/social_login_big.png" /></a>
+                </div>
+                <!--@end-->
+                    
+                    
+                </div>
+                </div>
+			</fieldset>
+		</form>
+        
+
+        
+      </div>
+	</div>
+</div>
+<!-- /loginWindow -->
+<!--@end-->
+<!--AJAX 로그인 창 끝-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

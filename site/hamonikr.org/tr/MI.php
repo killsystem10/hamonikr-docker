@@ -1,0 +1,105 @@
+<?php
+/**
+ * MI.php
+ * This file acts as the "backend controller" to your application. You can
+ * get git clone source using this.
+ * PHP error_reporting level may also be changed.
+ *
+ * @see http://hamonikr.org
+ *
+ * The MIT License (MIT)
+ *
+ * Copyright (c) <hamonikr@gmail.com> <HamoniKR.org>
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+Class MI extends mysqli
+{
+	# Basic
+	private $HOST,$DATA,$USER,$PASS,$DBCON;
+	public $TRAN=true;
+	function MI() {}
+	function ERROR($msg) {printf("MySQL Error : %s\n",$msg);exit;}
+	function Conn($data='',$user='',$pass='',$host='',$char='') {$this->DATA=($data!=false)?$data:'hamonitr';$this->USER=($user!=false)?$user:'hamonitr';$this->PASS=($pass!=false)?$pass:'gkahslzk!$(';$this->HOST=($host!=false)?$host:'www.hamonikr.org';$this->DBCON=new mysqli($this->HOST,$this->USER,$this->PASS,$this->DATA);if(!$this->DBCON){$this->ERROR(mysqli_connect_error());}$char=($char!=false)?$char:'utf8';mysqli_query($this->DBCON,'set names '.$char);return $this->DBCON;}
+//	function Query($sql,$show=false) {if($show==true){echo '<br><br>'.$sql.'<br><br>';exit;}$result=mysqli_query($this->DBCON,$sql) or die ($this->ERROR('Query Error =><br /><br />'.$sql.'<br /><br />'.mysqli_error($this->DBCON)));if($result){$this->TRAN=true;return $result;}else{$this->TRAN=false;return false;}}
+	function Query($sql,$show=false) {if($show==true){echo '<br><br>'.$sql.'<br><br>';exit;}$result=mysqli_query($this->DBCON,$sql) or die ($this->ERROR('<br /><br />죄송합니다.<br /><br />현재 접속이 원활하지 않습니다.<br /><br />잠시 후에 다시 접속해 주시기 바랍니다.<br /><br />지속적인 오류 발생 시 hamoroot@gmail.com 로 문의 바랍니다.<br /><br />'));if($result){$this->TRAN=true;return $result;}else{$this->TRAN=false;return false;}}
+	function Close() {mysqli_close($this->DBCON);}
+	function Begin() {$this->Query('set autocommit = 0;');$this->Query('begin;');}
+	function Commit() {if($this->TRAN){$this->Query('commit');}else{$this->Query('rollback');$this->TRAN=false;}return $this->TRAN;}
+	function Lock($table,$opt) {return $this->Query('lock tables '.$table.' '.$opt);}
+	function Unlock($table) {return $this->Query('unlock tables '.$table);}
+	function InsertID() {return mysqli_insert_id($this->DBCON);}
+	# Extends
+	function NRow($sql) {return mysqli_num_rows($this->Query($sql));}
+	function FRow($sql) {return mysqli_fetch_row($this->Query($sql));}
+	function FAss($sql) {return mysqli_fetch_assoc($this->Query($sql));}
+	function FArr($sql) {return mysqli_fetch_array($this->Query($sql));}
+	function KRow($sql,$show=false) {if($show!=false){echo '<br><br>'.$sql.'<br><br>';exit;}$res=Array();if($result=$this->Query($sql)) while($row=$result->fetch_row()) $res[]=$row;$res['Count']=count($res);return $res;}
+	function KAss($sql,$show=false) {if($show!=false){echo '<br><br>'.$sql.'<br><br>';exit;}$res=Array();if($result=$this->Query($sql)) while($row=$result->fetch_assoc()) $res[]=$row;$res['Count']=count($res);return $res;}
+	function KArr($sql,$show=false) {if($show!=false){echo '<br><br>'.$sql.'<br><br>';exit;}$res=Array();if($result=$this->Query($sql)) while($row=$result->fetch_array()) $res[]=$row;$res['Count']=count($res);return $res;}
+
+
+	Function Total($Table,$Colm,$Whe="",$Ord="",$Limit="",$Group="",$View=""){
+		$C=(!$Colm)?"*":$Colm;
+		if($Whe!=""){
+			$W=eregi_replace(",,","##",$Whe);
+			$W=eregi_replace(","," and ",$W);
+			$W=eregi_replace("##",",",$W);
+			$W=" where ".$W;
+		}
+		$O=(!$Ord)?"":" order by ".eregi_replace("="," ",$Ord);
+		$L=(!$Limit)?"":" limit ".$Limit;
+		$G=(!$Group)?"":" group by ".$Group;
+		$this->SQL="select $C from $Table $W $G $O $L";
+		if($View!=false){
+			echo $this->SQL;
+			exit;
+		}else{
+			return $this->TotalNum();
+		}
+	}
+
+	Function Sele($Table,$Colm,$Whe="",$Chk="",$Ord="",$Limit="",$Group="",$View=""){
+		$C=(!$Colm)?"*":$Colm;
+		if($Whe!=""){
+			$W=eregi_replace(",,","##",$Whe);
+			$W=eregi_replace(","," and ",$W);
+			$W=eregi_replace("##",",",$W);
+			$W=" where ".$W;
+		}
+		$O=(!$Ord)?"":" order by ".eregi_replace("="," ",$Ord);
+		$L=(!$Limit)?"":" limit ".$Limit;
+		$G=(!$Group)?"":" group by ".$Group;
+		$this->SQL="select $C from $Table $W $G $O $L";
+
+		if($_REQUEST[sun]) echo $this->SQL."<br/>"; // kbh
+
+		if($View!=false){
+			echo $this->SQL;exit;
+		}else{
+			if($Chk!=false){
+				return $this->FArr($this->SQL);
+			}else{
+				return $this->FRow($this->SQL);
+			}
+		}
+	}
+}
+?>

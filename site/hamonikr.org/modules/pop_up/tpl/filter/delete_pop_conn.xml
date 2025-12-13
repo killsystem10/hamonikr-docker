@@ -1,0 +1,10 @@
+<filter name="delete_pop_conn" module="pop_up" act="procPop_upAdminDeletePopupConn">
+    <form>
+        <node target="popup_conn_srl" required="true" />
+    </form>
+    <response callback_func="completeDeletePopupConn">
+        <tag name="error" />
+        <tag name="message" />
+        <tag name="page" />
+    </response>
+</filter>

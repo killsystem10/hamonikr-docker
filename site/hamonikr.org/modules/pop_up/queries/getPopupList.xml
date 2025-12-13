@@ -1,0 +1,20 @@
+<query id="getPopupList" action="select">
+    <tables>
+        <table name="pop_ups" />
+        <table name="modules" alias="target_modules" type="left join"/>
+    </tables>
+    <columns>
+        <column name="pop_ups.*" />
+        <column name="target_modules.mid" alias="target_mid"/>
+    </columns>
+    <conditions>
+        <condition operation="equal" column="pop_ups.popup_conn_srl" var="popup_conn_srl" />
+        <condition operation="equal" column="target_modules.module_srl" default="pop_ups.target_srl" pipe="and" />
+    </conditions>
+    <navigation>
+        <index var="sort_index" default="popup_conn_srl" order="desc" />
+        <list_count var="list_count" default="20" />
+        <page_count var="page_count" default="10" />
+        <page var="page" default="1" />
+    </navigation>
+</query>

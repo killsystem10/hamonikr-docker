@@ -1,0 +1,26 @@
+<query id="insertPopupConn" action="insert">
+    <tables>
+        <table name="pop_ups" />
+    </tables>
+    <columns>
+        <column name="popup_conn_srl" var="popup_conn_srl" notnull="notnull" />
+        <column name="document_srl" var="document_srl" />
+        <column name="popup_name" var="popup_name" default="" notnull="notnull"/>
+        <column name="target_type" var="target_type" notnull="notnull" default="module" />
+        <column name="target_srl" var="target_srl" notnull="notnull" default="0"/>
+        <column name="popup_type" var="popup_type" notnull="notnull" default="data" />
+		<column name="popup_url" var="popup_url" notnull="notnull" default="" />
+		<column name="popup_linkto" var="popup_linkto" default="" />
+		<column name="popup_linkto_newwindow" var="popup_linkto_newwindow" default="" />
+		<column name="popup_data" var="popup_data" notnull="notnull" default="" />
+		<column name="open_type" var="open_type" default="outter" />
+		<column name="exp_days" var="exp_days" default="1" />
+        <column name="width" var="width" default="" />
+        <column name="height" var="height" default="" />
+        <column name="top" var="top" default=""/>
+        <column name="left" var="left" default=""/>
+        <column name="startdate" var="startdate" default="curdate()" notnull="notnull"/>
+        <column name="enddate" var="enddate" default="curdate()" notnull="notnull"/>
+        <column name="regdate" var="regdate" default="curdate()" notnull="notnull"/>
+    </columns>
+</query>

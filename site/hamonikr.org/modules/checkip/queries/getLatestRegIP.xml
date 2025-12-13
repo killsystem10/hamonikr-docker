@@ -1,0 +1,15 @@
+<query id="getLatestRegIp" action="select">
+	<tables>
+		<table name="member_checkip" />
+	</tables>
+	<columns>
+		<column name="regdate" />
+	</columns>
+	<conditions>
+		<condition operation="equal" column="reg_ip" var="reg_ip" />
+	</conditions>
+	<navigation>
+		<index var="sort_index" default="regdate" order="order_type" />
+		<list_count var="list_count" default="1" />
+	</navigation>
+</query>

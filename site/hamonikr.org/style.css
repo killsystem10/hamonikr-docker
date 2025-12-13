@@ -1,0 +1,12 @@
+* {margin:0xp;padding:0px;list-style:none;font-family:'Pretendard', Verdana;}
+#wrap {width:100%;float:left;padding-bottom:50px;}
+.Butt {-moz-box-shadow:inset 0px 1px 0px 0px #caefab;-webkit-box-shadow:inset 0px 1px 0px 0px #caefab;box-shadow:inset 0px 1px 0px 0px #caefab;background-color:#77d42a;-webkit-border-top-left-radius:0px;-moz-border-radius-topleft:0px;border-top-left-radius:0px;-webkit-border-top-right-radius:0px;-moz-border-radius-topright:0px;border-top-right-radius:0px;-webkit-border-bottom-right-radius:0px;-moz-border-radius-bottomright:0px;border-bottom-right-radius:0px;-webkit-border-bottom-left-radius:0px;-moz-border-radius-bottomleft:0px;border-bottom-left-radius:0px;text-indent:0;border:1px solid #268a16;display:inline-block;color:#306108;font-family:Arial;font-size:15px;font-weight:bold;font-style:normal;height:40px;line-height:40px;width:100px;text-decoration:none;text-align:center;text-shadow:1px 1px 0px #aade7c;}
+.Butt:hover {background-color:#5cb811;}
+.Butt:active {position:relative;top:1px;}
+.Butt_ {-moz-box-shadow:inset 0px 1px 0px 0px #caefab;-webkit-box-shadow:inset 0px 1px 0px 0px #caefab;box-shadow:inset 0px 1px 0px 0px #caefab;background-color:#c0c0c0;-webkit-border-top-left-radius:0px;-moz-border-radius-topleft:0px;border-top-left-radius:0px;-webkit-border-top-right-radius:0px;-moz-border-radius-topright:0px;border-top-right-radius:0px;-webkit-border-bottom-right-radius:0px;-moz-border-radius-bottomright:0px;border-bottom-right-radius:0px;-webkit-border-bottom-left-radius:0px;-moz-border-radius-bottomleft:0px;border-bottom-left-radius:0px;text-indent:0;border:1px solid #646464;display:inline-block;color:#306108;font-family:Arial;font-size:15px;font-weight:bold;font-style:normal;height:40px;line-height:40px;width:100px;text-decoration:none;text-align:center;text-shadow:1px 1px 0px #aade7c;}
+.Butt_:hover {background-color:#5cb811;}
+.Butt_:active {position:relative;top:1px;}
+td {font-size:12px;font-family:verdana;vertical-align:middle;}
+td a, a:link {font-family:verdana;vertical-align:middle;}
+
+td select {vertical-align:middle;margin:0px;}

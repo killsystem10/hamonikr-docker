@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="0.2">
+    <title xml:lang="ko">가가토끼 MOD - 원 클릭 스팸 킬</title>
+    <description xml:lang="ko">가가토끼 MOD - 원 클릭 스팸 킬</description>
+    <version>1.0</version>
+    <date>2009-12-07</date>
+    <category>accessory</category>
+
+    <author email_address="digirave@kmle.com" link="http://www.gagalive.kr">
+        <name xml:lang="ko">가가토끼</name>
+    </author>
+</module>

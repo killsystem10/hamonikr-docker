@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+	<grants>
+		<grant name="list" default="guest">
+			<title xml:lang="ko">목록</title>
+			<title xml:lang="zh-CN">目录</title>
+			<title xml:lang="jp">リスト</title>
+			<title xml:lang="en">list</title>
+			<title xml:lang="vi">Danh sách</title>
+			<title xml:lang="es">Lista</title>
+			<title xml:lang="zh-TW">列表</title>
+			<title xml:lang="tr">Liste</title>
+		</grant>
+		<grant name="view" default="guest">
+			<title xml:lang="ko">열람</title>
+			<title xml:lang="zh-CN">查看</title>
+			<title xml:lang="jp">閲覧</title>
+			<title xml:lang="en">view</title>
+			<title xml:lang="vi">Xem</title>
+			<title xml:lang="es">Opinión</title>
+			<title xml:lang="zh-TW">檢視</title>
+			<title xml:lang="tr">görüş</title>
+		</grant>
+		<grant name="write_document" default="guest">
+			<title xml:lang="ko">글 작성</title>
+			<title xml:lang="zh-CN">发表新主题</title>
+			<title xml:lang="jp">書き込み作成</title>
+			<title xml:lang="en">write document</title>
+			<title xml:lang="vi">Gửi bài viết</title>
+			<title xml:lang="es">Escribir el documento</title>
+			<title xml:lang="zh-TW">發表主題</title>
+			<title xml:lang="tr">belge yaz</title>
+		</grant>
+		<grant name="write_comment" default="guest">
+			<title xml:lang="ko">댓글 작성</title>
+			<title xml:lang="zh-CN">发表评论</title>
+			<title xml:lang="jp">コメント作成</title>
+			<title xml:lang="en">write comment</title>
+			<title xml:lang="vi">Gửi bình luận</title>
+			<title xml:lang="es">Escribir comentario</title>
+			<title xml:lang="zh-TW">發表評論</title>
+			<title xml:lang="es">yorum yaz</title>
+		</grant>
+	</grants>
+	<permissions>
+		<permission action="dispHtrAdminInsertHtr" target="manager" />
+		<permission action="dispHtrAdminHtrInfo" target="manager" />
+		<permission action="dispHtrAdminExtraVars" target="manager" />
+		<permission action="dispHtrAdminHtrAdditionSetup" target="manager" />
+		<permission action="dispHtrAdminSkinInfo" target="manager" />
+
+		<permission action="procHtrAdminInsertHtr" target="manager" />
+		<permission action="procHtrAdminUpdateHtrFroBasic" target="manager" />
+		<permission action="procHtrAdminSaveCategorySettings" target="manager" />
+
+		<permission action="getHtrAdminSimpleSetup" target="manager" />
+	</permissions>
+	<actions>
+		<action name="dispHtrContent" type="view" index="true" />
+		<action name="dispHtrNoticeList" type="view" />
+		<action name="dispHtrContentList" type="view" />
+		<action name="dispHtrContentView" type="view" />
+		<action name="dispHtrCatogoryList" type="view" />
+		<action name="dispHtrContentCommentList" type="view" />
+		<action name="dispHtrContentFileList" type="view" />
+
+		<action name="dispHtrTagList" type="view" />
+		<action name="dispHtrWrite" type="view" standalone="false" />
+		<action name="dispHtrDelete" type="view" standalone="false" />
+		<action name="dispHtrWriteComment" type="view" standalone="false" />
+		<action name="dispHtrReplyComment" type="view" standalone="false" />
+		<action name="dispHtrModifyComment" type="view" standalone="false" />
+		<action name="dispHtrDeleteComment" type="view" standalone="false" />
+		<action name="dispHtrDeleteTrackback" type="view" standalone="false" />
+		<action name="dispHtrMessage" type="view" />
+
+		<action name="procHtrInsertDocument" type="controller" ruleset="insertDocument" standalone="false" />
+		<action name="procHtrDeleteDocument" type="controller" standalone="false" />
+		<action name="procHtrVoteDocument" type="controller" standalone="false" />
+		<action name="procHtrInsertComment" type="controller" standalone="false" />
+		<action name="procHtrDeleteComment" type="controller" standalone="false" />
+		<action name="procHtrDeleteTrackback" type="controller" standalone="false" />
+		<action name="procHtrVerificationPassword" type="controller" />
+		<action name="procHtrDeleteFile" type="controller" standalone="false" />
+		<action name="procHtrUploadFile" type="controller" standalone="false" />
+		<action name="procHtrDownloadFile" type="controller" standalone="false" />
+
+		<action name="dispHtrAdminContent" type="view" admin_index="true" menu_name="htr" menu_index="true" />
+		<action name="dispHtrAdminHtrInfo" type="view"  menu_name="htr" />
+		<action name="dispHtrAdminExtraVars" type="view"  menu_name="htr" />
+		<action name="dispHtrAdminHtrAdditionSetup" type="view" menu_name="htr"  />
+		<action name="dispHtrAdminInsertHtr" type="view" setup_index="true" menu_name="htr" />
+		<action name="dispHtrAdminDeleteHtr" type="view" menu_name="htr"  />
+		<action name="dispHtrAdminSkinInfo" type="view" menu_name="htr"  />
+		<action name="dispHtrAdminMobileSkinInfo" type="view" menu_name="htr"  />
+		<action name="dispHtrAdminGrantInfo" type="view" menu_name="htr"  />
+		<action name="dispHtrAdminCategoryInfo" type="view" menu_name="htr"  />
+		<action name="procHtrAdminInsertHtr" type="controller" ruleset="insertHtr" />
+		<action name="procHtrAdminDeleteHtr" type="controller" />
+		<action name="procHtrAdminUpdateHtrFroBasic" type="controller" ruleset="insertHtrForBasic" />
+		<action name="procHtrAdminSaveCategorySettings" type="controller" ruleset="saveCategorySettings" />
+
+		<action name="getHtrAdminSimpleSetup" type="model" simple_setup_index="true" />
+
+		<action name="dispHtrCategory" type="mobile" />
+		<action name="getHtrCommentPage" type="mobile" />
+	</actions>
+	<menus>
+		<menu name="htr" type="all">
+			<title xml:lang="en">HamoniTR</title>
+			<title xml:lang="ko">하모니타</title>
+			<title xml:lang="zh-CN">Htr</title>
+			<title xml:lang="jp">Htr</title>
+			<title xml:lang="es">Htr</title>
+			<title xml:lang="ru">Htr</title>
+			<title xml:lang="fr">Htr</title>
+			<title xml:lang="zh-TW">Htr</title>
+			<title xml:lang="vi">Htr</title>
+			<title xml:lang="mn">Htr</title>
+			<title xml:lang="tr">Htr</title>
+		</menu>
+	</menus>
+</module>

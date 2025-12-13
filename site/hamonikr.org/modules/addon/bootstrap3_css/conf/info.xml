@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon version="0.2">
+    <title xml:lang="ko">Bootstrap 3 CSS</title>
+    <title xml:lang="en">Bootstrap 3 CSS</title>
+    <description xml:lang="ko">
+	    Twitter Bootstrap 3 CSS를 불러오는 애드온입니다. 충돌을 방지하기 위해 .bs3-wrap 을 상위 요소의 class 속성에 추가하기 바랍니다.
+    </description>
+    <version>1.0</version>
+    <date>2013-12-30</date>
+
+    <author email_address="wincomi@me.com" link="http://www.wincomi.com">
+        <name xml:lang="ko">윈컴이</name>
+    </author>
+</addon>

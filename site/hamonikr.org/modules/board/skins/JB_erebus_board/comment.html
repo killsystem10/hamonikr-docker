@@ -1,0 +1,105 @@
+
+<div class="feedbackList" id="comment" cond="$oDocument->getCommentCount()">
+	<h3 class="feedbackHeader" cond="$grant->write_comment && $oDocument->allowComment()">
+			{$lang->comment} <em>'{$oDocument->getCommentcount()}'</em>
+	</h3>
+	
+	<div class="replyList">
+		{@ $_comment_list = $oDocument->getComments() }
+		<block loop="$oDocument->getComments()=>$key,$comment">
+			<div class="round6 item <!--@if($comment->get('depth'))-->itemReply<!--@end-->" id="comment_{$comment->comment_srl}">
+				<div class="indent" style="margin-left:{($comment->get('depth'))*15}px"|cond="$comment->get('depth')">
+				
+					<div class="itemAside">
+						<img src="{$comment->getProfileImage()}" alt="profile" class="profile" cond="$comment->getProfileImage()" />
+						<img src="img/common/profile_photo.gif" alt="profile" class="profile" cond="!$comment->getProfileImage()" />
+
+						<div class="profile_info">
+							<!-- // 작성자 이름 출력 -->
+							<h4 class="header" cond="!$comment->member_srl">
+								<a href="{$comment->homepage}" onclick="window.open(this.href);return false;" cond="$comment->homepage">{$comment->getNickName()}</a>
+								<strong cond="!$comment->homepage">{$comment->getNickName()}</strong>
+							</h4>
+							<h4 class="header" cond="$comment->member_srl">
+								<a href="#popup_menu_area" class="member_{$comment->member_srl}" onclick="return false">{$comment->getNickName()}</a>
+							</h4>
+
+							<span class="meta">
+								{$comment->getRegdate('Y.m.d')} {$comment->getRegdate('H:i')}
+								<block cond="$grant->manager || $module_info->display_ip_address!='N'"><br />{$comment->getIpaddress()}</block>
+							</span>
+							
+							<!-- // 추천표시 출력 -->
+							<dl class="vote" cond="$comment->get('voted_count')!=0 || $comment->get('blamed_count') != 0">
+								<dt class="love"><span>{$lang->cmd_vote}</span></dt>
+								<dd>{$comment->get('voted_count')?$comment->get('voted_count'):0}</dd>
+								<dt class="hate"><span>{$lang->cmd_vote_down}</span></dt>
+								<dd>{$comment->get('blamed_count')?$comment->get('blamed_count'):0}</dd>
+							</dl>
+						</div>
+						
+					</div><!-- // itemAside end -->
+
+					<div class="itemContent">
+						<!--@if(!$comment->isAccessible())-->
+							<form action="./" method="get" onsubmit="return procFilter(this, input_password)" class="secretMessage">
+							<input type="hidden" name="mid" value="{$mid}" />
+							<input type="hidden" name="page" value="{$page}" />
+							<input type="hidden" name="document_srl" value="{$comment->get('document_srl')}" />
+							<input type="hidden" name="comment_srl" value="{$comment->get('comment_srl')}" />
+								<p>&quot;{$lang->msg_is_secret}&quot;</p>
+								<dl>
+									<dt><label for="cpw">{$lang->password}</label> :</dt>
+									<dd><input type="password" id="cpw" name="password" class="inputText" /><span class="buttonOfficial"><input type="submit" value="{$lang->cmd_input}" /></span></dd>
+								</dl>
+							</form>
+						<!--@else-->
+
+							<!-- // 댓글 출력 -->
+							{$comment->getContent(false)}
+
+							<!-- // 첨부파일 출력 -->
+							<dl class="attachedFile" cond="$comment->hasUploadedFIles()">
+								<dt><img src="./img/common/iconFiles.gif" width="27" height="11" alt="{$lang->uploaded_file}" /> 
+									<button type="button" class="fileToggle" onclick="jQuery(this).parents('dl.attachedFile').toggleClass('open');return false;">{$lang->uploaded_file} ({$comment->get('uploaded_count')})</button>
+								</dt>
+								<dd>
+									<ul class="files">
+										{@ $_uploaded_files = $comment->getUploadedFiles() }
+										<!--@foreach($_uploaded_files as $key => $file)-->
+										<li><a href="{getUrl('')}{$file->download_url}">{$file->source_filename} <span class="bubble">[File Size:{FileHandler::filesize($file->file_size)}/Download{number_format($file->download_count)}]</span></a></li>
+										<!--@end-->
+									</ul>
+								</dd>
+							</dl>
+
+							<ul class="option">
+								<li class="wouldYou" cond="$is_logged"><a href="#popup_menu_area" class="comment_{$comment->comment_srl}">{$lang->cmd_comment_do}</a></li>
+								<li><a href="{getUrl('act','dispBoardReplyComment','comment_srl',$comment->comment_srl)}">{$lang->cmd_reply}</a></li> 
+							<block cond="$comment->isGranted() || !$comment->get('member_srl')">
+								<li><a href="{getUrl('act','dispBoardModifyComment','comment_srl',$comment->comment_srl)}">{$lang->cmd_modify}</a></li> 
+								<li><a href="{getUrl('act','dispBoardDeleteComment','comment_srl',$comment->comment_srl)}">{$lang->cmd_delete}</a></li>
+							</block>
+							</ul>
+						<!--@end-->
+					</div><!-- // itemContent end -->
+					
+				</div><!-- // indent end -->
+
+			</div><!-- // item end -->
+		</block>
+
+	</div><!-- // replyList end -->
+
+    <!-- // 댓글 페이지표시 -->
+    <div class="pagination" cond="$oDocument->comment_page_navigation">
+        <a href="{getUrl('cpage',1)}#comment" title="{$lang->first_page}" class="prevEnd"><span>{$lang->first_page}</span></a> 
+		<block loop="$page_no=$oDocument->comment_page_navigation->getNextPage()">
+			<strong class="page_on" cond="$cpage==$page_no">{$page_no}</strong> 
+			<a href="{getUrl('cpage',$page_no)}#comment" class="page_no" cond="$cpage!=$page_no">{$page_no}</a>
+        </block>
+        <a href="{getUrl('cpage',$oDocument->comment_page_navigation->last_page)}#comment" title="{$lang->last_page}" class="nextEnd"><span>{$lang->last_page}</span></a>
+    </div>
+
+</div>
+

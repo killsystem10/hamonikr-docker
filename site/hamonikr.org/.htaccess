@@ -1,0 +1,124 @@
+RewriteEngine On
+
+# deny access to files that may contain sensitive information
+RewriteRule ^(.*/)?\.(editor|git|ht|jshint|travis) - [L,F]
+RewriteRule ^(codeception(.*)\.yml|composer(.*)\.(json|lock)|package\.json)$ - [L,F]
+RewriteRule ^files/(attach|config|cache/store)/.+\.(ph(p|t|ar)?[0-9]?|p?html?|cgi|pl|exe|(a|j)sp|inc)$ - [L,F]
+RewriteRule ^files/(env|member_extra_info/(new_message_flags|point))/ - [L,F]
+
+# reserve XE Layout Template Source File (*.html)
+RewriteRule ^(layouts|m.layouts|files/faceOff)/(.+)\.html$ - [L,F]
+# reserve XE Template Source Files (*.html)
+RewriteCond %{REQUEST_URI} !/modules/editor/
+RewriteRule /(skins|m.skins)/(.+)\.html$ - [L,F]
+
+# conf, query, schema
+RewriteRule ^(modules|addons|widgets)/(.+)/(conf|queries|schemas)/(.+)\.xml$ ./index.php [L]
+
+# static files
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^(.+)/files/(member_extra_info|attach|cache|faceOff)/(.*) ./files/$2/$3 [L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^(.+)/(files|modules|widgets|widgetstyles|layouts|m.layouts|addons)/(.*) ./$2/$3 [L]
+
+# rss , blogAPI
+RewriteRule ^(rss|atom)$ ./index.php?module=rss&act=$1 [L]
+RewriteRule ^([a-zA-Z0-9_]+)/(rss|atom|api)$ ./index.php?mid=$1&act=$2 [L]
+RewriteRule ^([a-zA-Z0-9_]+)/([a-zA-Z0-9_]+)/(rss|atom|api)$ ./index.php?vid=$1&mid=$2&act=$3 [L]
+
+# trackback
+RewriteRule ^([0-9]+)/(.+)/trackback$ ./index.php?document_srl=$1&key=$2&act=trackback [L]
+RewriteRule ^([a-zA-Z0-9_]+)/([0-9]+)/(.+)/trackback$ ./index.php?mid=$1&document_srl=$2&key=$3&act=trackback [L]
+RewriteRule ^([a-zA-Z0-9_]+)/([0-9]+)/(.+)/trackback$ ./index.php?vid=$1&document_srl=$2&key=$3&act=trackback [L]
+RewriteRule ^([a-zA-Z0-9_]+)/([a-zA-Z0-9_]+)/([0-9]+)/(.+)/trackback$ ./index.php?vid=$1&mid=$2&document_srl=$3&key=$4&act=trackback [L]
+
+# document permanent link
+RewriteRule ^([0-9]+)$ ./index.php?document_srl=$1 [L,QSA]
+
+# mid link
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9_]+)/?$ ./index.php?mid=$1 [L,QSA]
+# mid + document link
+RewriteRule ^([a-zA-Z0-9_]+)/([0-9]+)$ ./index.php?mid=$1&document_srl=$2 [L,QSA]
+
+# vid + mid link
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9_]+)/([a-zA-Z0-9_]+)/?$ ./index.php?vid=$1&mid=$2 [L,QSA]
+# vid + mid + document link
+RewriteRule ^([a-zA-Z0-9_]+)/([a-zA-Z0-9_]+)/([0-9]+)$ ./index.php?vid=$1&mid=$2&document_srl=$3 [L,QSA]
+
+# mid + entry title
+RewriteRule ^([a-zA-Z0-9_]+)/entry/(.+)$ ./index.php?mid=$1&entry=$2 [L,QSA]
+# vid + mid + entry title
+RewriteRule ^([a-zA-Z0-9_]+)/([a-zA-Z0-9_]+)/entry/(.+)$ ./index.php?vid=$1&mid=$2&entry=$3 [L,QSA]
+
+#shop / vid / [category|product] / identifier
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^([a-zA-Z0-9_]+)/([a-zA-Z0-9_]+)/([a-zA-Z0-9_\.-]+)$ ./index.php?act=route&vid=$1&type=$2&identifier=$3 [L,QSA]
+
+Options All -Indexes
+
+# Block Bad Bots & Scrapers
+SetEnvIfNoCase User-Agent "^AhrefsBot" bad_bot
+SetEnvIfNoCase User-Agent "AhrefsBot" bad_bot
+SetEnvIfNoCase User-Agent "AhrefsBot/7.0" bad_bot
+SetEnvIfNoCase User-Agent "Aboundex" bad_bot
+SetEnvIfNoCase User-Agent "80legs" bad_bot
+SetEnvIfNoCase User-Agent "360Spider" bad_bot
+SetEnvIfNoCase User-Agent "^Java" bad_bot
+SetEnvIfNoCase User-Agent "^Cogentbot" bad_bot
+SetEnvIfNoCase User-Agent "^Alexibot" bad_bot
+SetEnvIfNoCase User-Agent "^asterias" bad_bot
+SetEnvIfNoCase User-Agent "^attach" bad_bot
+SetEnvIfNoCase User-Agent "^BackDoorBot" bad_bot
+SetEnvIfNoCase User-Agent "^BackWeb" bad_bot
+SetEnvIfNoCase User-Agent "Bandit" bad_bot
+SetEnvIfNoCase User-Agent "^BatchFTP" bad_bot
+SetEnvIfNoCase User-Agent "^Bigfoot" bad_bot
+SetEnvIfNoCase User-Agent "^Black.Hole" bad_bot
+SetEnvIfNoCase User-Agent "^BlackWidow" bad_bot
+SetEnvIfNoCase User-Agent "^BlowFish" bad_bot
+SetEnvIfNoCase User-Agent "^BotALot" bad_bot
+SetEnvIfNoCase User-Agent "Buddy" bad_bot
+SetEnvIfNoCase User-Agent "^BuiltBotTough" bad_bot
+SetEnvIfNoCase User-Agent "^Bullseye" bad_bot
+SetEnvIfNoCase User-Agent "^BunnySlippers" bad_bot
+SetEnvIfNoCase User-Agent "^Cegbfeieh" bad_bot
+SetEnvIfNoCase User-Agent "^CheeseBot" bad_bot
+SetEnvIfNoCase User-Agent "^CherryPicker" bad_bot
+SetEnvIfNoCase User-Agent "^ChinaClaw" bad_bot
+SetEnvIfNoCase User-Agent "Collector" bad_bot
+SetEnvIfNoCase User-Agent "Copier" bad_bot
+SetEnvIfNoCase User-Agent "^CopyRightCheck" bad_bot
+SetEnvIfNoCase User-Agent "^cosmos" bad_bot
+SetEnvIfNoCase User-Agent "^Crescent" bad_bot
+SetEnvIfNoCase User-Agent "^Custo" bad_bot
+SetEnvIfNoCase User-Agent "^AIBOT" bad_bot
+SetEnvIfNoCase User-Agent "^DISCo" bad_bot
+SetEnvIfNoCase User-Agent "^DIIbot" bad_bot
+SetEnvIfNoCase User-Agent "^DittoSpyder" bad_bot
+SetEnvIfNoCase User-Agent "^Download\ Demon" bad_bot
+SetEnvIfNoCase User-Agent "^Download\ Devil" bad_bot
+SetEnvIfNoCase User-Agent "^Download\ Wonder" bad_bot
+
+## <--- Start Apache Version 2.4
+<RequireAll>
+    Require all granted
+    Require not env bad_bot
+    Require not ip 27.72.60
+    Require not ip 46.229.168
+    Require not ip 50.62.208.94
+    Require not ip 51.255.208
+    Require not ip 112.64.33.92
+    Require not ip 104.131.0
+    Require not ip 104.131.68
+    Require not ip 104.131.169.194
+    Require not ip 159.65.242.236
+    Require not ip 180.249.254.198
+    Require not ip 216.244.66.241
+##  Uncomment the line below to add hosts you wish to block
+#    Require not host example-1.com example-2.com example-3.net
+##  Uncomment the line below to add extensions you wish to block and replace xx yy and zz with the two letter code
+#    Require not host .xx .yy .zz
+</RequireAll>
+## End Apache Version 2.4 --->

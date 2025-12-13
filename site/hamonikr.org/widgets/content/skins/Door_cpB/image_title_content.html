@@ -1,0 +1,116 @@
+
+
+		
+<!--@if($widget_info->markup_type=="list")-->
+<div class="DWZineB DWZineB{$widget_info->cols_list_count}">
+	<div class="clearBoth">
+	{@$_idx=0}
+	<!--@foreach($widget_info->content_items as $key => $item)-->
+		<div class="DWZineB_item DWZineB_item{$_idx}">
+			
+				
+			<div class="in_DWZineB_item">
+				<p class="DWZineB_item_thumbArea">
+					<!--@if($item->getThumbnail())-->
+					<a class="DWZineB_item_img" href="{$item->getLink()}" target="_blank"|cond="$widget_info->new_window"><img src="{$item->getThumbnail()}" alt=""></a>
+					<!--@else-->
+					<a class="DWZineB_item_img" href="{$item->getLink()}" target="_blank"|cond="$widget_info->new_window"><img src="img/noneLarge_img.gif" alt=""></a>
+					<!--@end-->
+				</p>
+				<!--@for($j=0,$c=count($widget_info->option_view_arr);$j<$c;$j++)-->
+				<!--@if($widget_info->option_view_arr[$j]=='title')-->
+				<h3 class="slide_title">
+					<a href="{$item->getLink()}" class="title dw_color" target="_blank"|cond="$widget_info->new_window">{$item->getTitle($widget_info->subject_cut_size)}</a>
+				</h3>
+				<!--@else if($widget_info->option_view_arr[$j]=='regdate')-->
+				<div class="wrap_date">
+					<div class="wrap_DW_Rep">
+						 <span class="wrap_date"><i class="xi-calendar"></i><span class="slide_block">{$item->getRegdate("m-d")}</span></span>
+						 <!--@if($widget_info->show_comment_count=='Y' && $item->getCommentCount())-->
+						<span class="DW_Rep">
+							<i class="xi-message"></i><a href="{$item->getLink()}#comment" class="DW_Replies"><span>{$item->getCommentCount()}</span></a>
+						</span>
+						<!--@elseif($widget_info->show_comment_count=='Y')-->
+						<span class="DW_Rep">
+							<i class="xi-message"></i><span class="DW_Replies">0</span>
+						</span>
+						<!--@end-->
+						<!--@if($widget_info->option_view_arr[$j+1]=='nickname')-->
+						<span class="DW_Rep DW_Nic">
+							<i class="xi-pen"></i><a <!--@if($item->getMemberSrl())-->href="#" onclick="return false;" class="author member_{$item->getMemberSrl()}"<!--@elseif($item->getAuthorSite())-->href="{$item->getAuthorSite()}" onclick="window.open(this.href); return false;" class="author member"<!--@else-->href="#" onclick="return false;" class="author member"<!--@end--> >{$item->getNickName($widget_info->nickname_cut_size)}</a>
+						</span>
+						<!--@end-->
+					</div>
+					
+				</div>
+				
+				<!--@else if($widget_info->option_view_arr[$j]=='content')-->
+				<p class="DWcontent">
+					<a href="{$item->getLink()}" class="title" target="_blank"|cond="$widget_info->new_window">{$item->getContent()}</a>	
+				</p>
+				
+				<!--@end-->
+				<!--@end-->
+			</div>
+		</div>
+		{@$_idx++}
+	<!--@end-->
+	</div>
+</div>
+<!--@else-->
+<div class="DWZineA">
+	<div>
+	{@$_idx=0}
+	<!--@foreach($widget_info->content_items as $key => $item)-->
+		<div class="DWZineA_item DWZineA_item{$_idx}">
+			<div class="wrap_slide_titleB clearBoth">
+				<p class="DWZineA_item_thumbArea" style="width:{$widget_info->thumbnail_width}px;margin-right:-{$widget_info->thumbnail_width+2}px;">
+					<!--@if($item->getThumbnail())-->
+					<a class="DWZineA_item_img" href="{$item->getLink()}" target="_blank"|cond="$widget_info->new_window"><img src="{$item->getThumbnail()}"   alt=""></a>
+					<!--@else-->
+					<a class="DWZineA_item_img" href="{$item->getLink()}" target="_blank"|cond="$widget_info->new_window"><img src="img/noneMin_img.gif"  style="width:{$widget_info->thumbnail_width}px;height:{$widget_info->thumbnail_height}px;" alt=""></a>
+					<!--@end-->
+				</p>
+				<div class="in_DWZineA_item" style="margin-left:{$widget_info->thumbnail_width+15}px;">
+					<!--@for($j=0,$c=count($widget_info->option_view_arr);$j<$c;$j++)-->
+					<!--@if($widget_info->option_view_arr[$j]=='title')-->
+					<h3 class="slide_title">
+						<a href="{$item->getLink()}" class="title dw_color" target="_blank"|cond="$widget_info->new_window">{$item->getTitle($widget_info->subject_cut_size)}</a>
+					</h3>
+					<!--@else if($widget_info->option_view_arr[$j]=='regdate')-->
+					<div class="wrap_date">
+						<div class="wrap_DW_Rep">
+							 <span class="wrap_date"><i class="xi-calendar"></i><span class="slide_block">{$item->getRegdate("m-d")}</span></span>
+							 <!--@if($widget_info->show_comment_count=='Y' && $item->getCommentCount())-->
+							<span class="DW_Rep">
+								<i class="xi-message"></i><a href="{$item->getLink()}#comment" class="DW_Replies"><span>{$item->getCommentCount()}</span></a>
+							</span>
+							<!--@elseif($widget_info->show_comment_count=='Y')-->
+							<span class="DW_Rep">
+								<i class="xi-message"></i><span class="DW_Replies">0</span>
+							</span>
+							<!--@end-->
+							<!--@if($widget_info->option_view_arr[$j+1]=='nickname')-->
+							<span class="DW_Rep DW_Nic_B">
+								<i class="xi-pen"></i><a <!--@if($item->getMemberSrl())-->href="#" onclick="return false;" class="author member_{$item->getMemberSrl()}"<!--@elseif($item->getAuthorSite())-->href="{$item->getAuthorSite()}" onclick="window.open(this.href); return false;" class="author member"<!--@else-->href="#" onclick="return false;" class="author member"<!--@end--> >{$item->getNickName($widget_info->nickname_cut_size)}</a>
+							</span>
+							<!--@end-->
+						</div>
+					</div>
+					<!--@else if($widget_info->option_view_arr[$j]=='content')-->
+					<p class="DWcontent">
+						<a href="{$item->getLink()}" class="title" target="_blank"|cond="$widget_info->new_window">{$item->getContent()}</a>	
+					</p>
+					<!--@end-->
+					<!--@end-->
+				</div>
+			</div>	
+		</div>
+		{@$_idx++}
+	<!--@end-->
+	</div>
+</div>
+
+<!--@end-->
+
+				

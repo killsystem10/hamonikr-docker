@@ -1,0 +1,17 @@
+
+<div class="feedback" id="trackback" cond="$oDocument->getTrackbackCount()">
+	<h3 class="feedbackHeader">{$lang->trackback} <em>'{$oDocument->getTrackbackCount()}'</em></h3>    
+	<div class="trackbackList" id="trackback_{$val->trackback_srl}" loop="$oDocument->getTrackbacks()=>$key,$val" cond="$oDocument->getTrackbackCount()">
+		<p class="trackbackURL"><a href="{$oDocument->getTrackbackUrl()}" onclick="return false;">{$oDocument->getTrackbackUrl()}</a></p>
+		<h4 class="fb_header"><a href="{$val->url}" onclick="winopen(this.href);return false;">{htmlspecialchars($val->title)} - {htmlspecialchars($val->blog_name)}</a></h4>
+		<p class="fb_content">
+			<span class="date">{zdate($val->regdate, "Y.m.d H:i")}</span>
+			<span class="ip" cond="$grant->manager">{$val->ipaddress}</span>
+			<span class="expert">{$val->excerpt}</span>
+			<a href="{getUrl('act','dispBoardDeleteTrackback','trackback_srl',$val->trackback_srl)}" class="buttonOfficial" cond="$grant->manager"><span>{$lang->cmd_delete}</span></a>
+		</p>
+	</div>
+</div>
+
+
+

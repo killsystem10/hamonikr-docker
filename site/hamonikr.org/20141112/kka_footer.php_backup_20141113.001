@@ -1,0 +1,14 @@
+<div class="footer">
+	<p class="copy">
+    HamoniKR is free of charge (thanks to your donations and adverts on the website) and we hope you'll enjoy it. Some of the packages we distribute are under the GPL. If you want to access their source code you can use the apt-get source command. If you can't find what you're looking for please write to hamoroot@hamonikr.com and we'll provide the source to you.
+ HamoniKR is copyrighted 2014 and trademarked through the Linux Mark Institute. All rights reserved. Linux® is the registered trademark of Linus Torvalds in the U.S. and other countries.
+    </p>
+    <ul class="menu">
+	    </ul>
+</div>
+<!-- ETC -->
+
+
+<div class="wfsr"></div>
+<script src="/addons/autolink/autolink.js?20141102212527"></script><script src="/common/js/plugins/ui/jquery-ui.min.js?20141102212544"></script><script src="/common/js/plugins/ui/jquery.ui.datepicker-ko.js?20141102212544"></script><script src="/addons/resize_image/js/resize_image.min.js?20141102212531"></script><script src="/files/cache/js_filter_compiled/a97ea5de022a5cb99f59ef44008324a6.ko.compiled.js?20141103215009"></script><script src="/files/cache/ruleset/18518e6fe572de220334c8e270222a24.ko.js?20141102213156"></script></body>
+</html>

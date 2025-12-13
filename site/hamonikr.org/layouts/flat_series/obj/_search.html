@@ -1,0 +1,13 @@
+<!--// SEARCH -->
+<form class="fs-search" method="get" action="{getUrl('')}" no-error-return-url="true">
+	<legend>{$lang->cmd_search}</legend>
+	<input type="hidden" name="vid" value="{$vid}" />
+	<input type="hidden" name="mid" value="{$mid}"|cond="$li->search_type != 'fixed'" value="IS"|cond="$li->search_type == 'fixed'" />
+	<input type="hidden" name="act" value="IS" />
+	<fieldset>
+		<div class="clear">
+			<input type="text" name="is_keyword" class="keyword" value="{$is_keyword}" title="{$lang->cmd_search}" placeholder="{$lang->cmd_search}" autocomplete="off" />
+			<button type="submit" class="submit" title="{$lang->cmd_search}"><i class="fa fa-search"></i></button>
+		</div>
+	</fieldset>
+</form>

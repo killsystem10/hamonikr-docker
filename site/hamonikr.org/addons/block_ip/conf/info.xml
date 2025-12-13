@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon version="0.2">
+	<title xml:lang="ko">IP 차단 애드온</title>
+	<description xml:lang="ko">
+		특정 IP를 차단합니다.
+	</description>
+	<version>2.1a</version>
+	<date>2015-01-20</date>
+	<license link="http://opensource.org/licenses/eclipse-1.0.php">Eclipse Public License(EPL)</license>
+	<author email_address="kisstoxe@nate.com" link="http://me2.do/G1RQaFzy">
+		<name xml:lang="ko">키스투엑스이</name>
+	</author>
+	<extra_vars>
+		<var name="block_ip" type="textarea">
+			<title xml:lang="ko">차단할 IP</title>
+			<description xml:lang="ko">여러 개를 쓸 때는 줄을 바꿔서 써주세요. 123.123.*.* 등 대역폭 차단도 가능합니다.<br />
+			등록된 IP로 접속하면 아래 입력된 주소로 이동됩니다.</description>
+		</var>
+		<var name="where" type="text">
+			<title>이동될 주소</title>
+			<description>
+			해당 IP접근시 이동될 주소를 입력합니다.
+			</description>
+		</var>
+	</extra_vars>
+</addon>

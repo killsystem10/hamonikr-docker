@@ -1,0 +1,115 @@
+	<!--@if($widget_info->markup_type=="list")-->
+{@ $widget_info->slider_name = 'gySliderBot_'.rand(100000,500000).rand(100000,500000);}
+<div style="height:18px !important; overflow:hidden;position:relative;line-height:18px; padding:0;">
+	<div id="{$widget_info->slider_name}">
+		<ul class="slideT slideT_data">
+		 {@$_idx=0}
+    <!--@foreach($widget_info->content_items as $key => $item)-->
+        <li class="clearBoth"<!--@if($_idx >= $widget_info->list_count)--> style="display:none"<!--@end-->>
+
+            <!--@foreach($widget_info->option_view_arr as $k => $v)-->
+                <!--@if($v=='title')-->
+                    <!--@if($widget_info->show_browser_title=='Y' && $item->getBrowserTitle())-->
+                        <a href="<!--@if($item->contents_link)-->{$item->contents_link}<!--@else-->{getSiteUrl($item->domain, '', 'mid', $item->get('mid'))}<!--@end-->" class="board" target="_blank"|cond="$widget_info->new_window"><strong>{$item->getBrowserTitle()}</strong></a>
+                    <!--@end-->
+                    <!--@if($widget_info->show_category=='Y' && $item->get('category_srl') )-->
+                        <a href="{getSiteUrl($item->domain,'','mid',$item->get('mid'),'category',$item->get('category_srl'))}" target="_blank"|cond="$widget_info->new_window"><strong class="category">{$item->getCategory()}</strong></a>
+                    <!--@end-->
+
+                    <a href="{$item->getLink()}" class="title on_dw_color" target="_blank"|cond="$widget_info->new_window">{$item->getTitle($widget_info->subject_cut_size)}</a>
+
+                    <!--@if($widget_info->show_comment_count=='Y' && $item->getCommentCount())-->
+                        <em class="replyNum" title="Replies"><a href="{$item->getLink()}#comment" target="_blank"|cond="$widget_info->new_window">{$item->getCommentCount()}</a></em>
+                    <!--@end-->
+
+                    <!--@if($widget_info->show_trackback_count=='Y' && $item->getTrackbackCount())-->
+                        <em class="trackbackNum" title="Trackbacks"><a href="{$item->getLink()}#trackback" target="_blank"|cond="$widget_info->new_window">{$item->getTrackbackCount()}</a></em>
+                    <!--@end-->
+
+                    <!--@if($widget_info->show_icon=='Y')-->
+                        <span class="icon">{$item->printExtraImages()}</span>
+                    <!--@end-->
+
+                <!--@else if($v=='nickname')-->
+                    <a <!--@if($item->getMemberSrl())-->href="#" onclick="return false;" class="author member_{$item->getMemberSrl()}"<!--@elseif($item->getAuthorSite())-->href="{$item->getAuthorSite()}" onclick="window.open(this.href); return false;" class="author member"<!--@else-->href="#" onclick="return false;" class="author member"<!--@end--> >{$item->getNickName($widget_info->nickname_cut_size)}</a>
+
+                <!--@else if($v=='regdate')-->
+                   <span class="notoce_date"><span class="slide_block">{$item->getRegdate("m-d")}</span></span>
+                <!--@end-->
+            <!--@end-->
+        </li>
+    {@$_idx++}
+    <!--@end-->
+		</ul>
+	</div>
+</div>
+<!--@if($_idx >= 1)--> 
+<script type="text/javascript">
+(function($){	
+  $(function(){
+   $('#{$widget_info->slider_name}').jCarouselLite({
+		vertical: true,
+		hoverPause:true,
+		visible: 1,
+		auto:5000,
+		speed:500
+	});
+  });	
+}(jQuery))
+
+</script>
+<!--@end-->
+<!--@else-->
+<div class="DWZineA DWZineC DWZineA{$widget_info->cols_list_count} clearBoth">
+	{@$_idx=0}
+	<!--@foreach($widget_info->content_items as $key => $item)-->
+	<div class="DWZineA_itemC DWZineA_itemC{$_idx}">
+		<div class="DWZineA_itemC_thumbArea">
+			<div class="item">
+			
+                <a href="{$item->getLink()}" class="DCP_box_link" target="_blank"|cond="$widget_info->new_window">
+                    <!--@if($item->getThumbnail())-->
+                        <img src="{$item->getThumbnail()}" alt="" />
+                    <!--@else-->
+                        <span><img src="img/empty.gif" alt="{$lang->none_image}" /></span>
+                    <!--@end-->
+                </a>
+				
+				<div class="over_DCPA_image DW_BG">
+				<!--@for($j=0,$c=count($widget_info->option_view_arr);$j<$c;$j++)-->
+				<!--@if($widget_info->option_view_arr[$j]=='title')-->
+					<h3><a href="{$item->getLink()}">{$item->getTitle($widget_info->subject_cut_size)}</a></h3>
+					<!--@else if($widget_info->option_view_arr[$j]=='regdate')-->
+					<div class="wrap_date">
+						
+							<div class="wrap_DW_Rep">
+								<span class="wrap_date"><i class="xi-calendar"></i><span class="slide_block">{$item->getRegdate("m-d")}</span></span>
+								 <!--@if($widget_info->show_comment_count=='Y' && $item->getCommentCount())-->
+								<span class="DW_Rep">
+									<i class="xi-message"></i><a href="{$item->getLink()}#comment" class="DW_Replies"><span>{$item->getCommentCount()}</span></a>
+								</span>
+								<!--@elseif($widget_info->show_comment_count=='Y')-->
+								<span class="DW_Rep">
+									<i class="xi-message"></i><span class="DW_Replies">0</span>
+								</span>
+								<!--@end-->
+								<!--@if($widget_info->option_view_arr[$j+1]=='nickname')-->
+								<span class="DW_RepB">
+									<i class="xi-pen"></i> <a href="#" onclick="return false;" class="author member_{$item->getMemberSrl()}" target="_blank"|cond="$widget_info->new_window">{$item->getNickName($widget_info->nickname_cut_size)}</a>
+								</span>
+								<!--@end-->
+							</div>
+						
+						
+					</div>
+					<!--@end-->
+					<!--@end-->
+				</div>
+			</div>
+		</div>
+	</div>
+		{@$_idx++}
+	<!--@end-->
+</div>
+
+<!--@end-->

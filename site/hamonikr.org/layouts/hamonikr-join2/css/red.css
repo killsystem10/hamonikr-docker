@@ -1,0 +1,38 @@
+
+/*--- 기본 링크색상  ---*/
+a{color:#e21956 ;}
+
+.language strong,
+#footer-links li a:hover,
+#sidebar #sidemenu li a,
+.widgetZineA li .author,
+.widgetTabA li.active a,
+.widgetTabA li a,
+.small-button span {color:#e21956 !important ;}
+
+/*--- 진한링크색상  ---*/
+#sidebar h6,
+.widgetZineA li 
+.replyNum a,
+.widgetContainer_to2 
+.widgetGalleryAo2 li 
+.readmore,
+.widgetGalleryAo1 li 
+.author,
+.widgetGalleryA li 
+.author,.widgetGalleryA li 
+.replyNum a,
+.widgetZineA li 
+.author,
+.widgetGalleryAo1 li .replyNum a{ color: #c7174d !important; }
+
+/*--- 배경색상/보더색상  ---*/
+#sidebar #sidemenu li.current{  background-color:#b70038; }
+#cycle-pager a:hover span {	background: #b70038;  }
+html ul.tabs li.active  { border-top: 1px solid #b70038; }
+#side_util_tap{ border-bottom: 2px solid #b70038 !important; }
+.sf-menu > li:hover > a {border-bottom: 1px solid #b70038;}
+
+
+#sidebar #sidemenu li.current a{ color:#eee !important;}
+

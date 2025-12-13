@@ -1,0 +1,36 @@
+<filter name="insert_pop_conn" module="pop_up" act="procPop_upAdminInsertPopupConn" confirm_msg_code="confirm_submit">
+    <form>
+        <node target="popup_conn_srl" />
+        <node target="popup_name" required="true" />
+        <node target="target_srl" required="true" />
+        <node target="popup_module_srl" required="true" />
+		<node target="content" />
+
+        <node target="startdate" required="true" />
+        <node target="enddate" required="true" />
+    </form>
+    <parameter>
+        <param name="popup_conn_srl" target="popup_conn_srl" />
+        <param name="target_srl" target="target_srl" />
+        <param name="popup_url" target="popup_url" />
+        <param name="popup_linkto" target="popup_linkto" />
+		<param name="popup_linkto_newwindow" target="popup_linkto_newwindow" />
+		<param name="content" target="content" />
+
+        <param name="startdate" target="startdate" />
+        <param name="enddate" target="enddate" />
+        <param name="width" target="width" />
+        <param name="height" target="height" />
+        <param name="top" target="top" />
+        <param name="left" target="left" />
+        <param name="popup_type" target="popup_type" />
+        <param name="open_type" target="open_type" />
+        <param name="exp_days" target="exp_days" />
+        <param name="popup_name" target="popup_name" />
+    </parameter>
+    <response callback_func="completeInsertPopupConn">
+        <tag name="error" />
+        <tag name="message" />
+        <tag name="popup_conn_srl" />
+    </response>
+</filter>

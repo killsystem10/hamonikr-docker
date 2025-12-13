@@ -1,0 +1,22 @@
+<query id="getRegIpList" action="select">
+	<tables>
+		<table name="member_checkip" />
+	</tables>
+	<columns>
+		<column name="log_srl" />
+		<column name="member_srl" />
+		<column name="reg_ip" />
+		<column name="regdate" />
+	</columns>
+	<conditions>
+		<condition operation="equal" column="member_srl" var="member_srl" filter="number" pipe="and" />
+		<condition operation="like_prefix" column="regdate" var="s_regdate" pipe="and" />
+		<condition operation="like_prefix" column="reg_ip" var="s_reg_ip" pipe="and" />
+	</conditions>
+	<navigation>
+		<index var="sort_index" default="regdate" order="order_type" />
+		<list_count var="list_count" default="20" />
+		<page_count var="page_count" default="10" />
+		<page var="page" default="1" />
+	</navigation>
+</query>

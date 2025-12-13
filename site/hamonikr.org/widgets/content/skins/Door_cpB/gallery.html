@@ -1,0 +1,147 @@
+{@ $widget_info->slider_name = 'gySliderBot_'.rand(100000,500000).rand(100000,500000);}
+
+		
+<!--@if($widget_info->markup_type=="list")-->
+<div class="wrap_owl owl-normal owl-normal-ITC-listC">
+	<div class="owl-carousel {$widget_info->slider_name} ">
+	<!--@foreach($widget_info->content_items as $key => $item)-->
+		<div class="item">
+			
+                <a href="{$item->getLink()}" class="DCP_box_link" target="_blank"|cond="$widget_info->new_window">
+                    <!--@if($item->getThumbnail())-->
+                        <img src="{$item->getThumbnail()}" alt="" />
+                    <!--@else-->
+                        <span><img src="img/empty.gif" alt="{$lang->none_image}" /></span>
+                    <!--@end-->
+                </a>
+				
+				<div class="over_DCPA_image DW_BG">
+				<!--@for($j=0,$c=count($widget_info->option_view_arr);$j<$c;$j++)-->
+				<!--@if($widget_info->option_view_arr[$j]=='title')-->
+					<h3><a href="{$item->getLink()}">{$item->getTitle($widget_info->subject_cut_size)}</a></h3>
+					<!--@else if($widget_info->option_view_arr[$j]=='regdate')-->
+					<div class="wrap_date">
+						
+							<div class="wrap_DW_Rep">
+								<span class="wrap_date"><i class="xi-calendar"></i><span class="slide_block">{$item->getRegdate("m-d")}</span></span>
+								 <!--@if($widget_info->show_comment_count=='Y' && $item->getCommentCount())-->
+								<span class="DW_Rep">
+									<i class="xi-message"></i><a href="{$item->getLink()}#comment" class="DW_Replies"><span>{$item->getCommentCount()}</span></a>
+								</span>
+								<!--@elseif($widget_info->show_comment_count=='Y')-->
+								<span class="DW_Rep">
+									<i class="xi-message"></i><span class="DW_Replies">0</span>
+								</span>
+								<!--@end-->
+								<!--@if($widget_info->option_view_arr[$j+1]=='nickname')-->
+								<span class="DW_RepB">
+									<i class="xi-pen"></i> <a href="#" onclick="return false;" class="author member_{$item->getMemberSrl()}" target="_blank"|cond="$widget_info->new_window">{$item->getNickName($widget_info->nickname_cut_size)}</a>
+								</span>
+								<!--@end-->
+							</div>
+						
+						
+					</div>
+					<!--@end-->
+					<!--@end-->
+				</div>
+		</div>
+	<!--@end-->
+	</div>
+</div>
+<script type="text/javascript">
+			jQuery(function($){
+			
+			  $('.{$widget_info->slider_name}').owlCarousel({
+				nav:true,
+				items:4,
+				loop:true,
+				autoplay:false,
+				autoplayTimeout:7000,
+				margin:8,
+				responsive:{
+					0:{
+					items:2
+					},
+					376:{
+						items:2
+					},
+					533:{
+						items:3
+					},
+					1020:{
+						items:4
+					}
+				}
+               
+             });
+		});
+		</script>
+<!--@else-->
+
+<div class="wrap_owl owl-normal owl-normal-ITC-list">
+	<div class="owl-carousel {$widget_info->slider_name} ">
+	<!--@foreach($widget_info->content_items as $key => $item)-->
+		<div class="item">
+			<div class="wrap_slide_title door_bg">
+				<a href="{$item->getLink()}" target="_blank"|cond="$widget_info->new_window">
+				<!--@if($item->getThumbnail())-->
+				<img class="w100" src="{$item->getThumbnail()}" alt="">
+				<!--@else-->
+				<img class="w100" src="img/noneLarge_img.gif" alt="">
+				<!--@end-->
+				</a>
+				<!--@for($j=0,$c=count($widget_info->option_view_arr);$j<$c;$j++)-->
+				<!--@if($widget_info->option_view_arr[$j]=='title')-->
+				<h3 class="slide_title">
+					<a href="{$item->getLink()}" class="title dw_color" target="_blank"|cond="$widget_info->new_window">{$item->getTitle($widget_info->subject_cut_size)}</a>
+				</h3>
+				<!--@else if($widget_info->option_view_arr[$j]=='regdate')-->
+				<div class="wrap_date">
+					<div class="wrap_DW_Rep">
+						 <span class="wrap_date"><i class="xi-calendar"></i><span class="slide_block">{$item->getRegdate("m-d")}</span></span>
+						 <!--@if($widget_info->show_comment_count=='Y' && $item->getCommentCount())-->
+						<span class="DW_Rep">
+							<i class="xi-message"></i><a href="{$item->getLink()}#comment" class="DW_Replies"><span>{$item->getCommentCount()}</span></a>
+						</span>
+						<!--@elseif($widget_info->show_comment_count=='Y')-->
+						<span class="DW_Rep">
+							<i class="xi-message"></i><span class="DW_Replies">0</span>
+						</span>
+						<!--@end-->
+						<!--@if($widget_info->option_view_arr[$j+1]=='nickname')-->
+						<span class="DW_Rep">
+							<i class="xi-pen"></i><a <!--@if($item->getMemberSrl())-->href="#" onclick="return false;" class="author member_{$item->getMemberSrl()}"<!--@elseif($item->getAuthorSite())-->href="{$item->getAuthorSite()}" onclick="window.open(this.href); return false;" class="author member"<!--@else-->href="#" onclick="return false;" class="author member"<!--@end--> >{$item->getNickName($widget_info->nickname_cut_size)}</a>
+						</span>
+						<!--@end-->
+					</div>
+				</div>
+				
+				<!--@else if($widget_info->option_view_arr[$j]=='content')-->
+				<p class="DWcontent">
+					<a href="{$item->getLink()}" class="title" target="_blank"|cond="$widget_info->new_window">{$item->getContent()}</a>	
+				</p>
+				
+				<!--@end-->
+				<!--@end-->
+			</div>
+			
+		</div>
+	<!--@end-->
+	</div>
+</div>
+<script type="text/javascript">
+			jQuery(function($){
+			
+			  $('.{$widget_info->slider_name}').owlCarousel({
+				nav:true,
+				items:1,
+				loop:true,
+				autoplay:false,
+				autoplayTimeout:7000,
+				margin:0
+               
+             });
+		});
+</script>
+<!--@end-->

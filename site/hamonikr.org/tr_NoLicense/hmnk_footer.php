@@ -1,0 +1,96 @@
+</div>
+
+
+    <!--FOOTER BOOTOM WRAPPER STARTS-->
+    <div id="footer-bottom-wrapper">
+    	<!--FOOTER BOTTOM CONTAINER STARTS-->
+    	<div id="footer-bottom-container" class="container">
+        <div class="language">
+                    <strong title="ko">한국어</strong> <button type="button" class="toggle"><img src="/layouts/TM_Tiva/images/buttonLang.gif" alt="Select Language" /></button>
+                    <ul class="selectLang">
+                                            </ul>
+                </div>
+
+        	<!--FOOTER COPYRIGHT STARTS-->
+        	<div id="footer-logo" class="one_fourth" >
+              	<a href=""><img src="http://xe.hamonikr.org/files/attach/images/253/ff6906733da71b29e721f7f9ece70cfd.png" title="" /></a>
+            </div>
+            <!--FOOTER COPYRIGHT ENDS-->
+            <!--FOOTER LINKS STARTS-->
+            <div id="footer-links" class="last_column" >
+            <ul>
+				<li><a href="/index.php?mid=page_jBcr78">홈으로</a>
+				</li><li><a href="<?=_DIR_;?>/korean_bs.php">한글화서비스</a>
+				</li><li><a href="/index.php?mid=page_wFpT75">다운로드</a>
+				</li><li class="current"><a href="/index.php?mid=board_hzVL42&amp;category=453">사용자커뮤니티</a>
+				</li><li><a href="/index.php?mid=terms_of_use">이용 약관</a>
+				</li>			</ul>
+            <p id="footer-copyright"><span><br/>HamoniKR.org 사이트의 목적은 다음과 같습니다. 한국어를 사용하는 사용자가 좋은 오픈소스 소프트웨어를 찾고 한국어 번역에 참여하고 발전시켜서 자유 라이선스에 따라서 이를 공개하도록 허용하고 권장하는 것입니다. 이렇게 오픈소스 소프트웨어를 효율적으로 한국어 접근성을 높여 보급하는 것입니다.</span></p>
+
+
+
+            </div>
+            <!--FOOTER LINKS ENDS-->
+        </div>
+        <!--FOOTER BOTTOM CONTAINER ENDS-->
+    </div>
+	<!--FOOTER BOOTOM WRAPPER ENDS-->
+
+<!--AJAX 로그인 창 시작-->
+<!-- loginWindow -->
+<div id="cv2_login_area">
+	<div class="loginboxcover ">
+
+                <div id="login_close"><img src="/layouts/TM_Tiva/images/btn_loginboxClose.png" /></div>
+
+    <div class="loginbox">
+
+    	<div id="loginbox_ad">
+        <div id="box1">
+
+
+                <img src="/layouts/TM_Tiva/images/loginbox_ad_img.png" alt="loginbox"/>
+                	                </div>
+        <div id="box2" style="display:none;"><img src="/layouts/TM_Tiva/images/loginbox_ad_img.jpg" alt="loginbox"/></div>
+        </div>
+
+		<form action="/index.php" method="post"  class="logbinbox_form"><input type="hidden" name="error_return_url" value="<?=$_SERVER['PHP_SELF'];?>?<?=$_SERVER['QUERY_STRING'];?>" /><input type="hidden" name="mid" value="board_hzVL42" /><input type="hidden" name="vid" value="" /><input type="hidden" name="ruleset" value="@login" />
+			<fieldset>
+					<input type="hidden" name="act" value="procMemberLogin" />
+                    <input type="hidden" name="success_return_url" value="<?=$_SERVER['PHP_SELF'];?>?<?=$_SERVER['QUERY_STRING'];?>" />
+				<ul>
+					<li><input name="user_id"  type="text" /></li>
+					<li><input  name="password" type="password" /></li>
+				</ul>
+
+				<div class="lbbtn">
+                <a href="#"><button type="submit" value="" class="cielov2Submit">LOGIN</button></a>
+                <span><input  name="keep_signed" value="Y" type="checkbox" class="check" id="che_id" onclick="if(this.checked) return confirm('브라우저를 닫더라도 로그인이 계속 유지될 수 있습니다.\n\n로그인 유지 기능을 사용할 경우 다음 접속부터는 로그인할 필요가 없습니다.\n\n단, 게임방, 학교 등 공공장소에서 이용 시 개인정보가 유출될 수 있으니 꼭 로그아웃을 해주세요.');"/> <label for="che_id">로그인유지</label></span>
+				</div>
+              	<ul class="idmail" >
+                    <li><a href="/index.php?mid=board_hzVL42&amp;category=453&amp;act=dispMemberFindAccount">아이디/비밀번호 찾기</a></li>
+                    <li class="mail"><a href="/index.php?mid=board_hzVL42&amp;category=453&amp;act=dispMemberResendAuthMail">인증메일 재발송</a></li>
+                </ul>
+
+                <div id="joinsocial">
+                <div id="jswarp">
+                <div class="memberjoin">
+                <span>아직 회원이 아니세요?</span>
+                 <a href="/index.php?mid=board_hzVL42&amp;category=453&amp;act=dispMemberSignUpForm" class="btnJoin lcblue">MEMBER JOIN</a>
+                </div>
+
+
+                </div>
+                </div>
+			</fieldset>
+		</form>
+
+
+      </div>
+	</div>
+</div>
+<!-- /loginWindow -->
+<!--AJAX 로그인 창 끝--><!-- ETC -->
+<div class="wfsr"></div>
+<script src="/files/cache/js_filter_compiled/d046d1841b9c79c545b82d3be892699d.ko.compiled.js?20141102213916"></script><script src="/files/cache/js_filter_compiled/1bdc15d63816408b99f674eb6a6ffcea.ko.compiled.js?20141102213916"></script><script src="/files/cache/js_filter_compiled/9b007ee9f2af763bb3d35e4fb16498e9.ko.compiled.js?20141102213916"></script><script src="/addons/autolink/autolink.js?20141102212527"></script><script src="/addons/oembed/jquery.oembed.min.js?20141102212528"></script><script src="/addons/oembed/oembed.min.js?20141102212528"></script><script src="/common/js/plugins/ui/jquery-ui.min.js?20141102212544"></script><script src="/common/js/plugins/ui/jquery.ui.datepicker-ko.js?20141102212544"></script><script src="/addons/resize_image/js/resize_image.min.js?20141102212531"></script><script src="/files/cache/js_filter_compiled/b59f56bff36e019eb93afb74c71217d3.ko.compiled.js?20141113171515"></script><script src="/files/cache/ruleset/18518e6fe572de220334c8e270222a24.ko.js?20141118171855"></script></body>
+</html>

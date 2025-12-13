@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon version="0.2">
+    <title xml:lang="ko">팝업 오프너</title>
+    <title xml:lang="en">Popup opener</title>
+    <description xml:lang="ko">등록된 popup창을 열어줍니다.</description>
+    <description xml:lang="en">Let the popup windows opened.</description>
+    <version>0.0.4</version>
+    <date>2009-09-30</date>
+
+    <author email_address="zirho6@gmail.com" link="http://www.zirho.co.kr">
+        <name xml:lang="ko">zirho</name>
+        <name xml:lang="en">zirho</name>
+    </author>
+</addon>

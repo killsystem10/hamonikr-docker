@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.2">
+	<title xml:lang="ko">Flat Series</title>
+	<title xml:lang="en">Flat Series</title>
+	<title xml:lang="jp">Flat Series</title>
+	<description xml:lang="ko">평면 디자인을 채택한 기업형 레이아웃입니다.</description>
+	<description xml:lang="en">The layout for corporation type is adopted flat design.</description>
+	<description xml:lang="jp">フラットデザインを採用した企業型のレイアウトです。</description>
+	<version>1.0.22</version>
+	<date>2014-06-16</date>
+	<author email_address="izuzero@gmail.com" link="http://www.isizu.co.kr/">
+		<name xml:lang="ko">이즈야</name>
+		<name xml:lang="en">ISIZU</name>
+		<name xml:lang="jp">イズヤ</name>
+	</author>
+	<extra_vars>
+		<group>
+			<title xml:lang="ko">기본 설정</title>
+			<title xml:lang="en">General settings</title>
+			<title xml:lang="jp">基本設定</title>
+			<var name="layout_type" type="select">
+				<title xml:lang="ko">레이아웃 타입</title>
+				<title xml:lang="en">Layout type</title>
+				<title xml:lang="jp">レイアウトタイプ</title>
+				<options value="mainpage">
+					<title xml:lang="ko">[기본] 메인 페이지</title>
+					<title xml:lang="en">[General] Main page</title>
+					<title xml:lang="jp">[基本] メインページ</title>
+				</options>
+				<options value="onepage">
+					<title xml:lang="ko">단일 페이지</title>
+					<title xml:lang="en">One page</title>
+					<title xml:lang="jp">一つのページ</title>
+				</options>
+				<options value="leftside">
+					<title xml:lang="ko">왼쪽 사이드 영역 사용</title>
+					<title xml:lang="en">Use the left-side area</title>
+					<title xml:lang="jp">左サイドエリアを使用</title>
+				</options>
+				<options value="rightside">
+					<title xml:lang="ko">오른쪽 사이드 영역 사용</title>
+					<title xml:lang="en">Use the right-side area</title>
+					<title xml:lang="jp">右サイドエリアを使用</title>
+				</options>
+				<options value="totalside">
+					<title xml:lang="ko">양쪽 사이드 영역 사용</title>
+					<title xml:lang="en">Use the total area</title>
+					<title xml:lang="jp">両サイド領域の使用</title>
+				</options>
+			</var>
+			<var name="search_type" type="select">
+				<title xml:lang="ko">검색 타입</title>
+				<title xml:lang="en">Search type</title>
+				<title xml:lang="jp">検索タイプ</title>
+				<options value="default">
+					<title xml:lang="ko">[기본] 보고 있는 페이지의 모듈 아이디 사용</title>
+					<title xml:lang="en">[General] Use the module ID of the page</title>
+					<title xml:lang="jp">[基本] 見ているページのモジュール名を使用</title>
+				</options>
+				<options value="fixed">
+					<title xml:lang="ko">모듈 아이디를 'IS'로 고정</title>
+					<title xml:lang="en">Fix the module ID to 'IS'</title>
+					<title xml:lang="jp">モジュール名を「IS」で固定</title>
+				</options>
+			</var>
+			<var name="menu_colorset" type="select">
+				<title xml:lang="ko">메뉴 컬러셋</title>
+				<title xml:lang="en">Menu colorset</title>
+				<title xml:lang="jp">メニューカラーセット</title>
+				<options value="black">
+					<title xml:lang="ko">[기본] 검정</title>
+					<title xml:lang="en">[General] Black</title>
+					<title xml:lang="jp">[基本] 黒</title>
+				</options>
+				<options value="white">
+					<title xml:lang="ko">하양</title>
+					<title xml:lang="en">White</title>
+					<title xml:lang="jp">白</title>
+				</options>
+			</var>
+			<var name="expand_sitemap" type="select">
+				<title xml:lang="ko">사이트맵 펼치기</title>
+				<title xml:lang="en">Expand sitemap</title>
+				<title xml:lang="jp">サイトマップ開く</title>
+				<options value="N">
+					<title xml:lang="ko">[기본] 사용 안 함</title>
+					<title xml:lang="en">[General] Not use</title>
+					<title xml:lang="jp">[基本] 使用しない</title>
+				</options>
+				<options value="Y">
+					<title xml:lang="ko">사용</title>
+					<title xml:lang="en">Use</title>
+					<title xml:lang="jp">使用</title>
+				</options>
+			</var>
+			<var name="use_content" type="select">
+				<title xml:lang="ko">본문 사용</title>
+				<title xml:lang="en">Use content area</title>
+				<title xml:lang="jp">コンテンツ領域を使用</title>
+				<options value="Y">
+					<title xml:lang="ko">[기본] 사용</title>
+					<title xml:lang="en">[General] Use</title>
+					<title xml:lang="jp">[基本] 使用</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">사용 안 함</title>
+					<title xml:lang="en">Not use</title>
+					<title xml:lang="jp">使用しない</title>
+				</options>
+			</var>
+			<var name="container_size" type="text">
+				<title xml:lang="ko">전체 영역 크기</title>
+				<title xml:lang="en">Size of the total area</title>
+				<title xml:lang="jp">領域全体のサイズ</title>
+			</var>
+			<var name="content_size" type="text">
+				<title xml:lang="ko">본문 영역 크기</title>
+				<title xml:lang="en">Size of the content area</title>
+				<title xml:lang="jp">コンテンツ領域のサイズ</title>
+			</var>
+			<var name="leftside_size" type="text">
+				<title xml:lang="ko">왼쪽 사이드 영역 크기</title>
+				<title xml:lang="en">Size of the left-side area</title>
+				<title xml:lang="jp">左サイド領域のサイズ</title>
+			</var>
+			<var name="rightside_size" type="text">
+				<title xml:lang="ko">오른쪽 사이드 영역 크기</title>
+				<title xml:lang="en">Size of the right-side area</title>
+				<title xml:lang="jp">右サイド領域のサイズ</title>
+			</var>
+			<var name="leftside_option" type="checkbox">
+				<title xml:lang="ko">왼쪽 사이드 영역 옵션</title>
+				<title xml:lang="en">Option of the left-side area</title>
+				<title xml:lang="jp">左サイド領域のオプション</title>
+				<options value="search">
+					<title xml:lang="ko">검색</title>
+					<title xml:lang="en">Search</title>
+					<title xml:lang="jp">検索</title>
+				</options>
+				<options value="login_form">
+					<title xml:lang="ko">로그인 위젯</title>
+					<title xml:lang="en">Login widget</title>
+					<title xml:lang="jp">ログインウィジェット</title>
+				</options>
+				<options value="category">
+					<title xml:lang="ko">카테고리</title>
+					<title xml:lang="en">Category</title>
+					<title xml:lang="jp">カテゴリー</title>
+				</options>
+			</var>
+			<var name="rightside_option" type="checkbox">
+				<title xml:lang="ko">오른쪽 사이드 영역 옵션</title>
+				<title xml:lang="en">Option of the right-side area</title>
+				<title xml:lang="jp">右サイド領域のオプション</title>
+				<options value="search">
+					<title xml:lang="ko">검색</title>
+					<title xml:lang="en">Search</title>
+					<title xml:lang="jp">検索</title>
+				</options>
+				<options value="login_form">
+					<title xml:lang="ko">로그인 위젯</title>
+					<title xml:lang="en">Login widget</title>
+					<title xml:lang="jp">ログインウィジェット</title>
+				</options>
+				<options value="category">
+					<title xml:lang="ko">카테고리</title>
+					<title xml:lang="en">Category</title>
+					<title xml:lang="jp">カテゴリー</title>
+				</options>
+			</var>
+		</group>
+		<group>
+			<title xml:lang="ko">라이브러리 설정</title>
+			<title xml:lang="en">Library settings</title>
+			<title xml:lang="jp">ライブラリの設定</title>
+			<var name="lib_fa" type="select">
+				<title xml:lang="ko">Font-Awesome</title>
+				<title xml:lang="en">Font-Awesome</title>
+				<title xml:lang="jp">Font-Awesome</title>
+				<description xml:lang="ko">4.1.0, css/libs/font-awesome.css</description>
+				<description xml:lang="en">4.1.0, css/libs/font-awesome.css</description>
+				<description xml:lang="jp">4.1.0, css/libs/font-awesome.css</description>
+				<options value="Y">
+					<title xml:lang="ko">[기본] 사용</title>
+					<title xml:lang="en">[General] Use</title>
+					<title xml:lang="jp">[基本] 使用</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">사용 안 함</title>
+					<title xml:lang="en">Not use</title>
+					<title xml:lang="jp">使用しない</title>
+				</options>
+			</var>
+			<var name="lib_fa_cdn" type="select">
+				<title xml:lang="ko">Font-Awesome CDN</title>
+				<title xml:lang="en">Font-Awesome CDN</title>
+				<title xml:lang="jp">Font-Awesome CDN</title>
+				<description xml:lang="ko">4.1.0, Bootstrap CDN 사용</description>
+				<description xml:lang="en">4.1.0, Use Bootstrap CDN</description>
+				<description xml:lang="jp">4.1.0, Bootstrap CDNを使用</description>
+				<options value="Y">
+					<title xml:lang="ko">[기본] 사용</title>
+					<title xml:lang="en">[General] Use</title>
+					<title xml:lang="jp">[基本] 使用</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">사용 안 함</title>
+					<title xml:lang="en">Not use</title>
+					<title xml:lang="jp">使用しない</title>
+				</options>
+			</var>
+			<var name="lib_jq_cookie" type="select">
+				<title xml:lang="ko">jQuery Cookie</title>
+				<title xml:lang="en">jQuery Cookie</title>
+				<title xml:lang="jp">jQuery Cookie</title>
+				<description xml:lang="ko">1.3.1, js/libs/jquery.cookie.js</description>
+				<description xml:lang="en">1.3.1, js/libs/jquery.cookie.js</description>
+				<description xml:lang="jp">1.3.1, js/libs/jquery.cookie.js</description>
+				<options value="Y">
+					<title xml:lang="ko">[기본] 사용</title>
+					<title xml:lang="en">[General] Use</title>
+					<title xml:lang="jp">[基本] 使用</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">사용 안 함</title>
+					<title xml:lang="en">Not use</title>
+					<title xml:lang="jp">使用しない</title>
+				</options>
+			</var>
+			<var name="lib_jq_easing" type="select">
+				<title xml:lang="ko">jQuery Easing</title>
+				<title xml:lang="en">jQuery Easing</title>
+				<title xml:lang="jp">jQuery Easing</title>
+				<description xml:lang="ko">1.3, js/libs/jquery.easing.js</description>
+				<description xml:lang="en">1.3, js/libs/jquery.easing.js</description>
+				<description xml:lang="jp">1.3, js/libs/jquery.easing.js</description>
+				<options value="Y">
+					<title xml:lang="ko">[기본] 사용</title>
+					<title xml:lang="en">[General] Use</title>
+					<title xml:lang="jp">[基本] 使用</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">사용 안 함</title>
+					<title xml:lang="en">Not use</title>
+					<title xml:lang="jp">使用しない</title>
+				</options>
+			</var>
+			<var name="lib_jq_placeholder" type="select">
+				<title xml:lang="ko">jQuery Placeholder</title>
+				<title xml:lang="en">jQuery Placeholder</title>
+				<title xml:lang="jp">jQuery Placeholder</title>
+				<description xml:lang="ko">js/libs/jquery.placeholder.js</description>
+				<description xml:lang="en">js/libs/jquery.placeholder.js</description>
+				<description xml:lang="jp">js/libs/jquery.placeholder.js</description>
+				<options value="Y">
+					<title xml:lang="ko">[기본] 사용</title>
+					<title xml:lang="en">[General] Use</title>
+					<title xml:lang="jp">[基本] 使用</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">사용 안 함</title>
+					<title xml:lang="en">Not use</title>
+					<title xml:lang="jp">使用しない</title>
+				</options>
+			</var>
+			<var name="lib_cufon" type="select">
+				<title xml:lang="ko">Cufon</title>
+				<title xml:lang="en">Cufon</title>
+				<title xml:lang="jp">Cufon</title>
+				<description xml:lang="ko">js/libs/cufon.yui.js</description>
+				<description xml:lang="en">js/libs/cufon.yui.js</description>
+				<description xml:lang="jp">js/libs/cufon.yui.js</description>
+				<options value="Y">
+					<title xml:lang="ko">[기본] 사용</title>
+					<title xml:lang="en">[General] Use</title>
+					<title xml:lang="jp">[基本] 使用</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">사용 안 함</title>
+					<title xml:lang="en">Not use</title>
+					<title xml:lang="jp">使用しない</title>
+				</options>
+			</var>
+			<var name="lib_cufon_font" type="select">
+				<title xml:lang="ko">Cufon 폰트</title>
+				<title xml:lang="en">Cufon fonts</title>
+				<title xml:lang="jp">Cufonフォント</title>
+				<options value="600">
+					<title xml:lang="ko">[기본] 나눔고딕 600</title>
+					<title xml:lang="en">[General] NanumGothic 600</title>
+					<title xml:lang="jp">[基本] NanumGothic 600</title>
+				</options>
+				<options value="400">
+					<title xml:lang="ko">[기본] 나눔고딕 400</title>
+					<title xml:lang="en">[General] NanumGothic 400</title>
+					<title xml:lang="jp">[基本] NanumGothic 400</title>
+				</options>
+			</var>
+			<var name="lib_camera_slide" type="select">
+				<title xml:lang="ko">Camera Slideshow</title>
+				<title xml:lang="en">Camera Slideshow</title>
+				<title xml:lang="jp">Camera Slideshow</title>
+				<description xml:lang="ko">1.3.4, js/libs/camera.js</description>
+				<description xml:lang="en">1.3.4, js/libs/camera.js</description>
+				<description xml:lang="jp">1.3.4, js/libs/camera.js</description>
+				<options value="Y">
+					<title xml:lang="ko">[기본] 사용</title>
+					<title xml:lang="en">[General] Use</title>
+					<title xml:lang="jp">[基本] 使用</title>
+				</options>
+				<options value="N">
+					<title xml:lang="ko">사용 안 함</title>
+					<title xml:lang="en">Not use</title>
+					<title xml:lang="jp">使用しない</title>
+				</options>
+			</var>
+		</group>
+		<group>
+			<title xml:lang="ko">로고 설정</title>
+			<title xml:lang="en">Logo settings</title>
+			<title xml:lang="jp">ロゴの設定</title>
+			<var name="header_logo" type="image">
+				<title xml:lang="ko">header .logo</title>
+				<title xml:lang="en">header .logo</title>
+				<title xml:lang="jp">header .logo</title>
+			</var>
+			<var name="header_logo_src" type="text">
+				<title xml:lang="ko">header .logo [href]</title>
+				<title xml:lang="en">header .logo [href]</title>
+				<title xml:lang="jp">header .logo [href]</title>
+			</var>
+			<var name="header_logo_desc" type="text">
+				<title xml:lang="ko">header .logo [alt]</title>
+				<title xml:lang="en">header .logo [alt]</title>
+				<title xml:lang="jp">header .logo [alt]</title>
+			</var>
+			<var name="footer_logo" type="image">
+				<title xml:lang="ko">footer .logo</title>
+				<title xml:lang="en">footer .logo</title>
+				<title xml:lang="jp">footer .logo</title>
+			</var>
+			<var name="footer_logo_src" type="text">
+				<title xml:lang="ko">footer .logo [href]</title>
+				<title xml:lang="en">footer .logo [href]</title>
+				<title xml:lang="jp">footer .logo [href]</title>
+			</var>
+			<var name="footer_logo_desc" type="text">
+				<title xml:lang="ko">footer .logo [alt]</title>
+				<title xml:lang="en">footer .logo [alt]</title>
+				<title xml:lang="jp">footer .logo [alt]</title>
+			</var>
+		</group>
+		<group>
+			<title xml:lang="ko">슬라이더 설정</title>
+			<title xml:lang="en">Slider settings</title>
+			<title xml:lang="jp">スライダーの設定</title>
+			<var name="use_camera_slide" type="select">
+				<title xml:lang="ko">사용 여부</title>
+				<title xml:lang="en">Whether to use</title>
+				<title xml:lang="jp">使用</title>
+				<description xml:lang="ko">data-src 값에 들어간 이미지가 없을 경우 사용하지 않습니다.</description>
+				<description xml:lang="en">Slider is not used if the value of data-src is no image.</description>
+				<description xml:lang="jp">data-srcに入ったイメージがない場合は使用しません。</description>
+				<options value="N">
+					<title xml:lang="ko">[기본] 사용 안 함</title>
+					<title xml:lang="en">[General] Not use</title>
+					<title xml:lang="jp">[基本] 使用しない</title>
+				</options>
+				<options value="Y">
+					<title xml:lang="ko">사용</title>
+					<title xml:lang="en">Use</title>
+					<title xml:lang="jp">使用</title>
+				</options>
+			</var>
+			<var name="use_camera_slide_thumb" type="select">
+				<title xml:lang="ko">섬네일 사용 여부</title>
+				<title xml:lang="en">Thumbnail whether to use</title>
+				<title xml:lang="jp">サムネイルを使用</title>
+				<description xml:lang="ko">data-thumb 값에 들어간 이미지가 없을 경우 사용하지 않습니다.</description>
+				<description xml:lang="en">Slider is not used if the value of data-src is no image.</description>
+				<description xml:lang="jp">data-thumbに入ったイメージがない場合は使用しません。</description>
+				<options value="N">
+					<title xml:lang="ko">[기본] 사용 안 함</title>
+					<title xml:lang="en">[General] Not use</title>
+					<title xml:lang="jp">[基本] 使用しない</title>
+				</options>
+				<options value="Y">
+					<title xml:lang="ko">사용</title>
+					<title xml:lang="en">Use</title>
+					<title xml:lang="jp">使用</title>
+				</options>
+			</var>
+			<var name="camera_slide_width_fixed" type="select">
+				<title xml:lang="ko">고정폭 사용</title>
+				<title xml:lang="en">Use a fixed-width</title>
+				<title xml:lang="jp">固定サイズを使用</title>
+				<description xml:lang="ko">슬라이더의 가로 크기를 고정합니다.</description>
+				<description xml:lang="en">Fix a width of the slider.</description>
+				<description xml:lang="jp">スライダーの横幅を固定します。</description>
+				<options value="N">
+					<title xml:lang="ko">[기본] 사용 안 함</title>
+					<title xml:lang="en">[General] Not use</title>
+					<title xml:lang="jp">[基本] 使用しない</title>
+				</options>
+				<options value="Y">
+					<title xml:lang="ko">사용</title>
+					<title xml:lang="en">Use</title>
+					<title xml:lang="jp">使用</title>
+				</options>
+			</var>
+			<var name="camera_slide_pattern" type="select">
+				<title xml:lang="ko">패턴</title>
+				<title xml:lang="en">Patterns</title>
+				<title xml:lang="jp">パターン</title>
+				<options value="none">
+					<title xml:lang="ko">[기본] 사용 안 함</title>
+					<title xml:lang="en">[General] Not use</title>
+					<title xml:lang="jp">[基本] 使用しない</title>
+				</options>
+				<options value="01">
+					<title xml:lang="ko">01</title>
+					<title xml:lang="en">01</title>
+					<title xml:lang="jp">01</title>
+				</options>
+				<options value="02">
+					<title xml:lang="ko">02</title>
+					<title xml:lang="en">02</title>
+					<title xml:lang="jp">02</title>
+				</options>
+				<options value="03">
+					<title xml:lang="ko">03</title>
+					<title xml:lang="en">03</title>
+					<title xml:lang="jp">03</title>
+				</options>
+				<options value="04">
+					<title xml:lang="ko">04</title>
+					<title xml:lang="en">04</title>
+					<title xml:lang="jp">04</title>
+				</options>
+				<options value="05">
+					<title xml:lang="ko">05</title>
+					<title xml:lang="en">05</title>
+					<title xml:lang="jp">05</title>
+				</options>
+				<options value="06">
+					<title xml:lang="ko">06</title>
+					<title xml:lang="en">06</title>
+					<title xml:lang="jp">06</title>
+				</options>
+				<options value="07">
+					<title xml:lang="ko">07</title>
+					<title xml:lang="en">07</title>
+					<title xml:lang="jp">07</title>
+				</options>
+				<options value="08">
+					<title xml:lang="ko">08</title>
+					<title xml:lang="en">08</title>
+					<title xml:lang="jp">08</title>
+				</options>
+				<options value="09">
+					<title xml:lang="ko">09</title>
+					<title xml:lang="en">09</title>
+					<title xml:lang="jp">09</title>
+				</options>
+			</var>
+			<var name="camera_slide_alignment" type="select">
+				<title xml:lang="ko">이미지 정렬</title>
+				<title xml:lang="en">Image alignment</title>
+				<title xml:lang="jp">イメージ並べ替え</title>
+				<options value="center">
+					<title xml:lang="ko">[기본] center</title>
+					<title xml:lang="en">[General] center</title>
+					<title xml:lang="jp">[基本] center</title>
+				</options>
+				<options value="topLeft">
+					<title xml:lang="ko">topLeft</title>
+					<title xml:lang="en">topLeft</title>
+					<title xml:lang="jp">topLeft</title>
+				</options>
+				<options value="topCenter">
+					<title xml:lang="ko">topCenter</title>
+					<title xml:lang="en">topCenter</title>
+					<title xml:lang="jp">topCenter</title>
+				</options>
+				<options value="topRight">
+					<title xml:lang="ko">topRight</title>
+					<title xml:lang="en">topRight</title>
+					<title xml:lang="jp">topRight</title>
+				</options>
+				<options value="centerLeft">
+					<title xml:lang="ko">centerLeft</title>
+					<title xml:lang="en">centerLeft</title>
+					<title xml:lang="jp">centerLeft</title>
+				</options>
+				<options value="centerRight">
+					<title xml:lang="ko">centerRight</title>
+					<title xml:lang="en">centerRight</title>
+					<title xml:lang="jp">centerRight</title>
+				</options>
+				<options value="bottomLeft">
+					<title xml:lang="ko">bottomLeft</title>
+					<title xml:lang="en">bottomLeft</title>
+					<title xml:lang="jp">bottomLeft</title>
+				</options>
+				<options value="bottomCenter">
+					<title xml:lang="ko">bottomCenter</title>
+					<title xml:lang="en">bottomCenter</title>
+					<title xml:lang="jp">bottomCenter</title>
+				</options>
+				<options value="bottomRight">
+					<title xml:lang="ko">bottomRight</title>
+					<title xml:lang="en">bottomRight</title>
+					<title xml:lang="jp">bottomRight</title>
+				</options>
+			</var>
+			<var name="camera_slide_image_1" type="image">
+				<title xml:lang="ko">[1] data-src</title>
+				<title xml:lang="en">[1] data-src</title>
+				<title xml:lang="jp">[1] data-src</title>
+			</var>
+			<var name="camera_slide_thumb_1" type="image">
+				<title xml:lang="ko">[1] data-thumb</title>
+				<title xml:lang="en">[1] data-thumb</title>
+				<title xml:lang="jp">[1] data-thumb</title>
+			</var>
+			<var name="camera_slide_caption_1" type="textarea">
+				<title xml:lang="ko">[1] .camera-caption</title>
+				<title xml:lang="en">[1] .camera-caption</title>
+				<title xml:lang="jp">[1] .camera-caption</title>
+			</var>
+			<var name="camera_slide_image_2" type="image">
+				<title xml:lang="ko">[2] data-src</title>
+				<title xml:lang="en">[2] data-src</title>
+				<title xml:lang="jp">[2] data-src</title>
+			</var>
+			<var name="camera_slide_thumb_2" type="image">
+				<title xml:lang="ko">[2] data-thumb</title>
+				<title xml:lang="en">[2] data-thumb</title>
+				<title xml:lang="jp">[2] data-thumb</title>
+			</var>
+			<var name="camera_slide_caption_2" type="textarea">
+				<title xml:lang="ko">[2] .camera-caption</title>
+				<title xml:lang="en">[2] .camera-caption</title>
+				<title xml:lang="jp">[2] .camera-caption</title>
+			</var>
+			<var name="camera_slide_image_3" type="image">
+				<title xml:lang="ko">[3] data-src</title>
+				<title xml:lang="en">[3] data-src</title>
+				<title xml:lang="jp">[3] data-src</title>
+			</var>
+			<var name="camera_slide_thumb_3" type="image">
+				<title xml:lang="ko">[3] data-thumb</title>
+				<title xml:lang="en">[3] data-thumb</title>
+				<title xml:lang="jp">[3] data-thumb</title>
+			</var>
+			<var name="camera_slide_caption_3" type="textarea">
+				<title xml:lang="ko">[3] .camera-caption</title>
+				<title xml:lang="en">[3] .camera-caption</title>
+				<title xml:lang="jp">[3] .camera-caption</title>
+			</var>
+			<var name="camera_slide_image_4" type="image">
+				<title xml:lang="ko">[4] data-src</title>
+				<title xml:lang="en">[4] data-src</title>
+				<title xml:lang="jp">[4] data-src</title>
+			</var>
+			<var name="camera_slide_thumb_4" type="image">
+				<title xml:lang="ko">[4] data-thumb</title>
+				<title xml:lang="en">[4] data-thumb</title>
+				<title xml:lang="jp">[4] data-thumb</title>
+			</var>
+			<var name="camera_slide_caption_4" type="textarea">
+				<title xml:lang="ko">[4] .camera-caption</title>
+				<title xml:lang="en">[4] .camera-caption</title>
+				<title xml:lang="jp">[4] .camera-caption</title>
+			</var>
+			<var name="camera_slide_image_5" type="image">
+				<title xml:lang="ko">[5] data-src</title>
+				<title xml:lang="en">[5] data-src</title>
+				<title xml:lang="jp">[5] data-src</title>
+			</var>
+			<var name="camera_slide_thumb_5" type="image">
+				<title xml:lang="ko">[5] data-thumb</title>
+				<title xml:lang="en">[5] data-thumb</title>
+				<title xml:lang="jp">[5] data-thumb</title>
+			</var>
+			<var name="camera_slide_caption_5" type="textarea">
+				<title xml:lang="ko">[5] .camera-caption</title>
+				<title xml:lang="en">[5] .camera-caption</title>
+				<title xml:lang="jp">[5] .camera-caption</title>
+			</var>
+		</group>
+		<group>
+			<title xml:lang="ko">기타 설정</title>
+			<title xml:lang="en">Other settings</title>
+			<title xml:lang="jp">その他の設定</title>
+			<var name="body_color" type="text">
+				<title xml:lang="ko">.body 색상</title>
+				<title xml:lang="en">.body Color</title>
+				<title xml:lang="jp">.body カラー</title>
+			</var>
+			<var name="body_img" type="image">
+				<title xml:lang="ko">.body 배경이미지</title>
+				<title xml:lang="en">.body Background image</title>
+				<title xml:lang="jp">.body 背景イメージ</title>
+			</var>
+			<var name="body_img_repeat" type="select">
+				<title xml:lang="ko">.body 배경이미지 반복</title>
+				<options value="no-repeat">
+					<title xml:lang="ko">[기본] 반복 안 함</title>
+					<title xml:lang="en">[General] No repeat</title>
+					<title xml:lang="jp">[基本] 繰り返しなし</title>
+				</options>
+				<options value="repeat-x">
+					<title xml:lang="ko">가로만 반복</title>
+					<title xml:lang="en">Repeat only horizontal</title>
+					<title xml:lang="jp">横のみ繰り返し</title>
+				</options>
+				<options value="repeat-y">
+					<title xml:lang="ko">세로만 반복</title>
+					<title xml:lang="en">Repeat only vertical</title>
+					<title xml:lang="jp">縦のみ繰り返し</title>
+				</options>
+			</var>
+			<var name="body_img_position" type="select">
+				<title xml:lang="ko">.body 배경이미지 정렬</title>
+				<options value="left top">
+					<title xml:lang="ko">[기본] left top</title>
+					<title xml:lang="en">[General] left top</title>
+					<title xml:lang="jp">[基本] left top</title>
+				</options>
+				<options value="center top">
+					<title xml:lang="ko">center top</title>
+					<title xml:lang="en">center top</title>
+					<title xml:lang="jp">center top</title>
+				</options>
+				<options value="right top">
+					<title xml:lang="ko">right top</title>
+					<title xml:lang="en">right top</title>
+					<title xml:lang="jp">right top</title>
+				</options>
+				<options value="left center">
+					<title xml:lang="ko">left center</title>
+					<title xml:lang="en">left center</title>
+					<title xml:lang="jp">left center</title>
+				</options>
+				<options value="center center">
+					<title xml:lang="ko">center</title>
+					<title xml:lang="en">center</title>
+					<title xml:lang="jp">center</title>
+				</options>
+				<options value="right center">
+					<title xml:lang="ko">right center</title>
+					<title xml:lang="en">right center</title>
+					<title xml:lang="jp">right center</title>
+				</options>
+				<options value="left bottom">
+					<title xml:lang="ko">left bottom</title>
+					<title xml:lang="en">left bottom</title>
+					<title xml:lang="jp">left bottom</title>
+				</options>
+				<options value="center bottom">
+					<title xml:lang="ko">center bottom</title>
+					<title xml:lang="en">center bottom</title>
+					<title xml:lang="jp">center bottom</title>
+				</options>
+				<options value="right bottom">
+					<title xml:lang="ko">right bottom</title>
+					<title xml:lang="en">right bottom</title>
+					<title xml:lang="jp">right bottom</title>
+				</options>
+			</var>
+			<var name="body_img_attach" type="select">
+				<title xml:lang="ko">.body 배경이미지 고정</title>
+				<options value="scroll">
+					<title xml:lang="ko">[기본] 고정 안 함</title>
+					<title xml:lang="en">[General] Not fixed</title>
+					<title xml:lang="jp">[基本] 固定しない</title>
+				</options>
+				<options value="fixed">
+					<title xml:lang="ko">고정</title>
+					<title xml:lang="en">FIxed</title>
+					<title xml:lang="jp">固定</title>
+				</options>
+			</var>
+			<var name="body_img_size" type="select">
+				<title xml:lang="ko">.body 배경이미지 크기</title>
+				<options value="default">
+					<title xml:lang="ko">[기본] 사용 안 함</title>
+					<title xml:lang="en">[General] Not use</title>
+					<title xml:lang="jp">[基本] 使用しない</title>
+				</options>
+				<options value="cover">
+					<title xml:lang="ko">가로 크기를 윈도우에 맞춤</title>
+					<title xml:lang="en">Fit to window width size</title>
+					<title xml:lang="jp">横方向のサイズをウィンドウに合わせる</title>
+				</options>
+				<options value="contain">
+					<title xml:lang="ko">세로 크기를 윈도우에 맞춤</title>
+					<title xml:lang="en">Fit to window height size</title>
+					<title xml:lang="jp">縦方向のサイズをウィンドウに合わせる</title>
+				</options>
+				<options value="100% 100%">
+					<title xml:lang="ko">크기를 윈도우에 맞춤</title>
+					<title xml:lang="en">Fit to window size</title>
+					<title xml:lang="jp">サイズをウィンドウに合わせる</title>
+				</options>
+			</var>
+			<var name="body_header" type="textarea">
+				<title xml:lang="ko">.body 이전 내용</title>
+				<title xml:lang="en">Before .body</title>
+				<title xml:lang="jp">.body以前の内容</title>
+			</var>
+			<var name="body_footer" type="textarea">
+				<title xml:lang="ko">.body 이후 내용</title>
+				<title xml:lang="en">After .body</title>
+				<title xml:lang="jp">.body以後の内容</title>
+			</var>
+			<var name="content_header" type="textarea">
+				<title xml:lang="ko">.content 이전 내용</title>
+				<title xml:lang="en">Before .content</title>
+				<title xml:lang="jp">.content以前の内容</title>
+			</var>
+			<var name="content_footer" type="textarea">
+				<title xml:lang="ko">.content 이후 내용</title>
+				<title xml:lang="en">After .content</title>
+				<title xml:lang="jp">.content以後の内容</title>
+			</var>
+			<var name="body_left_sidebar" type="textarea">
+				<title xml:lang="ko">.body .left-sidebar</title>
+				<title xml:lang="en">.body .left-sidebar</title>
+				<title xml:lang="jp">.body .left-sidebar</title>
+			</var>
+			<var name="body_right_sidebar" type="textarea">
+				<title xml:lang="ko">.body .right-sidebar</title>
+				<title xml:lang="en">.body .right-sidebar</title>
+				<title xml:lang="jp">.body .right-sidebar</title>
+			</var>
+			<var name="footer_widget" type="textarea">
+				<title xml:lang="ko">footer .widget</title>
+				<title xml:lang="en">footer .widget</title>
+				<title xml:lang="jp">footer .widget</title>
+			</var>
+			<var name="footer_license" type="textarea">
+				<title xml:lang="ko">footer .license</title>
+				<title xml:lang="en">footer .license</title>
+				<title xml:lang="jp">footer .license</title>
+			</var>
+		</group>
+	</extra_vars>
+	<menus>
+		<menu name="top_menu" maxdepth="1">
+			<title xml:lang="ko">상단 메뉴</title>
+			<title xml:lang="en">Top menu</title>
+			<title xml:lang="jp">トップメニュー</title>
+		</menu>
+		<menu name="main_menu" maxdepth="2" default="true">
+			<title xml:lang="ko">메인 메뉴</title>
+			<title xml:lang="en">Main menu</title>
+			<title xml:lang="jp">メインメニュー</title>
+		</menu>
+		<menu name="footer_menu" maxdepth="1">
+			<title xml:lang="ko">푸터 메뉴</title>
+			<title xml:lang="en">Footer menu</title>
+			<title xml:lang="jp">フッターメニュー</title>
+		</menu>
+	</menus>
+</layout>

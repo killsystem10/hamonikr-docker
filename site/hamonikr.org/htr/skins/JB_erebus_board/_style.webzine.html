@@ -1,0 +1,133 @@
+{@$list_count = -1}
+<form action="./" method="get" class="boardListForm">
+    <fieldset>
+        <legend>List of Articles</legend>
+        <table cellspacing="0" border="0" summary="List of Articles" class="boardList webZine">
+			
+
+			<tbody>	
+				<!--// 등록된 글이 없을때 -->
+				<tr cond="!$document_list && !$notice_list">
+					<td colspan="<!--@if($grant->manager)-->{count($list_config)+1}<!--@else-->{count($list_config)}<!--@end-->">{$lang->no_documents}</td>
+				</tr>
+			
+				<!--// 공지 글 출력 -->
+				<tr class="notice" loop="$notice_list=>$no, $document">
+					<td class="title" colspan="{$list_count}">
+						<a href="{getUrl('document_srl',$document->document_srl, 'listStyle', $listStyle, 'cpage','')}">{$document->getTitle($module_info->subject_cut_size)}</a>
+						<block cond="$module_info->display_new !='N'">{$document->printExtraImages(60*60*$module_info->duration_new)}</block>
+						<a href="{getUrl('document_srl', $document->document_srl)}#comment" cond="$document->getCommentCount()"><span class="replyNum" title="Replies">+ {$document->getCommentCount()}</span></a>
+						<a href="{getUrl('document_srl', $document->document_srl)}#trackback" cond="$document->getTrackbackCount()"><span class="trackbackNum" title="Trackbacks">+ {$document->getTrackbackCount()}</span></a>
+					</td>
+					<td class="count">
+						<block loop="$list_config=>$key, $val">	
+						<span class="date" cond="$val->type == 'regdate'">{$document->getRegdate('Y-m-d')}</span>
+						<span class="date" cond="$val->type == 'last_update'">{zdate($document->get('last_update'),'Y-m-d H:i')}</span>
+						<span class="author" cond="$val->type == 'nick_name'"><a href="#popup_menu_area" class="member_{$document->get('member_srl')}" onclick="return false">{$document->getNickName()}</a></span>
+						<span class="author" cond="$val->type == 'user_id'">{$document->getUserID()}</span>
+						<span class="author" cond="$val->type == 'user_name'">{$document->getUserName()}</span>
+						<span class="reading" cond="$val->type == 'readed_count'">{$document->get('readed_count')>0?$document->get('readed_count'):'&nbsp;'}</span>
+						<span class="recommend" cond="$val->type == 'voted_count'">{$document->get('voted_count')!=0?$document->get('voted_count'):'&nbsp;'}</span>
+						<span class="lastReply" cond="$val->type == 'last_post'">
+							<block cond="(int)($document->get('comment_count'))>0">
+								<a href="{$document->getPermanentUrl()}#comment" class="replyAnchor">{zdate($document->get('last_update'),'Y-m-d')}</a>
+								<span class="author" cond="$document->get('last_updater')">{htmlspecialchars($document->get('last_updater'))}</span>
+							</block>
+							<block cond="(int)($document->get('comment_count'))==0">&nbsp;</block>
+						</span>
+						</block>
+					</td>
+					<td class="check" width="20" cond="$grant->manager">
+						<input type="checkbox" name="cart" value="{$document->document_srl}" title="Check this" onclick="doAddDocumentCart(this)" checked="checked"|cond="$document->isCarted()" />
+					</td>
+				</tr>
+	
+				<!--// 일반 글 출력 -->
+				<tr class="bg{($no+1)%2+1}" loop="$document_list=>$no, $document">
+					<td class="title" colspan="{$list_count}">
+
+						<!--// 썸네일 출력 -->
+						<div class="thumb" cond="$document->thumbnailExists($module_info->thumbnail_width, $module_info->thumbnail_height, $module_info->thumbnail_type)">
+							<a href="{getUrl('document_srl',$document->document_srl,'listStyle',$listStyle, 'cpage','')}">
+								<img src="{$document->getThumbnail($module_info->thumbnail_width, $module_info->thumbnail_height, $module_info->thumbnail_type)}" alt="" />
+							</a>
+						</div>
+						<div class="thumb" cond="!$document->thumbnailExists() && $module_info->no_img!='N'">
+							<a href="{getUrl('document_srl',$document->document_srl,'listStyle',$listStyle, 'cpage','')}" style="width:{$module_info->thumbnail_width}px; height:{$module_info->thumbnail_height}px; line-height:{$module_info->thumbnail_height}px">
+								No Image
+							</a>
+						</div>
+
+						<!--// 내용 출력 -->
+						<div class="desc">
+						<block loop="$list_config=>$key,$val">
+							<!--// 기본 컨텐츠일 경우 -->
+							<!--@if($val->idx == -1)-->
+								<p class="subject" cond="$val->type == 'title'">
+									<!-- 분류 출력-->
+									<block cond="$module_info->use_category == 'Y' && $document->get('category_srl')">
+										<strong class="category" style="color:{$category_list[$document->get('category_srl')]->color};"|cond="$category_list[$document->get('category_srl')]->color && $category_list[$document->get('category_srl')]->color != 'transparent'">
+											{$category_list[$document->get('category_srl')]->title}
+										</strong>
+									 </block>
+									<a href="{getUrl('document_srl',$document->document_srl, 'listStyle', $listStyle, 'cpage','')}" class="title" style="<!--@if($module_info->subject_font_size)-->font-size:{$module_info->subject_font_size}px;<!--@end-->font-weight:{$module_info->subject_font_weight}">{$document->getTitle($module_info->subject_cut_size)}</a>
+									<block cond="$module_info->display_new !='N'">{$document->printExtraImages(60*60*$module_info->duration_new)}</block>
+
+									<a href="{getUrl('document_srl', $document->document_srl)}#trackback" cond="$document->getTrackbackCount()">
+										<span class="trackbackNum" title="Trackbacks">+{$document->getTrackbackCount()}</span>
+									</a>
+								</p>
+
+								<p class="summary" cond="$val->type=='summary'">
+										{$document->getSummary($module_info->content_cut_size)}
+								</p>
+
+								<p class="lastReply" cond="$val->type == 'last_post' && $document->get('comment_count')>0">
+									{$lang->last_post}: <a href="{$document->getPermanentUrl()}#comment">{zdate($document->get('last_update'),'Y-m-d')} {zdate($document->get('last_update'),'H:i')}</a>
+									<span class="author" cond="$document->get('last_updater')">| {htmlspecialchars($document->get('last_updater'))}</span>
+								</p>
+
+								<block cond="in_array($val->type,array('regdate','last_update', 'nick_name','user_id','user_name','readed_count','voted_count'))">
+								<ul class="meta" cond="!$_meta_display">
+									<li class="date" cond="$val->type == 'regdate'">{$lang->regdate}: {$document->getRegdate('Y-m-d')}</li>
+									<li class="date" cond="$val->type == 'last_update'">{$lang->last_update}: {zdate($document->get('last_update'),'Y-m-d H:i')}</li>
+									<li class="author" cond="$val->type == 'nick_name'">{$lang->author}: <a href="#popup_menu_area" class="member_{$document->get('member_srl')}" onclick="return false">{$document->getNickName()}</a></li>
+									<li class="author" cond="$val->type == 'user_id'">{$lang->user_id}: {$document->getUserID()}</li>
+									<li class="author" cond="$val->type == 'user_name'">{$lang->user_name}: {$document->getUserName()}</li>
+								</ul>
+								</block>
+							<!--@else-->
+								<p class="extra">{$val->name}: {$document->getExtraValueHTML($val->idx)}&nbsp;</p>						
+							<!--@end-->
+							</block>
+						</div>
+					</td>
+
+					<td class="count">
+						<block loop="$list_config=>$key,$val" cond="in_array($val->type,array('readed_count','voted_count'))">
+							<div class="readWrap" cond="$val->type == 'readed_count'">
+								<p class="readCount">{$document->get('readed_count')>0?$document->get('readed_count'):'0'}</p>
+								<p class="readed">VIEWS</p> 
+							</div>								
+							<div class="voteWrap" cond="$val->type == 'voted_count'">
+								<p class="voteCount"> {$document->get('voted_count')!=0?$document->get('voted_count'):'0'}</p>
+								<p class="voted">VOTES</p>
+							</div>
+						</block>
+
+						<div class="commenteWrap" cond="$document->getCommentCount()">
+							<p class="commenteCount"><a href="{getUrl('document_srl', $document->document_srl)}#comment">{$document->getCommentCount()}</a></p>
+							<p class="commented">COMMENTED</p> 
+						</div>
+					</td>
+
+					<td class="check" width="20" cond="$grant->manager">
+						<input type="checkbox" name="cart" value="{$document->document_srl}" title="Check this" onclick="doAddDocumentCart(this)" checked="checked"|cond="$document->isCarted()" />
+					</td>
+
+				</tr>	
+			</tbody>
+        </table>
+		
+    </fieldset>
+</form>

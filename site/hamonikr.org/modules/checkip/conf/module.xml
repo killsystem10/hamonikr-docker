@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<grants />
+	<permissions />
+	<actions>
+		<action name="dispCheckipAdminIndex" type="view" standalone="true" admin_index="true" />
+		<action name="procCheckipAdminAllDelete" type="controller" />
+		<action name="procCheckipAdminInsertConfig" type="controller" standalone="true" />
+		<action name="procCheckipAdminInitLogs" type="controller" standalone="true" />
+	</actions>
+</module>

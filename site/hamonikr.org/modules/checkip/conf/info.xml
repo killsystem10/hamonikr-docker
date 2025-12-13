@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="0.2">
+	<title xml:lang="ko">회원 가입 IP 기록</title>
+	<description xml:lang="ko">회원 가입한 IP와 시간을 기록하고 중복되는 IP를 차단할 수 있는 모듈입니다.</description>
+	<version>0.2.2</version>
+	<date>2012-03-16</date>
+	<category>member</category>
+
+	<author email_address="webmaster@comcorea.com" link="http://code.google.com/p/xe-check-ip/">
+		<name xml:lang="ko">CMD</name>
+	</author>
+</module>

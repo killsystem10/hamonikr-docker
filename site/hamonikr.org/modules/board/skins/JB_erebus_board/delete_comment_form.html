@@ -1,0 +1,24 @@
+<include target="_header.html" />
+
+<div class="smallBox">
+	<h3 class="round6">{$lang->confirm_delete}</h3>
+    
+    <form action="./" method="get" onsubmit="return procFilter(this, delete_comment)">
+		<input type="hidden" name="mid" value="{$mid}" />
+		<input type="hidden" name="page" value="{$page}" />
+		<input type="hidden" name="document_srl" value="{$oComment->get('document_srl')}" />
+		<input type="hidden" name="comment_srl" value="{$oComment->get('comment_srl')}" />
+
+		<div style="text-align:center" cond="$oComment->isExists()">
+			{$oComment->getContent(false)}
+		</div>
+
+        <div class="boardNavigation">
+            <span class="buttonOfficial"><input type="submit" value="{$lang->cmd_delete}" accesskey="s" /></span>
+            <a href="{getUrl('act','','comment_srl','')}" class="buttonOfficial"><span>{$lang->cmd_cancel}</span></a>
+        </div>
+    </form>
+</div>
+
+<include target="_footer.html" />
+

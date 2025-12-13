@@ -1,0 +1,2763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.2">
+    <title xml:lang="ko">Door_cpB_limit 레이아웃</title>
+    <description xml:lang="ko">
+        Door_cpB_limit 레이아웃입니다.
+        제작 : NAVER
+    </description> 
+     <version>1.4</version>
+    <date>2013-11-27</date>
+    <link>http://xpressengine.com/</link>
+
+    <author email_address="developers@xpressengine.com" link="http://doorweb.net/xe/">
+        <name xml:lang="ko">DoorWeb</name>
+        <name xml:lang="jp">DoorWeb</name>
+        <name xml:lang="en">DoorWeb</name>
+        <name xml:lang="ge">DoorWeb</name>
+        <name xml:lang="ru">DoorWeb</name>
+        <name xml:lang="es">DoorWeb</name>
+        <name xml:lang="zh-CN">DoorWeb</name>
+        <name xml:lang="zh-TW">DoorWeb</name>
+		<name xml:lang="vi">DoorWeb</name>
+		<name xml:lang="tr">DoorWeb</name>
+    </author>
+
+    <extra_vars>
+		<group>
+			<title xml:lang="ko">기본 설정</title>
+			<var name="layout_style" type="select">
+				<title xml:lang="ko">레이아웃 형태</title>
+				<description xml:lang="ko">레이아웃 형태</description>
+				<options value="c">
+					<title xml:lang="ko">메인페이지용</title>
+				</options>
+				<options value="ec">
+					<title xml:lang="ko">서브 + 본문</title>
+				</options>
+				<options value="ce">
+					<title xml:lang="ko">본문 + 서브</title>
+				</options>
+				<options value="cc">
+					<title xml:lang="ko">검색페이지</title>
+				</options>
+			</var>
+			<var name="e1_width" type="text">
+				<title xml:lang="ko">서브 넓이</title>
+				<description xml:lang="ko">서브+본문시 서브공간 넓이(예:250 - 기본260)</description>
+			</var>
+			<var name="layout_color" type="select">
+				<title xml:lang="ko">레이아웃 포인트 컬러</title>
+				<title xml:lang="en">Layout Colorset</title>
+				<options value="">
+					<title xml:lang="ko">사용자 설정</title>
+				</options>
+				<options value="Red">
+					<title xml:lang="ko">Red</title>
+				</options>
+				<options value="Pink">
+					<title xml:lang="ko">Pink</title>
+				</options>
+				<options value="Purple">
+					<title xml:lang="ko">Purple</title>
+				</options>
+				<options value="DeepPurple">
+					<title xml:lang="ko">Deep Purple</title>
+				</options>
+				<options value="Indigo">
+					<title xml:lang="ko">Indigo</title>
+				</options>
+				<options value="Blue">
+					<title xml:lang="ko">Blue</title>
+				</options>
+				<options value="LightBlue">
+					<title xml:lang="ko">Light Blue</title>
+				</options>
+				<options value="Cyan">
+					<title xml:lang="ko">Cyan</title>
+				</options>
+				<options value="Teal">
+					<title xml:lang="ko">Teal</title>
+				</options>
+				<options value="Green">
+					<title xml:lang="ko">Green</title>
+				</options>
+				<options value="LightGreen">
+					<title xml:lang="ko">Light Green</title>
+				</options>
+				<options value="Amber">
+					<title xml:lang="ko">Amber</title>
+				</options>
+				<options value="Orange">
+					<title xml:lang="ko">Orange</title>
+				</options>
+				<options value="DeepOrange">
+					<title xml:lang="ko">Deep Orange</title>
+				</options>
+				<options value="Brown">
+					<title xml:lang="ko">Brown</title>
+				</options>
+				<options value="BlueGrey">
+					<title xml:lang="ko">Blue Grey</title>
+				</options>
+			</var>
+			<var name="point_color" type="text">
+				<title xml:lang="ko">포인트색</title>
+				<description xml:alng="ko">포인트색을 입력해 주십시오.(예 : #a6875b) </description>
+			</var>
+			<var name="use_language" type="select">
+				<title xml:lang="ko">언어선택창 사용 유무</title>
+				<description xml:lang="ko">구글 로그인 사용 유무를 설정해 주십시오</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="Y">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+			<var name="DWmember_info" type="text">
+				<title xml:lang="ko">검색페이지 mid</title>
+				<description xml:alng="ko">메인 페이지에서 검색을 할 시에 검색내용 하단에 메인 위젯의 내용들이 노츨되어 보기 싫을때가 있습니다. 그럴경우 빈 레이아웃 하나 생성하시고 검색이 노출될 위젯 페이지를 만드신 다음 그 주소를 여기에 입력하시면 됩니다. (예:search)</description>
+			</var>
+			<var name="header_style" type="select">
+				<title xml:lang="ko">모바일 Tab 메뉴의 유형</title>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+		</group>
+		<group>
+		<title xml:lang="ko">HEADER</title>
+			<var name="logo_image" type="image">
+				<title xml:lang="ko">● 사이트 로고 이미지</title>
+				<title xml:lang="en">Site logo image</title>
+				<description xml:alng="ko">사이트 로고를 등록하십시오.</description>
+			</var>
+			<var name="Mlogo_image" type="image">
+				<title xml:lang="ko">L 모바일 로고 이미지</title>
+				<title xml:lang="en">Site logo image</title>
+				<description xml:alng="ko">최대 높이 34 이하를 권합니다.(권장 40~45)</description>
+			</var>
+			<var name="logo_image_alt" type="text">
+				<title xml:lang="ko">사이트 로고 문자</title>
+				<title xml:lang="en">Site logo text</title>
+			</var>
+			
+			<var name="logo_url" type="text">
+				<title xml:lang="ko">사이트 로고 URL</title>
+				<title xml:lang="en">Site logo url</title>
+				<description xml:alng="ko">로고를 클릭했을때 이동할 주소(달리 값이 없으면 메인으로 주소가 잡힙니다.)</description>
+			</var>
+			<var name="menu_padding" type="text">
+				<title xml:lang="ko">메뉴간 간격</title>
+				<description xml:alng="ko">메뉴간 간격을 입력해 주십시오.(예:30 - 기본 40)</description>
+			</var>	
+			<var name="min_menu_padding" type="text">
+				<title xml:lang="ko">테블릿 메뉴간 간격</title>
+				<description xml:alng="ko">1001화면에서 전체 공간이 줄어듭니다.그때 더 좁은 메뉴공간을 원하신다면 메뉴간 간격을 입력해 주십시오.(예:30 - 기본 40)</description>
+			</var>	
+			<var name="menu_font_size" type="text">
+				<title xml:lang="ko">메뉴 폰트크기</title>
+				<description xml:alng="ko">메뉴 폰트크기를 입력해 주십시오.(예:18 - 기본 15)</description>
+			</var>	
+			<var name="menu_align" type="select">
+				<title xml:lang="ko">L 메뉴 배열</title>
+				<description xml:lang="ko">메뉴 배열을 설정해 주십시오</description>
+				<options value="">
+					<title xml:lang="ko">좌측배열</title>
+				</options>
+				<options value="gnb_center">
+					<title xml:lang="ko">중앙배열</title>
+				</options>
+			</var>
+			<var name="sub_menu_width" type="text">
+				<title xml:lang="ko">L 서브메뉴의 넓이</title>
+				<description xml:alng="ko">서브메뉴의 넓이를 입력해 주십시오.(예:180 - 기본 150)</description>
+			</var>
+		</group>
+		<group>
+		<title xml:lang="ko">펼침메뉴</title>
+			<var name="menu_list" type="select">
+				<title xml:lang="ko">L 메뉴 가로배열 갯수</title>
+				<description xml:lang="ko">3차메뉴를 가진 2차 메뉴의 가로 배열 갯수를 설정해 주십시오</description>
+				<options value="33.3">
+					<title xml:lang="ko">3</title>
+				</options>
+				<options value="25">
+					<title xml:lang="ko">4</title>
+				</options>
+				<options value="20">
+					<title xml:lang="ko">5</title>
+				</options>
+				<options value="16.6">
+					<title xml:lang="ko">6</title>
+				</options>
+				<options value="14.3">
+					<title xml:lang="ko">7</title>
+				</options>
+				<options value="12.5">
+					<title xml:lang="ko">8</title>
+				</options>
+			</var>
+			<var name="menu_height" type="text">
+				<title xml:lang="ko">L 하위메뉴 높이값</title>
+				<description xml:alng="ko">하위메뉴 높이값을 입력해 주세요(예:200)</description>
+			</var>
+		</group>
+		<group>
+		<title xml:lang="ko">메인-슬라이드</title>
+			<var name="main_slide" type="select">
+				<title xml:lang="ko">● 슬라이드 사용 유무</title>
+				<description xml:lang="ko">슬라이드 사용 유무를 설정해 주십시오</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">페이드형</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">블럭형</title>
+				</options>
+			</var>
+			<var name="slide_height" type="text">
+				<title xml:lang="ko">L 슬라이드 높이</title>
+				<title xml:lang="en">slide speed</title>
+			</var>
+			<var name="slide_speed" type="text">
+				<title xml:lang="ko">L 슬라이드 속도(예:5000 - 1000이 1초임)</title>
+				<title xml:lang="en">slide speed</title>
+			</var>
+			<var name="slide_img1" type="image">
+				<title xml:lang="ko">● 슬라이드 배경이미지1</title>
+				<description xml:lang="ko">슬라이드 배경이미지1을 등록하세요.</description>
+			</var>
+			<var name="slide_imgB1" type="image">
+				<title xml:lang="ko">L 슬라이드 큰 타이틀 이미지1</title>
+				<description xml:lang="ko">슬라이드 큰 타이틀 이미지1을 등록하세요.</description>
+			</var>
+			<var name="slide_imgB_p1" type="select">
+				<title xml:lang="ko">L 슬라이드 큰 타이틀 위치</title>
+				<description xml:lang="ko">슬라이드 큰 타이틀 위치를 설정해 주십시오</description>
+				<options value="hlt">
+					<title xml:lang="ko">좌상단</title>
+				</options>
+				<options value="hlb">
+					<title xml:lang="ko">좌하단</title>
+				</options>
+				<options value="hrt">
+					<title xml:lang="ko">우상단</title>
+				</options>
+				<options value="hrb">
+					<title xml:lang="ko">우하단</title>
+				</options>
+				<options value="hct">
+					<title xml:lang="ko">중상단</title>
+				</options>
+			</var>
+			<var name="slide_imgP1" type="image">
+				<title xml:lang="ko">L 슬라이드 작은 텍스트용 이미지1</title>
+				<description xml:lang="ko">슬라이드 작은 텍스트용 이미지1을 등록하세요.</description>
+			</var>
+			<var name="slide_imgP_p1" type="select">
+				<title xml:lang="ko">L 슬라이드 작은 텍스트용 위치</title>
+				<description xml:lang="ko">슬라이드 작은 텍스트용 위치를 설정해 주십시오</description>
+				<options value="plt">
+					<title xml:lang="ko">좌상단</title>
+				</options>
+				<options value="plb">
+					<title xml:lang="ko">좌하단</title>
+				</options>
+				<options value="prt">
+					<title xml:lang="ko">우상단</title>
+				</options>
+				<options value="prb">
+					<title xml:lang="ko">우하단</title>
+				</options>
+				<options value="pcb">
+					<title xml:lang="ko">중하단</title>
+				</options>
+			</var>
+			<var name="slide_url1" type="text">
+				<title xml:lang="ko">L 슬라이드 링크1</title>
+				<description xml:alng="ko">슬라이드 링크1을 입력해 주십시오.</description>
+			</var>
+			
+			<var name="slide_title1" type="text">
+				<title xml:lang="ko">L 슬라이드 타이틀1</title>
+				<description xml:alng="ko">슬라이드 타이틀1을 입력해 주십시오.</description>
+			</var>
+
+			<var name="slide_img2" type="image">
+				<title xml:lang="ko">● 슬라이드 배경이미지2</title>
+				<description xml:lang="ko">슬라이드 배경이미지2을 등록하세요.</description>
+			</var>
+			<var name="slide_imgB2" type="image">
+				<title xml:lang="ko">L 슬라이드 큰 타이틀 이미지2</title>
+				<description xml:lang="ko">슬라이드 큰 타이틀 이미지2을 등록하세요.</description>
+			</var>
+			<var name="slide_imgB_p2" type="select">
+				<title xml:lang="ko">L 슬라이드 큰 타이틀 위치</title>
+				<description xml:lang="ko">슬라이드 큰 타이틀 위치를 설정해 주십시오</description>
+				<options value="hlt">
+					<title xml:lang="ko">좌상단</title>
+				</options>
+				<options value="hlb">
+					<title xml:lang="ko">좌하단</title>
+				</options>
+				<options value="hrt">
+					<title xml:lang="ko">우상단</title>
+				</options>
+				<options value="hrb">
+					<title xml:lang="ko">우하단</title>
+				</options>
+				<options value="hct">
+					<title xml:lang="ko">중상단</title>
+				</options>
+			</var>
+			<var name="slide_imgP2" type="image">
+				<title xml:lang="ko">L 슬라이드 작은 텍스트용 이미지2</title>
+				<description xml:lang="ko">슬라이드 작은 텍스트용 이미지2을 등록하세요.</description>
+			</var>
+			<var name="slide_imgP_p2" type="select">
+				<title xml:lang="ko">L 슬라이드 작은 텍스트용 위치</title>
+				<description xml:lang="ko">슬라이드 작은 텍스트용 위치를 설정해 주십시오</description>
+				<options value="plt">
+					<title xml:lang="ko">좌상단</title>
+				</options>
+				<options value="plb">
+					<title xml:lang="ko">좌하단</title>
+				</options>
+				<options value="prt">
+					<title xml:lang="ko">우상단</title>
+				</options>
+				<options value="prb">
+					<title xml:lang="ko">우하단</title>
+				</options>
+				<options value="pcb">
+					<title xml:lang="ko">중하단</title>
+				</options>
+			</var>
+			<var name="slide_title2" type="text">
+				<title xml:lang="ko">L 슬라이드 타이틀2</title>
+				<description xml:alng="ko">슬라이드 타이틀2을 입력해 주십시오.</description>
+			</var>
+			<var name="slide_url2" type="text">
+				<title xml:lang="ko">L 슬라이드 링크2</title>
+				<description xml:alng="ko">슬라이드 링크2을 입력해 주십시오.</description>
+			</var>
+			<var name="slide_img3" type="image">
+				<title xml:lang="ko">● 슬라이드 배경이미지3</title>
+				<description xml:lang="ko">슬라이드 배경이미지3을 등록하세요.</description>
+			</var>
+			<var name="slide_imgB3" type="image">
+				<title xml:lang="ko">L 슬라이드 큰 타이틀 이미지3</title>
+				<description xml:lang="ko">슬라이드 큰 타이틀 이미지3을 등록하세요.</description>
+			</var>
+			<var name="slide_imgB_p3" type="select">
+				<title xml:lang="ko">L 슬라이드 큰 타이틀 위치</title>
+				<description xml:lang="ko">슬라이드 큰 타이틀 위치를 설정해 주십시오</description>
+				<options value="hlt">
+					<title xml:lang="ko">좌상단</title>
+				</options>
+				<options value="hlb">
+					<title xml:lang="ko">좌하단</title>
+				</options>
+				<options value="hrt">
+					<title xml:lang="ko">우상단</title>
+				</options>
+				<options value="hrb">
+					<title xml:lang="ko">우하단</title>
+				</options>
+				<options value="hct">
+					<title xml:lang="ko">중상단</title>
+				</options>
+			</var>
+			<var name="slide_imgP3" type="image">
+				<title xml:lang="ko">L 슬라이드 작은 텍스트용 이미지3</title>
+				<description xml:lang="ko">슬라이드 작은 텍스트용 이미지3을 등록하세요.</description>
+			</var>
+			<var name="slide_imgP_p3" type="select">
+				<title xml:lang="ko">L 슬라이드 작은 텍스트용 위치</title>
+				<description xml:lang="ko">슬라이드 작은 텍스트용 위치를 설정해 주십시오</description>
+				<options value="plt">
+					<title xml:lang="ko">좌상단</title>
+				</options>
+				<options value="plb">
+					<title xml:lang="ko">좌하단</title>
+				</options>
+				<options value="prt">
+					<title xml:lang="ko">우상단</title>
+				</options>
+				<options value="prb">
+					<title xml:lang="ko">우하단</title>
+				</options>
+				<options value="pcb">
+					<title xml:lang="ko">중하단</title>
+				</options>
+			</var>
+			<var name="slide_title3" type="text">
+				<title xml:lang="ko">L 슬라이드 타이틀3</title>
+				<description xml:alng="ko">슬라이드 타이틀3을 입력해 주십시오.</description>
+			</var>
+			<var name="slide_url3" type="text">
+				<title xml:lang="ko">L 슬라이드 링크3</title>
+				<description xml:alng="ko">슬라이드 링크3을 입력해 주십시오.</description>
+			</var>
+
+			<var name="slide_img4" type="image">
+				<title xml:lang="ko">● 슬라이드 배경이미지4</title>
+				<description xml:lang="ko">슬라이드 배경이미지4을 등록하세요.</description>
+			</var>
+			<var name="slide_imgB4" type="image">
+				<title xml:lang="ko">L 슬라이드 큰 타이틀 이미지4</title>
+				<description xml:lang="ko">슬라이드 큰 타이틀 이미지4을 등록하세요.</description>
+			</var>
+			<var name="slide_imgB_p4" type="select">
+				<title xml:lang="ko">L 슬라이드 큰 타이틀 위치</title>
+				<description xml:lang="ko">슬라이드 큰 타이틀 위치를 설정해 주십시오</description>
+				<options value="hlt">
+					<title xml:lang="ko">좌상단</title>
+				</options>
+				<options value="hlb">
+					<title xml:lang="ko">좌하단</title>
+				</options>
+				<options value="hrt">
+					<title xml:lang="ko">우상단</title>
+				</options>
+				<options value="hrb">
+					<title xml:lang="ko">우하단</title>
+				</options>
+				<options value="hct">
+					<title xml:lang="ko">중상단</title>
+				</options>
+			</var>
+			<var name="slide_imgP4" type="image">
+				<title xml:lang="ko">L 슬라이드 작은 텍스트용 이미지4</title>
+				<description xml:lang="ko">슬라이드 작은 텍스트용 이미지4을 등록하세요.</description>
+			</var>
+			<var name="slide_imgP_p4" type="select">
+				<title xml:lang="ko">L 슬라이드 작은 텍스트용 위치</title>
+				<description xml:lang="ko">슬라이드 작은 텍스트용 위치를 설정해 주십시오</description>
+				<options value="plt">
+					<title xml:lang="ko">좌상단</title>
+				</options>
+				<options value="plb">
+					<title xml:lang="ko">좌하단</title>
+				</options>
+				<options value="prt">
+					<title xml:lang="ko">우상단</title>
+				</options>
+				<options value="prb">
+					<title xml:lang="ko">우하단</title>
+				</options>
+				<options value="pcb">
+					<title xml:lang="ko">중하단</title>
+				</options>
+			</var>
+			<var name="slide_title4" type="text">
+				<title xml:lang="ko">L 슬라이드 타이틀4</title>
+				<description xml:alng="ko">슬라이드 타이틀4을 입력해 주십시오.</description>
+			</var>
+			<var name="slide_url4" type="text">
+				<title xml:lang="ko">L 슬라이드 링크4</title>
+				<description xml:alng="ko">슬라이드 링크4을 입력해 주십시오.</description>
+			</var>
+
+			<var name="slide_img5" type="image">
+				<title xml:lang="ko">● 슬라이드 배경이미지5</title>
+				<description xml:lang="ko">슬라이드 배경이미지5을 등록하세요.</description>
+			</var>
+			<var name="slide_imgB5" type="image">
+				<title xml:lang="ko">L 슬라이드 큰 타이틀 이미지5</title>
+				<description xml:lang="ko">슬라이드 큰 타이틀 이미지5을 등록하세요.</description>
+			</var>
+			<var name="slide_imgB_p5" type="select">
+				<title xml:lang="ko">L 슬라이드 큰 타이틀 위치</title>
+				<description xml:lang="ko">슬라이드 큰 타이틀 위치를 설정해 주십시오</description>
+				<options value="hlt">
+					<title xml:lang="ko">좌상단</title>
+				</options>
+				<options value="hlb">
+					<title xml:lang="ko">좌하단</title>
+				</options>
+				<options value="hrt">
+					<title xml:lang="ko">우상단</title>
+				</options>
+				<options value="hrb">
+					<title xml:lang="ko">우하단</title>
+				</options>
+				<options value="hct">
+					<title xml:lang="ko">중상단</title>
+				</options>
+			</var>
+			<var name="slide_imgP5" type="image">
+				<title xml:lang="ko">L 슬라이드 작은 텍스트용 이미지5</title>
+				<description xml:lang="ko">슬라이드 작은 텍스트용 이미지5을 등록하세요.</description>
+			</var>
+			<var name="slide_imgP_p5" type="select">
+				<title xml:lang="ko">L 슬라이드 작은 텍스트용 위치</title>
+				<description xml:lang="ko">슬라이드 작은 텍스트용 위치를 설정해 주십시오</description>
+				<options value="plt">
+					<title xml:lang="ko">좌상단</title>
+				</options>
+				<options value="plb">
+					<title xml:lang="ko">좌하단</title>
+				</options>
+				<options value="prt">
+					<title xml:lang="ko">우상단</title>
+				</options>
+				<options value="prb">
+					<title xml:lang="ko">우하단</title>
+				</options>
+				<options value="pcb">
+					<title xml:lang="ko">중하단</title>
+				</options>
+			</var>
+			<var name="slide_title5" type="text">
+				<title xml:lang="ko">L 슬라이드 타이틀5</title>
+				<description xml:alng="ko">슬라이드 타이틀5을 입력해 주십시오.</description>
+			</var>
+			<var name="slide_url5" type="text">
+				<title xml:lang="ko">L 슬라이드 링크5</title>
+				<description xml:alng="ko">슬라이드 링크5을 입력해 주십시오.</description>
+			</var>
+		</group>
+		<group>
+		<title xml:lang="ko">모바일 슬라이드</title>
+			<var name="mobile_slide" type="select">
+				<title xml:lang="ko">모바일 슬라이드 사용 유무</title>
+				<description xml:lang="ko">모바일 슬라이드 사용 유무를 설정해 주십시오</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="Y">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+			<var name="Mslide_img1" type="image">
+				<title xml:lang="ko">● 슬라이드 이미지1</title>
+				<description xml:lang="ko">슬라이드 이미지1을 등록하세요.(넓이 768 권장)</description>
+			</var>
+			
+			<var name="Mslide_title1" type="text">
+				<title xml:lang="ko">L 슬라이드 타이틀1</title>
+				<description xml:alng="ko">슬라이드 타이틀1을 입력해 주십시오.</description>
+			</var>
+
+			
+			<var name="Mslide_img2" type="image">
+				<title xml:lang="ko">● 슬라이드 이미지2</title>
+				<description xml:lang="ko">슬라이드 이미지2을 등록하세요.</description>
+			</var>
+		
+			<var name="Mslide_title2" type="text">
+				<title xml:lang="ko">L 슬라이드 타이틀2</title>
+				<description xml:alng="ko">슬라이드 타이틀2을 입력해 주십시오.</description>
+			</var>
+	
+			
+			<var name="Mslide_img3" type="image">
+				<title xml:lang="ko">● 슬라이드 이미지3</title>
+				<description xml:lang="ko">슬라이드 이미지3을 등록하세요.</description>
+			</var>
+			
+			<var name="Mslide_title3" type="text">
+				<title xml:lang="ko">L 슬라이드 타이틀3</title>
+				<description xml:alng="ko">슬라이드 타이틀3을 입력해 주십시오.</description>
+			</var>
+
+			
+			<var name="Mslide_img4" type="image">
+				<title xml:lang="ko">● 슬라이드 이미지4</title>
+				<description xml:lang="ko">슬라이드 이미지4을 등록하세요.</description>
+			</var>
+			
+			<var name="Mslide_title4" type="text">
+				<title xml:lang="ko">L 슬라이드 타이틀4</title>
+				<description xml:alng="ko">슬라이드 타이틀4을 입력해 주십시오.</description>
+			</var>
+
+			<var name="Mslide_img5" type="image">
+				<title xml:lang="ko">● 슬라이드 이미지5</title>
+				<description xml:lang="ko">슬라이드 이미지5을 등록하세요.</description>
+			</var>
+			
+			<var name="Mslide_title5" type="text">
+				<title xml:lang="ko">L 슬라이드 타이틀5</title>
+				<description xml:alng="ko">슬라이드 타이틀5을 입력해 주십시오.</description>
+			</var>
+		</group>
+		<group>
+		<title xml:lang="ko">메인 위젯</title>
+			<var name="main_widget" type="select">
+				<title xml:lang="ko">메인위젯 사용유무</title>
+				<description xml:lang="ko">메인위젯 사용유무를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="Y">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+			<var name="notice_widget" type="text">
+				<title xml:lang="ko">● 공지 게시판 srl</title>
+				<description xml:lang="ko">공지 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="notice_title" type="text">
+				<title xml:lang="ko">L 공지의 타이틀</title>
+				<description xml:lang="ko">공지의 타이틀을 입력해 주십시오</description>
+			</var>
+		</group>
+		<group>
+		<title xml:lang="ko">메인 중간(1~4)</title>
+			<var name="box1_size" type="select">
+				<title xml:lang="ko">● 블럭1 크기</title>
+				<description xml:lang="ko">블럭 크기를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">전체 100%</title>
+				</options>
+				<options value="left_section">
+					<title xml:lang="ko">왼쪽 50%</title>
+				</options>
+				<options value="right_section">
+					<title xml:lang="ko">오른쪽 50%</title>
+				</options>
+			</var>
+			<var name="box1_title" type="text">
+				<title xml:lang="ko">L 블럭의 타이틀</title>
+				<description xml:lang="ko">블럭의 타이틀을 입력해 주십시오</description>
+			</var>
+			<var name="box1_title_img" type="image">
+				<title xml:lang="ko">L 블럭의 타이틀 이미지</title>
+				<description xml:lang="ko">블럭의 타이틀을 이미지로 사용하고 싶을때 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="box1_more" type="text">
+				<title xml:lang="ko">L 타이틀 링크</title>
+				<description xml:lang="ko">타이틀 링크를 입력해 주십시오</description>
+			</var>
+			<var name="box1_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="A">
+					<title xml:lang="ko">배너</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목(넓이 50% )</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목(넓이 50%)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지+제목+내용 (세로나열 - 넓이 50%)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">이미지+제목+내용 (가로나열 목록3 - 넓이 100%)</title>
+				</options>
+				<options value="G">
+					<title xml:lang="ko">대형 슬라이드(가로1 노출)</title>
+				</options>
+				<options value="H">
+					<title xml:lang="ko">위젯코드 또는 html</title>
+				</options>
+			</var>
+			<var name="box1_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="box1_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+			
+			<var name="box1_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">블럭에 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="box1_banner" type="image">
+				<title xml:lang="ko">L 배너 이미지</title>
+				<description xml:lang="ko">배너 이미지를 등록해 주십시오.(권장넓이 728px)</description>
+			</var>
+			<var name="box1_banner_url" type="text">
+				<title xml:lang="ko">L 배너 이미지 링크</title>
+				<description xml:lang="ko">배너 이미지 링크를 입력해 주십시오</description>
+			</var>
+			<var name="box1_html" type="textarea">
+				<title xml:lang="ko">L 위젯코드 또는 html</title>
+				<description xml:lang="ko">위젯코드 또는 html을 입력해 주십시오</description>
+			</var>
+
+			<var name="box2_size" type="select">
+				<title xml:lang="ko">● 블럭2 크기</title>
+				<description xml:lang="ko">블럭 크기를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">전체 100%</title>
+				</options>
+				<options value="left_section">
+					<title xml:lang="ko">왼쪽 50%</title>
+				</options>
+				<options value="right_section">
+					<title xml:lang="ko">오른쪽 50%</title>
+				</options>
+			</var>
+			<var name="box2_title" type="text">
+				<title xml:lang="ko">L 블럭의 타이틀</title>
+				<description xml:lang="ko">블럭의 타이틀을 입력해 주십시오</description>
+			</var>
+			<var name="box2_title_img" type="image">
+				<title xml:lang="ko">L 블럭의 타이틀 이미지</title>
+				<description xml:lang="ko">블럭의 타이틀을 이미지로 사용하고 싶을때 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="box2_more" type="text">
+				<title xml:lang="ko">L 타이틀 링크</title>
+				<description xml:lang="ko">타이틀 링크를 입력해 주십시오</description>
+			</var>
+			<var name="box2_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="A">
+					<title xml:lang="ko">배너</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목(넓이 50% )</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목(넓이 50%)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지+제목+내용 (세로나열 - 넓이 50%)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">이미지+제목+내용 (가로나열 목록3 - 넓이 100%)</title>
+				</options>
+				<options value="G">
+					<title xml:lang="ko">대형 슬라이드(가로1 노출)</title>
+				</options>
+				<options value="H">
+					<title xml:lang="ko">위젯코드 또는 html</title>
+				</options>
+			</var>
+			<var name="box2_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="box2_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+			
+			<var name="box2_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">블럭에 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="box2_banner" type="image">
+				<title xml:lang="ko">L 배너 이미지</title>
+				<description xml:lang="ko">배너 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="box2_banner_url" type="text">
+				<title xml:lang="ko">L 배너 이미지 링크</title>
+				<description xml:lang="ko">배너 이미지 링크를 입력해 주십시오</description>
+			</var>
+			<var name="box2_html" type="textarea">
+				<title xml:lang="ko">L 위젯코드 또는 html</title>
+				<description xml:lang="ko">위젯코드 또는 html을 입력해 주십시오</description>
+			</var>
+
+			<var name="box3_size" type="select">
+				<title xml:lang="ko">● 블럭3 크기</title>
+				<description xml:lang="ko">블럭 크기를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">전체 100%</title>
+				</options>
+				<options value="left_section">
+					<title xml:lang="ko">왼쪽 50%</title>
+				</options>
+				<options value="right_section">
+					<title xml:lang="ko">오른쪽 50%</title>
+				</options>
+			</var>
+			<var name="box3_title" type="text">
+				<title xml:lang="ko">L 블럭의 타이틀</title>
+				<description xml:lang="ko">블럭의 타이틀을 입력해 주십시오</description>
+			</var>
+			<var name="box3_title_img" type="image">
+				<title xml:lang="ko">L 블럭의 타이틀 이미지</title>
+				<description xml:lang="ko">블럭의 타이틀을 이미지로 사용하고 싶을때 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="box3_more" type="text">
+				<title xml:lang="ko">L 타이틀 링크</title>
+				<description xml:lang="ko">타이틀 링크를 입력해 주십시오</description>
+			</var>
+			<var name="box3_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="A">
+					<title xml:lang="ko">배너</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목(넓이 50% )</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목(넓이 50%)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지+제목+내용 (세로나열 - 넓이 50%)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">이미지+제목+내용 (가로나열 목록3 - 넓이 100%)</title>
+				</options>
+				<options value="G">
+					<title xml:lang="ko">대형 슬라이드(가로1 노출)</title>
+				</options>
+				<options value="H">
+					<title xml:lang="ko">위젯코드 또는 html</title>
+				</options>
+			</var>
+			<var name="box3_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="box3_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+			
+			<var name="box3_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">블럭에 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="box3_banner" type="image">
+				<title xml:lang="ko">L 배너 이미지</title>
+				<description xml:lang="ko">배너 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="box3_banner_url" type="text">
+				<title xml:lang="ko">L 배너 이미지 링크</title>
+				<description xml:lang="ko">배너 이미지 링크를 입력해 주십시오</description>
+			</var>
+			<var name="box3_html" type="textarea">
+				<title xml:lang="ko">L 위젯코드 또는 html</title>
+				<description xml:lang="ko">위젯코드 또는 html을 입력해 주십시오</description>
+			</var>
+
+			<var name="box4_size" type="select">
+				<title xml:lang="ko">● 블럭4 크기</title>
+				<description xml:lang="ko">블럭 크기를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">전체 100%</title>
+				</options>
+				<options value="left_section">
+					<title xml:lang="ko">왼쪽 50%</title>
+				</options>
+				<options value="right_section">
+					<title xml:lang="ko">오른쪽 50%</title>
+				</options>
+			</var>
+			<var name="box4_title" type="text">
+				<title xml:lang="ko">L 블럭의 타이틀</title>
+				<description xml:lang="ko">블럭의 타이틀을 입력해 주십시오</description>
+			</var>
+			<var name="box4_title_img" type="image">
+				<title xml:lang="ko">L 블럭의 타이틀 이미지</title>
+				<description xml:lang="ko">블럭의 타이틀을 이미지로 사용하고 싶을때 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="box4_more" type="text">
+				<title xml:lang="ko">L 타이틀 링크</title>
+				<description xml:lang="ko">타이틀 링크를 입력해 주십시오</description>
+			</var>
+			<var name="box4_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="A">
+					<title xml:lang="ko">배너</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목(넓이 50% )</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목(넓이 50%)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지+제목+내용 (세로나열 - 넓이 50%)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">이미지+제목+내용 (가로나열 목록3 - 넓이 100%)</title>
+				</options>
+				<options value="G">
+					<title xml:lang="ko">대형 슬라이드(가로1 노출)</title>
+				</options>
+				<options value="H">
+					<title xml:lang="ko">위젯코드 또는 html</title>
+				</options>
+			</var>
+			<var name="box4_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="box4_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+			
+			<var name="box4_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">블럭에 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="box4_banner" type="image">
+				<title xml:lang="ko">L 배너 이미지</title>
+				<description xml:lang="ko">배너 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="box4_banner_url" type="text">
+				<title xml:lang="ko">L 배너 이미지 링크</title>
+				<description xml:lang="ko">배너 이미지 링크를 입력해 주십시오</description>
+			</var>
+			<var name="box4_html" type="textarea">
+				<title xml:lang="ko">L 위젯코드 또는 html</title>
+				<description xml:lang="ko">위젯코드 또는 html을 입력해 주십시오</description>
+			</var>
+		</group>
+		<group>
+		<title xml:lang="ko">메인 중간(5~8)</title>
+			<var name="box5_size" type="select">
+				<title xml:lang="ko">● 블럭5 크기</title>
+				<description xml:lang="ko">블럭 크기를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">전체 100%</title>
+				</options>
+				<options value="left_section">
+					<title xml:lang="ko">왼쪽 50%</title>
+				</options>
+				<options value="right_section">
+					<title xml:lang="ko">오른쪽 50%</title>
+				</options>
+			</var>
+			<var name="box5_title" type="text">
+				<title xml:lang="ko">L 블럭의 타이틀</title>
+				<description xml:lang="ko">블럭의 타이틀을 입력해 주십시오</description>
+			</var>
+			<var name="box5_title_img" type="image">
+				<title xml:lang="ko">L 블럭의 타이틀 이미지</title>
+				<description xml:lang="ko">블럭의 타이틀을 이미지로 사용하고 싶을때 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="box5_more" type="text">
+				<title xml:lang="ko">L 타이틀 링크</title>
+				<description xml:lang="ko">타이틀 링크를 입력해 주십시오</description>
+			</var>
+			<var name="box5_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="A">
+					<title xml:lang="ko">배너</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목(넓이 50% )</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목(넓이 50%)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지+제목+내용 (세로나열 - 넓이 50%)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">이미지+제목+내용 (가로나열 목록3 - 넓이 100%)</title>
+				</options>
+				<options value="G">
+					<title xml:lang="ko">대형 슬라이드(가로1 노출)</title>
+				</options>
+				<options value="H">
+					<title xml:lang="ko">위젯코드 또는 html</title>
+				</options>
+			</var>
+			<var name="box5_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="box5_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+			
+			<var name="box5_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">블럭에 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="box5_banner" type="image">
+				<title xml:lang="ko">L 배너 이미지</title>
+				<description xml:lang="ko">배너 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="box5_banner_url" type="text">
+				<title xml:lang="ko">L 배너 이미지 링크</title>
+				<description xml:lang="ko">배너 이미지 링크를 입력해 주십시오</description>
+			</var>
+			<var name="box5_html" type="textarea">
+				<title xml:lang="ko">L 위젯코드 또는 html</title>
+				<description xml:lang="ko">위젯코드 또는 html을 입력해 주십시오</description>
+			</var>
+
+			<var name="box6_size" type="select">
+				<title xml:lang="ko">● 블럭6 크기</title>
+				<description xml:lang="ko">블럭 크기를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">전체 100%</title>
+				</options>
+				<options value="left_section">
+					<title xml:lang="ko">왼쪽 50%</title>
+				</options>
+				<options value="right_section">
+					<title xml:lang="ko">오른쪽 50%</title>
+				</options>
+			</var>
+			<var name="box6_title" type="text">
+				<title xml:lang="ko">L 블럭의 타이틀</title>
+				<description xml:lang="ko">블럭의 타이틀을 입력해 주십시오</description>
+			</var>
+			<var name="box6_title_img" type="image">
+				<title xml:lang="ko">L 블럭의 타이틀 이미지</title>
+				<description xml:lang="ko">블럭의 타이틀을 이미지로 사용하고 싶을때 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="box6_more" type="text">
+				<title xml:lang="ko">L 타이틀 링크</title>
+				<description xml:lang="ko">타이틀 링크를 입력해 주십시오</description>
+			</var>
+			<var name="box6_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="A">
+					<title xml:lang="ko">배너</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목(넓이 50% )</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목(넓이 50%)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지+제목+내용 (세로나열 - 넓이 50%)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">이미지+제목+내용 (가로나열 목록3 - 넓이 100%)</title>
+				</options>
+				<options value="G">
+					<title xml:lang="ko">대형 슬라이드(가로1 노출)</title>
+				</options>
+				<options value="H">
+					<title xml:lang="ko">위젯코드 또는 html</title>
+				</options>
+			</var>
+			<var name="box6_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="box6_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+			
+			<var name="box6_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">블럭에 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="box6_banner" type="image">
+				<title xml:lang="ko">L 배너 이미지</title>
+				<description xml:lang="ko">배너 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="box6_banner_url" type="text">
+				<title xml:lang="ko">L 배너 이미지 링크</title>
+				<description xml:lang="ko">배너 이미지 링크를 입력해 주십시오</description>
+			</var>
+			<var name="box6_html" type="textarea">
+				<title xml:lang="ko">L 위젯코드 또는 html</title>
+				<description xml:lang="ko">위젯코드 또는 html을 입력해 주십시오</description>
+			</var>
+
+			<var name="box7_size" type="select">
+				<title xml:lang="ko">● 블럭7 크기</title>
+				<description xml:lang="ko">블럭 크기를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">전체 100%</title>
+				</options>
+				<options value="left_section">
+					<title xml:lang="ko">왼쪽 50%</title>
+				</options>
+				<options value="right_section">
+					<title xml:lang="ko">오른쪽 50%</title>
+				</options>
+			</var>
+			<var name="box7_title" type="text">
+				<title xml:lang="ko">L 블럭의 타이틀</title>
+				<description xml:lang="ko">블럭의 타이틀을 입력해 주십시오</description>
+			</var>
+			<var name="box7_title_img" type="image">
+				<title xml:lang="ko">L 블럭의 타이틀 이미지</title>
+				<description xml:lang="ko">블럭의 타이틀을 이미지로 사용하고 싶을때 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="box7_more" type="text">
+				<title xml:lang="ko">L 타이틀 링크</title>
+				<description xml:lang="ko">타이틀 링크를 입력해 주십시오</description>
+			</var>
+			<var name="box7_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="A">
+					<title xml:lang="ko">배너</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목(넓이 50% )</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목(넓이 50%)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지+제목+내용 (세로나열 - 넓이 50%)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">이미지+제목+내용 (가로나열 목록3 - 넓이 100%)</title>
+				</options>
+				<options value="G">
+					<title xml:lang="ko">대형 슬라이드(가로1 노출)</title>
+				</options>
+				<options value="H">
+					<title xml:lang="ko">위젯코드 또는 html</title>
+				</options>
+			</var>
+			<var name="box7_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="box7_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+			
+			<var name="box7_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">블럭에 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="box7_banner" type="image">
+				<title xml:lang="ko">L 배너 이미지</title>
+				<description xml:lang="ko">배너 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="box7_banner_url" type="text">
+				<title xml:lang="ko">L 배너 이미지 링크</title>
+				<description xml:lang="ko">배너 이미지 링크를 입력해 주십시오</description>
+			</var>
+			<var name="box7_html" type="textarea">
+				<title xml:lang="ko">L 위젯코드 또는 html</title>
+				<description xml:lang="ko">위젯코드 또는 html을 입력해 주십시오</description>
+			</var>
+
+			<var name="box8_size" type="select">
+				<title xml:lang="ko">● 블럭8 크기</title>
+				<description xml:lang="ko">블럭 크기를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">전체 100%</title>
+				</options>
+				<options value="left_section">
+					<title xml:lang="ko">왼쪽 50%</title>
+				</options>
+				<options value="right_section">
+					<title xml:lang="ko">오른쪽 50%</title>
+				</options>
+			</var>
+			<var name="box8_title" type="text">
+				<title xml:lang="ko">L 블럭의 타이틀</title>
+				<description xml:lang="ko">블럭의 타이틀을 입력해 주십시오</description>
+			</var>
+			<var name="box8_title_img" type="image">
+				<title xml:lang="ko">L 블럭의 타이틀 이미지</title>
+				<description xml:lang="ko">블럭의 타이틀을 이미지로 사용하고 싶을때 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="box8_more" type="text">
+				<title xml:lang="ko">L 타이틀 링크</title>
+				<description xml:lang="ko">타이틀 링크를 입력해 주십시오</description>
+			</var>
+			<var name="box8_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="A">
+					<title xml:lang="ko">배너</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목(넓이 50% )</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목(넓이 50%)</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지+제목+내용 (세로나열 - 넓이 50%)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">이미지+제목+내용 (가로나열 목록3 - 넓이 100%)</title>
+				</options>
+				<options value="G">
+					<title xml:lang="ko">대형 슬라이드(가로1 노출)</title>
+				</options>
+				<options value="H">
+					<title xml:lang="ko">위젯코드 또는 html</title>
+				</options>
+			</var>
+			<var name="box8_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="box8_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+			
+			<var name="box8_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">블럭에 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="box8_banner" type="image">
+				<title xml:lang="ko">L 배너 이미지</title>
+				<description xml:lang="ko">배너 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="box8_banner_url" type="text">
+				<title xml:lang="ko">L 배너 이미지 링크</title>
+				<description xml:lang="ko">배너 이미지 링크를 입력해 주십시오</description>
+			</var>
+			<var name="box8_html" type="textarea">
+				<title xml:lang="ko">L 위젯코드 또는 html</title>
+				<description xml:lang="ko">위젯코드 또는 html을 입력해 주십시오</description>
+			</var>
+		</group>
+		<group>
+		<title xml:lang="ko">메인 오른쪽</title>
+			<var name="right1_size" type="select">
+				<title xml:lang="ko">● 블럭1 사용유무</title>
+				<description xml:lang="ko">블럭 사용유무를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+			<var name="right1_title" type="text">
+				<title xml:lang="ko">L 블럭의 타이틀</title>
+				<description xml:lang="ko">블럭의 타이틀을 입력해 주십시오</description>
+			</var>
+			<var name="right1_title_img" type="image">
+				<title xml:lang="ko">L 블럭의 타이틀 이미지</title>
+				<description xml:lang="ko">블럭의 타이틀을 이미지로 사용하고 싶을때 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="right1_more" type="text">
+				<title xml:lang="ko">L 타이틀 링크</title>
+				<description xml:lang="ko">타이틀 링크를 입력해 주십시오</description>
+			</var>
+			<var name="right1_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="A">
+					<title xml:lang="ko">배너</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지+제목+내용 (세로나열)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="H">
+					<title xml:lang="ko">위젯코드 또는 html</title>
+				</options>
+			</var>
+			<var name="right1_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="right1_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+			
+			<var name="right1_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">블럭에 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="right1_banner" type="image">
+				<title xml:lang="ko">L 배너 이미지</title>
+				<description xml:lang="ko">배너 이미지를 등록해 주십시오.(권장넓이 300px)</description>
+			</var>
+			<var name="right1_banner_url" type="text">
+				<title xml:lang="ko">L 배너 이미지 링크</title>
+				<description xml:lang="ko">배너 이미지 링크를 입력해 주십시오</description>
+			</var>
+			<var name="right1_html" type="textarea">
+				<title xml:lang="ko">L 위젯코드 또는 html</title>
+				<description xml:lang="ko">위젯코드 또는 html을 입력해 주십시오</description>
+			</var>
+
+			<var name="right2_size" type="select">
+				<title xml:lang="ko">● 블럭2 사용유무</title>
+				<description xml:lang="ko">블럭 사용유무를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+			<var name="right2_title" type="text">
+				<title xml:lang="ko">L 블럭의 타이틀</title>
+				<description xml:lang="ko">블럭의 타이틀을 입력해 주십시오</description>
+			</var>
+			<var name="right2_title_img" type="image">
+				<title xml:lang="ko">L 블럭의 타이틀 이미지</title>
+				<description xml:lang="ko">블럭의 타이틀을 이미지로 사용하고 싶을때 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="right2_more" type="text">
+				<title xml:lang="ko">L 타이틀 링크</title>
+				<description xml:lang="ko">타이틀 링크를 입력해 주십시오</description>
+			</var>
+			<var name="right2_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="A">
+					<title xml:lang="ko">배너</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지+제목+내용 (세로나열)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="H">
+					<title xml:lang="ko">위젯코드 또는 html</title>
+				</options>
+			</var>
+			<var name="right2_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="right2_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+			
+			<var name="right2_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">블럭에 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="right2_banner" type="image">
+				<title xml:lang="ko">L 배너 이미지</title>
+				<description xml:lang="ko">배너 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="right2_banner_url" type="text">
+				<title xml:lang="ko">L 배너 이미지 링크</title>
+				<description xml:lang="ko">배너 이미지 링크를 입력해 주십시오</description>
+			</var>
+			<var name="right2_html" type="textarea">
+				<title xml:lang="ko">L 위젯코드 또는 html</title>
+				<description xml:lang="ko">위젯코드 또는 html을 입력해 주십시오</description>
+			</var>
+
+			<var name="right3_size" type="select">
+				<title xml:lang="ko">● 블럭3 사용유무</title>
+				<description xml:lang="ko">블럭 사용유무를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+			<var name="right3_title" type="text">
+				<title xml:lang="ko">L 블럭의 타이틀</title>
+				<description xml:lang="ko">블럭의 타이틀을 입력해 주십시오</description>
+			</var>
+			<var name="right3_title_img" type="image">
+				<title xml:lang="ko">L 블럭의 타이틀 이미지</title>
+				<description xml:lang="ko">블럭의 타이틀을 이미지로 사용하고 싶을때 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="right3_more" type="text">
+				<title xml:lang="ko">L 타이틀 링크</title>
+				<description xml:lang="ko">타이틀 링크를 입력해 주십시오</description>
+			</var>
+			<var name="right3_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="A">
+					<title xml:lang="ko">배너</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지+제목+내용 (세로나열)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="H">
+					<title xml:lang="ko">위젯코드 또는 html</title>
+				</options>
+			</var>
+			<var name="right3_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="right3_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+			
+			<var name="right3_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">블럭에 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="right3_banner" type="image">
+				<title xml:lang="ko">L 배너 이미지</title>
+				<description xml:lang="ko">배너 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="right3_banner_url" type="text">
+				<title xml:lang="ko">L 배너 이미지 링크</title>
+				<description xml:lang="ko">배너 이미지 링크를 입력해 주십시오</description>
+			</var>
+			<var name="right3_html" type="textarea">
+				<title xml:lang="ko">L 위젯코드 또는 html</title>
+				<description xml:lang="ko">위젯코드 또는 html을 입력해 주십시오</description>
+			</var>
+
+			<var name="right4_size" type="select">
+				<title xml:lang="ko">● 블럭4 사용유무</title>
+				<description xml:lang="ko">블럭 사용유무를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+			<var name="right4_title" type="text">
+				<title xml:lang="ko">L 블럭의 타이틀</title>
+				<description xml:lang="ko">블럭의 타이틀을 입력해 주십시오</description>
+			</var>
+			<var name="right4_title_img" type="image">
+				<title xml:lang="ko">L 블럭의 타이틀 이미지</title>
+				<description xml:lang="ko">블럭의 타이틀을 이미지로 사용하고 싶을때 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="right4_more" type="text">
+				<title xml:lang="ko">L 타이틀 링크</title>
+				<description xml:lang="ko">타이틀 링크를 입력해 주십시오</description>
+			</var>
+			<var name="right4_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="A">
+					<title xml:lang="ko">배너</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지+제목+내용 (세로나열)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="H">
+					<title xml:lang="ko">위젯코드 또는 html</title>
+				</options>
+			</var>
+			<var name="right4_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="right4_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+			
+			<var name="right4_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">블럭에 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="right4_banner" type="image">
+				<title xml:lang="ko">L 배너 이미지</title>
+				<description xml:lang="ko">배너 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="right4_banner_url" type="text">
+				<title xml:lang="ko">L 배너 이미지 링크</title>
+				<description xml:lang="ko">배너 이미지 링크를 입력해 주십시오</description>
+			</var>
+			<var name="right4_html" type="textarea">
+				<title xml:lang="ko">L 위젯코드 또는 html</title>
+				<description xml:lang="ko">위젯코드 또는 html을 입력해 주십시오</description>
+			</var>
+
+			<var name="right5_size" type="select">
+				<title xml:lang="ko">● 블럭5 사용유무</title>
+				<description xml:lang="ko">블럭 사용유무를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+			<var name="right5_title" type="text">
+				<title xml:lang="ko">L 블럭의 타이틀</title>
+				<description xml:lang="ko">블럭의 타이틀을 입력해 주십시오</description>
+			</var>
+			<var name="right5_title_img" type="image">
+				<title xml:lang="ko">L 블럭의 타이틀 이미지</title>
+				<description xml:lang="ko">블럭의 타이틀을 이미지로 사용하고 싶을때 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="right5_more" type="text">
+				<title xml:lang="ko">L 타이틀 링크</title>
+				<description xml:lang="ko">타이틀 링크를 입력해 주십시오</description>
+			</var>
+			<var name="right5_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="A">
+					<title xml:lang="ko">배너</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지+제목+내용 (세로나열)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="H">
+					<title xml:lang="ko">위젯코드 또는 html</title>
+				</options>
+			</var>
+			<var name="right5_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="right5_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+			
+			<var name="right5_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">블럭에 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="right5_banner" type="image">
+				<title xml:lang="ko">L 배너 이미지</title>
+				<description xml:lang="ko">배너 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="right5_banner_url" type="text">
+				<title xml:lang="ko">L 배너 이미지 링크</title>
+				<description xml:lang="ko">배너 이미지 링크를 입력해 주십시오</description>
+			</var>
+			<var name="right5_html" type="textarea">
+				<title xml:lang="ko">L 위젯코드 또는 html</title>
+				<description xml:lang="ko">위젯코드 또는 html을 입력해 주십시오</description>
+			</var>
+		</group>
+		<group>
+		<title xml:lang="ko">메인 왼쪽</title>
+			<var name="left1_size" type="select">
+				<title xml:lang="ko">● 블럭1 사용유무</title>
+				<description xml:lang="ko">블럭 사용유무를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+			<var name="left1_title" type="text">
+				<title xml:lang="ko">L 블럭의 타이틀</title>
+				<description xml:lang="ko">블럭의 타이틀을 입력해 주십시오</description>
+			</var>
+			<var name="left1_title_img" type="image">
+				<title xml:lang="ko">L 블럭의 타이틀 이미지</title>
+				<description xml:lang="ko">블럭의 타이틀을 이미지로 사용하고 싶을때 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="left1_more" type="text">
+				<title xml:lang="ko">L 타이틀 링크</title>
+				<description xml:lang="ko">타이틀 링크를 입력해 주십시오</description>
+			</var>
+			<var name="left1_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="A">
+					<title xml:lang="ko">배너</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지+제목+내용 (세로나열)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="H">
+					<title xml:lang="ko">위젯코드 또는 html</title>
+				</options>
+			</var>
+			<var name="left1_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="left1_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+			
+			<var name="left1_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">블럭에 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="left1_banner" type="image">
+				<title xml:lang="ko">L 배너 이미지</title>
+				<description xml:lang="ko">배너 이미지를 등록해 주십시오.(권장넓이 160px)</description>
+			</var>
+			<var name="left1_banner_url" type="text">
+				<title xml:lang="ko">L 배너 이미지 링크</title>
+				<description xml:lang="ko">배너 이미지 링크를 입력해 주십시오</description>
+			</var>
+			<var name="left1_html" type="textarea">
+				<title xml:lang="ko">L 위젯코드 또는 html</title>
+				<description xml:lang="ko">위젯코드 또는 html을 입력해 주십시오</description>
+			</var>
+
+			<var name="left2_size" type="select">
+				<title xml:lang="ko">● 블럭2 사용유무</title>
+				<description xml:lang="ko">블럭 사용유무를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+			<var name="left2_title" type="text">
+				<title xml:lang="ko">L 블럭의 타이틀</title>
+				<description xml:lang="ko">블럭의 타이틀을 입력해 주십시오</description>
+			</var>
+			<var name="left2_title_img" type="image">
+				<title xml:lang="ko">L 블럭의 타이틀 이미지</title>
+				<description xml:lang="ko">블럭의 타이틀을 이미지로 사용하고 싶을때 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="left2_more" type="text">
+				<title xml:lang="ko">L 타이틀 링크</title>
+				<description xml:lang="ko">타이틀 링크를 입력해 주십시오</description>
+			</var>
+			<var name="left2_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="A">
+					<title xml:lang="ko">배너</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지+제목+내용 (세로나열)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="H">
+					<title xml:lang="ko">위젯코드 또는 html</title>
+				</options>
+			</var>
+			<var name="left2_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="left2_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+			
+			<var name="left2_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">블럭에 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="left2_banner" type="image">
+				<title xml:lang="ko">L 배너 이미지</title>
+				<description xml:lang="ko">배너 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="left2_banner_url" type="text">
+				<title xml:lang="ko">L 배너 이미지 링크</title>
+				<description xml:lang="ko">배너 이미지 링크를 입력해 주십시오</description>
+			</var>
+			<var name="left2_html" type="textarea">
+				<title xml:lang="ko">L 위젯코드 또는 html</title>
+				<description xml:lang="ko">위젯코드 또는 html을 입력해 주십시오</description>
+			</var>
+
+			<var name="left3_size" type="select">
+				<title xml:lang="ko">● 블럭3 사용유무</title>
+				<description xml:lang="ko">블럭 사용유무를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+			<var name="left3_title" type="text">
+				<title xml:lang="ko">L 블럭의 타이틀</title>
+				<description xml:lang="ko">블럭의 타이틀을 입력해 주십시오</description>
+			</var>
+			<var name="left3_title_img" type="image">
+				<title xml:lang="ko">L 블럭의 타이틀 이미지</title>
+				<description xml:lang="ko">블럭의 타이틀을 이미지로 사용하고 싶을때 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="left3_more" type="text">
+				<title xml:lang="ko">L 타이틀 링크</title>
+				<description xml:lang="ko">타이틀 링크를 입력해 주십시오</description>
+			</var>
+			<var name="left3_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="A">
+					<title xml:lang="ko">배너</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지+제목+내용 (세로나열)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="H">
+					<title xml:lang="ko">위젯코드 또는 html</title>
+				</options>
+			</var>
+			<var name="left3_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="left3_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+			
+			<var name="left3_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">블럭에 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="left3_banner" type="image">
+				<title xml:lang="ko">L 배너 이미지</title>
+				<description xml:lang="ko">배너 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="left3_banner_url" type="text">
+				<title xml:lang="ko">L 배너 이미지 링크</title>
+				<description xml:lang="ko">배너 이미지 링크를 입력해 주십시오</description>
+			</var>
+			<var name="left3_html" type="textarea">
+				<title xml:lang="ko">L 위젯코드 또는 html</title>
+				<description xml:lang="ko">위젯코드 또는 html을 입력해 주십시오</description>
+			</var>
+
+			<var name="left4_size" type="select">
+				<title xml:lang="ko">● 블럭4 사용유무</title>
+				<description xml:lang="ko">블럭 사용유무를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+			<var name="left4_title" type="text">
+				<title xml:lang="ko">L 블럭의 타이틀</title>
+				<description xml:lang="ko">블럭의 타이틀을 입력해 주십시오</description>
+			</var>
+			<var name="left4_title_img" type="image">
+				<title xml:lang="ko">L 블럭의 타이틀 이미지</title>
+				<description xml:lang="ko">블럭의 타이틀을 이미지로 사용하고 싶을때 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="left4_more" type="text">
+				<title xml:lang="ko">L 타이틀 링크</title>
+				<description xml:lang="ko">타이틀 링크를 입력해 주십시오</description>
+			</var>
+			<var name="left4_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="A">
+					<title xml:lang="ko">배너</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지+제목+내용 (세로나열)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="H">
+					<title xml:lang="ko">위젯코드 또는 html</title>
+				</options>
+			</var>
+			<var name="left4_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="left4_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+			
+			<var name="left4_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">블럭에 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="left4_banner" type="image">
+				<title xml:lang="ko">L 배너 이미지</title>
+				<description xml:lang="ko">배너 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="left4_banner_url" type="text">
+				<title xml:lang="ko">L 배너 이미지 링크</title>
+				<description xml:lang="ko">배너 이미지 링크를 입력해 주십시오</description>
+			</var>
+			<var name="left4_html" type="textarea">
+				<title xml:lang="ko">L 위젯코드 또는 html</title>
+				<description xml:lang="ko">위젯코드 또는 html을 입력해 주십시오</description>
+			</var>
+
+			<var name="left5_size" type="select">
+				<title xml:lang="ko">● 블럭5 사용유무</title>
+				<description xml:lang="ko">블럭 사용유무를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+			<var name="left5_title" type="text">
+				<title xml:lang="ko">L 블럭의 타이틀</title>
+				<description xml:lang="ko">블럭의 타이틀을 입력해 주십시오</description>
+			</var>
+			<var name="left5_title_img" type="image">
+				<title xml:lang="ko">L 블럭의 타이틀 이미지</title>
+				<description xml:lang="ko">블럭의 타이틀을 이미지로 사용하고 싶을때 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="left5_more" type="text">
+				<title xml:lang="ko">L 타이틀 링크</title>
+				<description xml:lang="ko">타이틀 링크를 입력해 주십시오</description>
+			</var>
+			<var name="left5_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="A">
+					<title xml:lang="ko">배너</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지+제목+내용 (세로나열)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="H">
+					<title xml:lang="ko">위젯코드 또는 html</title>
+				</options>
+			</var>
+			<var name="left5_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="left5_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+			
+			<var name="left5_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">블럭에 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="left5_banner" type="image">
+				<title xml:lang="ko">L 배너 이미지</title>
+				<description xml:lang="ko">배너 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="left5_banner_url" type="text">
+				<title xml:lang="ko">L 배너 이미지 링크</title>
+				<description xml:lang="ko">배너 이미지 링크를 입력해 주십시오</description>
+			</var>
+			<var name="left5_html" type="textarea">
+				<title xml:lang="ko">L 위젯코드 또는 html</title>
+				<description xml:lang="ko">위젯코드 또는 html을 입력해 주십시오</description>
+			</var>
+		</group>
+
+		<group>
+			<title xml:lang="ko">서브 설정</title>
+			<var name="sub_bgimg" type="image">
+				<title xml:lang="ko">● 서브 상단 타이틀 배경이미지</title>
+				<description xml:lang="ko">서브 상단 타이틀 타이틀 배경이미지를 등록하세요. (넓이 : 1920, 높이 400이상 달리 입력이 없으며 기본 배경이 적용됩니다.)</description>
+			</var>
+			<var name="m_sub_bgimg" type="image">
+				<title xml:lang="ko">● 모바일용 서브 상단 타이틀 배경이미지</title>
+				<description xml:lang="ko">모바일용 서브 상단 타이틀 타이틀 배경이미지를 등록하세요. (넓이 : 768이상, 높이 150이상 달리 입력이 없으며 기본 배경이 적용됩니다.)</description>
+			</var>
+			<var name="locNav_img" type="image">
+				<title xml:lang="ko">● 로컬메뉴 타이틀 상단 이미지</title>
+				<description xml:alng="ko">로컬메뉴 타이틀 상단 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="breadclumb" type="select">
+				<title xml:lang="ko">● 빵조각 사용유무</title>
+				<description xml:lang="ko">빵조각(현재위치) 사용유무 선택해 주십시오.</description>
+				<options value="N">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="Y">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+			<var name="ad_top" type="textarea">
+				<title xml:lang="ko">● 본문 상단 광고</title>
+				<description xml:lang="ko">본문 상단에 광고를 넣고 싶으시다면 코드를 입력하세요.</description>
+			</var>
+			<var name="ad_bottom" type="textarea">
+				<title xml:lang="ko">● 본문 하단 광고</title>
+				<description xml:lang="ko">본문 하단에 광고를 넣고 싶으시다면 코드를 입력하세요.</description>
+			</var>
+			<var name="notice_sub" type="text">
+				<title xml:lang="ko">● 빵조각 좌측 공지 게시판 srl</title>
+				<description xml:lang="ko">빵조각 좌측 공지 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="notice_title_sub" type="text">
+				<title xml:lang="ko">L 공지의 타이틀</title>
+				<description xml:lang="ko">공지의 타이틀을 입력해 주십시오</description>
+			</var>
+		</group>
+		<group>
+		<title xml:lang="ko">서브 공간</title>
+			<var name="use_quick" type="select">
+				<title xml:lang="ko">● 서브 쫄쫄이 사용유무</title>
+				<description xml:lang="ko">서브 쫄쫄이 사용유무를 설정해 주십시오.(사용으로 하시면 서브가 본문 공간을 넘어설때 본문을 따라 다닙니다.)</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="Y">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+			<var name="sub0_size" type="select">
+				<title xml:lang="ko">● 최신글 사용유무</title>
+				<description xml:lang="ko">최신글 최신댓글 사용유무를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+			<var name="sub0_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목</title>
+				</options>
+			</var>
+			<var name="sub0_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="sub0_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+			<var name="sub0_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">최신글 최신댓글 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="sub1_size" type="select">
+				<title xml:lang="ko">● 블럭1 사용유무</title>
+				<description xml:lang="ko">블럭 사용유무를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+			<var name="sub1_title" type="text">
+				<title xml:lang="ko">L 블럭의 타이틀</title>
+				<description xml:lang="ko">블럭의 타이틀을 입력해 주십시오</description>
+			</var>
+			<var name="sub1_title_img" type="image">
+				<title xml:lang="ko">L 블럭의 타이틀 이미지</title>
+				<description xml:lang="ko">블럭의 타이틀을 이미지로 사용하고 싶을때 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="sub1_more" type="text">
+				<title xml:lang="ko">L 타이틀 링크</title>
+				<description xml:lang="ko">타이틀 링크를 입력해 주십시오</description>
+			</var>
+			<var name="sub1_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="A">
+					<title xml:lang="ko">배너</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지+제목+내용 (세로나열)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="H">
+					<title xml:lang="ko">위젯코드 또는 html</title>
+				</options>
+			</var>
+			<var name="sub1_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="sub1_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+			
+			<var name="sub1_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">블럭에 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="sub1_banner" type="image">
+				<title xml:lang="ko">L 배너 이미지</title>
+				<description xml:lang="ko">배너 이미지를 등록해 주십시오.(권장넓이 160px)</description>
+			</var>
+			<var name="sub1_banner_url" type="text">
+				<title xml:lang="ko">L 배너 이미지 링크</title>
+				<description xml:lang="ko">배너 이미지 링크를 입력해 주십시오</description>
+			</var>
+			<var name="sub1_html" type="textarea">
+				<title xml:lang="ko">L 위젯코드 또는 html</title>
+				<description xml:lang="ko">위젯코드 또는 html을 입력해 주십시오</description>
+			</var>
+
+			<var name="sub2_size" type="select">
+				<title xml:lang="ko">● 블럭2 사용유무</title>
+				<description xml:lang="ko">블럭 사용유무를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+			<var name="sub2_title" type="text">
+				<title xml:lang="ko">L 블럭의 타이틀</title>
+				<description xml:lang="ko">블럭의 타이틀을 입력해 주십시오</description>
+			</var>
+			<var name="sub2_title_img" type="image">
+				<title xml:lang="ko">L 블럭의 타이틀 이미지</title>
+				<description xml:lang="ko">블럭의 타이틀을 이미지로 사용하고 싶을때 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="sub2_more" type="text">
+				<title xml:lang="ko">L 타이틀 링크</title>
+				<description xml:lang="ko">타이틀 링크를 입력해 주십시오</description>
+			</var>
+			<var name="sub2_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="A">
+					<title xml:lang="ko">배너</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지+제목+내용 (세로나열)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="H">
+					<title xml:lang="ko">위젯코드 또는 html</title>
+				</options>
+			</var>
+			<var name="sub2_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="sub2_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+		
+			<var name="sub2_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">블럭에 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="sub2_banner" type="image">
+				<title xml:lang="ko">L 배너 이미지</title>
+				<description xml:lang="ko">배너 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="sub2_banner_url" type="text">
+				<title xml:lang="ko">L 배너 이미지 링크</title>
+				<description xml:lang="ko">배너 이미지 링크를 입력해 주십시오</description>
+			</var>
+			<var name="sub2_html" type="textarea">
+				<title xml:lang="ko">L 위젯코드 또는 html</title>
+				<description xml:lang="ko">위젯코드 또는 html을 입력해 주십시오</description>
+			</var>
+
+			<var name="sub3_size" type="select">
+				<title xml:lang="ko">● 블럭3 사용유무</title>
+				<description xml:lang="ko">블럭 사용유무를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+			<var name="sub3_title" type="text">
+				<title xml:lang="ko">L 블럭의 타이틀</title>
+				<description xml:lang="ko">블럭의 타이틀을 입력해 주십시오</description>
+			</var>
+			<var name="sub3_title_img" type="image">
+				<title xml:lang="ko">L 블럭의 타이틀 이미지</title>
+				<description xml:lang="ko">블럭의 타이틀을 이미지로 사용하고 싶을때 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="sub3_more" type="text">
+				<title xml:lang="ko">L 타이틀 링크</title>
+				<description xml:lang="ko">타이틀 링크를 입력해 주십시오</description>
+			</var>
+			<var name="sub3_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="A">
+					<title xml:lang="ko">배너</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지+제목+내용 (세로나열)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="H">
+					<title xml:lang="ko">위젯코드 또는 html</title>
+				</options>
+			</var>
+			<var name="sub3_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="sub3_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+			
+			<var name="sub3_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">블럭에 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="sub3_banner" type="image">
+				<title xml:lang="ko">L 배너 이미지</title>
+				<description xml:lang="ko">배너 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="sub3_banner_url" type="text">
+				<title xml:lang="ko">L 배너 이미지 링크</title>
+				<description xml:lang="ko">배너 이미지 링크를 입력해 주십시오</description>
+			</var>
+			<var name="sub3_html" type="textarea">
+				<title xml:lang="ko">L 위젯코드 또는 html</title>
+				<description xml:lang="ko">위젯코드 또는 html을 입력해 주십시오</description>
+			</var>
+
+			<var name="sub4_size" type="select">
+				<title xml:lang="ko">● 블럭4 사용유무</title>
+				<description xml:lang="ko">블럭 사용유무를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+			<var name="sub4_title" type="text">
+				<title xml:lang="ko">L 블럭의 타이틀</title>
+				<description xml:lang="ko">블럭의 타이틀을 입력해 주십시오</description>
+			</var>
+			<var name="sub4_title_img" type="image">
+				<title xml:lang="ko">L 블럭의 타이틀 이미지</title>
+				<description xml:lang="ko">블럭의 타이틀을 이미지로 사용하고 싶을때 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="sub4_more" type="text">
+				<title xml:lang="ko">L 타이틀 링크</title>
+				<description xml:lang="ko">타이틀 링크를 입력해 주십시오</description>
+			</var>
+			<var name="sub4_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="A">
+					<title xml:lang="ko">배너</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지+제목+내용 (세로나열)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="H">
+					<title xml:lang="ko">위젯코드 또는 html</title>
+				</options>
+			</var>
+			<var name="sub4_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="sub4_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+			
+			<var name="sub4_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">블럭에 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="sub4_banner" type="image">
+				<title xml:lang="ko">L 배너 이미지</title>
+				<description xml:lang="ko">배너 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="sub4_banner_url" type="text">
+				<title xml:lang="ko">L 배너 이미지 링크</title>
+				<description xml:lang="ko">배너 이미지 링크를 입력해 주십시오</description>
+			</var>
+			<var name="sub4_html" type="textarea">
+				<title xml:lang="ko">L 위젯코드 또는 html</title>
+				<description xml:lang="ko">위젯코드 또는 html을 입력해 주십시오</description>
+			</var>
+
+			<var name="sub5_size" type="select">
+				<title xml:lang="ko">● 블럭5 사용유무</title>
+				<description xml:lang="ko">블럭 사용유무를 설정해 주십시오.</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="full_section">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+			<var name="sub5_title" type="text">
+				<title xml:lang="ko">L 블럭의 타이틀</title>
+				<description xml:lang="ko">블럭의 타이틀을 입력해 주십시오</description>
+			</var>
+			<var name="sub5_title_img" type="image">
+				<title xml:lang="ko">L 블럭의 타이틀 이미지</title>
+				<description xml:lang="ko">블럭의 타이틀을 이미지로 사용하고 싶을때 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="sub5_more" type="text">
+				<title xml:lang="ko">L 타이틀 링크</title>
+				<description xml:lang="ko">타이틀 링크를 입력해 주십시오</description>
+			</var>
+			<var name="sub5_style" type="select">
+				<title xml:lang="ko">L 블럭의 유형</title>
+				<description xml:lang="ko">블럭의 유형을 설정해 주십시오.</description>
+				<options value="A">
+					<title xml:lang="ko">배너</title>
+				</options>
+				<options value="B">
+					<title xml:lang="ko">▶ 제목</title>
+				</options>
+				<options value="C">
+					<title xml:lang="ko">● 제목</title>
+				</options>
+				<options value="D">
+					<title xml:lang="ko">이미지+제목+내용 (세로나열)</title>
+				</options>
+				<options value="E">
+					<title xml:lang="ko">갤러리</title>
+				</options>
+				<options value="H">
+					<title xml:lang="ko">위젯코드 또는 html</title>
+				</options>
+			</var>
+			<var name="sub5_date" type="select">
+				<title xml:lang="ko">L 날짜, 닉네임 노출</title>
+				<description xml:lang="ko">날짜, 닉네임 노출 유뮤를 설정해 주십시오.</description>
+				<options value="thumbnail,title,regdate,nickname">
+					<title xml:lang="ko">날짜, 닉네임 노출</title>
+				</options>
+				<options value="thumbnail,title,regdate">
+					<title xml:lang="ko">날짜 노출</title>
+				</options>
+				<options value="thumbnail,title">
+					<title xml:lang="ko">날짜, 닉네임 노출안함</title>
+				</options>
+			</var>
+			<var name="sub5_list" type="text">
+				<title xml:lang="ko">L 목록수</title>
+				<description xml:lang="ko">목록수를 설정해 주십시오(이미지+제목+내용의 가로나열 3은 고정입니다.)</description>
+			</var>
+			
+			<var name="sub5_widget" type="text">
+				<title xml:lang="ko">L 블럭의 게시판 srl</title>
+				<description xml:lang="ko">블럭에 불러올 게시판의 게시판 srl 값을 입력하십시오.(예:65)</description>
+			</var>
+			<var name="sub5_banner" type="image">
+				<title xml:lang="ko">L 배너 이미지</title>
+				<description xml:lang="ko">배너 이미지를 등록해 주십시오.</description>
+			</var>
+			<var name="sub5_banner_url" type="text">
+				<title xml:lang="ko">L 배너 이미지 링크</title>
+				<description xml:lang="ko">배너 이미지 링크를 입력해 주십시오</description>
+			</var>
+			<var name="sub5_html" type="textarea">
+				<title xml:lang="ko">L 위젯코드 또는 html</title>
+				<description xml:lang="ko">위젯코드 또는 html을 입력해 주십시오</description>
+			</var>
+		</group>
+		<group>
+			<title xml:lang="ko">풋터</title>
+			<var name="foot_logo_image" type="image">
+				<title xml:lang="ko">● 풋터 로고 이미지</title>
+				<title xml:lang="en">Site logo image</title>
+				<description xml:alng="ko">풋터용 로고를 등록하시면 됩니다.</description>
+			</var>
+			<var name="copyright" type="textarea">
+				<title xml:lang="ko">copyright</title>
+				<description xml:alng="ko">copyright를 입력하십시오.</description>
+			</var>	
+		</group>
+		<group>
+			<title xml:lang="ko">풋터 SNS</title>
+			<var name="use_footer_SNS" type="select">
+				<title xml:lang="ko">풋터 SNS버튼 사용 유무</title>
+				<description xml:lang="ko">풋터 SNS버튼 사용 유무를 설정해 주십시오</description>
+				<options value="">
+					<title xml:lang="ko">사용안함</title>
+				</options>
+				<options value="A">
+					<title xml:lang="ko">사용함</title>
+				</options>
+			</var>
+	
+			<var name="facebook" type="text">
+				<title xml:lang="ko">Facebook url</title>
+				<title xml:lang="en">Facebook url</title>
+				<description xml:alng="ko">Facebook 버튼을 클릭했을때 이동할 주소를입력해 주십시오.(예 :https://www.facebook.com/아이디)</description>
+			</var>
+			<var name="twitter" type="text">
+				<title xml:lang="ko">Twitter url</title>
+				<title xml:lang="en">Twitter url</title>
+				<description xml:alng="ko">Twitter 버튼을 클릭했을때 이동할 주소를입력해 주십시오.</description>
+			</var>
+			<var name="instagram" type="text">
+				<title xml:lang="ko">Instagram url</title>
+				<title xml:lang="en">Instagram url</title>
+				<description xml:alng="ko">Instagram 버튼을 클릭했을때 이동할 주소를입력해 주십시오.</description>
+			</var>
+			<var name="google" type="text">
+				<title xml:lang="ko">Google url</title>
+				<title xml:lang="en">Google url</title>
+				<description xml:alng="ko">Google 버튼을 클릭했을때 이동할 주소를입력해 주십시오.</description>
+			</var>
+			<var name="pinterest" type="text">
+				<title xml:lang="ko">Pinterest url</title>
+				<title xml:lang="en">Pinterest url</title>
+				<description xml:alng="ko">Pinterest 버튼을 클릭했을때 이동할 주소를입력해 주십시오.</description>
+			</var>
+			<var name="kakaostory" type="text">
+				<title xml:lang="ko">KakaoStory url</title>
+				<title xml:lang="en">KakaoStory url</title>
+				<description xml:alng="ko">KakaoStory 버튼을 클릭했을때 이동할 주소를입력해 주십시오.</description>
+			</var>
+			<var name="band" type="text">
+				<title xml:lang="ko">Band url</title>
+				<title xml:lang="en">Band url</title>
+				<description xml:alng="ko">Band 버튼을 클릭했을때 이동할 주소를입력해 주십시오.</description>
+			</var>
+			<var name="sns_image1" type="image">
+				<title xml:lang="ko">● 추가 SNS 이미지1</title>
+				<description xml:alng="ko">높이24(권장 32이상)를 사용하세요</description>
+			</var>
+			<var name="sns_image_alt1" type="text">
+				<title xml:lang="ko">L 추가 SNS 이미지1의 alt</title>
+			</var>
+			<var name="sns_image_url1" type="text">
+				<title xml:lang="ko">L 추가 SNS 이미지1의 URL</title>
+				<description xml:alng="ko">이미지를 클릭했을때 이동할 주소(달리 값이 없으면 #.)</description>
+			</var>
+
+			<var name="sns_image2" type="image">
+				<title xml:lang="ko">● 추가 SNS 이미지2</title>
+				<description xml:alng="ko">높이24(권장 32이상)를 사용하세요</description>
+			</var>
+			<var name="sns_image_alt2" type="text">
+				<title xml:lang="ko">L 추가 SNS 이미지2의 alt</title>
+			</var>
+			<var name="sns_image_url2" type="text">
+				<title xml:lang="ko">L 추가 SNS 이미지2의 URL</title>
+				<description xml:alng="ko">이미지를 클릭했을때 이동할 주소(달리 값이 없으면 #.)</description>
+			</var>
+
+			<var name="sns_image3" type="image">
+				<title xml:lang="ko">● 추가 SNS 이미지3</title>
+				<description xml:alng="ko">높이24(권장 32이상)를 사용하세요</description>
+			</var>
+			<var name="sns_image_alt3" type="text">
+				<title xml:lang="ko">L 추가 SNS 이미지3의 alt</title>
+			</var>
+			<var name="sns_image_url3" type="text">
+				<title xml:lang="ko">L 추가 SNS 이미지3의 URL</title>
+				<description xml:alng="ko">이미지를 클릭했을때 이동할 주소(달리 값이 없으면 #.)</description>
+			</var>
+
+			<var name="sns_image4" type="image">
+				<title xml:lang="ko">● 추가 SNS 이미지4</title>
+				<description xml:alng="ko">높이24(권장 32이상)를 사용하세요</description>
+			</var>
+			<var name="sns_image_alt4" type="text">
+				<title xml:lang="ko">L 추가 SNS 이미지4의 alt</title>
+			</var>
+			<var name="sns_image_url4" type="text">
+				<title xml:lang="ko">L 추가 SNS 이미지4의 URL</title>
+				<description xml:alng="ko">이미지를 클릭했을때 이동할 주소(달리 값이 없으면 #.)</description>
+			</var>
+		</group>
+		
+    </extra_vars>
+
+    <menus>
+        <menu name="main_menu" maxdepth="3" default="true">
+            <title xml:lang="ko">메인 메뉴</title>
+        </menu>
+		<menu name="mobile_menu" maxdepth="3" default="true">
+            <title xml:lang="ko">모바일 메뉴</title>
+            <title xml:lang="jp">上段用メニュー</title>
+            <title xml:lang="zh-CN">主菜单</title>
+            <title xml:lang="zh-TW">主選單</title>
+            <title xml:lang="en">Top menu</title>
+            <title xml:lang="ge">Top Menü</title>
+            <title xml:lang="ru">Верхнее меню</title>
+            <title xml:lang="es">Menú Principal</title>
+            <title xml:lang="vi">Menu trên</title>
+            <title xml:lang="tr">Ana Menü</title>
+        </menu>
+		<menu name="mobile_top_menu" maxdepth="3" default="true">
+            <title xml:lang="ko">모바일 상단메뉴</title>
+            <title xml:lang="jp">上段用メニュー</title>
+            <title xml:lang="zh-CN">主菜单</title>
+            <title xml:lang="zh-TW">主選單</title>
+            <title xml:lang="en">Top menu</title>
+            <title xml:lang="ge">Top Menü</title>
+            <title xml:lang="ru">Верхнее меню</title>
+            <title xml:lang="es">Menú Principal</title>
+            <title xml:lang="vi">Menu trên</title>
+            <title xml:lang="tr">Ana Menü</title>
+        </menu>
+		<menu name="foot_menu" maxdepth="3" default="true">
+            <title xml:lang="ko">푸터 메뉴</title>
+        </menu>
+		<menu name="select_menu" maxdepth="3" default="true">
+            <title xml:lang="ko">페밀리 사이트</title>
+        </menu>
+		<menu name="sub_menu" maxdepth="3" default="true">
+            <title xml:lang="ko">서브 메뉴</title>
+            <title xml:lang="jp">上段用メニュー</title>
+            <title xml:lang="zh-CN">主菜单</title>
+            <title xml:lang="zh-TW">主選單</title>
+            <title xml:lang="en">Top menu</title>
+            <title xml:lang="ge">Top Menü</title>
+            <title xml:lang="ru">Верхнее меню</title>
+            <title xml:lang="es">Menú Principal</title>
+            <title xml:lang="vi">Menu trên</title>
+            <title xml:lang="tr">Ana Menü</title>
+        </menu>
+    </menus>
+</layout>

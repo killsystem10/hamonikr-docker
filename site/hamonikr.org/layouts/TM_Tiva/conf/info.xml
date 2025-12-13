@@ -1,0 +1,1089 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.2">
+    <title xml:lang="ko">TM Tiva 1.0.7 </title>
+    <title xml:lang="en">Tiva 1.0.7</title>
+    <description xml:lang="ko">
+	Touchmind tiva Layout 입니다.
+	디자인 : 신영빈
+	퍼블리싱 : 신영빈
+	레이아웃 제작 : touchmind
+	tiva 레이아웃 입니다.다양한 7가지 컬러셋과 사용자 색상을 지원하며 다양한 패턴 및 배경 스타일을 제공하고 있습니다.
+	최종수정 : 2013.09.06
+	버전 : 1.0.7</description>
+    <description xml:lang="en">tiva Layout offering Multiple colorset and background pattern set</description>
+    <version>0.1</version>
+    <date>2013-9-06</date>
+    <author email_address="touchxe@gmail.com" link="http://www.cosignstudio.com">
+        <name xml:lang="ko">신영빈</name>
+        <name xml:lang="en">Shin young-bin</name>
+    </author>
+	
+	<extra_vars>
+	
+	<group>
+		<title xml:lang="ko">1.레이아웃 기본 스타일</title>
+		<title xml:lang="en">1.Layout Style</title>
+		
+		<var name="layout_width" type="text">
+		<title xml:lang="ko">레이아웃 너비</title>
+		<title xml:lang="en">layout width</title>
+		<description xml:lang="ko">레이아웃의 기본 너비를 입력합니다.(기본은 960px입니다. 숫자만 입력해 주세요.)</description>
+		<description xml:lang="en">input layout width(960px as default)</description>
+		</var>
+		
+		<var name="layout_type" type="select">
+		<title xml:lang="ko"> ┗ 레이아웃 타입</title>
+		<title xml:lang="en"> ┗ layout type</title>
+			<options value="c">
+				<title xml:lang="ko">컨텐츠</title>
+				<title xml:lang="en">contents</title>
+			</options>
+			<options value="ec">
+				<title xml:lang="ko">메뉴-컨텐츠</title>
+				<title xml:lang="en">menu-contents</title>
+			</options>
+			<options value="ce">
+				<title xml:lang="ko">컨텐츠-메뉴</title>
+				<title xml:lang="en">contents-menu</title>
+			</options>
+
+		<description xml:lang="ko">레이아웃의 형태를 설정합니다.</description>
+		<description xml:lang="en">set default layout type </description>	
+		</var>
+		
+		<var name="contents_type" type="select">
+		<title xml:lang="ko"> ┗ 컨텐츠부 타입</title>
+		<title xml:lang="en"> ┗ layout type</title>
+			<options value="default">
+				<title xml:lang="ko">컨텐츠형</title>
+				<title xml:lang="en">contents default</title>
+			</options>
+			<options value="box">
+				<title xml:lang="ko">박스형</title>
+				<title xml:lang="en">box</title>
+			</options>
+
+		<description xml:lang="ko">레이아웃의 형태를 설정합니다. 박스형은 라운드 박스 형태의 컨텐츠 화면을 표시합니다.</description>
+		<description xml:lang="en">set default layout type </description>	
+		</var>
+		
+		
+		<var name="colorset" type="select">
+		<title xml:lang="ko"> ┗ 컬러셋</title>
+		<title xml:lang="en"> ┗ colorset</title>
+			<options value="lcblue">
+				<title xml:lang="ko">파란색</title>
+				<title xml:lang="en">blue</title>
+			</options>
+			<options value="lcred">
+				<title xml:lang="ko">빨간색</title>
+				<title xml:lang="en">red</title>
+			</options>
+			<options value="lcorange">
+				<title xml:lang="ko">오랜지색</title>
+				<title xml:lang="en">orange</title>
+			</options>
+			<options value="lcgreen">
+				<title xml:lang="ko">연두색</title>
+				<title xml:lang="en">green</title>
+			</options>
+			<options value="lcolive">
+				<title xml:lang="ko">올리브색</title>
+				<title xml:lang="en">olive</title>
+			</options>
+			<options value="lcpurple">
+				<title xml:lang="ko">보라색</title>
+				<title xml:lang="en">purple</title>
+			</options>
+			<options value="lcgrayblue">
+				<title xml:lang="ko">남색</title>
+				<title xml:lang="en">grayblue</title>
+			</options>
+			<options value="lcgraysky">
+				<title xml:lang="ko">남청색</title>
+				<title xml:lang="en">graysky</title>
+			</options>
+			
+		<description xml:lang="ko">레이아웃의 기본 색상을 설정합니다. </description>
+		<description xml:lang="en">set default colorset for layout</description>	
+		</var>
+		
+		
+		<var name="pattern" type="select">
+		<title xml:lang="ko"> ┗ 배경 패턴</title>
+		<title xml:lang="en"> ┗ backgournd pattern</title>
+			<options value="0">
+				<title xml:lang="ko">사용안함</title>
+				<title xml:lang="en">unuse</title>
+			</options>
+			<options value="white_brick1">
+				<title xml:lang="ko">화이트벽돌1</title>
+				<title xml:lang="en">white_brick1</title>
+			</options>
+			<options value="white_brick2">
+				<title xml:lang="ko">화이트벽돌2</title>
+				<title xml:lang="en">white_brick2</title>
+			</options>
+			<options value="white_brick3">
+				<title xml:lang="ko">화이트벽돌3</title>
+				<title xml:lang="en">white_brick3</title>
+			</options>
+			<options value="white_brick4">
+				<title xml:lang="ko">화이트벽돌4</title>
+				<title xml:lang="en">white_brick4</title>
+			</options>
+			<options value="white_diamond">
+				<title xml:lang="ko">화이트다이아몬드</title>
+				<title xml:lang="en">white_diamond</title>
+			</options>
+			<options value="white_dot1">
+				<title xml:lang="ko">화이트 점박이1</title>
+				<title xml:lang="en">white_dot1</title>
+			</options>
+			<options value="white_dot2">
+				<title xml:lang="ko">화이트 점박이2</title>
+				<title xml:lang="en">white_dot2</title>
+			</options>
+			<options value="white_dot3">
+				<title xml:lang="ko">화이트 점박이3</title>
+				<title xml:lang="en">white_dot3</title>
+			</options>
+			<options value="white_dust1">
+				<title xml:lang="ko">화이트 안개1</title>
+				<title xml:lang="en">white_dust1</title>
+			</options>
+			<options value="white_dust2">
+				<title xml:lang="ko">화이트 안개2</title>
+				<title xml:lang="en">white_dust2</title>
+			</options>
+			<options value="white_line1">
+				<title xml:lang="ko">화이트 라인1</title>
+				<title xml:lang="en">white_line1</title>
+			</options>
+			<options value="white_line2">
+				<title xml:lang="ko">화이트 라인2</title>
+				<title xml:lang="en">white_line2</title>
+			</options>
+			<options value="white_line3">
+				<title xml:lang="ko">화이트 라인3</title>
+				<title xml:lang="en">white_line3</title>
+			</options>
+			<options value="white_line4">
+				<title xml:lang="ko">화이트 라인4</title>
+				<title xml:lang="en">white_line4</title>
+			</options>
+			<options value="white_tiles1">
+				<title xml:lang="ko">화이트 타일1</title>
+				<title xml:lang="en">white_tiles1</title>
+			</options>
+			<options value="white_tiles2">
+				<title xml:lang="ko">화이트 타일2</title>
+				<title xml:lang="en">white_tiles2</title>
+			</options>
+			<options value="balck_asfalt">
+				<title xml:lang="ko">블랙 아스팔트</title>
+				<title xml:lang="en">balck_asfalt</title>
+			</options>
+			<options value="balck_carbon1">
+				<title xml:lang="ko">블랙 카본</title>
+				<title xml:lang="en">balck_carbon1</title>
+			</options>
+			<options value="balck_hix">
+				<title xml:lang="ko">블랙 헥사</title>
+				<title xml:lang="en">balck_hix</title>
+			</options>
+			<options value="balck_irongrip">
+				<title xml:lang="ko">블랙 철판</title>
+				<title xml:lang="en">balck_irongrip</title>
+			</options>
+			<options value="balck_navy">
+				<title xml:lang="ko">블랙 네이비</title>
+				<title xml:lang="en">balck_navy</title>
+			</options>
+			<options value="balck_noisy">
+				<title xml:lang="ko">블랙 격자</title>
+				<title xml:lang="en">balck_noisy</title>
+			</options>
+			<options value="balck_px">
+				<title xml:lang="ko">블랙 전광판</title>
+				<title xml:lang="en">balck_px</title>
+			</options>
+			<options value="balck_stripe1">
+				<title xml:lang="ko">블랙 세로줄1</title>
+				<title xml:lang="en">balck_stripe1</title>
+			</options>
+			<options value="balck_stripe2">
+				<title xml:lang="ko">블랙 세로줄2</title>
+				<title xml:lang="en">balck_stripe2</title>
+			</options>
+			<options value="balck_wood">
+				<title xml:lang="ko">블랙 원목</title>
+				<title xml:lang="en">balck_wood</title>
+			</options>
+			<options value="black_dot">
+				<title xml:lang="ko">블랙 기본</title>
+				<title xml:lang="en">balck_carbon1</title>
+			</options>
+			<options value="black_line">
+				<title xml:lang="ko">블랙 라인</title>
+				<title xml:lang="en">black_line</title>
+			</options>
+			<options value="wood">
+				<title xml:lang="ko">원목</title>
+				<title xml:lang="en">wood</title>
+			</options>
+		
+		<description xml:lang="ko"> ┗ 레이아웃 배경의 패턴을 설정합니다.</description>
+		<description xml:lang="en"> ┗ set default colorset for layout</description>	
+		</var>
+		
+		<var name="background_img_use" type="select">
+			<title xml:lang="ko">배경이미지 사용</title>
+			<title xml:lang="en">background image useage</title>
+			<options value="unuse">
+				<title xml:lang="ko">미사용</title>
+				<title xml:lang="en">unuse</title>
+			</options>
+			<options value="slide">
+				<title xml:lang="ko">슬라이드 배경이미지</title>
+				<title xml:lang="en">use</title>
+			</options>
+			<options value="mp4">
+				<title xml:lang="ko">동영상 배경이미지</title>
+				<title xml:lang="en">unuse</title>
+			</options>
+			
+			<description xml:lang="ko">배경이미지 사용여부를 선택합니다. 슬라이드 배경이미지: 배경이 움직임, 동영상 배경이미지 : 배경을 mp4동영상으로 표시함</description>
+			<description xml:lang="en">select background image useage. you can select customized image as layout background.</description>
+		</var>
+		
+		<var name="userbg1" type="image">
+			<title xml:lang="ko"> ┗ 사용자 배경이미지1</title>
+			<title xml:lang="en"> ┗ user background image</title>
+			<description xml:lang="ko">사용자 배경이미지를 선택하세요.</description>
+			<description xml:lang="en">select user background image (no-repate, centered image for default background image setting)</description>
+		</var>
+		<var name="userbg2" type="image">
+			<title xml:lang="ko"> ┗ 사용자 배경이미지2</title>
+			<title xml:lang="en"> ┗ user background image</title>
+			<description xml:lang="ko">사용자 배경이미지를 선택하세요.</description>
+			<description xml:lang="en">select user background image (no-repate, centered image for default background image setting)</description>
+		</var>
+		<var name="userbg3" type="image">
+			<title xml:lang="ko"> ┗ 사용자 배경이미지3</title>
+			<title xml:lang="en"> ┗ user background image</title>
+			<description xml:lang="ko">사용자 배경이미지를 선택하세요.</description>
+			<description xml:lang="en">select user background image (no-repate, centered image for default background image setting)</description>
+		</var>
+		<var name="userbg4" type="image">
+			<title xml:lang="ko"> ┗ 사용자 배경이미지4</title>
+			<title xml:lang="en"> ┗ user background image</title>
+			<description xml:lang="ko">사용자 배경이미지를 선택하세요.</description>
+			<description xml:lang="en">select user background image (no-repate, centered image for default background image setting)</description>
+		</var>
+		
+		<var name="userbgmp4" type="text">
+			<title xml:lang="ko"> ┗ 사용자 배경 동영상</title>
+			<title xml:lang="en"> ┗ user background image</title>
+			<description xml:lang="ko">사용자 배경이미지를 선택하세요. mp4확장자를 사용해 주시기 바랍니다.</description>
+			<description xml:lang="en">select user background image (no-repate, centered image for default background image setting)</description>
+		</var>
+		
+	</group>
+	
+	<group>
+		<title xml:lang="ko">2.헤더상단 스타일과 로고</title>
+		<title xml:lang="en">2.Layout Header Style and logo</title>
+		
+		<var name="top_menu_type" type="select">
+			<title xml:lang="ko"> ┗ 상단 메인메뉴 스타일</title>
+			<title xml:lang="en"> ┗ top main menu style</title>
+			<options value="type1">
+				<title xml:lang="ko">우측정렬 작은글씨</title>
+				<title xml:lang="en">right small font</title>
+			</options>
+			<options value="type2">
+				<title xml:lang="ko">우측정렬 큰글씨</title>
+				<title xml:lang="en">right big font</title>
+			</options>
+			<options value="type3">
+				<title xml:lang="ko">좌측정렬 작은글씨</title>
+				<title xml:lang="en">left small font</title>
+			</options>
+			<options value="type4">
+				<title xml:lang="ko">좌측정렬 큰글씨</title>
+				<title xml:lang="en">left big font</title>
+			</options>
+			<description xml:lang="ko">메인메뉴의 위치와 글씨의 크기를 선택합니다.</description>
+			<description xml:lang="en">select main menu position and font size</description>
+		</var>
+		
+		<var name="logo_text" type="text">
+			<title xml:lang="ko"> ┗ 로고 설명글</title>
+			<title xml:lang="en"> ┗ logo title text</title>
+			<description xml:lang="ko">로고의 마우스를 올리게 될 경우 나타나는 설명글 입니다.</description>
+			<description xml:lang="en">logo title text</description>
+		</var>
+		
+		<var name="cover_logo_image" type="image">
+			<title xml:lang="ko"> ┗ 홈페이지 로고</title>
+			<title xml:lang="en"> ┗ select logo image</title>
+			<description xml:lang="ko">png형식의 로고이미지를 선택해 주세요. (235px*66px의 이미지에 최적화 되어 있습니다)</description>
+			<description xml:lang="en">select png type logo image.(235px*66px for cover logo style, 180px*49px image for line logo style)</description>
+		</var>
+		
+		<var name="logo_url" type="text">
+			<title xml:lang="ko"> ┗ 로고 url</title>
+			<title xml:lang="en"> ┗ logo url</title>
+			<description xml:lang="ko">로고 클릭시 이동하게되는 url입니다.</description>
+			<description xml:lang="en">url for logo</description>
+		</var>
+		
+		<var name="top_utilmenu_useage" type="select">
+			<title xml:lang="ko"> ┗ 상단 우측메뉴 사용여부</title>
+			<title xml:lang="en"> ┗ top right side util menu useage</title>
+			<options value="use">
+				<title xml:lang="ko">사용</title>
+				<title xml:lang="en">use</title>
+			</options>
+			<options value="unuse">
+				<title xml:lang="ko">사용안함</title>
+				<title xml:lang="en">unuse</title>
+			</options>
+			<description xml:lang="ko">우측상단의 즐겨찾기, 시작페이지 설정 등의 메뉴의 사용여부를 선택합니다.</description>
+			<description xml:lang="en">select topleftside utilmenu useage</description>
+		</var>
+		
+		<var name="favorit_url" type="text">
+			<title xml:lang="ko"> ┗ 즐겨찾기 주소</title>
+			<title xml:lang="en"> ┗ favorit url</title>
+			<description xml:lang="ko">즐겨찾기에 사용될 사용자 주소를 입력해 주세요. ( http://www.touchmind.co.kr 형식으로 입력해 주세요. )</description>
+			<description xml:lang="en">input favorit url</description>
+		</var>
+		
+		<var name="favorit_name" type="text">
+			<title xml:lang="ko"> ┗ 즐겨찾기 사이트이름</title>
+			<title xml:lang="en"> ┗ favorit sitename</title>
+			<description xml:lang="ko">즐겨찾기에 사용될 사이트이름을 입력해 주세요.</description>
+			<description xml:lang="en">input favorit site name</description>
+		</var>
+		
+
+	
+	</group>
+	
+	<group>
+		<title xml:lang="ko">3.메뉴표시/네비게이션/더읽기 메뉴/서치박스/</title>
+		<title xml:lang="en">3.display menu/ read more menu / search box</title>
+		
+		<var name="page_navi" type="select">
+			<title xml:lang="ko"> ┗ 현위치 표시네비</title>
+			<title xml:lang="en"> ┗ current page</title>
+			<options value="use">
+				<title xml:lang="ko">사용</title>
+				<title xml:lang="en">use</title>
+			</options>
+			<options value="unuse">
+				<title xml:lang="ko">사용안함</title>
+				<title xml:lang="en">unuse</title>
+			</options>
+
+			<description xml:lang="ko">현재페이지를 알려주는 네비게이션 메뉴의 표시여부를 선택합니다.</description>
+			<description xml:lang="en">navigation menu usage</description>
+		</var>
+		
+		<var name="drop_menu_display" type="select">
+			<title xml:lang="ko"> ┗ 드랍다운 메뉴사용여부</title>
+			<title xml:lang="en"> ┗ drop menu usage</title>
+			<options value="use">
+				<title xml:lang="ko">세로펼침</title>
+				<title xml:lang="en">use</title>
+			</options>
+			<options value="horizon">
+				<title xml:lang="ko">가로펼침</title>
+				<title xml:lang="en">horizon</title>
+			</options>
+			<options value="unuse">
+				<title xml:lang="ko">사용안함</title>
+				<title xml:lang="en">unuse</title>
+			</options>
+			
+			<description xml:lang="ko">메인메뉴 마우스 오버시 나타나는 2차 드랍다운메뉴의 사용여부를 선택합니다.</description>
+			<description xml:lang="en">dropdown menu usage</description>
+		</var>
+		<var name="drop_menu_width" type="text">
+			<title xml:lang="ko"> ┗ 드랍다운메뉴 너비</title>
+			<title xml:lang="en"> ┗ drop down menu width</title>
+			<description xml:lang="ko">드랍다운메뉴의 너비를 지정할 수 있습니다. 2차메뉴의 메뉴명이 길때 사용합니다. 기본은145px입니다. 숫자만 입력하세요.</description>
+			<description xml:lang="en"> drop down menu width</description>
+		</var>
+		
+		<var name="openmenu_display" type="select">
+			<title xml:lang="ko"> ┗ 전체 펼침메뉴사용여부</title>
+			<title xml:lang="en"> ┗ open menu usage</title>
+			<options value="unuse">
+				<title xml:lang="ko">사용안함</title>
+				<title xml:lang="en">unuse</title>
+			</options>
+			<options value="use">
+				<title xml:lang="ko">사용</title>
+				<title xml:lang="en">use</title>
+			</options>
+			<options value="mouse">
+				<title xml:lang="ko">마우스 오버시 표시</title>
+				<title xml:lang="en">mouse over menu</title>
+			</options>
+			<description xml:lang="ko">메인메뉴 하단의 전체펼침메뉴창의 표시여부를 선택합니다. 펼침메뉴 사용시 드랍다운메뉴는 사용하지 않는것을 권해드립다.마우스 오버시 표시를 선택하시면 전체메뉴가 마우스 오버시 표시되게 됩니다. </description>
+			<description xml:lang="en">select local menu usage</description>
+		</var>	
+		
+		<var name="openmenu_height" type="text">
+			<title xml:lang="ko"> ┗ 전체 펼침메뉴사용여부</title>
+			<title xml:lang="en"> ┗ open menu height</title>
+			<description xml:lang="ko">펼침멘뉴의 높이를 사용자가 지정할수 있습니다. 기본은300px입니다. 숫자만 입력하세요.</description>
+			<description xml:lang="en">open menu height</description>
+		</var>	
+
+	</group>	
+	
+	<group>
+		<title xml:lang="ko">4.로그인방식/퀵메뉴사용</title>
+		<title xml:lang="en">4.display menu/ read more menu / search box</title>
+		
+		<var name="login_type" type="select">
+			<title xml:lang="ko"> ┗ 로그인 방식</title>
+			<title xml:lang="en"> ┗ login type</title>
+			<options value="xe">
+				<title xml:lang="ko">XE 로그인</title>
+				<title xml:lang="en">XE login type</title>
+			</options>
+			<options value="social">
+				<title xml:lang="ko">소셜 로그인</title>
+				<title xml:lang="en">social login type</title>
+			</options>
+			<options value="both">
+				<title xml:lang="ko">XE + 소셜 로그인</title>
+				<title xml:lang="en">XE + social login</title>
+			</options>
+
+			<description xml:lang="ko">로그인 방식을 선택합니다. 소셜 로그인의 경우 소셜xe모듈이 설치되어있어야 합니다. </description>
+			<description xml:lang="en">select login type. you need social xe module to use social login type</description>
+		</var>
+		
+		<var name="login_box" type="select">
+			<title xml:lang="ko"> ┗ 로그인박스사용</title>
+			<title xml:lang="en"> ┗ login box</title>
+			<options value="use">
+				<title xml:lang="ko">로그인박스 사용</title>
+				<title xml:lang="en">login box</title>
+			</options>
+			<options value="unuse">
+				<title xml:lang="ko">로그인 사용안함</title>
+				<title xml:lang="en">use login util button</title>
+			</options>
+
+			<description xml:lang="ko">컨텐츠 위젯컬럼에 표시되는 로그인 박스 사용여부를 선택합니다. 레이아웃 형태가 컨텐츠로 되어있을 경우는 로그인 기능버튼을 사용하시기 바랍니다. 로그인 박스를 사용하지 않을시 로그인 버튼이 자동으로 표시되게 됩니다.</description>
+			<description xml:lang="en">select usage of login box</description>
+		</var>
+		
+		<var name="side_util_cont1" type="text">
+			<title xml:lang="ko"> ┗ 로그인 박스 유틸메뉴 최신글 </title>
+			<title xml:lang="en"> ┗ login box util menu new documents</title>
+			<description xml:lang="ko">유틸메뉴 (3개의 텝메뉴)에서 최신글 탭에 들어갈 위젯코드를 입력합니다.</description>
+			<description xml:lang="en">login box util menu new documents</description>
+		</var>
+		
+		<var name="side_util_cont2" type="text">
+			<title xml:lang="ko"> ┗ 로그인 박스 유틸메뉴 최신댓글 </title>
+			<title xml:lang="en"> ┗ login box util menu new documents</title>
+			<description xml:lang="ko">유틸메뉴 (3개의 텝메뉴)에서 최신댓글 탭에 들어갈 위젯코드를 입력합니다.</description>
+			<description xml:lang="en">login box util menu new documents</description>
+		</var>
+		
+		<var name="quick_menu_use" type="select">
+		<title xml:lang="ko"> ┗ 우측 퀵메뉴 사용여부</title>
+		<title xml:lang="en"> ┗ quick menu useage</title>
+			<options value="unuse">
+				<title xml:lang="ko">사용안함</title>
+				<title xml:lang="en">unuse</title>
+			</options>
+			<options value="use">
+				<title xml:lang="ko">사용</title>
+				<title xml:lang="en">use</title>
+			</options>
+			
+			<description xml:lang="ko">우측 퀵메뉴의 사용여부를 선택합니다. </description>
+			<description xml:lang="en">select quick menu useage</description>
+		</var>
+
+		
+		<var name="q1_width" type="text">
+			<title xml:lang="ko"> ┗ 우측 퀵메뉴 너비</title>
+			<title xml:lang="en"> ┗ right quick menu width</title>
+			<description xml:lang="ko">오른쪽 퀵메뉴의 너비를 입력합니다. ( px없이 숫자만 입력해 주세요. 기본은 92px이며 입력하지 않으시면 기본너비로 보여집니다. )</description>
+			<description xml:lang="en">input right quick menu width</description>
+		</var>
+		
+		<var name="q1_widget" type="text">
+			<title xml:lang="ko"> ┗ 첫번째 퀵메뉴 위젯소스</title>
+			<title xml:lang="en"> ┗ first quick menu widget code</title>
+			<description xml:lang="ko">오른쪽 퀵메뉴의 첫번째로 표시되는 위젯 소스를 입력합니다.</description>
+			<description xml:lang="en">quick menu first widget code</description>
+		</var>
+		<var name="q2_widget" type="text">
+			<title xml:lang="ko"> ┗ 두번째 퀵메뉴 위젯소스</title>
+			<title xml:lang="en"> ┗ second quick menu widget code</title>
+			<description xml:lang="ko">오른쪽 퀵메뉴의 두번째로 표시되는 위젯 소스를 입력합니다.</description>
+			<description xml:lang="en">quick menu second widget code</description>
+		</var>
+		<var name="q3_widget" type="text">
+			<title xml:lang="ko"> ┗ 세번째 퀵메뉴 위젯소스</title>
+			<title xml:lang="en"> ┗ third quick menu widget code</title>
+			<description xml:lang="ko">오른쪽 퀵메뉴의 세번째로 표시되는 위젯 소스를 입력합니다.</description>
+			<description xml:lang="en">quick menu third widget code</description>
+		</var>
+		
+		<var name="q1_image" type="image">
+			<title xml:lang="ko"> ┗ 첫번째 퀵메뉴 이미지</title>
+			<title xml:lang="en"> ┗ first quick menu image</title>
+			<description xml:lang="ko">오른쪽 퀵메뉴의 첫번째 이미지를 선택합니다. (90px * 90px 의 이미지에 최적화 되어있습니다.)</description>
+			<description xml:lang="en">select right quick menu first image</description>
+		</var>
+		<var name="q1_url" type="text">
+			<title xml:lang="ko"> ┗ 첫번째 퀵메뉴 주소</title>
+			<title xml:lang="en"> ┗ first quick menu url</title>
+			<description xml:lang="ko">첫번째 퀵메뉴를 클릭시 연결될 주소를 입력합니다.(http://www.touchmind.co.kr형식으로 입력해 주시기 바랍니다.)</description>
+			<description xml:lang="en">quick menu first image link url</description>
+		</var>
+		<var name="q2_image" type="image">
+			<title xml:lang="ko"> ┗ 두번째 퀵메뉴 이미지</title>
+			<title xml:lang="en"> ┗ second quick menu image</title>
+			<description xml:lang="ko">오른쪽 퀵메뉴의 두번째 이미지를 선택합니다.(90px * 90px 의 이미지에 최적화 되어있습니다.)</description>
+			<description xml:lang="en">select right quick menu second image</description>
+		</var>
+		<var name="q2_url" type="text">
+			<title xml:lang="ko"> ┗ 두번째 퀵메뉴 주소</title>
+			<title xml:lang="en"> ┗ second quick menu url</title>
+			<description xml:lang="ko">두번째 퀵메뉴를 클릭시 연결될 주소를 입력합니다.(http://www.touchmind.co.kr형식으로 입력해 주시기 바랍니다.)</description>
+			<description xml:lang="en">quick menu second image link url</description>
+		</var>
+		<var name="q3_image" type="image">
+			<title xml:lang="ko"> ┗ 세번째 퀵메뉴 이미지</title>
+			<title xml:lang="en"> ┗ third quick menu image</title>
+			<description xml:lang="ko">오른쪽 퀵메뉴의 세번째 이미지를 선택합니다.(90px * 90px 의 이미지에 최적화 되어있습니다.)</description>
+			<description xml:lang="en">select right quick menu third image</description>
+		</var>
+		<var name="q3_url" type="text">
+			<title xml:lang="ko"> ┗ 세번째 퀵메뉴 주소</title>
+			<title xml:lang="en"> ┗ third quick menu url</title>
+			<description xml:lang="ko">세번째 퀵메뉴를 클릭시 연결될 주소를 입력합니다.(http://www.touchmind.co.kr형식으로 입력해 주시기 바랍니다.)</description>
+			<description xml:lang="en">third menu first image link url</description>
+		</var>
+		<var name="q4_image" type="image">
+			<title xml:lang="ko"> ┗ 네번째 퀵메뉴 이미지</title>
+			<title xml:lang="en"> ┗ fourth quick menu image</title>
+			<description xml:lang="ko">오른쪽 퀵메뉴의 네번째 이미지를 선택합니다.(90px * 90px 의 이미지에 최적화 되어있습니다.)</description>
+			<description xml:lang="en">select right quick menu fourth image</description>
+		</var>
+		<var name="q4_url" type="text">
+			<title xml:lang="ko"> ┗ 네번째 퀵메뉴 주소</title>
+			<title xml:lang="en"> ┗ forth quick menu url</title>
+			<description xml:lang="ko">네번째 퀵메뉴를 클릭시 연결될 주소를 입력합니다.(http://www.touchmind.co.kr형식으로 입력해 주시기 바랍니다.)</description>
+			<description xml:lang="en">quick menu fourth image link url</description>
+		</var>
+		<var name="q5_image" type="image">
+			<title xml:lang="ko"> ┗ 다섯번째 퀵메뉴 이미지</title>
+			<title xml:lang="en"> ┗ fifth quick menu image</title>
+			<description xml:lang="ko">오른쪽 퀵메뉴의 다섯번째 이미지를 선택합니다.(90px * 90px 의 이미지에 최적화 되어있습니다.)</description>
+			<description xml:lang="en">select right quick menu fifth image</description>
+		</var>
+		<var name="q5_url" type="text">
+			<title xml:lang="ko"> ┗ 다섯번째 퀵메뉴 주소</title>
+			<title xml:lang="en"> ┗ fifth quick menu url</title>
+			<description xml:lang="ko">다섯번째 퀵메뉴를 클릭시 연결될 주소를 입력합니다.(http://www.touchmind.co.kr형식으로 입력해 주시기 바랍니다.)</description>
+			<description xml:lang="en">quick menu fifth image link url</description>
+		</var>
+		
+		<var name="lquick_menu_use" type="select">
+			<title xml:lang="ko"> ┗ 좌측 퀵메뉴 사용여부</title>
+			<title xml:lang="en"> ┗ quick menu useage</title>
+			<options value="unuse">
+				<title xml:lang="ko">사용안함</title>
+				<title xml:lang="en">unuse</title>
+			</options>
+			<options value="use">
+				<title xml:lang="ko">사용</title>
+				<title xml:lang="en">use</title>
+			</options>
+
+			<description xml:lang="ko">좌측 퀵메뉴의 사용여부를 선택합니다. </description>
+			<description xml:lang="en">select quick menu useage</description>
+		</var>
+		
+		<var name="lq1_width" type="text">
+			<title xml:lang="ko"> ┗ 좌측 퀵메뉴 너비</title>
+			<title xml:lang="en"> ┗ right quick menu width</title>
+			<description xml:lang="ko">오른쪽 퀵메뉴의 너비를 입력합니다. ( px없이 숫자만 입력해 주세요. 기본은 92px이며 입력하지 않으시면 기본너비로 보여집니다. )</description>
+			<description xml:lang="en">input right quick menu width</description>
+		</var>
+		
+		<var name="lq1_widget" type="text">
+			<title xml:lang="ko"> ┗ 첫번째 퀵메뉴 위젯소스</title>
+			<title xml:lang="en"> ┗ first quick menu widget code</title>
+			<description xml:lang="ko">오른쪽 퀵메뉴의 첫번째로 표시되는 위젯 소스를 입력합니다.</description>
+			<description xml:lang="en">quick menu first widget code</description>
+		</var>
+		<var name="lq2_widget" type="text">
+			<title xml:lang="ko"> ┗ 두번째 퀵메뉴 위젯소스</title>
+			<title xml:lang="en"> ┗ second quick menu widget code</title>
+			<description xml:lang="ko">오른쪽 퀵메뉴의 두번째로 표시되는 위젯 소스를 입력합니다.</description>
+			<description xml:lang="en">quick menu second widget code</description>
+		</var>
+		<var name="lq3_widget" type="text">
+			<title xml:lang="ko"> ┗ 세번째 퀵메뉴 위젯소스</title>
+			<title xml:lang="en"> ┗ third quick menu widget code</title>
+			<description xml:lang="ko">오른쪽 퀵메뉴의 세번째로 표시되는 위젯 소스를 입력합니다.</description>
+			<description xml:lang="en">quick menu third widget code</description>
+		</var>
+		
+		<var name="lq1_image" type="image">
+			<title xml:lang="ko"> ┗ 첫번째 퀵메뉴 이미지</title>
+			<title xml:lang="en"> ┗ first quick menu image</title>
+			<description xml:lang="ko">왼쪽 퀵메뉴의 첫번째 이미지를 선택합니다. (90px * 90px 의 이미지에 최적화 되어있습니다.)</description>
+			<description xml:lang="en">select right quick menu first image</description>
+		</var>
+		<var name="lq1_url" type="text">
+			<title xml:lang="ko"> ┗ 첫번째 퀵메뉴 주소</title>
+			<title xml:lang="en"> ┗ first quick menu url</title>
+			<description xml:lang="ko">첫번째 퀵메뉴를 클릭시 연결될 주소를 입력합니다.(http://www.touchmind.co.kr형식으로 입력해 주시기 바랍니다.)</description>
+			<description xml:lang="en">quick menu first image link url</description>
+		</var>
+		<var name="lq2_image" type="image">
+			<title xml:lang="ko"> ┗ 두번째 퀵메뉴 이미지</title>
+			<title xml:lang="en"> ┗ second quick menu image</title>
+			<description xml:lang="ko">왼쪽 퀵메뉴의 두번째 이미지를 선택합니다.(90px * 90px 의 이미지에 최적화 되어있습니다.)</description>
+			<description xml:lang="en">select right quick menu second image</description>
+		</var>
+		<var name="lq2_url" type="text">
+			<title xml:lang="ko"> ┗ 두번째 퀵메뉴 주소</title>
+			<title xml:lang="en"> ┗ second quick menu url</title>
+			<description xml:lang="ko">두번째 퀵메뉴를 클릭시 연결될 주소를 입력합니다.(http://www.touchmind.co.kr형식으로 입력해 주시기 바랍니다.)</description>
+			<description xml:lang="en">quick menu second image link url</description>
+		</var>
+		<var name="lq3_image" type="image">
+			<title xml:lang="ko"> ┗ 세번째 퀵메뉴 이미지</title>
+			<title xml:lang="en"> ┗ third quick menu image</title>
+			<description xml:lang="ko">왼쪽 퀵메뉴의 세번째 이미지를 선택합니다.(90px * 90px 의 이미지에 최적화 되어있습니다.)</description>
+			<description xml:lang="en">select right quick menu third image</description>
+		</var>
+		<var name="lq3_url" type="text">
+			<title xml:lang="ko"> ┗ 세번째 퀵메뉴 주소</title>
+			<title xml:lang="en"> ┗ third quick menu url</title>
+			<description xml:lang="ko">세번째 퀵메뉴를 클릭시 연결될 주소를 입력합니다.(http://www.touchmind.co.kr형식으로 입력해 주시기 바랍니다.)</description>
+			<description xml:lang="en">third menu first image link url</description>
+		</var>
+		<var name="lq4_image" type="image">
+			<title xml:lang="ko"> ┗ 네번째 퀵메뉴 이미지</title>
+			<title xml:lang="en"> ┗ fourth quick menu image</title>
+			<description xml:lang="ko">왼쪽 퀵메뉴의 네번째 이미지를 선택합니다.(90px * 90px 의 이미지에 최적화 되어있습니다.)</description>
+			<description xml:lang="en">select right quick menu fourth image</description>
+		</var>
+		<var name="lq4_url" type="text">
+			<title xml:lang="ko"> ┗ 네번째 퀵메뉴 주소</title>
+			<title xml:lang="en"> ┗ forth quick menu url</title>
+			<description xml:lang="ko">네번째 퀵메뉴를 클릭시 연결될 주소를 입력합니다.(http://www.touchmind.co.kr형식으로 입력해 주시기 바랍니다.)</description>
+			<description xml:lang="en">quick menu fourth image link url</description>
+		</var>
+		<var name="lq5_image" type="image">
+			<title xml:lang="ko"> ┗ 다섯번째 퀵메뉴 이미지</title>
+			<title xml:lang="en"> ┗ fifth quick menu image</title>
+			<description xml:lang="ko">왼쪽 퀵메뉴의 다섯번째 이미지를 선택합니다.(90px * 90px 의 이미지에 최적화 되어있습니다.)</description>
+			<description xml:lang="en">select right quick menu fifth image</description>
+		</var>
+		<var name="lq5_url" type="text">
+			<title xml:lang="ko"> ┗ 다섯번째 퀵메뉴 주소</title>
+			<title xml:lang="en"> ┗ fifth quick menu url</title>
+			<description xml:lang="ko">다섯번째 퀵메뉴를 클릭시 연결될 주소를 입력합니다.(http://www.touchmind.co.kr형식으로 입력해 주시기 바랍니다.)</description>
+			<description xml:lang="en">quick menu fifth image link url</description>
+		</var>
+		
+		
+
+		
+	</group>
+	
+	<group>
+		<title xml:lang="ko">5.메인베너 설정</title>
+		<title xml:lang="en">5.Main banner setting</title>
+		
+		<var name="banner_type" type="select">
+			<title xml:lang="ko"> ┗ 움직이는 베너 이미지 종류선택</title>
+			<title xml:lang="en"> ┗ select rolling banner type</title>
+			<options value="unuse">
+				<title xml:lang="ko">사용안함</title>
+				<title xml:lang="en">unuse</title>
+			</options>
+			<options value="img">
+				<title xml:lang="ko">이미지</title>
+				<title xml:lang="en">image</title>
+			</options>
+			<options value="type1">
+				<title xml:lang="ko">tiva 슬라이더1</title>
+				<title xml:lang="en">tiva slider1</title>
+			</options>
+			<options value="type2">
+				<title xml:lang="ko">tiva 슬라이더2</title>
+				<title xml:lang="en">tiva slider2</title>
+			</options>
+			<options value="type3">
+				<title xml:lang="ko">tiva 슬라이더3</title>
+				<title xml:lang="en">tiva slider3</title>
+			</options>
+
+
+			<description xml:lang="ko">tiva 레이아웃의 겔러리 사용 여부 및 종류를 선택합니다. 이미지:단순이미지, tiva 슬라이더1:화면 우측에서 좌측으로 이동하는 슬라이더,tiva 슬라이더2:이미지를 페이드인 페이드 아웃 하는 슬라이더, tiva 슬라이더3:3개의 이미지가 회전하며 보여지는 슬라이더 *높이는 반드시 입력하셔야 합니다. 슬라이더3을 이용할 경우 width="582" height="340" 의 이미지를 사용하시기 바랍니다.  </description>
+			<description xml:lang="en">select gallery usage or gallery type</description>
+		</var>
+		
+		<var name="banner_height" type="text">
+			<title xml:lang="ko"> ┗ 베너 높이</title>
+			<title xml:lang="en"> ┗ banner image height</title>
+			<description xml:lang="ko">베너이미지의 높이(기본높이는 400px이며 너비는 레이아웃의 너비와 같이 적용이 됩니다)</description>
+			<description xml:lang="en">banner image height(image width same as layout width)</description>
+		</var>
+				
+		<var name="banner_slider_image1" type="image">
+			<title xml:lang="ko"> ┗ tiva 슬라이더 이미지1(베너종류 '이미지'지 사용시 선택이미지가 표시됨)</title>
+			<title xml:lang="en"> ┗ user slider image1 </title>
+			<description xml:lang="ko">움직이는 베너선택에서 'tiva 슬라이더'를 선택할 경우 표시되는 첫번째 이미지 입니다.</description>
+			<description xml:lang="en">user slider image1</description>
+		</var>
+		<var name="banner_slider_image1_url" type="text">
+			<title xml:lang="ko"> ┗ tiva 슬라이더 이미지1 연결 url(베너종류 '이미지'지 사용시 입력 URL이 사용됨)</title>
+			<title xml:lang="en"> ┗ url for user slider image1</title>
+			<description xml:lang="ko">첫번째 배너이미지와 연결될 주소를 입력합니다.</description>
+			<description xml:lang="en">user slider image1 url</description>
+		</var>
+
+		<var name="banner_slider_image2" type="image">
+			<title xml:lang="ko"> ┗ tiva 슬라이더 이미지2</title>
+			<title xml:lang="en"> ┗ user slider image2 </title>
+			<description xml:lang="ko">움직이는 베너선택에서 'tiva 슬라이더'를 선택할 경우 표시되는 두번째 이미지 입니다.</description>
+			<description xml:lang="en">user slider image2</description>
+		</var>
+		<var name="banner_slider_image2_url" type="text">
+			<title xml:lang="ko"> ┗ tiva 슬라이더 이미지2 연결 url</title>
+			<title xml:lang="en"> ┗ url for user slider image2</title>
+			<description xml:lang="ko">두번째 배너이미지와 연결될 주소를 입력합니다.</description>
+			<description xml:lang="en">user slider image2 url</description>
+		</var>
+
+		<var name="banner_slider_image3" type="image">
+			<title xml:lang="ko"> ┗ tiva 슬라이더 이미지3</title>
+			<title xml:lang="en"> ┗ user slider image3 </title>
+			<description xml:lang="ko">움직이는 베너선택에서 'tiva 슬라이더'를 선택할 경우 표시되는 세번째 이미지 입니다.</description>
+			<description xml:lang="en">user slider image3</description>
+		</var>
+		<var name="banner_slider_image3_url" type="text">
+			<title xml:lang="ko"> ┗ tiva 슬라이더 이미지3 연결 url</title>
+			<title xml:lang="en"> ┗ url for user slider image3</title>
+			<description xml:lang="ko">세번째 배너이미지와 연결될 주소를 입력합니다.</description>
+			<description xml:lang="en">user slider image3 url</description>
+		</var>
+
+		<var name="banner_slider_image4" type="image">
+			<title xml:lang="ko"> ┗ tiva 슬라이더 이미지4</title>
+			<title xml:lang="en"> ┗ user slider image4 </title>
+			<description xml:lang="ko">움직이는 베너선택에서 'tiva 슬라이더'를 선택할 경우 표시되는 네번째 이미지 입니다.</description>
+			<description xml:lang="en">user slider image4</description>
+		</var>
+		
+		<var name="banner_slider_image4_url" type="text">
+			<title xml:lang="ko"> ┗ tiva 슬라이더 이미지4 연결 url</title>
+			<title xml:lang="en"> ┗ url for user slider image4</title>
+			<description xml:lang="ko">네번째 배너이미지와 연결될 주소를 입력합니다.</description>
+			<description xml:lang="en">user slider image4 url</description>
+		</var>
+
+		
+		</group>
+		
+	
+	
+	<group>
+		<title xml:lang="ko">6.로그인창에 표시되는 베너설정</title>
+		<title xml:lang="en">6.Login box banner setting</title>
+		
+		<var name="loginbox_banner_type" type="select">
+			<title xml:lang="ko"> ┗ 로그인 베너 종류선택</title>
+			<title xml:lang="en"> ┗ select content rolling banner type</title>
+			<options value="img">
+				<title xml:lang="ko">이미지</title>
+				<title xml:lang="en">image</title>
+			</options>
+			<options value="tiva">
+				<title xml:lang="ko">tiva 슬라이더</title>
+				<title xml:lang="en">user slider</title>
+			</options>
+			<options value="xe">
+				<title xml:lang="ko">XE위젯 슬라이더</title>
+				<title xml:lang="en">XE widget slider</title>
+			</options>
+
+			<description xml:lang="ko">tiva 레이아웃의 겔러리 사용 여부 및 종류를 선택합니다. 이미지:단순이미지, tiva 슬라이더:코인슬라이더를 이용한 움직이는 슬라이더,XE위젯슬라이더:XE위젯을 이용하여 생성된 코드를 입력합니다.*베너의 높이와 너비는 반드시 입력하시기 바랍니다. </description>
+			<description xml:lang="en">select gallery usage or gallery type</description>
+		</var>
+		
+		<var name="loginbox_banner_widget" type="textarea">
+			<title xml:lang="ko"> ┗ 로그인창 베너 위젯 코드</title>
+			<title xml:lang="en"> ┗ contents banner widget code</title>
+			<description xml:lang="ko">로그인창 베너이미지를 사용하기 위한 xe위젯 코드를 입력하시기 바랍니다.</description>
+			<description xml:lang="en">loginbox banner widget source code</description>
+		</var>
+
+		<var name="loginbox_banner_image" type="image">
+			<title xml:lang="ko"> ┗ 로그인창 베너 이미지</title>
+			<title xml:lang="en"> ┗ loginbox banner image </title>
+			<description xml:lang="ko">로그인창 베너이미지의 선택</description>
+			<description xml:lang="en">select loginbox banner image </description>
+		</var>
+		<var name="loginbox_banner_slider_image1" type="image">
+			<title xml:lang="ko"> ┗ tiva 슬라이더 이미지1</title>
+			<title xml:lang="en"> ┗ user slider image1 </title>
+			<description xml:lang="ko">로그인창 움직이는 베너선택에서 'tiva 슬라이더'를 선택할 경우 표시되는 첫번째 이미지 입니다.</description>
+			<description xml:lang="en">user slider image1</description>
+		</var>
+		<var name="loginbox_banner_slider_image1_url" type="text">
+			<title xml:lang="ko"> ┗ 로그인창 tiva 슬라이더 이미지1 연결 url</title>
+			<title xml:lang="en"> ┗ url for user slider image1</title>
+			<description xml:lang="ko">첫번째 배너이미지와 연결될 주소를 입력합니다.</description>
+			<description xml:lang="en">user slider image1 url</description>
+		</var>
+		
+		<var name="loginbox_banner_slider_image2" type="image">
+			<title xml:lang="ko"> ┗ 로그인창 tiva 슬라이더 이미지2</title>
+			<title xml:lang="en"> ┗ user slider image2 </title>
+			<description xml:lang="ko">움직이는 베너선택에서 'tiva 슬라이더'를 선택할 경우 표시되는 두번째 이미지 입니다.</description>
+			<description xml:lang="en">user slider image2</description>
+		</var>
+		<var name="loginbox_banner_slider_image2_url" type="text">
+			<title xml:lang="ko"> ┗ 로그인창 tiva 슬라이더 이미지2 연결 url</title>
+			<title xml:lang="en"> ┗ url for user slider image2</title>
+			<description xml:lang="ko">두번째 배너이미지와 연결될 주소를 입력합니다.</description>
+			<description xml:lang="en">user slider image2 url</description>
+		</var>
+		
+		<var name="loginbox_banner_slider_image3" type="image">
+			<title xml:lang="ko"> ┗ 로그인창 tiva 슬라이더 이미지3</title>
+			<title xml:lang="en"> ┗ user slider image3 </title>
+			<description xml:lang="ko">움직이는 베너선택에서 'tiva 슬라이더'를 선택할 경우 표시되는 세번째 이미지 입니다.</description>
+			<description xml:lang="en">user slider image3</description>
+		</var>
+		<var name="loginbox_banner_slider_image3_url" type="text">
+			<title xml:lang="ko"> ┗ 로그인창 tiva 슬라이더 이미지3 연결 url</title>
+			<title xml:lang="en"> ┗ url for user slider image3</title>
+			<description xml:lang="ko">세번째 배너이미지와 연결될 주소를 입력합니다.</description>
+			<description xml:lang="en">user slider image3 url</description>
+		</var>
+
+	</group>
+	
+	<group>
+		<title xml:lang="ko">7.컨텐츠부</title>
+		<title xml:lang="en">7.contents part</title>
+		
+		<var name="contents" type="text">
+			<title xml:lang="ko"> ┗ 컨텐츠 배경색상</title>
+			<title xml:lang="en"> ┗ contents background color</title>
+			<description xml:lang="ko">컨텐츠의 배경색상을 지정합니다.</description>
+			<description xml:lang="en">contents background color</description>
+		</var>
+
+		
+		<var name="contents_widget_width" type="text">
+			<title xml:lang="ko"> ┗ 컨텐츠 좌우측 위젯부 컬럼너비</title>
+			<title xml:lang="en"> ┗ contents widget part width</title>
+			<description xml:lang="ko">컨텐츠 위젯부의 너비를 지정합니다. px를 제외한 숫자만 입력하십시요.(기본은220px입니다.)</description>
+			<description xml:lang="en">contents widget part width</description>
+		</var>
+		
+		<var name="contents_widget_img_link_use" type="select">
+			<title xml:lang="ko"> ┗ 위젯부 이미지베너 사용여부</title>
+			<title xml:lang="en"> ┗ footer menu</title>
+			<options value="use">
+				<title xml:lang="ko">사용</title>
+				<title xml:lang="en">use</title>
+			</options>
+			<options value="unuse">
+				<title xml:lang="ko">사용안함</title>
+				<title xml:lang="en">unuse</title>
+			</options>
+			<description xml:lang="ko">위젯부의 이미지 배너 표시여부를 선택합니다. (처음 설치시 xe 레이아웃다운로드 배너가 표시되는 영역 입니다.) </description>
+			<description xml:lang="en">select useage of widget image banner</description>
+		</var>
+		
+		
+		<var name="contents_widget_img_link1" type="image">
+			<title xml:lang="ko"> ┗ 위젯부 이미지 배너1</title>
+			<title xml:lang="en"> ┗ widget part image banner link1</title>
+			<description xml:lang="ko">위젯부에 표시될 이미지 배너를 선택합니다. (위젯부 컬럼너비보다 60px 적은 이미지를 사용하시는것을 권장합니다)</description>
+			<description xml:lang="en">select widget part image 1</description>
+		</var>
+		<var name="contents_widget_img_link1_url" type="text">
+			<title xml:lang="ko"> ┗ 이미지 배너1 링크 url</title>
+			<title xml:lang="en"> ┗ widget part 1 title link</title>
+			<description xml:lang="ko">위젯부에 표시될 이미지 클릭시 이동하게될 주소를 입력합니다.</description>
+			<description xml:lang="en">image widget1 link url </description>
+		</var>
+		
+		<var name="contents_widget_img_link2" type="image">
+			<title xml:lang="ko"> ┗ 위젯부 이미지 배너2</title>
+			<title xml:lang="en"> ┗ widget part image banner link2 </title>
+			<description xml:lang="ko">위젯부에 표시될 이미지 배너를 선택합니다.(위젯부 컬럼너비보다 60px 적은 이미지를 사용하시는것을 권장합니다)</description>
+			<description xml:lang="en">select widget part image 2</description>
+		</var>
+		<var name="contents_widget_img_link2_url" type="text">
+			<title xml:lang="ko"> ┗ 이미지 배너2 링크 url</title>
+			<title xml:lang="en"> ┗ widget part 2 title link</title>
+			<description xml:lang="ko">위젯부에 표시될 이미지 클릭시 이동하게될 주소를 입력합니다.</description>
+			<description xml:lang="en">image widget2 link url </description>
+		</var>
+		<var name="contents_widget_img_link3" type="image">
+			<title xml:lang="ko"> ┗ 위젯부 이미지 배너3</title>
+			<title xml:lang="en"> ┗ widget part image banner link3 </title>
+			<description xml:lang="ko">위젯부에 표시될 이미지 배너를 선택합니다.(위젯부 컬럼너비보다 60px 적은 이미지를 사용하시는것을 권장합니다)</description>
+			<description xml:lang="en">select widget part image 3</description>
+		</var>
+		
+		<var name="contents_widget_img_link3_url" type="text">
+			<title xml:lang="ko"> ┗ 이미지 배너3 링크 url</title>
+			<title xml:lang="en"> ┗ widget part 3 title link</title>
+			<description xml:lang="ko">위젯부에 표시될 이미지 클릭시 이동하게될 주소를 입력합니다.</description>
+			<description xml:lang="en">image widget3 link url </description>
+		</var>
+		
+		<var name="contents_widget1_title" type="text">
+			<title xml:lang="ko"> ┗ 위젯부 1번 위젯 타이틀</title>
+			<title xml:lang="en"> ┗ widget part 1 title</title>
+			<description xml:lang="ko">위젯부의 1번위젯의 타이틀을 입력합니다.</description>
+			<description xml:lang="en">widget1 title </description>
+		</var>
+		<var name="contents_widget1_code" type="textarea">
+			<title xml:lang="ko"> ┗ 위젯부 1번 위젯코드</title>
+			<title xml:lang="en"> ┗ widget part 1 code</title>
+			<description xml:lang="ko">위젯부의 1번위젯의 코드를 입력합니다.</description>
+			<description xml:lang="en">widget1 code</description>
+		</var>
+		
+		<var name="contents_widget2_title" type="text">
+			<title xml:lang="ko"> ┗ 위젯부 2번 위젯 타이틀</title>
+			<title xml:lang="en"> ┗ widget part 2 title</title>
+			<description xml:lang="ko">위젯부의 2번위젯의 타이틀을 입력합니다.</description>
+			<description xml:lang="en">widget2 title </description>
+		</var>
+		<var name="contents_widget2_code" type="textarea">
+			<title xml:lang="ko"> ┗ 위젯부 2번 위젯코드</title>
+			<title xml:lang="en"> ┗ widget part 2 code</title>
+			<description xml:lang="ko">위젯부의 2번위젯의 코드를 입력합니다.</description>
+			<description xml:lang="en">widget2 code</description>
+		</var>
+		
+		<var name="contents_widget3_title" type="text">
+			<title xml:lang="ko"> ┗ 위젯부 3번 위젯 타이틀</title>
+			<title xml:lang="en"> ┗ widget part 3 title</title>
+			<description xml:lang="ko">위젯부의 3번위젯의 타이틀을 입력합니다.</description>
+			<description xml:lang="en">widget3 title </description>
+		</var>
+		<var name="contents_widget3_code" type="textarea">
+			<title xml:lang="ko"> ┗ 위젯부 3번 위젯코드</title>
+			<title xml:lang="en"> ┗ widget part 3 code</title>
+			<description xml:lang="ko">위젯부의 3번위젯의 코드를 입력합니다.</description>
+			<description xml:lang="en">widget3 code</description>
+		</var>
+		
+		<var name="contents_facebook_code" type="textarea">
+			<title xml:lang="ko"> ┗ SNS 플러그인코드</title>
+			<title xml:lang="en"> ┗ facebook plugin code</title>
+			<description xml:lang="ko">SNS 플러그인 코드를 입력합니다.</description>
+			<description xml:lang="en">facebook plugin code</description>
+		</var>
+		<var name="contents_twitterid" type="text">
+			<title xml:lang="ko"> ┗ 트워터 사용자 아이디</title>
+			<title xml:lang="en"> ┗ twitter id</title>
+			<description xml:lang="ko">트위터 사용시 표시될 사용자를 입력하세요. 아이디를 입력하지 않을 경우 트위터가 표시되지 않습니다.</description>
+			<description xml:lang="en">twitter user id </description>
+		</var>
+
+	</group>
+	
+	<group>
+		<title xml:lang="ko">8.하단 풋터섹션</title>
+		<title xml:lang="en">8.footer section part</title>
+		
+		<var name="footer_notice" type="text">
+			<title xml:lang="ko"> ┗ 로고상단 공지글 코드입력</title>
+			<title xml:lang="en"> ┗ header left top side notice bbs code</title>
+			<description xml:lang="ko">왼쪽 상단의 공지사항 위젯 보임. 관리자페이지의 위젯코드생성을 통하여 생성된 코드를 입력해 주세요.</description>
+			<description xml:lang="en">left top notice widget text</description>
+		</var>
+		
+	</group>
+	
+	<group>
+		<title xml:lang="ko">9.하단 카피라잇 부분</title>
+		<title xml:lang="en">9.bottom copyright part</title>
+		
+		<var name="footer_logo_text" type="text">
+			<title xml:lang="ko"> ┗ 하단로고 설명글</title>
+			<title xml:lang="en"> ┗ logo title text</title>
+			<description xml:lang="ko">로고의 마우스를 올리게 될 경우 나타나는 설명글 입니다.</description>
+			<description xml:lang="en">logo title text</description>
+		</var>
+		
+		<var name="footer_logo_image" type="image">
+			<title xml:lang="ko"> ┗ 하단 로고 이미지</title>
+			<title xml:lang="en"> ┗ logo image</title>
+			<description xml:lang="ko">png형식의 로고이미지를 선택해 주세요. (160px*37px에 최적화 되어 있습니다.)</description>
+			<description xml:lang="en">select png type logo image.(160px*37px for bottomr logo image)</description>
+		</var>
+		
+		<var name="footer_logo_url" type="text">
+			<title xml:lang="ko"> ┗ 하단 로고 url</title>
+			<title xml:lang="en"> ┗ bottom logo url</title>
+			<description xml:lang="ko">하단 로고 클릭시 이동하게되는 url입니다.</description>
+			<description xml:lang="en">url for bottom logo</description>
+		</var>
+		
+		<var name="footer_copyright" type="textarea">
+			<title xml:lang="ko"> ┗ 하단 Copyright 문구 입력.</title>
+			<title xml:lang="en"> ┗ bottom copyright text</title>
+			<description xml:lang="ko">하단부의 Copyright 텍스트를 입력합니다. 줄바꿈시 br 테그를 입력하시기 바랍니다.</description>
+			<description xml:lang="en">Bottom copyright text</description>
+		</var>
+		
+		
+		
+	</group>
+
+
+	
+	
+	
+	</extra_vars>
+	
+    <menus>
+        <menu name="global_menu" maxdepth="3" default="true">
+            <title xml:lang="ko">전역 메뉴</title>
+            <title xml:lang="en">Global Menu</title>
+        </menu>
+		<menu name="open_menu" maxdepth="3" default="true">
+            <title xml:lang="ko">펼침 메뉴</title>
+            <title xml:lang="en">open Menu</title>
+        </menu>
+		<menu name="quick_menu" maxdepth="1" default="false">
+            <title xml:lang="ko">Footer 바로가기 메뉴</title>
+            <title xml:lang="en">Footer Quick Menu</title>
+        </menu>
+    </menus>
+</layout>
+

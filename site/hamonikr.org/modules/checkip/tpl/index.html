@@ -1,0 +1,98 @@
+<!--%import("./filter/init.xml")-->
+<!--%import("./filter/insert_config.xml")-->
+<!--%import("./filter/delete_checked_log.xml")-->
+<!--%import("./css/loginlog_admin.css")-->
+<!--%import("./js/loginlog_admin.js")-->
+<!-- 설정 -->
+<form action="{Context::getRequestUri()}" method="post" onsubmit="return procFilter(this, insert_config)">
+<h3 class="xeAdmin">{$lang->log_reg_ip} <span class="gray">{$lang->cmd_management}</span></h3>
+<table cellspacing="0" class="rowTable">
+<tbody>
+	<tr>
+		<th>{$lang->delete_reg_ip}</td>
+		<td><input type="checkbox" id="delete_reg_ip" name="delete_reg_ip" value="Y"<!--@if($config->delete_reg_ip == 'Y')--> checked="checked"<!--@end--> /><label for="delete_reg_ip">{$lang->desc_delete_reg_ip}</label></td>
+	</tr>
+	<tr>
+		<th>{$lang->check_ip}</td>
+		<td><input type="checkbox" id="check_ip" name="check_ip" value="Y"<!--@if($config->check_ip == 'Y')--> checked="checked"<!--@end--> /><label for="check_ip">{$lang->desc_check_ip}</label></td>
+	</tr>
+	<tr>
+		<th>{$lang->expiration_period}</td>
+		<td><input type="text" id="expiration_period" name="expiration_period" <!--@if($config->expiration_period)-->value="{$config->expiration_period}" <!--@end--> /><p>{$lang->desc_expiration_period}</p></td>
+	</tr>
+	<tr>
+		<th class="button" colspan="2"><span class="button black strong"><input type="submit" value="{$lang->cmd_save}" /></span></th>
+	</tr>
+</tbody>
+</table>
+</form>
+
+<!-- 초기화 -->
+<form action="{Context::getRequestUri()}" method="post" onsubmit="return procFilter(this, init)">
+	<span class="button red strong"><input type="submit" value="{$lang->cmd_reset_logs}" /></span>
+</form>
+
+<!-- 검색 -->
+<form action="{Context::getRequestUri()}" method="get" class="fr">
+	<input type="hidden" name="module" value="admin" />
+	<input type="hidden" name="act" value="dispCheckipAdminIndex" />
+	<select name="search_target">
+		<option value="user_id"<!--@if($search_target == 'user_id')--> selected="selected"<!--@end-->>{$lang->user_id}</option>
+		<option value="nick_name"<!--@if($search_target == 'nick_name')--> selected="selected"<!--@end-->>{$lang->nick_name}</option>
+		<option value="member_srl"<!--@if($search_target == 'member_srl')--> selected="selected"<!--@end-->>{$lang->member_no}</option>
+		<option value="regdate"<!--@if($search_target == 'regdate')--> selected="selected"<!--@end-->>{$lang->regdate}</option>
+		<option value="ipaddress"<!--@if($search_target == 'ipaddress')--> selected="selected"<!--@end-->>{$lang->ipaddress}</option>
+	</select>
+	<input type="text" name="search_keyword" value="{$search_keyword}" class="inputTypeText" />
+	<span class="button blue"><input type="submit" value="{$lang->cmd_search}" /></span>
+</form>
+
+<!-- 목록 -->
+<form method="get" action="./" onsubmit="return procFilter(this, delete_checked_log)" id="message_fo">
+	<table cellspacing="0" class="rowTable clear">
+	<caption>Total {number_format($total_count)}, Page {number_format($page)}/{number_format($total_page)}</caption>
+		<thead>
+			<tr>
+				<th scope="col"><input type="checkbox" onclick="XE.checkboxToggleAll(); return false;"/></th>
+				<th scope="col"><div>{$lang->no}</div></th>
+				<th scope="col"><div>{$lang->nick_name} ({$lang->user_id})</div></th>
+				<th scope="col"><div>{$lang->email_address}</div></th>
+				<th scope="col"><div>{$lang->ipaddress}</div></th>
+				<th scope="col"><div>{$lang->date}</div></th>
+			</tr>
+		</thead>
+		<tbody>
+			<!--@if(count($log_list))-->
+			{@ $oMemberModel = &getModel('member')}
+			<!--@foreach($log_list as $no => $log)-->
+			{@ $member_info = $oMemberModel->getMemberInfoByMemberSrl($log->member_srl)}
+			<tr>
+				<td class="center"><input type="checkbox" name="cart" value="{$log->log_srl}"/></td>
+				<td class="number center">{$no}</td>
+				<td class="center"><span class="member_{$log->member_srl}">{$member_info->nick_name}</span> <a href="{getUrl('search_target', 'member_srl', 'search_keyword', $log->member_srl)}">({$member_info->user_id})</a></td>
+				<td class="center">{$member_info->email_address}</td>
+				<td class="center"><a href="{getUrl('search_target', 'ipaddress', 'search_keyword', $log->reg_ip)}">{$log->reg_ip}</a>&nbsp;<a href="http://www.ip-adress.com/ip_tracer/{$log->reg_ip}" target="_blank">[추적]</a></td>
+				<td class="date center nowrap">{zdate($log->regdate, 'Y-m-d H:i:s')}</td>
+			</tr>
+			<!--@end-->
+			<!--@end-->
+		</tbody>
+	</table>
+	 <div class="clear">
+        <div class="fl">
+            <span class="button black strong"><input type="submit" value="{$lang->cmd_delete}" /></span>
+        </div>
+	  </div>
+</form>
+<!-- 페이지 네비게이션 -->
+<div class="pagination a1">
+	<a href="{getUrl('page','','module_srl',$module_srl)}" class="prevEnd">{$lang->first_page}</a> 
+	<!--@while($page_no = $page_navigation->getNextPage())-->
+		<!--@if($page == $page_no)-->
+			<strong>{$page_no}</strong> 
+		<!--@else-->
+			<a href="{getUrl('page',$page_no,'module_srl',$module_srl)}">{$page_no}</a> 
+		<!--@end-->
+	<!--@end-->
+	<a href="{getUrl('page',$page_navigation->last_page,'module_srl',$module_srl)}" class="nextEnd">{$lang->last_page}</a>
+</div>

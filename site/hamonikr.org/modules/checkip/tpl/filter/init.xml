@@ -1,0 +1,8 @@
+<filter name="init" module="checkip" act="procCheckipAdminInitLogs">
+	<form />
+	<parameter />
+	<response callback_func="completeInsertConfig">
+		<tag name="error" />
+		<tag name="message" />
+	</response>
+</filter>

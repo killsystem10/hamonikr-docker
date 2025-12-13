@@ -1,0 +1,231 @@
+﻿/**
+ * Flat Series XE Layout Stylesheet
+ * Copyright (C) ISIZU. All rights reserved.
+ **/
+
+@charset "UTF-8";
+
+/* Browser stylesheet reset to default */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin:0; padding:0; border:0; font-size:100%; font:inherit; vertical-align:baseline}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block}
+
+html {overflow:auto}
+body {line-height:1}
+
+img, input, button, select {max-width:100%}
+button, select {cursor:pointer}
+
+ol, ul {list-style:none}
+li {display:list-item}
+
+strong, b {font-weight:bold}
+p {margin-bottom:10px}
+a {color:#000000; text-decoration:none; cursor:pointer}
+
+blockquote, q {quotes:none}
+blockquote:before, blockquote:after, q:before, q:after {content:""; content:none}
+
+table {border-spacing:0; border-collapse:collapse}
+
+.h1, .h2, .h3, .h4, .h5, .h6 {line-height:1.1; font-weight:500; color:inherit}
+.h1, .h2, .h3 {margin-top:17px; margin-bottom:8.5px}
+.h4, .h5, .h6 {margin-top:8.5px; margin-bottom:8.5px}
+.h1 .small, .h2 .small, .h3 .small, .h4 .small, .h5 .small, .h6 .small {line-height:1; font-weight:normal; color:#999999}
+.h1 .small, .h2 .small, .h3 .small {font-size:65%}
+.h4 .small, .h5 .small, .h6 .small {font-size:75%}
+.h1 {font-size:31px}
+.h2 {font-size:25px}
+.h3 {font-size:21px}
+.h4 {font-size:15px}
+.h5 {font-size:12px}
+.h6 {font-size:11px}
+.small {font-size:85%}
+
+/* Fix for Resize Image Addon */
+#xe_gallery_screen {z-index:1000 !important}
+#xe_gallery_controls {z-index:1001 !important}
+
+/* Fix for Sketchbook5 board skin */
+.rd_hd .board h1 {line-height:1.5em}
+.rd_hd .rd_file th {vertical-align:middle}
+
+/* Layout default class */
+.fs-wrap {position:relative; width:960px; margin:0 auto}
+.fs-wrap-extend {padding:30px 0}
+
+.block {display:block}
+.inline {display:inline}
+.inline-block {position:relative; display:inline-block; *display:inline; zoom:1}
+
+.left {float:left}
+.right {float:right}
+
+.text-left {text-align:left}
+.text-right {text-align:right}
+.text-center {text-align:center}
+
+.color-black,
+.color-black a {color:#000000}
+.color-white,
+.color-white a {color:#FFFFFF}
+.color-gray,
+.color-gray a {color:#888888}
+.color-lightgray,
+.color-lightgray a {color:#CCCCCC}
+.color-darkgray,
+.color-darkgray a {color:#444444}
+.color-red,
+.color-red a {color:#FF0000}
+.color-green,
+.color-green a {color:#00FF00}
+.color-blue,
+.color-blue a {color:#0000FF}
+
+.bg-black {background-color:#000000}
+.bg-white {background-color:#FFFFFF}
+.bg-gray {background-color:#888888}
+.bg-lightgray {background-color:#EEEEEE}
+.bg-darkgray {background-color:#444444}
+.bg-red {background-color:#FF0000}
+.bg-green {background-color:#00FF00}
+.bg-blue {background-color:#0000FF}
+
+.clear {*zoom:1}
+.clear:before, .clear:after {display:table; content:""; line-height:0; font-size:0}
+.clear:after {clear:both}
+
+.grid {float:left}
+.grid-right {float:right}
+.grid-block {margin-bottom:30px}
+.grid-block-last {margin-top:30px}
+.grid-large {margin:20px}
+.grid-semilarge {margin:15px}
+.grid-normal {margin:10px}
+.grid-small {margin:5px}
+.grid-tiny {margin:1px}
+.grid-1-2,
+.grid-2-4,
+.grid-3-6 {width:50%}
+.grid-1-3,
+.grid-2-6 {width:33.33333334%}
+.grid-2-3,
+.grid-4-6 {width:66.66666667%}
+.grid-1-4 {width:25%}
+.grid-3-4 {width:75%}
+.grid-1-5 {width:20%}
+.grid-2-5 {width:40%}
+.grid-3-5 {width:60%}
+.grid-4-5 {width:80%}
+.grid-1-6 {width:16.66666667%}
+.grid-5-6 {width:83.33333333%}
+
+.arrow {position:relative}
+.arrow:after {z-index:1000; position:absolute; width:0; height:0; border:15px solid transparent; pointer-events:none; content:" "; -webkit-transition:all 0.2s ease; -moz-transition:all 0.2s ease; -o-transition:all 0.2s ease; transition:all 0.2s ease}
+.arrow-top:after {top:0; left:50%; margin-left:-15px; border-top-color:#FFFFFF}
+.arrow-left:after {top:50%; left:0; margin-top:-15px; border-left-color:#FFFFFF}
+.arrow-right:after {top:50%; right:0; margin-top:-15px; border-right-color:#FFFFFF}
+.arrow-bottom:after {left:50%; bottom:0; margin-left:-15px; border-bottom-color:#FFFFFF}
+.arrow-large:after {border-width:30px}
+.arrow-large .arrow-top:after,
+.arrow-large .arrow-bottom:after {margin-left:-30px}
+.arrow-large .arrow-left:after,
+.arrow-large .arrow-right:after {margin-top:-30px}
+
+.edge {position:relative}
+.edge:after {z-index:1000; position:absolute; width:0; height:0; border:10px solid transparent; pointer-events:none; content:" "}
+.edge-large:after {border-width:15px}
+.edge-small:after {border-width:5px}
+.edge-top-left:after {top:0; left:0; border-top-color:#FFFFFF; border-left-color:#FFFFFF}
+.edge-top-right:after {top:0; right:0; border-top-color:#FFFFFF; border-right-color:#FFFFFF}
+.edge-bottom-left:after {left:0; bottom:0; border-left-color:#FFFFFF; border-bottom-color:#FFFFFF}
+.edge-bottom-right:after {right:0; bottom:0; border-right-color:#FFFFFF; border-bottom-color:#FFFFFF}
+
+/* Layout stylesheet */
+body, .wfsr, input, button, select {font:12px/20px "Helvetica Neue", Helvetica, Arial, "MS PGothic", MalgunGothic, "맑은 고딕", Dotum, 돋움, Gulim, 굴림, sans-serif}
+
+body {overflow:hidden; width:auto !important; width:960px; min-width:960px; color:#000000; background-color:#323232}
+
+.wfsr {z-index:100; position:fixed; display:none; top:40px; left:40px; right:auto; bottom:auto; padding:5px 10px 5px 36px; border:1px solid #CCCCCC; font-weight:bold; color:#0000FF; background:#FFFFFF url(../../../common/img/loading.gif) no-repeat 10px center; background-color:rgba(255, 255, 255, 0.8); opacity:1; filter:none; -moz-border-radius:10px; -webkit-border-radius:10px; border-radius:10px; box-shadow:none}
+
+              #fs-camera-slide {height:200px; background-color:#000000}
+body.mainpage #fs-camera-slide {height:500px; border-bottom:2px solid #D0D0D0}
+
+header {position:relative; background-color:#FFFFFF}
+header .menu-wrap .fs-wrap-extend {padding:20px 0}
+header .menu-wrap .logo {position:absolute; top:15px; left:0}
+header .menu-wrap .menu {float:right}
+header .menu-wrap .menu > li {display:inline}
+header .menu-wrap .menu > li > a {display:inline-block; *display:inline; zoom:1; padding:10px 16px; font-size:14px; font-weight:bold}
+header .menu-wrap .menu > li.active > a {color:#FF5E00}
+header #fs-camera-slide ~ .menu-wrap {z-index:1000; position:absolute; top:0; left:0; right:0}
+header .submenu-wrap {height:36px; line-height:36px; background-color:#323232}
+header .submenu-wrap a {color:#AAAAAA; -webkit-transition:all 0.2s ease; -moz-transition:all 0.2s ease; -o-transition:all 0.2s ease; transition:all 0.2s ease}
+header .submenu-wrap a:hover,
+header .submenu-wrap a.active {color:#FFFFFF}
+header .submenu-wrap .breadcrumb {float:left}
+header .submenu-wrap .breadcrumb > li {float:left}
+header .submenu-wrap .breadcrumb > li.first-child ~ li:before {content:" "; float:left; width:12px; height:36px; background-image:url(../img/breadcrumb-arrow.png)}
+header .submenu-wrap .breadcrumb > li > a {margin:0 12px}
+header .submenu-wrap .submenu {float:right}
+header .submenu-wrap .submenu > li {display:none}
+header .submenu-wrap .submenu > li > a {margin:0 10px}
+header .sitemap-btn-wrap {border-top:3px solid #5F80A1}
+header .sitemap-btn {z-index:1000; position:absolute; display:block; top:-2px; right:0; padding:5px 10px; color:#FFFFFF; background-color:#5F80A1}
+header .sitemap-wrap {background:#FFFFFF url(../img/sitemap-grad.png) left bottom repeat-x}
+header .sitemap a:hover {color:#444444}
+header .sitemap > li {display:inline-block; *display:inline; zoom:1; width:139px; padding:0 10px; border-left:1px dashed #D0D0D0; vertical-align:top}
+header .sitemap > li > a {overflow:hidden; line-height:40px; font-size:14px; font-weight:bold; color:#888888; text-overflow:ellipsis; white-space:nowrap}
+header .sub-sitemap > li > a {overflow:hidden; display:block; line-height:25px; text-indent:10px; color:#AAAAAA; text-overflow:ellipsis; white-space:nowrap; -webkit-transition:all 0.2s ease; -moz-transition:all 0.2s ease; -o-transition:all 0.2s ease; transition:all 0.2s ease}
+header .sub-sitemap > li > a:hover {text-indent:14px}
+
+body.white     .menu-wrap .menu > li > a {color:#FFFFFF}
+body.leftside  .content,
+body.rightside .content,
+body.totalside .content {height:auto !important; height:400px; min-height:400px}
+body.leftside  .content,
+body.rightside .content {width:700px}
+body.totalside .content {width:440px; margin:0 30px}
+body.leftside  .content {float:right}
+body.rightside .content,
+body.totalside .content {float:left}
+
+.body {background-color:#FFFFFF}
+.body .left-sidebar {float:left; width:230px}
+.body .right-sidebar {float:right; width:230px}
+.body .fs-search {position:relative; height:20px; margin-bottom:30px; padding:8px 55px 8px 15px; background-color:#F0F0F0}
+.body .fs-search legend {display:none}
+.body .fs-search .keyword {width:100%; height:20px; margin:0; padding:0; border:0; color:#808080; background-color:#F0F0F0}
+.body .fs-search .submit {position:absolute; top:0; right:0; bottom:0; width:40px; line-height:100%; margin:0; padding:0; border:0; text-align:center; color:#808080; background-color:#F0F0F0}
+.body .fs-category {margin-bottom:30px}
+.body .fs-category > li > a {font-size:14px; font-weight:bold; color:#333333}
+.body .fs-category > li > a > .fa {color:#393D46}
+.body .fs-category .sub-category {margin-top:10px; background-color:#292D36}
+.body .fs-category .sub-category > li {margin:5px}
+.body .fs-category .sub-category > li > a {display:block; overflow:hidden; padding:5px 10px; color:#E0E0E0; text-overflow:ellipsis; white-space:nowrap; background-color:#292D36; -webkit-transition:all 0.2s ease; -moz-transition:all 0.2s ease; -o-transition:all 0.2s ease; transition:all 0.2s ease}
+.body .fs-category .sub-category > li > a:hover,
+.body .fs-category .sub-category > li.active > a {font-weight:bold; text-indent:6px; color:#FFFFFF; background-color:#090D16}
+
+.footer {background-color:#323232}
+.footer-divider {height:0; margin:12px 0; padding:0; border-width:1px 0; border-style:solid; border-color:#222222 transparent #424242}
+footer, footer a {color:#AAAAAA}
+footer strong,
+footer strong a {color:#CCCCCC}
+footer .widget {border-top:5px solid #323232; background-color:#4C4C4C}
+footer .widget.arrow:after {border-top-color:#323232}
+.body ~ .footer .widget.arrow:after {top:-5px; border-top-color:#FFFFFF}
+footer .widget ~ .footer.arrow:after {border-top-color:#4C4C4C}
+footer .logo {float:left; width:300px}
+footer .container {float:right; width:660px}
+footer .container .menu > li {float:left; padding:0 16px; border-width:0 1px; border-style:solid; border-color:transparent #222222 transparent #424242}
+footer .container .menu > li.first-child {border-left:0}
+footer .container .menu > li.last-child {border-right:0}
+footer .container .menu > li > a {-webkit-transition:all 0.2s ease; -moz-transition:all 0.2s ease; -o-transition:all 0.2s ease; transition:all 0.2s ease}
+footer .container .menu > li > a:hover,
+footer .container .menu > li.active > a {color:#FFFFFF}
+
+.follow-menu {z-index:1000; position:fixed; left:20px; bottom:20px; background-color:#2F5071; background-color:rgba(47, 80, 113, 0.75)}
+.follow-menu > li {float:left}
+.follow-menu > li > a {display:block; height:35px; line-height:35px; padding:0 10px; color:#FFFFFF}
+
+.top-btn {z-index:1000; position:fixed; display:none; right:20px; bottom:20px; width:45px; height:45px; line-height:45px; font-size:30px; text-align:center; color:#FFFFFF; background-color:#2F5071; background-color:rgba(47, 80, 113, 0.75)}

@@ -1,0 +1,132 @@
+<!--%import("filter/insert_pop_conn.xml")-->
+
+<!--%load_js_plugin("ui.datepicker")-->
+
+<!--#include("header.html")-->
+
+<form action="./" method="post" onsubmit="return procFilter(this, insert_pop_conn)" >
+<input type="hidden" name="page" value="{$page}" />
+<input type="hidden" name="mid" value="{$mid}" />
+<input type="hidden" name="popup_conn_srl" value="{$popup_conn_srl}" />
+<input type="hidden" name="content" value="{$oDocument->getContentText()}" />
+<input type="hidden" name="document_srl" value="{$document_srl}" />
+
+    <table cellspacing="0" class="rowTable">
+    <tr>
+        <th scope="row" class="w200"><div>{$lang->popup_name}</div></th>
+        <td><input type="text" name="popup_name" value="{$popup_info->popup_name?$popup_info->popup_name:''}" class="inputTypeText w200" /><p>{$lang->popup_name_explanation}</p>
+		</td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->select_target_module}</div></th>
+        <td>
+            <select name="target_srl" class="w400">
+                <option value="">{$lang->select}</option>
+                <!--@foreach($target_modules as $key => $val)-->
+                <option value="{$val->module_srl}" <!--@if($popup_info->target_srl==$val->module_srl)-->selected="selected"<!--@end-->>{"(".$val->module.") ".$key." - ".$val->browser_title}</option>
+                <!--@end-->
+            </select>
+            <p>{$lang->select_target_module_explanation}</p>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->open_type}</div></th>
+        <td>
+            <select name="open_type" class="w200">
+                <option value="inner" <!--@if($popup_info->open_type=="inner")-->selected="selected"<!--@end-->>{$lang->inner_layout}</option>
+            </select>
+            <p>{$lang->open_type_explanation}</p>
+		</td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->data_type}</div></th>
+        <td>
+            <select name="popup_type" class="w300" onchange="togglePopupDataType()">
+                <option value="content" <!--@if($popup_info->popup_type=="content")-->selected="selected"<!--@end-->>{$lang->input_content}</option>
+                <option value="url" <!--@if($popup_info->popup_type=="url")-->selected="selected"<!--@end-->>{$lang->input_url}</option>
+            </select>
+            <p>{$lang->data_type_explanation}</p>
+		</td>
+    </tr>
+    <tr alt="popup_data_type" <!--@if($popup_info->popup_type!="content")-->style="display:none;" <!--@end-->>
+        <th scope="row"><div>{$lang->input_content}</div></th>
+        <td>{$oDocument->getEditor()}
+		</td>
+    </tr>
+    <tr alt="popup_data_type" <!--@if($popup_info->popup_type!="url")-->style="display:none;" <!--@end-->>
+        <th scope="row"><div>{$lang->input_url}</div></th>
+        <td><input type="text" name="popup_url" value="{$popup_info->popup_url?$popup_info->popup_url:''}" class="inputTypeText w400" /><p>{$lang->url_explanation}<br ></p>
+		</td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->linkto}</div></th>
+        <td><input type="text" name="popup_linkto" value="{$popup_info->popup_linkto?$popup_info->popup_linkto:''}" class="inputTypeText w400" /><p>{$lang->link_explanation}</p>
+		</td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->to_new_window}</div></th>
+        <td><input type="checkbox" name="popup_linkto_newwindow" value="true" <!--@if($popup_info->popup_linkto_newwindow=="true")-->checked="true"<!--@end-->/><p>{$lang->to_new_window_explanation}</p>
+		</td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->start_date}</div></th>
+        <td>
+            <input type="hidden" name="startdate" id="date_startdate" value="{$popup_info->startdate}" /><input type="text" class="inputDate" value="{zdate($popup_info->startdate,'Y-m-d')}" readonly="readonly"/><p>{$lang->start_date_explanation}</p>
+		</td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->end_date}</div></th>
+        <td>
+            <input type="hidden" name="enddate" id="date_enddate" value="{$popup_info->enddate}" /><input type="text" class="inputDate" value="{zdate($popup_info->enddate,'Y-m-d')}" readonly="readonly"/><p>{$lang->end_date_explanation} </p>
+		</td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->width_size}</div></th>
+        <td><input type="text" name="width" value="{$popup_info->width?$popup_info->width:''}" class="inputTypeText w80" /><p>{$lang->width_size_explanation}</p>
+		</td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->height_size}</div></th>
+        <td><input type="text" name="height" value="{$popup_info->height?$popup_info->height:''}" class="inputTypeText w80" /><p>{$lang->height_size_explanation}</p>
+		</td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->top}</div></th>
+        <td><input type="text" name="top" value="{$popup_info->top?$popup_info->top:''}" class="inputTypeText w80" /><p>{$lang->top_explanation}</p>
+		</td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->left}</div></th>
+        <td><input type="text" name="left" value="{$popup_info->left?$popup_info->left:''}" class="inputTypeText w80" /><p>{$lang->left_explanation}</p>
+		</td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->disable_period}</div></th>
+        <td><input type="text" name="exp_days" value="{$popup_info->exp_days?$popup_info->exp_days:''}" class="inputTypeText w40" /><p>{$lang->disable_period_explanation}</p>
+		</td>
+    </tr>
+    <tr>
+        <th colspan="2" class="button">
+            <span class="button black strong"><input type="submit" value="{$lang->cmd_save}" accesskey="s" /></span>
+            <span class="button"><input type="button" value="{$lang->cmd_list}" onclick="location.href=current_url.setQuery('popup_conn_srl','').setQuery('act','dispPop_upAdminContent').setQuery('page','{$page}');return false;" /></span>
+        </th>
+    </tr>
+    </table>
+
+</form>
+
+
+
+
+<script type="text/javascript">
+(function($){
+    $(function(){
+        var option = { gotoCurrent: false,yearRange:'-100:+10', onSelect:function(){
+
+            $(this).prev('input[type="hidden"]').val(this.value.replace(/-/g,""))}
+        };
+        $.extend(option,$.datepicker.regional['{$lang_type}']);
+        $(".inputDate").datepicker(option);
+    });
+})(jQuery);
+</script>

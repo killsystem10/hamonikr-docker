@@ -1,0 +1,95 @@
+<include target="_header.html" />
+
+<form action="./" method="post" onsubmit="jQuery(this).find('input').each(function(){if(this.title==this.value)this.value='';});return procFilter(this, window.insert)" id="fo_write" class="boardWrite">
+	<input type="hidden" name="mid" value="{$mid}" />
+	<input type="hidden" name="content" value="{$oDocument->getContentText()}" />
+	<input type="hidden" name="document_srl" value="{$document_srl}" />
+
+	<div class="boardWriteHeader">
+		<p cond="$module_info->use_category == 'Y'">
+			<span>{$lang->category} : </span>
+			<select name="category_srl" class="category">
+				<option value="">{$lang->category}</option>
+				<option value="{$val->category_srl}" loop="$category_list=>$val" disabled="disabled"|cond="!$val->grant" selected="selected"|cond="$val->grant&&$val->selected||$val->category_srl==$oDocument->get('category_srl')">
+					{str_repeat("&nbsp;&nbsp;",$val->depth)} {$val->title} ({$val->document_count})
+				</option>
+			</select>
+		</p>
+
+		<p> 
+			<span>{$lang->title} : </span>
+			<input type="text" name="title" id="postTitle" class="inputText" value="{htmlspecialchars($oDocument->getTitleText())}" cond="$oDocument->getTitleText()" />
+			<input type="text" name="title" id="postTitle" class="inputText" value="" title="{$lang->title}" onfocus="if(this.value==this.title) this.value='';" cond="!$oDocument->getTitleText()"/>
+		</p>
+	</div>
+
+    <table border="0" cellspacing="0" summary="Extra Form" class="extraVarsList" cond="count($extra_keys)">
+		<caption><em>*</em> : {$lang->is_required}</caption>
+		    <tr loop="$extra_keys=>$key, $val">
+				<th scope="row">{$val->name} <em cond="$val->is_required == 'Y'">*</em></th>
+				<td>{$val->getFormHTML()}</td>
+			</tr>
+    </table>
+
+    <div class="editor">{$oDocument->getEditor()}</div>
+
+    <div class="tag">
+        <input type="text" name="tags" value="{htmlspecialchars($oDocument->get('tags'))}" class="inputText" title="Tag" />
+		<p>{$lang->about_tag}</p>
+    </div>
+
+	<div class="editorOption">
+		<p cond="!$is_logged">
+		   <input type="text" name="nick_name" class="inputText userName" value="{$lang->writer}" title="{$lang->writer}" onfocus="if(this.value==this.title)this.value='';return false;" />
+		   <input type="password" name="password" class="inputText userPw" value="{$lang->password}" title="{$lang->password}"  onfocus="if(this.value==this.title)this.value='';return false;" />
+		   <input type="text" name="email_address" class="inputText emailAddress" value="{$lang->email_address}" title="{$lang->email_address}"  onfocus="if(this.value==this.title)this.value='';return false;" />
+		   <input type="text" name="homepage" class="inputText homePage" value="{$lang->homepage}" title="{$lang->homepage}"  onfocus="if(this.value==this.title)this.value='';return false;" />
+		</p>
+		
+		<p>
+		<block cond="$grant->manager">
+			<input type="checkbox" name="title_bold" id="title_bold" value="Y" checked="checked"|cond="$oDocument->get('title_bold')=='Y'" />
+			<label for="title_bold">{$lang->title_bold}</label>
+			<input type="checkbox" name="is_notice" value="Y" checked="checked"|cond="$oDocument->isNotice()" id="is_notice" />
+			<label for="is_notice">{$lang->notice}</label>
+		</block>
+
+		<!-- XE코어1.5부터 변경 -->
+		<input type="checkbox" name="comment_status" value="ALLOW" checked="checked"|cond="$oDocument->allowComment()" id="comment_status" />
+		<label for="comment_status">{$lang->allow_comment}</label>
+		<!-- 여기까지 -->
+		<input type="checkbox" name="allow_trackback" value="Y" checked="checked"|cond="$oDocument->allowTrackback()" id="allow_trackback" />
+		<label for="allow_trackback">{$lang->allow_trackback}</label>
+
+		<block cond="$is_logged">
+			<input type="checkbox" name="notify_message" value="Y" checked="checked"|cond="$oDocument->useNotify()" id="notify_message" />
+			<label for="notify_message">{$lang->notify}</label>
+		</block>
+
+		<!-- XE코어1.4버전 사용하는 비밀글작성 -->
+		<block cond="$module_info->secret == 'Y'">
+			<input type="checkbox" name="is_secret" value="Y" checked="checked"|cond="$module_info->secret_document!='Y' && $oDocument->isSecret() || $module_info->secret_document=='Y' && (!$document_srl || $oDocument->isSecret())" id="is_secret"  />
+			<label for="is_secret">{$lang->secret}</label>
+		</block>
+
+		<!-- XE코어1.5버전 사용하는 게시물 공개,비공개 -->
+		<!--@if(is_array($status_list))-->
+			<!--@foreach($status_list AS $key=>$value)-->
+			<input type="radio" name="status" value="{$key}" id="{$key}" checked="checked"|cond="$oDocument->get('status') == $key || ($key == 'PUBLIC' && !$document_srl) || $module_info->secret_document=='Y' && (!$document_srl || $oDocument->isSecret())" /> 
+			<label for="{$key}">{$value}</label>
+			<!--@end-->
+		<!--@end-->
+		<!-- 여기까지 -->
+		</p>
+    </div>
+
+	<div class="boardNavigation">
+		<span class="buttonOfficial"><input type="submit" value="{$lang->cmd_registration}" accesskey="s" /></span>
+		<span class="buttonOfficial"><button type="button" onclick="doDocumentSave(this);">{$lang->cmd_temp_save}</button></span>
+		<span class="buttonOfficial"><button type="button" onclick="doDocumentLoad(this);">{$lang->cmd_load}</button></span>
+		<span class="buttonOfficial"><input type="button" value="{$lang->cmd_back}" onclick="location.href='{getUrl('act','')}'" /></span>
+	</div>
+
+</form>
+
+<include target="_footer.html" />

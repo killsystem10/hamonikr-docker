@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.2">
+    <title xml:lang="ko">웹빌드 부트스트립 레이아웃</title>
+    <title xml:lang="en">WEBBUILDER LAYOUT</title>
+    <title xml:lang="jp">WEBBUILDER LAYOUT </title>
+    <description xml:lang="ko">WEBBUILDER LAYOUT.</description>
+    <description xml:lang="en">WEBBUILDER LAYOUT.</description>
+    <description xml:lang="jp">WEBBUILDER LAYOUT。</description>
+    <version>1.0.3</version>
+    <date>2014-02-16</date>
+    <author email_address="ch7@hanmail.net" link="http://webbuilder.kr/">
+        <name xml:lang="ko">웹빌드</name>
+        <name xml:lang="en">webuilder</name>
+        <name xml:lang="jp">webuilder</name>
+    </author>
+    <menus>
+        <menu name="global_menu" maxdepth="3" default="true">
+            <title xml:lang="ko">전역 메뉴</title>
+            <title xml:lang="en">Global Menu</title>
+            <title xml:lang="jp">グローバルメニュー</title>
+        </menu>
+    </menus>
+	<extra_vars>
+	 <group>
+		<title xml:lang="ko">레이아웃 설정</title>
+		<var name="LOGO_IMG" type="image">
+			<title xml:lang="ko">사이트 로고 이미지</title>
+			<title xml:lang="en">Site logo image</title>
+		</var>
+		<var name="LOGO_TEXT" type="text">
+			<title xml:lang="ko">사이트 로고 문자</title>
+			<title xml:lang="en">Site logo text</title>
+		</var>
+			<var name="index_url" type="text">
+			<title xml:lang="ko">로고 링크</title>
+			<title xml:lang="en">Site url</title>
+		</var>
+	
+		<var name="main_box_yn" type="select">
+			<title xml:lang="ko">메인 박스 광고 사용유무</title>
+			<title xml:lang="en">main_box_display</title>
+			<description xml:lang="ko">메인 박스 광고 사용유무를 선택하세요.</description>
+			<options value="yes">
+				<title xml:lang="ko">사용</title>
+				<title xml:lang="en">Display</title>
+				<value>yes</value>
+				</options>	
+			<options value="no">
+				<title xml:lang="ko">미사용</title>
+				<title xml:lang="en">hidden</title>
+				<value>no</value>
+			</options>
+		</var>
+			<var name="FOOT_TEXT" type="text">
+			<title xml:lang="ko">하단 메시지</title>
+			<title xml:lang="en">Site foot text</title>
+		</var>
+
+		</group>
+		 <group>
+		<title xml:lang="ko">메인광고설정</title>
+		<var name="main_banner_img1" type="image">
+			<title xml:lang="ko">메인광고 이미지1</title>
+			<title xml:lang="en">Main Banner image1</title>
+			<description xml:lang="ko">메인 광고 베너 이미지 900*500 크기로 등록해주세요..</description>
+		</var>
+			<var name="main_banner_text1" type="text">
+			<title xml:lang="ko">메인광고텍스트 1</title>
+			<title xml:lang="en">Main Banner text1</title>
+		</var>
+			<var name="main_banner_textarea1" type="textarea">
+			<title xml:lang="ko">메인광고 본문1</title>
+			<title xml:lang="en">Main Banner textarea1</title>
+		</var>
+		<var name="main_banner_btn1" type="text">
+			<title xml:lang="ko">메인광고버튼텍스트1</title>
+			<title xml:lang="en">Main Banner button text1</title>
+		</var>
+		<var name="main_banner_url1" type="text">
+			<title xml:lang="ko">메인광고 url1</title>
+			<title xml:lang="en">Main Banner url1</title>
+		</var>
+			<var name="main_banner_img2" type="image">
+			<title xml:lang="ko">메인광고 이미지2</title>
+			<title xml:lang="en">Main Banner image2</title>
+						<description xml:lang="ko">메인 광고 베너 이미지 900*500 크기로 등록해주세요..</description>
+		</var>
+		<var name="main_banner_text2" type="text">
+			<title xml:lang="ko">메인광고텍스트 2</title>
+			<title xml:lang="en">Main Banner text2</title>
+		</var>
+			<var name="main_banner_textarea2" type="textarea">
+			<title xml:lang="ko">메인광고 본문2</title>
+			<title xml:lang="en">Main Banner textarea2</title>
+		</var>
+		<var name="main_banner_btn2" type="text">
+			<title xml:lang="ko">메인광고버튼텍스트2</title>
+			<title xml:lang="en">Main Banner button text2</title>
+		</var>
+		<var name="main_banner_url2" type="text">
+			<title xml:lang="ko">메인광고 url2</title>
+			<title xml:lang="en">Main Banner url2</title>
+		</var>
+			<var name="main_banner_img3" type="image">
+			<title xml:lang="ko">메인광고 이미지3</title>
+			<title xml:lang="en">Main Banner image3</title>
+						<description xml:lang="ko">메인 광고 베너 이미지 900*500 크기로 등록해주세요..</description>
+		</var>
+			<var name="main_banner_text3" type="text">
+			<title xml:lang="ko">메인광고텍스트 3</title>
+			<title xml:lang="en">Main Banner text3</title>
+		</var>
+		<var name="main_banner_textarea3" type="textarea">
+			<title xml:lang="ko">메인광고 본문3</title>
+			<title xml:lang="en">Main Banner textarea3</title>
+		</var>
+		<var name="main_banner_btn3" type="text">
+			<title xml:lang="ko">메인광고버튼텍스트</title>
+			<title xml:lang="en">Main Banner button text3</title>
+		</var>
+		<var name="main_banner_url3" type="text">
+			<title xml:lang="ko">메인광고 url3</title>
+			<title xml:lang="en">Main Banner url3</title>
+		</var>
+		</group>
+		 <group>
+
+		<title xml:lang="ko">메인 박스 설정</title>
+		<var name="main_box_img1" type="image">
+			
+			<title xml:lang="ko">메인 박스 이미지 1</title>
+			<title xml:lang="en">Main box image1</title>
+		</var>
+			<var name="main_box_text1" type="text">
+			<title xml:lang="ko">메인 박스 제목 1</title>
+			<title xml:lang="en">Main box subject1</title>
+		</var>
+			<var name="main_box_textarea1" type="textarea">
+			<title xml:lang="ko">메인  박스 본문 1</title>
+			<title xml:lang="en">Main box textarea1</title>
+		</var>
+		<var name="main_box_btn1" type="text">
+			<title xml:lang="ko">메인 박스 버튼 바로가기 1</title>
+			<title xml:lang="en">Main box button text1</title>
+		</var>
+		<var name="main_box_url1" type="text">
+			<title xml:lang="ko">메인 박스 링크1</title>
+			<title xml:lang="en">Main box url1</title>
+		</var>
+	
+
+	<var name="main_box_img2" type="image">
+			
+			<title xml:lang="ko">메인 박스 이미지 2</title>
+			<title xml:lang="en">Main box image2</title>
+		</var>
+			<var name="main_box_text2" type="text">
+			<title xml:lang="ko">메인 박스 제목 2</title>
+			<title xml:lang="en">Main box subject2</title>
+		</var>
+			<var name="main_box_textarea2" type="textarea">
+			<title xml:lang="ko">메인  박스 본문 2</title>
+			<title xml:lang="en">Main box textarea2</title>
+		</var>
+		<var name="main_box_btn2" type="text">
+			<title xml:lang="ko">메인 박스 버튼 바로가기 2</title>
+			<title xml:lang="en">Main box button text2</title>
+		</var>
+		<var name="main_box_url2" type="text">
+			<title xml:lang="ko">메인 박스 링크2</title>
+			<title xml:lang="en">Main box url2</title>
+		</var>
+
+<var name="main_box_img3" type="image">
+			
+			<title xml:lang="ko">메인 박스 이미지 3</title>
+			<title xml:lang="en">Main box image3</title>
+		</var>
+			<var name="main_box_text3" type="text">
+			<title xml:lang="ko">메인 박스 제목 3</title>
+			<title xml:lang="en">Main box subject3</title>
+		</var>
+			<var name="main_box_textarea3" type="textarea">
+			<title xml:lang="ko">메인  박스 본문 3</title>
+			<title xml:lang="en">Main box textarea3</title>
+		</var>
+		<var name="main_box_btn3" type="text">
+			<title xml:lang="ko">메인 박스 버튼 바로가기 3</title>
+			<title xml:lang="en">Main box button text3</title>
+		</var>
+		<var name="main_box_url3" type="text">
+			<title xml:lang="ko">메인 박스 링크3</title>
+			<title xml:lang="en">Main box url3</title>
+		</var>
+		</group>
+	</extra_vars>
+</layout>

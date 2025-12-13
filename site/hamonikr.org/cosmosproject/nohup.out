@@ -1,0 +1,6 @@
+--2015-06-26 18:31:03--  https://docs.google.com/uc?export=download
+Resolving docs.google.com... 216.58.221.78, 2404:6800:4005:808::200e
+Connecting to docs.google.com|216.58.221.78|:443... connected.
+HTTP request sent, awaiting response... 400 Bad Request
+2015-06-26 18:31:03 ERROR 400: Bad Request.
+

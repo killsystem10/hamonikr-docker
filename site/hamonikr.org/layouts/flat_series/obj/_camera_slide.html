@@ -1,0 +1,28 @@
+<!--// CAMERA SLIDE -->
+<div cond="$li->use_camera_slide == 'Y' && $li->camera_slide_image_1" id="fs-camera-slide" class="camera-fs-wrap<!--@if($li->camera_slide_width_fixed == 'Y')--> fs-wrap<!--@end--><!--@if($li->camera_slide_pattern != 'none')--> pattern-{$li->camera_slide_pattern}<!--@end-->">
+	<div data-src="{$li->camera_slide_image_1}" data-thumb="{$li->camera_slide_thumb_1}"|cond="$li->camera_slide_thumb_1">
+		<div cond="$li->camera_slide_caption_1" class="camera-caption fadeIn clear">
+			{$li->camera_slide_caption_1}
+		</div>
+	</div>
+	<div cond="$li->camera_slide_image_2" data-src="{$li->camera_slide_image_2}" data-thumb="{$li->camera_slide_thumb_2}"|cond="$li->camera_slide_thumb_2">
+		<div cond="$li->camera_slide_caption_2" class="camera-caption fadeIn clear">
+			{$li->camera_slide_caption_2}
+		</div>
+	</div>
+	<div cond="$li->camera_slide_image_3" data-src="{$li->camera_slide_image_3}" data-thumb="{$li->camera_slide_thumb_3}"|cond="$li->camera_slide_thumb_3">
+		<div cond="$li->camera_slide_caption_3" class="camera-caption fadeIn clear">
+			{$li->camera_slide_caption_3}
+		</div>
+	</div>
+	<div cond="$li->camera_slide_image_4" data-src="{$li->camera_slide_image_4}" data-thumb="{$li->camera_slide_thumb_4}"|cond="$li->camera_slide_thumb_4">
+		<div cond="$li->camera_slide_caption_4" class="camera-caption fadeIn clear">
+			{$li->camera_slide_caption_4}
+		</div>
+	</div>
+	<div cond="$li->camera_slide_image_5" data-src="{$li->camera_slide_image_5}" data-thumb="{$li->camera_slide_thumb_5}"|cond="$li->camera_slide_thumb_5">
+		<div cond="$li->camera_slide_caption_5" class="camera-caption fadeIn clear">
+			{$li->camera_slide_caption_5}
+		</div>
+	</div>
+</div>
