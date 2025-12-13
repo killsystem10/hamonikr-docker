@@ -47,7 +47,7 @@ COPY mysql/mysql.conf.d/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
 
 RUN mkdir -p /opt/hamonikr-migration/db /etc/letsencrypt/live/hamonikr.org-0001
 
-COPY db/hamonikr_20251213.sql.gz /opt/hamonikr-migration/db/hamonikr.sql.gz
+COPY db/hamonikr.sql.gz /opt/hamonikr-migration/db/hamonikr.sql.gz
 COPY files.tar.gz /opt/hamonikr-migration/files.tar.gz
 COPY site/ /var/www/hamonikr/
 RUN chown -R www-data:www-data /var/www/hamonikr
