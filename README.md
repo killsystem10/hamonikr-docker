@@ -53,6 +53,9 @@ cd hamonikr-docker
 - **db/hamonikr.sql.gz**: MySQL 데이터베이스 덤프 (119MB)
 - **certs/hamonikr/**: SSL 인증서 파일들
 
+**선택사항 (AI 응답 품질 향상)**:
+- **manual/hamonikr-8.0.txt**: 하모니카OS 8.0 매뉴얼 파일
+
 ### 3. Docker 이미지 빌드
 
 ```bash
@@ -80,35 +83,37 @@ docker run -d \
 
 ### 설정 방법
 
-1. **OpenAI API 키 설정**:
-   ```python
-   API_KEY = "your_openai_api_key"
-   ```
-
-2. **데이터베이스 연결 정보 수정**:
-   ```python
-   db_config = {
-       'HOST': 'localhost',
-       'USER': 'hamonikr',
-       'PASSWORD': 'your_db_password',
-       'DB': 'hamonikr'
-   }
-   ```
-
-3. **크론탭 설정**:
+1. **환경 변수 설정**:
    ```bash
-   # 10분마다 실행
-   */10 * * * * /usr/bin/python3 /path/to/xe_gpt.py
+   # 컨테이너 실행 시 환경 변수 전달
+   docker run -d \
+     --name hamonikr \
+     -e OPENAI_API_KEY='your_openai_api_key' \
+     -e DB_PASSWORD='your_db_password' \
+     hamonikr/hamonikr.org:latest
+   ```
+
+2. **크론탭 설정** (컨테이너 내부):
+   ```bash
+   # 컨테이너 접속 후 크롭 설정
+   docker exec -it hamonikr bash
+   crontab -e
+   # 10분마다 실행 추가
+   */10 * * * * /usr/bin/python3 /app/xe_gpt.py
    ```
 
 ### 매뉴얼 추가
 
-AI 응답의 정확도를 높이기 위해 하모니카OS 매뉴얼을 추가할 수 있습니다:
+AI 응답의 정확도를 높이기 위해 하모니카OS 매뉴얼을 manual 폴더에 추가할 수 있습니다:
 
 ```bash
+# 이미지 빌드 전에 매뉴얼 파일 추가
 mkdir manual
 # 하모니카OS 8.0 매뉴얼 파일 추가
 wget -O manual/hamonikr-8.0.txt https://docs.hamonikr.org/hamonikr-8.0/manual.txt
+
+# 다른 버전 매뉴얼도 추가 가능
+wget -O manual/hamonikr-7.0.txt https://docs.hamonikr.org/hamonikr-7.0/manual.txt
 ```
 
 ## 📁 프로젝트 구조

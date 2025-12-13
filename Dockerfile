@@ -30,12 +30,17 @@ RUN set -eux; \
         curl \
         ca-certificates \
         procps \
-        gzip; \
+        gzip \
+        python3 \
+        python3-pip; \
     a2enmod rewrite ssl headers geoip; \
     rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /var/log/mysql /var/run/mysqld \
     && chown -R mysql:mysql /var/run/mysqld /var/log/mysql /var/lib/mysql
+
+# Install Python packages
+RUN pip3 install --no-cache-dir pymysql openai beautifulsoup4
 
 COPY mysql/my.cnf /etc/mysql/my.cnf
 COPY mysql/mysql.conf.d/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
@@ -59,6 +64,11 @@ RUN a2ensite hamonikr.conf hamonikr-le-ssl.conf
 
 COPY start-services.sh /usr/local/bin/start-services.sh
 RUN chmod +x /usr/local/bin/start-services.sh
+
+# Copy AI response system
+COPY xe_gpt.py /app/xe_gpt.py
+COPY manual/ /app/manual/
+RUN mkdir -p /app && chmod +x /app/xe_gpt.py
 
 VOLUME /var/lib/mysql /var/log/mysql
 
