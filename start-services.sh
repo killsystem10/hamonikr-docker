@@ -38,6 +38,9 @@ function expand_files_archive() {
             mkdir -p "$WWW_FILES_DIR"
             tar -xzf "$FILES_ARCHIVE" -C /var/www/hamonikr
             rm -f "$FILES_ARCHIVE"
+            # Create installation completion flag
+            mkdir -p /var/www/hamonikr/files/config
+            touch /var/www/hamonikr/files/config/installed.lock
         fi
     fi
 }
@@ -62,6 +65,8 @@ if [[ -f "$MYSQL_SQL_ARCHIVE" ]]; then
         echo "Importing ${MYSQL_DB_NAME} database"
         mysql --protocol=socket --socket="$MYSQL_SOCKET" -uroot --password="$MYSQL_ROOT_PASSWORD" -e "CREATE DATABASE IF NOT EXISTS \`$MYSQL_DB_NAME\` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
         gunzip -c "$MYSQL_SQL_ARCHIVE" | mysql --protocol=socket --socket="$MYSQL_SOCKET" -uroot --password="$MYSQL_ROOT_PASSWORD" "$MYSQL_DB_NAME"
+        # Create hamonikr user for XE
+        mysql --protocol=socket --socket="$MYSQL_SOCKET" -uroot --password="$MYSQL_ROOT_PASSWORD" -e "CREATE USER IF NOT EXISTS 'hamonikr'@'localhost' IDENTIFIED BY 'exitem08'; GRANT ALL PRIVILEGES ON ${MYSQL_DB_NAME}.* TO 'hamonikr'@'localhost'; FLUSH PRIVILEGES;"
         touch "$MYSQL_IMPORT_FLAG"
     fi
 fi
