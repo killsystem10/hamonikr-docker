@@ -10,7 +10,7 @@
 - **웹서버**: Apache 2.4 + PHP 7.0 (XpressEngine 기반 하모니카 커뮤니티 사이트)
 - **데이터베이스**: MySQL 5.7 with 자동 데이터 임포트
 - **SSL/TLS**: Let's Encrypt 인증서 지원
-- **AI 자동응닡**: ChatGPT 기반 커뮤니티 자동 답변 시스템 (`xe_gpt.py`)
+- **AI 자동응답**: ChatGPT 기반 커뮤니티 자동 답변 시스템 (`xe_gpt.py`)
 - **GeoIP**: 지리 기반 접속 통계
 - **봇 차단**: 불필요한 크롤링 봇 자동 차단
 
@@ -77,7 +77,7 @@ docker run -d \
   hamonikr/hamonikr.org:latest
 ```
 
-## 🤖 AI 자동응닡 시스템 설정
+## 🤖 AI 자동응답 시스템 설정
 
 `xe_gpt.py`는 ChatGPT API를 사용하여 커뮤니티 질문에 자동으로 답변하는 시스템입니다.
 
